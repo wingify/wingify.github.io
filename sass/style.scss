@@ -12,6 +12,7 @@
 	content: "";
 	clear: both;
 }
+
 html {
 	height: 100%;
 }
@@ -27,7 +28,7 @@ body {
 }
 
 a {
-	color: #DA251D;
+	color: $wingifyRed;
 }
 
 .main-container {
@@ -56,6 +57,7 @@ header {
 
 .main-nav {
 	float: right;
+	margin-top: 10px;
 }
 
 .main-nav__nav-item {

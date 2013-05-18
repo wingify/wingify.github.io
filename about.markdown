@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 <center>
-	<img src="/images/hamster.png" width="400">
+	<img src="/images/hamster-says-hello.png" width="400">
 </center>
 
 We are bunch of young fun filled, smart and energetic hamsters powering the

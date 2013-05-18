@@ -16,7 +16,7 @@ body {
   height: 100%; }
 
 a {
-  color: #DA251D; }
+  color: #da251d; }
 
 .main-container {
   width: 720px;
@@ -39,7 +39,8 @@ header {
   font-size: 46px; }
 
 .main-nav {
-  float: right; }
+  float: right;
+  margin-top: 10px; }
 
 .main-nav__nav-item {
   float: left;
