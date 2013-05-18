@@ -70,6 +70,46 @@ header {
 	text-transform: uppercase;
 }
 
+.author {
+	position: relative;
+}
+
+.author__tooltip {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	margin-left: -60px;
+	width: 100px;
+	height: 100px;
+	border: 10px solid $wingifyRed;
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.3s cubic-bezier(0.175,0.885,0.320,1.275);
+
+	&, img {
+		border-radius: 50%;
+	}
+}
+
+.author__tooltip:after {
+	content: '';
+	position: absolute;
+	bottom: -60px;
+	left: 50%;
+	margin-left: -30px; 
+	border: 30px solid transparent;
+	border-top-width: 30px;
+	border-top-color: $wingifyRed;
+}
+
+.author:focus .author__tooltip,
+.author:hover .author__tooltip {
+	visibility: visible;
+	opacity: 1;
+	bottom: 40px;
+}
+
 
 // sticky footer hack by Ryan Fait: http://ryanfait.com/resources/footer-stick-to-bottom-of-page/
 .footer-push {

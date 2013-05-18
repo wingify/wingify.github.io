@@ -11,7 +11,13 @@ layout: default
     <img src="/images/team/{{page.authorslug}}.png" class="img-circle pull-right" style="width: 80px; height: 80px;">
   </a>
  -->
-  <p class="post__meta">Posted by <a href="/team/#{{page.authorslug}}" class="author">{{ page.author }}</a> on {{ page.date | date: "%B %e, %Y" }}</p>
+  <p class="post__meta">
+    Posted by 
+    <a href="/team/#{{page.authorslug}}" class="author">
+      {{ page.author }}
+      {% include author-tooltip.html %}
+    </a> on {{ page.date | date: "%B %e, %Y" }}
+  </p>
 
 {{ content }}
 

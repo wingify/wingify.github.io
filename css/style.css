@@ -50,6 +50,40 @@ header {
 .date {
   text-transform: uppercase; }
 
+.author {
+  position: relative; }
+
+.author__tooltip {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -60px;
+  width: 100px;
+  height: 100px;
+  border: 10px solid #da251d;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+  .author__tooltip, .author__tooltip img {
+    border-radius: 50%; }
+
+.author__tooltip:after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  margin-left: -30px;
+  border: 30px solid transparent;
+  border-top-width: 30px;
+  border-top-color: #da251d; }
+
+.author:focus .author__tooltip,
+.author:hover .author__tooltip {
+  visibility: visible;
+  opacity: 1;
+  bottom: 40px; }
+
 .footer-push {
   height: 80px; }
 
