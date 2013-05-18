@@ -2,6 +2,18 @@
 layout: default
 ---
 
+<div class="page-header">
+  <h1>
+    <a href='{{page.url}}'>{{page.title}}</a>
+    <small style="font-size: 16px;"><a href="{{page.url}}#disqus_thread"></a></small>
+    <a href="/team/#{{page.authorslug}}">
+      <img src="/images/team/{{page.authorslug}}.png" class="img-circle pull-right" style="width: 80px; height: 80px;">
+    </a>
+  </h1>
+<p>Posted by <a href="/team/#{{page.authorslug}}">{{page.author}}</a> on {{ page.date | date: "%B %e, %Y" }}</p>
+</div>
+{{ content }}
+
 <ul class="pager">
   <li class="previous">
   {% if page.previous %}
@@ -15,36 +27,4 @@ layout: default
   </li>
 </ul>
 
-<div class="page-header">
-  <h1>
-    <a href='{{page.url}}'>{{page.title}}</a>
-    <small style="font-size: 16px;"><a href="{{page.url}}#disqus_thread"></a></small>
-    <a href="/team/#{{page.authorslug}}">
-      <img src="/images/team/{{page.authorslug}}.png" class="img-circle pull-right" style="width: 80px; height: 80px;">
-    </a>
-  </h1>
-<p>Posted by <a href="/team/#{{page.authorslug}}">{{page.author}}</a> on {{ page.date | date: "%B %e, %Y" }}</p>
-</div>
-{{ content }}
-<hr/>
-
-<script type="text/javascript">
-var disqus_shortname = 'wingifyengineering';
-(function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());
-</script>
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'wingifyengineering'; // required: replace example with your forum shortname
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
+{% include comments.html %}

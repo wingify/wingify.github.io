@@ -1,0 +1,105 @@
+.clearfix:after {
+  display: table;
+  content: "";
+  clear: both; }
+
+html {
+  height: 100%; }
+
+body {
+  font: 16px/1.4 "Ubuntu", Georgia;
+  color: #333;
+  background-color: white;
+  overflow-y: scroll;
+  padding: 0;
+  margin: 0;
+  height: 100%; }
+
+a {
+  color: #DA251D; }
+
+.main-container {
+  width: 720px;
+  margin: 0 auto -80px;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%; }
+
+header {
+  margin-bottom: 60px; }
+
+.blog-title {
+  font-size: 38px;
+  float: left;
+  color: #333333;
+  text-decoration: none; }
+
+.letter-w {
+  color: #da251d;
+  font-size: 46px; }
+
+.main-nav {
+  float: right; }
+
+.main-nav__nav-item {
+  float: left;
+  list-style: none;
+  margin: 0 10px; }
+
+.footer-push {
+  height: 80px; }
+
+footer {
+  display: block;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  background: #da251d;
+  height: 80px;
+  line-height: 80px; }
+  footer, footer a {
+    color: #f5b7b4; }
+
+/* Archieve */
+.post-list {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center; }
+
+.post-list__item {
+  margin-bottom: 30px; }
+
+.post-list__item__title {
+  font-size: 26px;
+  text-decoration: none; }
+
+.post-list__item__date {
+  color: #999;
+  font-size: 14px;
+  margin: 0 10px; }
+
+.post-list__item__author {
+  color: #AAA; }
+
+/*
+Scrollbars
+ */
+/* Inspired by beautiful scrollbar 
+ * on Joshua Hibbert's website: http://joshnh.com/
+ */
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 14px; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #da251d; }
+
+::-webkit-scrollbar-track {
+  background-color: white; }
+
+/*
+Media queries
+ */
+@media only screen and (max-width: 960px) {
+  .main-container {
+    width: 90%; } }

@@ -3,48 +3,21 @@ layout: default
 title: Blog
 ---
 
-{% for post in paginator.posts %}
-<div class="page-header">
-  <h1>
-    <a href='{{post.url}}'>{{post.title}}</a>
-    <small style="font-size: 16px;"><a href="{{post.url}}#disqus_thread"></a></small>
-    <a href="/team/#{{post.authorslug}}">
-      <img src="/images/team/{{post.authorslug}}.png" class="img-circle pull-right" style="width: 80px; height: 80px;">
-    </a>
-  </h1>
-<p>Posted by <a href="/team/#{{post.authorslug}}">{{post.author}}</a> on {{ post.date | date: "%B %e, %Y" }}</p>
-</div>
-{{ post.content }}
-<hr/>
-{% endfor %}
+<section>
+  
+  <div class="post-list">
+    {% for post in paginator.posts %}
+    <article class="post-list__item">
+      <a class="post-list__item__title" href="{{ post.url }}">{{ post.title }}</a>
+      
+      <span class="post-list__item__date">{{ post.date | date: "%B %e, %Y" }}</span>
 
-<center>
-  <ul class="pagination">
-  {% if paginator.previous_page %}
-  <li class="prev"><a href="{% if paginator.page > 2 %}/page{{paginator.previous_page}}{% else %}/{% endif %}">&larr;</a></li>
-  {% else %}
-  <li class="prev disabled"><a href="#">&larr;</a></li>
-  {% endif %}
+      <div class="post-list__item__author">
+        - {{ post.author }}
+      </div>
 
-  {% for post in site.posts limit:paginator.total_pages %}
-  <li {% if forloop.index == paginator.page %}class="active"{% endif %}><a href="{% if forloop.index > 1 %}/page{{forloop.index}}{% else %}/{% endif %}">{{forloop.index}}</a></li>
-  {% endfor %}
+    </article>
+    {% endfor %}
+  </div>
 
-  {% if paginator.next_page %}
-  <li class="next"><a href="/page{{paginator.next_page}}">&rarr;</a></li>
-  {% else %}
-  <li class="next disabled"><a href="#">&rarr;</a></li>
-  {% endif %}
-  </ul>
-</center>
-
-<script type="text/javascript">
-var disqus_shortname = 'wingifyengineering';
-(function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());
-</script>
-
+</section>

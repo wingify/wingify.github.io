@@ -1,0 +1,134 @@
+@import "variables";
+
+// Resets
+
+// *, *:after, *:before {
+// 	margin: 0;
+// 	padding: 0;
+// }
+
+.clearfix:after {
+	display: table;
+	content: "";
+	clear: both;
+}
+html {
+	height: 100%;
+}
+
+body {
+	font: 16px/1.4 'Ubuntu', Georgia;
+	color: #333;
+	background-color: $backgroundColor;
+	overflow-y: scroll;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+a {
+	color: #DA251D;
+}
+
+.main-container {
+	width: 720px;
+	margin: 0 auto $footerHeight * -1;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
+
+header {
+	margin-bottom: 60px;
+}
+
+.blog-title {
+	font-size: 38px;
+	float: left;
+	color: $textColor;
+	text-decoration: none;
+}
+
+.letter-w {
+	color: $wingifyRed;
+	font-size: 46px;
+}
+
+.main-nav {
+	float: right;
+}
+
+.main-nav__nav-item {
+	float: left;
+	list-style: none;
+	margin: 0 10px;
+}
+
+// sticky footer hack by Ryan Fait: http://ryanfait.com/resources/footer-stick-to-bottom-of-page/
+.footer-push {
+	height: $footerHeight;
+}
+
+footer {
+	display: block;
+	position: relative;
+	text-align: center;
+	font-size: 12px;
+	background: $wingifyRed;
+	height: $footerHeight;
+	line-height: $footerHeight;
+
+	&, a {
+    	color: lighten($wingifyRed, 35%);
+	}
+}
+
+
+/* Archieve */
+.post-list {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.post-list__item {
+	margin-bottom: 30px;
+}
+
+.post-list__item__title {
+	font-size: 26px;
+	text-decoration: none;
+}
+
+.post-list__item__date {
+	color: #999;
+	font-size: 14px;
+	margin: 0 10px;
+}
+
+.post-list__item__author {
+	color: #AAA;
+}
+
+
+/*
+Scrollbars
+ */
+
+/* Inspired by beautiful scrollbar 
+ * on Joshua Hibbert's website: http://joshnh.com/
+ */
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: lighten($wingifyRed, 0%);
+}
+
+::-webkit-scrollbar-track {
+	background-color: $backgroundColor;
+}
+
+@import "media-queries";
