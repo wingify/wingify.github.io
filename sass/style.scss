@@ -66,6 +66,11 @@ header {
 	margin: 0 10px;
 }
 
+.date {
+	text-transform: uppercase;
+}
+
+
 // sticky footer hack by Ryan Fait: http://ryanfait.com/resources/footer-stick-to-bottom-of-page/
 .footer-push {
 	height: $footerHeight;
@@ -86,7 +91,7 @@ footer {
 }
 
 
-/* Archieve */
+// Archieve
 .post-list {
 	width: 80%;
 	margin: 0 auto;
@@ -112,6 +117,27 @@ footer {
 	color: #AAA;
 }
 
+//  Single post
+.post {
+
+}
+
+.post__title {
+	margin: 0;
+	font-size: 36px;
+	color: $wingifyRed;
+}
+
+.post__meta {
+	margin: 0 0 10px;
+	color: #AAA;
+}
+
+.pager {
+	text-align: center;
+	color: #999;
+	margin: 40px 0;
+}
 
 /*
 Scrollbars

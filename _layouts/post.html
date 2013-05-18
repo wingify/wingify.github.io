@@ -2,29 +2,39 @@
 layout: default
 ---
 
-<div class="page-header">
-  <h1>
-    <a href='{{page.url}}'>{{page.title}}</a>
-    <small style="font-size: 16px;"><a href="{{page.url}}#disqus_thread"></a></small>
-    <a href="/team/#{{page.authorslug}}">
-      <img src="/images/team/{{page.authorslug}}.png" class="img-circle pull-right" style="width: 80px; height: 80px;">
-    </a>
-  </h1>
-<p>Posted by <a href="/team/#{{page.authorslug}}">{{page.author}}</a> on {{ page.date | date: "%B %e, %Y" }}</p>
-</div>
+<section class="post">
+  <h2 class="post__title" href="{{page.url}}"> "{{page.title}}" </h2>
+  
+  <!-- <small style="font-size: 12px;"><a href="{{page.url}}#disqus_thread"></a></small>
+   -->
+  <!-- <a href="/team/#{{page.authorslug}}">
+    <img src="/images/team/{{page.authorslug}}.png" class="img-circle pull-right" style="width: 80px; height: 80px;">
+  </a>
+ -->
+  <p class="post__meta">Posted by <a href="/team/#{{page.authorslug}}" class="author">{{ page.author }}</a> on {{ page.date | date: "%B %e, %Y" }}</p>
+
 {{ content }}
 
-<ul class="pager">
-  <li class="previous">
+</section>
+
+<section class="pager">
   {% if page.previous %}
-    <a rel="prev" title="Previous: {{ page.previous.title }}" href="{{ page.previous.url }}">&larr; {{ page.previous.title }}</a>
+    <a rel="prev" title="Previous: {{ page.previous.title }}" href="{{ page.previous.url }}">previousPost()</a>
+  {% else %}
+    NULL
   {% endif %}
-  </li>
-  <li class="next">
+
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+
+  <a href="/">home()</a>
+  
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+
   {% if page.next %}
-    <a rel="next" title="Next: {{ page.next.title }}" href="{{ page.next.url }}">{{ page.next.title }} &rarr;</a>
+    <a rel="next" title="Next: {{ page.next.title }}" href="{{ page.next.url }}">nextPost()</a>
+  {% else %}
+    NULL  
   {% endif %}
-  </li>
-</ul>
+</section>
 
 {% include comments.html %}

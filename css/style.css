@@ -47,6 +47,9 @@ header {
   list-style: none;
   margin: 0 10px; }
 
+.date {
+  text-transform: uppercase; }
+
 .footer-push {
   height: 80px; }
 
@@ -61,7 +64,6 @@ footer {
   footer, footer a {
     color: #f5b7b4; }
 
-/* Archieve */
 .post-list {
   width: 80%;
   margin: 0 auto;
@@ -81,6 +83,20 @@ footer {
 
 .post-list__item__author {
   color: #AAA; }
+
+.post__title {
+  margin: 0;
+  font-size: 36px;
+  color: #da251d; }
+
+.post__meta {
+  margin: 0 0 10px;
+  color: #AAA; }
+
+.pager {
+  text-align: center;
+  color: #999;
+  margin: 40px 0; }
 
 /*
 Scrollbars
