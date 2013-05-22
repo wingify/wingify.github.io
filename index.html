@@ -4,16 +4,15 @@ title: Blog
 ---
 
 <section>
-  
   <div class="post-list">
     {% for post in paginator.posts %}
     <article class="post-list__item">
       <a class="post-list__item__title" href="{{ post.url }}">{{ post.title }}</a>
-      
-      <span class="post-list__item__date date">{{ post.date | date: "%B %e, %Y" }}</span>
 
       <div class="post-list__item__author">
-        - {{ post.author }}
+
+      <span class="post-list__item__date date">{{ post.date | date: "%B %e, %Y" }}</span>
+      | <span class="post-list__item__date date">{{ post.author }}</span>
       </div>
 
     </article>

@@ -4,7 +4,6 @@ layout: default
 
 <section class="post">
   <h2 class="post__title" href="{{page.url}}"> "{{page.title}}" </h2>
-  
   <!-- <small style="font-size: 12px;"><a href="{{page.url}}#disqus_thread"></a></small>
    -->
   <!-- <a href="/team/#{{page.authorslug}}">
@@ -12,7 +11,7 @@ layout: default
   </a>
  -->
   <p class="post__meta">
-    Posted by 
+    Posted by
     <a href="/team/#{{page.authorslug}}" class="author">
       {{ page.author }}
       {% include author-tooltip.html %}
@@ -24,22 +23,17 @@ layout: default
 </section>
 
 <section class="pager">
+
   {% if page.previous %}
-    <a rel="prev" title="Previous: {{ page.previous.title }}" href="{{ page.previous.url }}">previousPost()</a>
+    <a rel="prev" title="Previous: {{ page.previous.title }}" href="{{ page.previous.url }}">&larr; {{ page.previous.title }}</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
   {% else %}
-    NULL
   {% endif %}
 
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-
-  <a href="/">home()</a>
-  
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-
   {% if page.next %}
-    <a rel="next" title="Next: {{ page.next.title }}" href="{{ page.next.url }}">nextPost()</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a rel="next" title="Next: {{ page.next.title }}" href="{{ page.next.url }}">{{ page.next.title }} &rarr;</a>
   {% else %}
-    NULL  
   {% endif %}
 </section>
 
