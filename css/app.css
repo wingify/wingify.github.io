@@ -24,6 +24,7 @@ body {
 .container-narrow {
     margin: 0 auto;
     max-width: 960px;
+    min-height: 420px;
 }
 .container-overall {
     background-color: white;
