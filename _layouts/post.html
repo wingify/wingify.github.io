@@ -17,10 +17,8 @@ layout: default
 
 <div class="page-header">
   <h1 style="float: left;"><a href='{{page.url}}'>{{page.title}}</a></h1>
-  <a href="/team/#{{page.authorslug}}">
-      <img src="/images/team/{{page.authorslug}}.png" class="img-circle pull-right" style="width: 80px; height: 80px; margin-top: 14px;">
-  </a>
-<p style="float: left;">Posted by <a href="/team/#{{page.authorslug}}">{{page.author}}</a> on {{ page.date | date: "%B %e, %Y" }} | <small style="font-size: 16px;"><a href="{{page.url}}#disqus_thread"></a></small></p>
+  <img src="/images/team/{{page.authorslug}}.png" class="img-circle pull-right" style="width: 80px; height: 80px; margin-top: 14px;">
+<p style="float: left;">Posted by <strong>{{page.author}}</strong> on {{ page.date | date: "%B %e, %Y" }} | <small style="font-size: 16px;"><a href="{{page.url}}#disqus_thread"></a></small></p>
     <div style="clear: both;"></div>
 </div>
 {{ content }}
