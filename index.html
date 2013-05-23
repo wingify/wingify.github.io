@@ -5,15 +5,14 @@ title: Blog
 
 {% for post in paginator.posts %}
 <div class="page-header">
-  <h1>
-    <a href='{{post.url}}'>{{post.title}}</a>
-    <small style="font-size: 16px;"><a href="{{post.url}}#disqus_thread"></a></small>
+    <h1 style="float: left;"><a href='{{post.url}}'>{{post.title}}</a></h1>
     <a href="/team/#{{post.authorslug}}">
-      <img src="/images/team/{{post.authorslug}}.png" class="img-circle pull-right" style="width: 80px; height: 80px;">
+        <img src="/images/team/{{post.authorslug}}.png" class="img-circle pull-right" style="width: 80px; height: 80px; margin-top: 14px;">
     </a>
-  </h1>
-<p>Posted by <a href="/team/#{{post.authorslug}}">{{post.author}}</a> on {{ post.date | date: "%B %e, %Y" }}</p>
+    <p style="float: left;">Posted by <a href="/team/#{{post.authorslug}}">{{post.author}}</a> on {{ post.date | date: "%B %e, %Y" }} | <small style="font-size: 16px;"><a href="{{post.url}}#disqus_thread"></a></small></p>
+    <div style="clear: both;"></div>
 </div>
+
 {{ post.content }}
 <hr/>
 {% endfor %}
