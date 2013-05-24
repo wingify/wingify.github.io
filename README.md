@@ -1,2 +1,2 @@
-Wingify's Engineering blog
+Engineering @ Wingify
 http://engineering.wingify.com
