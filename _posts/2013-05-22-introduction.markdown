@@ -42,7 +42,7 @@ or with our engineering team [engineering@wingify.com](mailto:
 engineering@wingify.com) directly or via comments section in this blog.
 
 Hope to see you again soon when we post our first engineering article on this blog.
-Please subscribe the blog to stay updated. We're out to change the way software is written,
-so come along and share our journey!
+Please [subscribe](/atom.xml) the blog to stay updated. We're out to change the way software is written,
+so come along and [share our journey](http://visualwebsiteoptimizer.com/careers.php)!
 
 -- Engineering @ [Wingify](http://wingify.com)
