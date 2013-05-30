@@ -5,6 +5,6 @@ permalink: /opensource/
 ---
 
 At Wingify we love open source software, we contribute to existing projects and
-publish our own projects on [Github](http://github.com/Wingify).
+publish our own projects on [Github](http://github.com/wingify).
 
 <center><img src="/images/opensource.png"></center>
