@@ -7,14 +7,14 @@ authorslug: himanshu_kapoor
 author: Himanshu Kapoor
 ---
 
-Visual Website Optimizer’s Editor component loads a website for editing using a
+Visual Website Optimizer's Editor component loads a website for editing using a
 proxy tunnel. It put a big restriction on what kind of websites could be loaded
 in it. Websites behind a firewall, the ones on a local network, or behind HTTP
 authentication could not be loaded using the tunnel. Other than those, even if
 the website did load in the editor, chances were that it could break on the
 frontend due to issues with JavaScript or AJAX communication.
 
-You’d ask: why is there a proxy in the first place? Because, if a page contains
+You'd ask: why is there a proxy in the first place? Because, if a page contains
 an iframe on another domain, it cannot access its properties or functions. It is
 a security feature that browser vendors offer users to protect their privacy.
 
@@ -75,10 +75,10 @@ We concluded that refactoring the code to adapt to the asynchrony would be one
 hell of a task and we had to find another way. We decided to write a wrapper
 around the PostMessage API to solve the above three problems. We called it
 `please.js`. We are currently giving it some finishing touches before we push it
-out to the community. Here’s how we did it:
+out to the community. Here's how we did it:
 
 - We decided to build this library on top of jQuery Deferred API. While
-deferred objects and promises don’t exactly eliminate the asynchrony, they
+deferred objects and promises don't exactly eliminate the asynchrony, they
 somehow bridge the gap between the two, making asynchronous code feel more
 linear and flattened. So, using that base, any piece of code that expected code
 prior to it to have been executed fully, could now be made possible without
@@ -88,9 +88,10 @@ looked like this:
 {% highlight js %}
   $(elementXPath).click(function() {
     please(parent)
-      .call(‘VWO.Element.create’, elementXPath)
-      .then(function (element) {       please(parent)
-          .call(‘VWO.ContextMenu.showForElement’, element);
+      .call('VWO.Element.create', elementXPath)
+      .then(function (element) {
+          please(parent)
+              .call('VWO.ContextMenu.showForElement', element);
     });
   });
 {% endhighlight %}
@@ -112,41 +113,41 @@ calling a function were the most common tasks we performed. The code for these
 tasks now looked like this:
 
 {% highlight js %}
-  please(parent).get(‘window.location’).then(function(location) {
+  please(parent).get('window.location').then(function(location) {
     // use location here
   });
 
-  please(parent).set(‘foo’, ‘bar’).then(function () {
+  please(parent).set('foo', 'bar').then(function () {
     // do something here
   });
 
   // reload the child window.
-  var childWindow = $(‘iframe#child’).get(0).contentWindow;
-  please(childWindow).call(‘window.location.reload’);
+  var childWindow = $('iframe#child').get(0).contentWindow;
+  please(childWindow).call('window.location.reload');
 {% endhighlight %}
 
 A paradigm shift, yet the logic remained unaffected. Exactly what we wanted.
 
 - The last task was a big one. We had a lot of code in the parent frame
-directly accessing the child frame’s DOM. While this is not advocated as a good
+directly accessing the child frame's DOM. While this is not advocated as a good
 practice, such problems are often faced when building upon and improving legacy
-code. With PostMessage, you can no longer access the child’s DOM in any way.
+code. With PostMessage, you can no longer access the child's DOM in any way.
 But we came up with a smart solution. We know that jQuery is a wrapper around
 the traditional DOM. We created a PostMessage wrapper around jQuery itself!
 Which makes impossible turn possible:
 
 {% highlight js %}
-// set #bar’s height in child = foo’s height in child
-var pls = please($(‘iframe#child’).get(0).contentWindow);
-pls.$(‘div#foo’).height().then(function (fooHeight) {
-  pls.$(‘div#bar’).height(fooHeight);
-});
+  // set #bar's height in child = foo's height in child
+  var pls = please($('iframe#child').get(0).contentWindow);
+  pls.$('div#foo').height().then(function (fooHeight) {
+    pls.$('div#bar').height(fooHeight);
+  });
 
-// DOM elements are returned back as please.UnserializableObject
-// which can then be passed back to please.$ to do more stuff
-pls.$(‘<div>hello world</div>’).then(function (newDiv) {
-  pls.$(newDiv).appendTo(‘body’);
-});
+  // DOM elements are returned back as please.UnserializableObject
+  // which can then be passed back to please.$ to do more stuff
+  pls.$('<div>hello world</div>').then(function (newDiv) {
+    pls.$(newDiv).appendTo('body');
+  });
 {% endhighlight %}
 
 This was something that I thought of during one of the [hackathons](http://team.wingify.com/friday-engineering-talks-at-wingify)
