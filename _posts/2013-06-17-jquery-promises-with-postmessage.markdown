@@ -30,7 +30,7 @@ hood for every task the user performed.  When attempting to use PostMessage for
 this communication, we were faced with a couple of issues: 
 
 
-- Our legacy code had direct communication between the parent frame and the
+1. Our legacy code had direct communication between the parent frame and the
 child frame at all places, i.e. the objects and functions in the child were
 accessed synchronously. PostMessage API, on the other hand, is completely
 asynchronous, and implementing such an API on the existing codebase would almost
@@ -38,12 +38,12 @@ mean rethinking the entire logic and program flow all over again.  We could
 foresee this asynchronous transition become a cause of a lot of race conditions
 within the Editor.
 
-- Often, after sending a message to the other frame, we wanted to hear back a
+2. Often, after sending a message to the other frame, we wanted to hear back a
 reply, for which we needed a decent two-way communication. A kind that would
 keep track of the sender and the receiver and could be identified across iframes
 using a unique identifier (to tie up the requests and responses).
 
-- Since PostMessage uses string messages for communication (or [structurally
+3. Since PostMessage uses string messages for communication (or [structurally
 cloneable](https://developer.mozilla.org/en-US/docs/Web/Guide/DOM/The_structured_clone_algorithm)
 objects in the recent browsers), it put a big limit on what kind of
 data we could send during this communication. Directly accessing DOM nodes and
@@ -76,12 +76,12 @@ around the PostMessage API to solve the above three problems. We called it
 `please.js`. We are currently giving it some finishing touches before we push it
 out to the community. Here's how we did it:
 
-- We decided to build this library on top of jQuery Deferred API. While
+1. We decided to build this library on top of jQuery Deferred API. While
 deferred objects and promises don't exactly eliminate the asynchrony, they
 somehow bridge the gap between the two, making asynchronous code feel more
 linear and flattened. So, using that base, any piece of code that expected code
 prior to it to have been executed fully, could now be made possible without
-giving a lot of thought. In the above example, the transition to please.js
+giving a lot of thought. In the above example, the transition to `please.js`
 looked like this:
 
 {% highlight js %}
@@ -99,7 +99,7 @@ Although this seems hackish at the first glance, it was a way to rapidly
 iterate over synchronous code and convert it to use promises and callbacks
 without giving much thought on the logic.
 
-- To establish a good two-way communication, we thought of thinking of each
+2. To establish a good two-way communication, we thought of thinking of each
 communication as a pair of messages: a request and a response. Under the hood,
 we identified each message using a timestamp it was initiated on, and created a
 request object with that identifier. We then send the request to the other
@@ -127,7 +127,7 @@ tasks now looked like this:
 
 A paradigm shift, yet the logic remained unaffected. Exactly what we wanted.
 
-- The last task was a big one. We had a lot of code in the parent frame
+3. The last task was a big one. We had a lot of code in the parent frame
 directly accessing the child frame's DOM. While this is not advocated as a good
 practice, such problems are often faced when building upon and improving legacy
 code. With PostMessage, you can no longer access the child's DOM in any way.
