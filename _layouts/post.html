@@ -18,8 +18,20 @@ layout: default
 <div class="page-header" style="margin-top: 0px">
   <img src="/images/team/{{page.authorslug}}.png" class="img-circle pull-right" style="width: 80px; height: 80px; margin-top: 14px; margin-left: 20px;">
   <h1><a href='{{page.url}}'>{{page.title}}</a></h1>
-<p style="float: left;">Posted by <strong>{{page.author}}</strong> on {{ page.date | date: "%B %e, %Y" }} | <small style="font-size: 16px;"><a href="{{page.url}}#disqus_thread"></a></small></p>
-    <div style="clear: both;"></div>
+  <p style="float: left;">Posted by <strong>{{page.author}}</strong> on {{ page.date | date: "%B %e, %Y" }} | <small style="font-size: 16px;"><a href="{{page.url}}#disqus_thread"></a></small></p>
+
+  <br>
+  <div style="clear: both;"></div>
+
+  <div class="addthis_toolbox addthis_default_style">
+  <a class="addthis_button_tweet"></a>
+  <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+  <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+  <a class="addthis_button_linkedin_counter"></a>
+  <a class="addthis_button_pinterest_pinit"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-51bf5c216c176128"></script>
+
 </div>
 {{ content }}
 <hr/>
