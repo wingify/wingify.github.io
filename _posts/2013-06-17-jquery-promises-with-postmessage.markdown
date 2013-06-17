@@ -2,7 +2,6 @@
 layout: post
 title: "jQuery Promises: The answer to PostMessage's asynchrony"
 excerpt: jQuery Promises, the answer to PostMessage's asynchrony
-permalink: /postmessage/
 date: 2013-05-14 01:12:02
 authorslug: himanshu_kapoor
 author: Himanshu Kapoor
