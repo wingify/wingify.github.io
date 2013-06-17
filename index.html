@@ -5,7 +5,7 @@ title: Blog
 
 {% for post in paginator.posts %}
 <div class="page-header">
-    <img src="/images/team/{{post.authorslug}}.png" class="img-circle pull-right" style="width: 80px; height: 80px; margin-top: 14px;">
+    <img src="/images/team/{{post.authorslug}}.png" class="img-circle pull-right" style="width: 80px; height: 80px; margin-top: 14px; margin-left: 20px;">
     <h1><a href='{{post.url}}'>{{post.title}}</a></h1>
     <p style="float: left;">Posted by <strong>{{post.author}}</strong> on {{ post.date | date: "%B %e, %Y" }} | <small style="font-size: 16px;"><a href="{{post.url}}#disqus_thread"></a></small></p>
     <div style="clear: both;"></div>
