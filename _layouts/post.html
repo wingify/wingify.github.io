@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<ul class="pager">
+<ul class="pager" style="margin-bottom: 0px">
   <li class="previous">
   {% if page.previous %}
     <a rel="prev" title="Previous: {{ page.previous.title }}" href="{{ page.previous.url }}">&larr; {{ page.previous.title }}</a>
@@ -15,7 +15,7 @@ layout: default
   </li>
 </ul>
 
-<div class="page-header">
+<div class="page-header" style="margin-top: 0px">
   <h1 style="float: left;"><a href='{{page.url}}'>{{page.title}}</a></h1>
   <img src="/images/team/{{page.authorslug}}.png" class="img-circle pull-right" style="width: 80px; height: 80px; margin-top: 14px;">
 <p style="float: left;">Posted by <strong>{{page.author}}</strong> on {{ page.date | date: "%B %e, %Y" }} | <small style="font-size: 16px;"><a href="{{page.url}}#disqus_thread"></a></small></p>
