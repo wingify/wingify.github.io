@@ -6,7 +6,7 @@ authorslug: himanshu_kapoor
 author: Himanshu Kapoor
 ---
 
-Visual Website Optimizer's Editor component loads a website for editing using a
+[Visual Website Optimizer](http://visualwebsiteoptimizer.com/)'s editor component loads a website for editing using a
 proxy tunnel. It put a big restriction on what kind of websites could be loaded
 in it. Websites behind a firewall, the ones on a local network, or behind HTTP
 authentication could not be loaded using the tunnel. Other than those, even if
@@ -76,7 +76,7 @@ around the PostMessage API to solve the above three problems. We called it
 `please.js`. We are currently giving it some finishing touches before we push it
 out to the community. Here's how we did it:
 
-1. We decided to build this library on top of jQuery Deferred API. While
+- We decided to build this library on top of jQuery Deferred API. While
 deferred objects and promises don't exactly eliminate the asynchrony, they
 somehow bridge the gap between the two, making asynchronous code feel more
 linear and flattened. So, using that base, any piece of code that expected code
@@ -99,7 +99,7 @@ Although this seems hackish at the first glance, it was a way to rapidly
 iterate over synchronous code and convert it to use promises and callbacks
 without giving much thought on the logic.
 
-2. To establish a good two-way communication, we thought of thinking of each
+- To establish a good two-way communication, we thought of thinking of each
 communication as a pair of messages: a request and a response. Under the hood,
 we identified each message using a timestamp it was initiated on, and created a
 request object with that identifier. We then send the request to the other
@@ -127,7 +127,7 @@ tasks now looked like this:
 
 A paradigm shift, yet the logic remained unaffected. Exactly what we wanted.
 
-3. The last task was a big one. We had a lot of code in the parent frame
+- The last task was a big one. We had a lot of code in the parent frame
 directly accessing the child frame's DOM. While this is not advocated as a good
 practice, such problems are often faced when building upon and improving legacy
 code. With PostMessage, you can no longer access the child's DOM in any way.
