@@ -6,9 +6,15 @@ authorslug: kushagra_agarwal
 author: Kushagra Agarwal
 ---
 
+<div style="text-align:center; margin:5px">
+<img src="/images/posts/hn-bob-post.png">
+</div>
+
 Recently, we launched our first ever [animated guide to A/B testing](https://visualwebsiteoptimizer.com/what-is-ab-testing/) which made it to the top of [HN homepage](https://news.ycombinator.com/item?id=5993914) (Yay!). 
 
-![](https://phaven-prod.s3.amazonaws.com/files/image_part/asset/956765/Xq0eqxVYXbzyZmOwI4nN5LDsLAw/medium_what.jpg)
+<div style="text-align:center; margin:5px">
+<img src="https://phaven-prod.s3.amazonaws.com/files/image_part/asset/956765/Xq0eqxVYXbzyZmOwI4nN5LDsLAw/medium_what.jpg">
+</div>
 
 In this post, I'll go through the process of how I created the page using HTML5 and JS. Let's get started! 
 
