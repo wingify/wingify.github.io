@@ -22,7 +22,11 @@ please(frameWindow).call('window.location.reload');
 
 please.js is based on top of jQuery and the jQuery Promise API. jQuery version 1.6 or above is preferred. To make the communication between two windows on different domains work, both of them must be injected with the same version of jQuery and please.js.
 
-Currently, please.js is an alpha release (0.1.0), and we are working our way to add features like support for communication in Chrome Extensions and improving the documentation to make it easier for all users to get started easily.
+Currently, please.js is an alpha release (0.1.0). Down the line, we would like to add features like support for communication in Chrome Extensions and improving the documentation to make it easier for all users to get started easily.
+
+## How it works
+
+The underlying concept is simple. Two frames need to communicate with each other asynchronously. To access one of the child frames on a page, the parent frame sends a `please.Request` to the child frame. The `Request` object is a lot like the request sent by the browser to a server. It contains information on what needs to be done in the child frame (call a function, get/set a property or a variable, or access a DOM node using jQuery). The child frame sends a `please.Response` back to the parent frame with the result of what the parent frame asked. For a function call request, it is the return value of that function, and for a get request, the value of the variable/property is returned.
 
 ## Contributing
 
