@@ -85,9 +85,9 @@ giving a lot of thought. In the above example, the transition to `please.js`
 looked like this:
 
 {% highlight js %}
-  $(elementXPath).click(function() {
+  $(elementSelectorPath).click(function() {
     please(parent)
-      .call('VWO.Element.create', elementXPath)
+      .call('VWO.Element.create', elementSelectorPath)
       .then(function (element) {
           please(parent)
               .call('VWO.ContextMenu.showForElement', element);
