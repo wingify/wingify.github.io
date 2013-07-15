@@ -10,6 +10,11 @@ In [one of our previous posts](http://engineering.wingify.com/posts/jquery-promi
 
 We are proud to announce [please.js](https://github.com/wingify/please.js), a Request/Response based cross-domain communication. If you've ever faced problems in cross-domain frame communication, fear not - just say please!
 
+
+<div style="text-align: center;">
+	<a href="https://github.com/wingify/please.js" style="padding: 20px 40px; font-size: 24px;" class="btn btn-primary">please.js on Github</a>
+</div>
+
 ## What is please.js
 
 please.js is a Request/Response based wrapper around the PostMessage API that makes use of jQuery Promises. Here's a quick example to load an iframe window's location:
