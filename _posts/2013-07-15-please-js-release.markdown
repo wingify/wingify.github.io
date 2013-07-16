@@ -6,7 +6,7 @@ authorslug: himanshu_kapoor
 author: Himanshu Kapoor
 ---
 
-In [one of our previous posts](http://engineering.wingify.com/posts/jquery-promises-with-postmessage/), we talked about the problems we faced when communicating with frames on a different domain in our application [Visual Website Optimizer](https://visualwebsiteoptimizer.com/), and highlighted the possible solutions to each of those problems.
+In [one of our previous posts](http://engineering.wingify.com/posts/jquery-promises-with-postmessage/), we talked about the problems we faced when communicating with frames on a different domain in our application [Visual Website Optimizer](http://visualwebsiteoptimizer.com/), and highlighted the possible solutions to each of those problems.
 
 We are proud to announce [please.js](https://github.com/wingify/please.js), a Request/Response based cross-domain communication. If you've ever faced problems in cross-domain frame communication, fear not - just say please!
 
