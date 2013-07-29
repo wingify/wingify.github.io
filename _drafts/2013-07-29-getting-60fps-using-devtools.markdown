@@ -10,8 +10,8 @@ This post is primarily about how to make your web page perform better using a re
 
 The process we see in following text will apply more or less on all web pages in general. Heres what you need to get started:
 
-1. A [janky](http://jankfree.org/) web page
-2. Google chrome with its awesome devtools
+1. A [janky](http://jankfree.org/) web page.
+2. Google chrome with its awesome devtools.
 3. Determination to make it run smooth like butter :)
 
 Worry not if you are missing any of the above, you can still read on. Let us begin.
@@ -65,7 +65,7 @@ Moreover if you hover over any small horizontal yellow bars below, as show in th
 
 After all this analysis using the devtools we hence come to the conclusion that its the script executing for every scroll event that is the cause of issue here. Next step in our debug process is finding *WHY* is the cause causing it.
 
-## WHY is it causing issue?
+## WHY is it causing an issue?
 
 ### Lets investigate the code
 
