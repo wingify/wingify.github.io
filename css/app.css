@@ -67,3 +67,10 @@ code {
     line-height: 1.4em;
     padding: 1px 3px !important;
 }
+
+.img-wrapper {
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+    background: #f7f7f7;
+}

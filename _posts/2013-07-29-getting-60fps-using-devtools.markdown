@@ -6,25 +6,25 @@ authorslug: kushagra_gour
 author: Kushagra Gour
 ---
 
-This post is about how to make your web page perform better using a
+This post is about making your web page perform better using a
 real world example. As you know, we recently launched a very cool [animated
 comic on A/B Testing](https://visualwebsiteoptimizer.com/what-is-ab-testing/).
-It is scroll animation describing what is A/B testing. I'll be going to talk about
+It is scroll animation describing what is A/B testing. I'll talk about
 it as an example and walk you through its performance issues, how we
 debugged them and finally what we did to extract 60 FPS out of it.
 
-The process we see in following text will apply more or less on all web pages in
+The process we see in following text will applies more or less to all web pages in
 general. Here's what you need to get started:
 
 1. A [janky](http://jankfree.org/) web page.
-2. Google chrome with its awesome devtools.
-3. Determination to make it run smooth like butter :)
+2. Google Chrome with its awesome devtools.
+3. Determination to make it run as smooth as a hot knife through butter :)
 
 Worry not if you are missing any of the above, you can still read on. Let us begin.
 
 ## WHAT is causing the issue?
 
-For all we know now is that our page is janky. When you scroll up/down
+All we know now is that our page is janky. When you scroll up/down
 you'll notice that the animation is quite choppy. There are sudden jumps
 occasionally while scrolling which is really irritating and obviously a bad user
 experience. We don't know what is causing this. The very first step we take here
@@ -34,8 +34,8 @@ feature. So I went on and fired up my devtools.
 
 ### Open the devtools
 
-<div style="text-align:center; margin:5px">
-<img src="/images/2013/07/devtools.png" alt="Chrome devtools">
+<div class="img-wrapper">
+  <img src="/images/2013/07/devtools.png" alt="Chrome devtools">
 </div>
 
 Devtools in chrome can be fired either going to **Tools > Developer Tools** or
@@ -44,14 +44,16 @@ on Mac.
 
 ### Select frames tab
 
-![Chrome devtools](/images/2013/07/devetools-frames-tab.png)
+<div class="img-wrapper">
+    <img src="/images/2013/07/devetools-frames-tab.png" alt="Frames tab">
+</div>
 
 Frames tab basically will let us visualize each frame individually showing how much time was taken by that frame and for what tasks.
 
 ### Filter out events taking more than 15ms
 
-<div style="text-align:center; margin:5px">
-<img src="/images/2013/07/devtools-15ms.png" alt="Chrome devtools">
+<div class="img-wrapper">
+  <img src="/images/2013/07/devtools-15ms.png" alt="Chrome devtools">
 </div>
 
 Note that we are targeting 60 FPS here. A little math here gives us the number
@@ -64,8 +66,8 @@ shown.
 
 ### Record
 
-<div style="text-align:center; margin:5px">
-<img src="/images/2013/07/devtools-record.png" alt="Chrome devtools">
+<div class="img-wrapper">
+  <img src="/images/2013/07/devtools-record.png" alt="Chrome devtools">
 </div>
 
 Press the 'Record' button at the bottom to start devtools record what's happening
@@ -79,8 +81,8 @@ to stop the recording.
 
 ### Notice the frames
 
-<div style="text-align:center; margin:5px">
-<img src="/images/2013/07/devtools-initial.png" alt="Chrome devtools">
+<div class="img-wrapper">
+  <img src="/images/2013/07/devtools-initial.png" alt="Chrome devtools">
 </div>
 
 You now see the frame data for your page... something like in the snapshot
@@ -93,8 +95,8 @@ visualized and confirmed the issue. Lets find out the cause.
 
 ### Script events taking more than 15ms
 
-<div style="text-align:center; margin:5px">
-<img src="/images/2013/07/devtools-initial-script-time.png" alt="Chrome devtools">
+<div class="img-wrapper">
+  <img src="/images/2013/07/devtools-initial-script-time.png" alt="Chrome devtools">
 </div>
 
 Every frame's bar is made of different colour components. In the above
@@ -205,7 +207,9 @@ repeat the profiling procedure again.
 
 Here is what we got this time:
 
-![Chrome devtools](/images/2013/07/devtools-iter1-a.png)
+<div class="img-wrapper">
+  <img src="/images/2013/07/devtools-iter1-a.png" alt="Result">
+</div>
 
 Seems to have worked quite a bit! We have lesser frames overshooting the 16ms budget.
 
@@ -313,7 +317,9 @@ $window.scroll( $.throttle(250, scrollHandling));
 Needless to say, our next step is to test the changes made. Here is what the
 timeline says now:
 
-![Chrome devtools](/images/2013/07/devtools-iter1-b.png)
+<div class="img-wrapper">
+  <img src="/images/2013/07/devtools-iter1-b.png" alt="Final result">
+</div>
 
 Bingo!
 
