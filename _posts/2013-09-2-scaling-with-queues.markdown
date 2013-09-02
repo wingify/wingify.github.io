@@ -59,7 +59,7 @@ which could publish messages to a RabbitMQ broker over STOMP protocol. The libra
 [lua-resty-rabbitmqstomp](https://github.com/wingify/lua-resty-rabbitmqstomp) was
 opensourced for the hacker [community](https://groups.google.com/forum/?fromgroups#!forum/openresty-en).
 
-Later, after I rewrote the Lua code using this library and ran a [loader.io](http://loader.io)
+Later, I rewrote our Lua handler code using this library and ran a [loader.io](http://loader.io)
 load test. It failed this model due to very [low throughtput](http://ldr.io/154Xf1h),
 the test was performed on a small 1G DigitalOcean instance for both models.
 For us, the STOMP protocol
