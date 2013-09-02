@@ -60,7 +60,9 @@ which could publish messages to a RabbitMQ broker over STOMP protocol. The libra
 opensourced for the hacker [community](https://groups.google.com/forum/?fromgroups#!forum/openresty-en).
 
 Later, after I rewrote the Lua code using this library and ran a [loader.io](http://loader.io)
-load test. It failed this model due to very low throughtput. For us, the STOMP protocol
+load test. It failed this model due to very [low throughtput](http://ldr.io/154Xf1h),
+the test was performed on a small 1G DigitalOcean instance for both models.
+For us, the STOMP protocol
 and slow RabbitMQ STOMP adapter were performance bottlenecks. RabbitMQ was not
 as fast as Redis, so we decided to keep it and work on the second
 model. For our requirements, we wrote a proof-of-concept Redis to RabbitMQ transport
@@ -82,7 +84,9 @@ producers and consumers thrice and had two major phases of refactoring.
 <p>A/B testing of existing and new architecture</p>
 </div>
 
-Based on results, we migrated to the new pipeline based on RabbitMQ. There were
+Based on [results](http://ldr.io/1565jPu) against a 1G DigitalOcean instance like
+for the first model and against the A/B comparision of existing pipeline in realtime,
+we migrated to the new pipeline based on RabbitMQ. There were
 other issues of HA, redundancy and failover that were addressed in this migration.
 The new architecture ensures no single point of failure and has mechanisms to
 recover from failure and fault.
