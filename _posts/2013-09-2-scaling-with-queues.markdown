@@ -23,9 +23,9 @@ and the server sends some valid object. There are many ways to do this. To keep
 the size of the returned object small, for every HTTP request we
 return a tiny 1x1 pixel gif image and our geo-distributed architecture along with
 our managed Anycast DNS service helps us to do this with very low latencies,
-we aim for less than 40ms. When a HTTP request hits one of our data acquisition servers, [Openresty](http://openresty.org)
+we aim for less than 40ms. When a HTTP request hits one of our data acquisition servers, [OpenResty](http://openresty.org)
 handles it and our Lua based code processes the request in the same process thread.
-Openresty is a `nginx` mod which among many things bundles `luajit` that allows
+OpenResty is a `nginx` mod which among many things bundles `luajit` that allows
 us to write URL handlers in Lua and the code runs within the web server. Our Lua code
 does some quick checks, transformations and writes the data to a [Redis](http://redis.io)
 server which is used as fast in-memory data sink. The data stored in Redis is
