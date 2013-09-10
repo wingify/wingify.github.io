@@ -8,3 +8,19 @@ timezone:    Asia/Kolkata
 future:      true
 permalink:   /posts/:title/
 paginate:    5
+
+authors:
+ sparsh_gupta:
+  twitter: sparshgupta
+ kushagra_agarwal:
+  twitter: kushsolitary
+ himanshu_kapoor:
+  twitter: himkp
+ kushagra_gour:
+  twitter: chinchang457
+ vivek_kishore:
+  twitter: 
+ rohit_yadav:
+  twitter: _bhaisaab
+
+
