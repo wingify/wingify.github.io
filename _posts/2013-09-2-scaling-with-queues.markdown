@@ -106,3 +106,6 @@ name conventions. The flow diagram below has hints on how it works, checkout the
 <img src="/images/2013/09/3.png"><br>
 <p>Flow diagram of "agentredrabbit"</p>
 </div>
+
+<br>
+[Discussion on Hacker News](https://news.ycombinator.com/item?id=6359786)
