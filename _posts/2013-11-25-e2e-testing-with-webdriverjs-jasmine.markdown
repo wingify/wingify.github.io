@@ -6,9 +6,9 @@ authorslug: kushagra_gour
 author: Kushagra Gour
 ---
 
-e2e or end-to-end or UI testing is a methodology used to test whether the flow of an application is performing as designed from start to finish.
+e2e or end-to-end or UI testing is a methodology used to test whether the flow of an application is performing as designed from start to finish. In simple words, it is testing of your application from the user endpoint where the whole system is a blackbox with only the UI exposed to the user.
 
-It can become quite an overhead if done manually and your application has a large number of interactions/pages to test.
+It can become quite an overhead if done manually and if your application has a large number of interactions/pages to test.
 
 In the rest of the article I'll talk about webdriverJS and Jasmine to automate your e2e testing, a combination which isn't talked about much on the web.
 
@@ -66,6 +66,8 @@ To run your test file, all you do is:
 ```
 node testfile.js
 ```
+
+**Note**: In addition to the npm package, you will need to download the WebDriver implementations you wish to utilize. As of 2.34.0, selenium-webdriver natively supports the [ChromeDriver](https://code.google.com/p/selenium/wiki/ChromeDriver). Simply [download a copy](http://chromedriver.storage.googleapis.com/index.html) and make sure it can be found on your PATH. The other drivers (e.g. Firefox, Internet Explorer, and Safari), still require the [standalone Selenium server](http://selenium.googlecode.com/files/selenium-server-standalone-2.37.0.jar).
 
 ### Difference from other language bindings
 
