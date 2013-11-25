@@ -110,7 +110,7 @@ driver.click(E1);
 
 Isn't that awesome!
 
-*Controlflow* also provides an `execute` function to push your custom function inside the execution list and the return value of that function is used to resolve/reject that particular execution. So you can use promises and do any asynchronous thingin your custom code:
+*Controlflow* also provides an `execute` function to push your custom function inside the execution list and the return value of that function is used to resolve/reject that particular execution. So you can use promises and do any asynchronous thing in your custom code:
 
 ```
 var flow = webdriver.promise.controlFlow();
@@ -128,7 +128,7 @@ flow.execute(function () {
 
 ## Combining WebDriverJS with Jasmine
 
-Our browser automation is setup with selenium. Now we need a testing framework handle our tests. That is where [Jasmine](http://pivotal.github.io/jasmine/) comes in.
+Our browser automation is setup with selenium. Now we need a testing framework to handle our tests. That is where [Jasmine](http://pivotal.github.io/jasmine/) comes in.
 
 You can install jasmine for your JavaScript project through npm:
 ```
@@ -220,7 +220,7 @@ And more such cool stuff to make end-to-end testing for Angular apps super-easy.
 
 ## In the end
 
-e2e testing is important for the apps being written today and hence it becomes important for it to be automated and at the same time fun and easy to perform. There are numerous tools available for you to choose and this article talks about once such tool combination.
+e2e testing is important for the apps being written today and hence it becomes important for it to be automated and at the same time fun and easy to perform. There are numerous tools available for you to choose and this article talks about one such tool combination.
 
 Hope this helps you get started. So what are you waiting for, lets write some end-to-end tests!
 
