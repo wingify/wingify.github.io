@@ -224,6 +224,8 @@ e2e testing is important for the apps being written today and hence it becomes i
 
 Hope this helps you get started. So what are you waiting for, lets write some end-to-end tests!
 
+Using a e2e testing stack you want to share? Let us know in the comments.
+
 ## Links & references
 
 - WebDriverJS user guide: [https://code.google.com/p/selenium/wiki/WebDriverJs](https://code.google.com/p/selenium/wiki/WebDriverJs)
