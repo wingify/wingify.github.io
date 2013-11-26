@@ -200,7 +200,7 @@ Angular framework has been very testing focused since the very beginning. Needle
 
 Checkout some of the neat addons it gives you:
 
-1. Apart from querying element based on id, css selector, xpath etc, it lets you query on basis of binding, model, repeater etc. Sweat!
+1. Apart from querying element based on id, css selector, xpath etc, it lets you query on basis of binding, model, repeater etc. Sweet!
 
 2. It has Jasmine's `expect` function patched to accept promises. So, for example, in our previous test where we were checking for title:
 
