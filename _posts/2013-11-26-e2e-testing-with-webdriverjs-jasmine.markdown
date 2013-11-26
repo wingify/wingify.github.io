@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Automated e2e testing: WebDriverJS, Jasmine and Protractor
-excerpt: Automated e2e testing: WebDriverJS, Jasmine and Protractor
+title: Automated e2e testing- WebDriverJS, Jasmine and Protractor
+excerpt: Automated e2e testing- WebDriverJS, Jasmine and Protractor
 authorslug: kushagra_gour
 author: Kushagra Gour
 ---
@@ -45,13 +45,13 @@ Now if you search **webdriver JS** on the web, you'll come across 2 different bi
 
 Say you have a JavaScript project you want to automate e2e testing on. Installing the bindings is as simple as doing:
 
-```
+{% highlight bash %}
 npm install selenium-webdriver
-```
+{% endhighlight %}
 
 Done! You can now require the package and with a lil' configuration you can open any webpage in the browser:
 
-```
+{% highlight javascript %}
 var webdriver = require('selenium-webdriver');
 
 var driver = new webdriver.Builder().
@@ -59,13 +59,13 @@ var driver = new webdriver.Builder().
     build();
 
 driver.get('http://www.wingify.com');
-```
+{% endhighlight %}
 
 To run your test file, all you do is:
 
-```
+{% highlight bash %}
 node testfile.js
-```
+{% endhighlight %}
 
 **Note**: In addition to the npm package, you will need to download the WebDriver implementations you wish to utilize. As of 2.34.0, selenium-webdriver natively supports the [ChromeDriver](https://code.google.com/p/selenium/wiki/ChromeDriver). Simply [download a copy](http://chromedriver.storage.googleapis.com/index.html) and make sure it can be found on your PATH. The other drivers (e.g. Firefox, Internet Explorer, and Safari), still require the [standalone Selenium server](http://selenium.googlecode.com/files/selenium-server-standalone-2.37.0.jar).
 
@@ -74,22 +74,22 @@ node testfile.js
 WebDriverJS has an important difference from other bindings in any other language - **It is asynchronous**.
 
 So if you had done the following in python:
-```
+{% highlight javascript %}
 // pseudo code
 driver.get(page1);
 driver.click(E1);
-```
+{% endhighlight %}
 
 Both statments would have executed synchronously as the Python (as every other language) API is blocking. But that isn't the case with JavaScript. To maintain the required sequence between various actions, WebDriverJS uses [Promises](https://code.google.com/p/selenium/source/browse/javascript/webdriver/promise.js). In short, a promise is an object that can execute whatever you give it after it has finished.
 
 But it doesn't stop here. Even with promises, the above code would have become:
 
-```
+{% highlight javascript %}
 // pseudo code
 driver.get(page1).then(function () {
 	driver.click(E1);
 });
-```
+{% endhighlight %}
 
 Do you smell callback hell in there? To make it more neat, WebDriverJS has a wrapper for Promise called as [**ControlFlow**](https://code.google.com/p/selenium/wiki/WebDriverJs#Control_Flows).
 
@@ -101,18 +101,18 @@ In simple words, this is how *ControlFlow* prevents callback hell:
 
 And so, it enables us to simply do:
 
-```
+{% highlight javascript %}
 // pseudo code
 driver.get(page1);
 // Implicitly add to previous action's then()
 driver.click(E1);
-```
+{% endhighlight %}
 
 Isn't that awesome!
 
 *Controlflow* also provides an `execute` function to push your custom function inside the execution list and the return value of that function is used to resolve/reject that particular execution. So you can use promises and do any asynchronous thing in your custom code:
 
-```
+{% highlight javascript %}
 var flow = webdriver.promise.controlFlow();
 
 flow.execute(function () {
@@ -122,7 +122,7 @@ flow.execute(function () {
 	})
 	return d.promise;
 });
-```
+{% endhighlight %}
 
 **Quick tip**: Documentation for JavaScript bindings isn't that readily available (atleast I couldn't find it), so the best thing I found to be useful was the actual [WebDriverJS code](https://code.google.com/p/selenium/source/browse/javascript/webdriver/). It heavily commented and is very handy while looking for specific methods on the driver.
 
@@ -131,14 +131,14 @@ flow.execute(function () {
 Our browser automation is setup with selenium. Now we need a testing framework to handle our tests. That is where [Jasmine](http://pivotal.github.io/jasmine/) comes in.
 
 You can install jasmine for your JavaScript project through npm:
-```
+{% highlight bash %}
 npm install jasmine-node
-```
+{% endhighlight %}
 
 If we were to convert our earlier `testfile.js` to check for correct page title, here is what it might look like:
 
 
-```
+{% highlight javascript %}
 var webdriver = require('selenium-webdriver');
 
 var driver = new webdriver.Builder().
@@ -153,13 +153,13 @@ describe('basic test', function () {
 		});
 	});
 });
-```
+{% endhighlight %}
 
 Now the above file needs to be run with [jasmine-node](https://github.com/mhevery/jasmine-node), like so:
 
-```
+{% highlight bash %}
 jasmine-node testfile.js
-```
+{% endhighlight %}
 
 This will fire the browser and do the mentioned operations, but you'll notice that Jasmine won't give any results for the test. Why?
 
@@ -168,7 +168,7 @@ Well...that happens because Jasmine has finished executing and no `expect` state
 To solve such asynchronicity in our tests, jasmine-node provides a way to tell that a particular `it` block is asynchronous. It is done by accepting a done callback in the specification (`it` function) which makes Jasmine wait for the `done()` to be executed. So here is how we fix the above code:
 
 
-```
+{% highlight javascript %}
 var webdriver = require('selenium-webdriver');
 
 var driver = new webdriver.Builder().
@@ -185,12 +185,13 @@ describe('basic test', function () {
 		});
 	});
 });
-```
+{% endhighlight %}
+
 **Quick tip**: You might want to tweak the time allowed for tests to complete in Jasmine like so:
 
-```
+{% highlight javascript %}
 jasmine.getEnv().defaultTimeoutInterval = 10000; // in microseconds.
-```
+{% endhighlight %}
 
 ## Bonus for Angular apps
 
@@ -204,17 +205,17 @@ Checkout some of the neat addons it gives you:
 
 2. It has Jasmine's `expect` function patched to accept promises. So, for example, in our previous test where we were checking for title:
 
-```
+{% highlight javascript %}
 driver.getTitle().then(function (title) {
 	expect(title).toBe('Wingify');
 });
-```
+{% endhighlight %}
 
 can be refactored to a much cleaner:
 
-```
+{% highlight javascript %}
 expect(driver.getTitle()).toBe('Wingify');
-```
+{% endhighlight %}
 
 And more such cool stuff to make end-to-end testing for Angular apps super-easy.
 
