@@ -39,8 +39,6 @@ creating a campaign.
 <p>VWO URL Matching Helper</p>
 </div>
 
-### Exploration
-
 We started by [reviewing](http://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis)
 several opensource databases but none of them would fit our requirements except
 Cassandra. But, the issue with Cassandra was read latency in a clustered deployment
@@ -49,7 +47,9 @@ approach is the best way to solve our problem.
 
 Next I started playing with opensource embeddable databases such as LevelDB,
 KyotoCabinet etc. Finally, I found about [RocksDB](http://rocksdb.org) which was
-based off LevelDB and was recently opensourced by Facebook at the time.
+based off LevelDB and was recently opensourced by Facebook at the time. For
+getting started with RocksDB I recommend you start with the examples that come
+part of the repo [examples](https://github.com/facebook/rocksdb/tree/master/examples).
 
 I read RockDB's [wiki articles](https://github.com/facebook/rocksdb/wiki), wrote
 some proof of concept code, joined their Facebook group and started asking
@@ -62,7 +62,17 @@ around prefix lookup and using custom extractors and bloom filters.
 <p>RocksDB FB Group</p>
 </div>
 
-### Architecture and Implementation
 
-For capturing URLs at peak velocity of 10k serves/s, the [queue infrastructure](/scaling-with-queues/)
-was reused. After several off the shelf opensource databases failed for
+For capturing URLs at peak velocity of 10k serves/s, our [queue based infrastructure](/scaling-with-queues/)
+was reused. This solved the problem of collection of high velocity data.
+
+For storage, search and retrieval we built a custom datastore using C++, RocksDB
+and Thrift, called **HarvestDB**. Most of our backend stack consists of PHP and
+Python, so Thrift was useful for making this services distributed yet accessible
+by various parts of the sub-system.
+
+
+<div style="text-align:center; margin:5px">
+<img src="/images/2014/06/3.png"><br>
+<p>Overall architecture</p>
+</div>
