@@ -122,7 +122,7 @@ library to `get` (read) and to `search` URLs.
 A Python program runs as a periodic cron job and uses `purge` procedure to purge old entries
 based on timestamp which makes sure we won't exhaust our storage
 resources. The system is in production for more than five months now and is
-capable of handling up to a tested workload of up to 24k writes/second while consuming
+capable of handling (benchmarked) workload of up to 24k writes/second while consuming
 less than 500MB RAM. Our future work will be on replication, sharding and fault
 tolerance of this service. The following diagram illustrates this architecture.
 
