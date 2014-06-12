@@ -29,8 +29,8 @@ Smart Code was found on it.
 <p>VWO Smart Code checker</p>
 </div>
 
-The following screenshot shows another feature where users can see a list of matching
-URLs matching a complex wildcard pattern, regex pattern, string rule etc. while
+The following screenshot shows another feature where users can see a list of URLs
+matching a complex wildcard pattern, regex pattern, string rule etc. while
 creating a campaign.
 
 <div style="text-align:center; margin:5px">
