@@ -14,7 +14,7 @@ to collect all the URLs on which our [homegrown CDN](https://visualwebsiteoptimi
 would serve JS content. Based on our current traffic, we were looking to collect some 10k URLs per
 second across four major geographic regions where we run our servers.
 
-In the beginning we tried MySQL, Redis, Riak, CouchDB, MongoDB, ElasticSearch but
+In the beginning we tried MySQL, Redis, Riak, CouchDB, MongoDB and ElasticSearch, but
 nothing worked out for us with that kind of high speed writes. We also wanted our
 system to respond very quickly, under 40ms between
 internal servers on private network. This post talks about how we were able to
@@ -43,7 +43,9 @@ several opensource databases but none of them would fit our requirements except
 Cassandra. In clustered deployment, reads from Cassandra were too slow and slower
 when data size would grew. After understanding how Cassandra worked under the
 hood such as its log structured storage like LevelDB I started playing with opensource
-embeddable databases that would use similar approach such as LevelDB and Kyoto Cabinet.
+embeddable databases that would use similar approach such as
+[LevelDB](https://code.google.com/p/leveldb/) and
+[Kyoto Cabinet](http://fallabs.com/kyotocabinet/).
 At the time, I found an embedabble persistent key-value store
 library built on LevelDB called [RocksDB](http://rocksdb.org).
 It was opensourced by Facebook and had a fairly active developer community so I
