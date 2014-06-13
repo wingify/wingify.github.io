@@ -2,7 +2,7 @@ name: Wingify Engineering
 description: This is the engineering blog from the hackers at Wingify
 keywords: wingify, ab testing, split testing
 
-pygments:    true
+highligher:  pygments
 safe:        true
 timezone:    Asia/Kolkata
 future:      true
