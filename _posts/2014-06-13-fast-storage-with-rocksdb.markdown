@@ -96,7 +96,7 @@ struct Url {
 typedef list<Url> UrlList
 
 struct UrlResult {
-    1: required i32          id;
+    1: required i32          prefix;
     2: required i32          found;
     3: required i32          total;
     4: required list<string> urls;
@@ -104,14 +104,14 @@ struct UrlResult {
 
 service HarvestDB {
     bool ping(),
-    Url get(1:i32 id, 2:string url),
-    bool put(1:i32 id, 2:Url url),
-    UrlResult search(1:i32 id,
+    Url get(1:i32 prefix, 2:string url),
+    bool put(1:i32 prefix, 2:Url url),
+    UrlResult search(1:i32 prefix,
                      2:string includeRegex,
                      3:string excludeRegex,
                      4:i32 size,
                      5:i32 timeout),
-    bool purge(1:i32 id, 2:i64 timestamp)
+    bool purge(1:i32 prefix, 2:i64 timestamp)
 }
 {% endhighlight %}
 
