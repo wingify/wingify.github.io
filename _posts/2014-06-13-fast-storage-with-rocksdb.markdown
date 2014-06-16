@@ -130,3 +130,5 @@ tolerance of this service. The following diagram illustrates this architecture.
 <img src="/images/2014/06/3.png"><br>
 <p>Overall architecture</p>
 </div>
+
+[Discussion on Hacker News](https://news.ycombinator.com/item?id=7899353)
