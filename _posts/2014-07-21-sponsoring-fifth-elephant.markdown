@@ -3,7 +3,7 @@ layout: post
 title: We are sponsoring The Fifth Elephant 2014
 excerpt: We are sponsoring The Fifth Elephant 2014! Come, meet us during the conference in Bangalore.
 permalink: /sponsoring-fifth-elephant/
-date: 2014-07-15 00:00:00
+date: 2014-07-21 00:00:00
 authorslug: vaidik_kapoor
 author: Vaidik Kapoor
 ---
