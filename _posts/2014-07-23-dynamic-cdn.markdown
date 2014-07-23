@@ -24,7 +24,7 @@ deeper insight of your business results.
 Here is a very high-level overview of what goes on behind the scenes:
 
 <div style="text-align:center; margin: 5px">
-	<img src="/images/2014/07/0.png" style="width: 90%;">
+	<img src="/images/2014/07/0.png">
 </div>
 
 ## How it started
@@ -34,7 +34,7 @@ website using VWO app, served our static JS library, collected analytics data,
 captured visitor data, and saved it in a MySQL database.
 
 <div style="text-align:center; margin: 5px">
-	<img src="/images/2014/07/1.png" style="width: 50%;">
+	<img src="/images/2014/07/1.png">
 </div>
 
 This implementation worked perfectly for us initially, when we were serving a
@@ -45,7 +45,7 @@ we cache the content for every requested URL and serve back the content in the
 least possible time.
 
 <div style="text-align:center; margin: 5px">
-	<img src="/images/2014/07/2.png" style="width: 80%;">
+	<img src="/images/2014/07/2.png">
 </div>
 
 Gradually, we started using these servers only for serving JS settings and
@@ -90,7 +90,7 @@ world, the users are less likely to make purchases from a slow loading website
 as compared to a fast loading website.
 
 <div style="text-align:center; margin:5px">
-	<img src="/images/2014/07/3.png" style="width: 60%;">
+	<img src="/images/2014/07/3.png">
 </div>
 
 It is important to make sure that we only serve relevant content based on the
@@ -110,7 +110,7 @@ from the closest location instead of nodes only in the US. We had written a
 blog post earlier to explain this to our customers. [Read it here][6].
 
 <div style="text-align:center; margin:5px">
-	<img src="/images/2014/07/4.png" style="width: 100%;">
+	<img src="/images/2014/07/4.png">
 </div>
 
 [OpenResty (aka. ngx_openresty)][7] our current workhorse, is a full-fledged web
@@ -129,7 +129,7 @@ The following section describes briefly the new architecture of our CDN and how
 VWO servers handle requests:
 
 <div style="text-align:center; margin:5px">
-	<img src="/images/2014/07/5.png" style="width: 70%;">
+	<img src="/images/2014/07/5.png">
 </div>
 
 1. The following section dWe use [Nginx-Lua Shared Dictionary][9], an in-memory
