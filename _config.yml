@@ -10,6 +10,8 @@ permalink:   /posts/:title/
 paginate:    5
 
 authors:
+ ankit_jain:
+  twitter: ankneo
  sparsh_gupta:
   twitter: sparshgupta
  kushagra_agarwal:
