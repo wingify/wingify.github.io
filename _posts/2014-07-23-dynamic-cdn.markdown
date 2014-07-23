@@ -132,7 +132,7 @@ VWO servers handle requests:
 	<img src="/images/2014/07/5.png">
 </div>
 
-1. The following section dWe use [Nginx-Lua Shared Dictionary][9], an in-memory
+1. We use [Nginx-Lua Shared Dictionary][9], an in-memory
    store shared among all the Nginx worker processes to store campaign specific
    data. Memcached is used as the first fallback if we have to restart the
    OpenResty server (it resets the shared dictionary). Our second fallback is
