@@ -9,4 +9,4 @@ permalink: /about/
 </center>
 
 We are bunch of young fun filled, smart and energetic hamsters powering the
-super duper A/B testing tool -- [Visual Website Optimizer (VWO)](http://visualwebsiteoptimizer.com).
+super duper A/B testing tool -- [Visual Website Optimizer (VWO)](https://vwo.com).
