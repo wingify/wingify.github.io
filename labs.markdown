@@ -27,7 +27,7 @@ permalink: /labs/
 
 <div class="flexbox  flexbox--padded  flexbox--fixed  text--center">
 	<div class="flexbox__item ">
-		<a href="http://github.com/wingify/dom-comparator">
+		<a href="/dom-comparator/">
 			<img src="/images/generic_code@2x.png" width="160" height="160">
 			<h3>DOMComparator</h3>
 		</a>
