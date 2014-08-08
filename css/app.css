@@ -189,7 +189,7 @@ code {
     padding-top: 6px;
     padding-left: 20px;
 }
-.nav li>a:hover {
+.nav li>a:hover, .nav li>a.active {
     background: #1c263d;
     color: #fff;
 }
