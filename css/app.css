@@ -102,6 +102,7 @@ a {
 a:hover, a:focus {
     color: #8e44ad;
     text-decoration: none;
+    border-bottom: none!important;
 }
 img {
     max-width: 100%;
