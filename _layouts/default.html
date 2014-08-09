@@ -10,6 +10,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{{site.description}}">
   <meta name="keywords" content="{{site.keywords}}">
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Lato:300,100,300italic,400");
+    @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:300,300italic,400");
+    </style>
 
   <link rel="icon" type="image/png" href="/images/favicon.png">
   <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -34,22 +38,23 @@
       <!-- End Visual Website Optimizer Asynchronous Code -->
 </head>
 <body>
-
 <div class="container-narrow container-overall">
-  <div class="header">
-    <ul class="nav nav-pills pull-right">
-      <li><a style="padding: 5px;" href="https://github.com/wingify" title="Github"><img src="/images/github.png"></a></li>
-      <li><a style="padding: 5px;" href="/posts"><button type="button" class="btn btn-primary">Posts</button></a></li>
-      <li><a style="padding: 5px;" href="/about"><button type="button" class="btn btn-danger">About</button></a></li>
-      <li><a style="padding: 5px;" href="/atom.xml"><img style="padding-top:2px;" src="/images/feed.png"></a></li>
+  <header class="header">
+    <ul class="nav nav-pills pull-right" style="margin-top: 24px">
+      <li><a href="https://github.com/wingify" title="Github">GitHub</a></li>
+      <li><a href="/posts/" class="{% if page.url == '/posts/' %}active{% endif %}">Posts</a></li>
+      <li><a href="/labs/" class="{% if page.url == '/labs/' %}active{% endif %}">Labs</a></li>
+      <li><a href="/about/" class="{% if page.url == '/about/' %}active{% endif %}">About</a></li>
+      <li><a href="/atom.xml">Feed</a></li>
     </ul>
-    <p>
+
+    <h1>
       <a href="/">
-      <img class="pull-left" width="100" src="/images/chuckki.png" style="margin-right:10px;"/>
-      <strong style="font-family: 'Press Start 2P', cursive; font-size:28px; color: #34495e;">Wingify<br> Engineering</strong>
+        <img src="http://wingify.com/images/labs/engg_blog.png" style="width: 60px; height: 60px; margin-top: -6px; margin-right: 20px" class="pull-left">
+        <span style="vertical-align:middle; color: #2c3e50">Wingify Engineering</span>
       </a>
-    </p>
-  </div>
+    </h1>
+  </header>
   <div class="container-narrow">
     {{ content }}
   </div>

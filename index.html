@@ -5,14 +5,17 @@ title: Blog
 
 {% for post in paginator.posts %}
 {% assign author = site.authors[post.authorslug] %}
+<div class="post-content">
 <div class="page-header">
-    <a href="https://twitter.com/{{author.twitter}}" target="_blank" title="@{{author.twitter}}"><img src="/images/team/{{post.authorslug}}.png" class="img-circle pull-right" style="width: 80px; height: 80px; margin-top: 14px; margin-left: 20px;"></a>
+    <a href="https://twitter.com/{{author.twitter}}" target="_blank" title="@{{author.twitter}}"><img src="/images/team/{{post.authorslug}}.png" class="img-circle pull-right" style="width: 80px; height: 80px; margin-left: 20px;"></a>
     <h1><a href='{{post.url}}'>{{post.title}}</a></h1>
-    <p style="float: left;">Posted by <a href="https://twitter.com/{{author.twitter}}" target="_blank"><strong>{{post.author}}</strong></a> on {{ post.date | date: "%B %e, %Y" }} | <small style="font-size: 16px;"><a href="{{post.url}}#disqus_thread"></a></small></p>
+    <div style="float: left;">Posted by <a href="https://twitter.com/{{author.twitter}}" target="_blank"><strong>{{post.author}}</strong></a> on {{ post.date | date: "%B %e, %Y" }} | <small style="font-size: 16px;"><a href="{{post.url}}#disqus_thread"></a></small></div>
     <div style="clear: both;"></div>
 </div>
-
+<div style="margin-top: 60px">
 {{ post.content }}
+</div>
+</div>
 <hr/>
 {% endfor %}
 
