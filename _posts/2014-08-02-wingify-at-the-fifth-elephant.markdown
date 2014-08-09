@@ -9,7 +9,7 @@ author: Vaidik Kapoor
 ---
 
 
-[The Fifth Elephant][1] is a popular conference in India around the Big Data ecosystem. It happened last week in Bangalore. And we were proud to sponsor the conference. To represent Wingify at the event, [Ankit][2], [Varun][3] and [I][4] attended the event. This blog post is an account of what we did at the event and what we learned by sponsoring, attending and being present at the conference as an organization.
+[The Fifth Elephant][1] is a popular conference in India around the Big Data ecosystem. It happened last week in Bangalore. And we were proud to sponsor the conference. To represent Wingify at the event, [Ankit][2], [Varun][3] and [I (Vaidik)][4] attended the event. This blog post is an account of what we did at the event and what we learned by sponsoring, attending and being present at the conference as an organization.
 
 <script>Galleria.run('#fifth-elephant-gallery');</script>
 <div id="fifth-elephant-gallery" style="height: 600px;">
