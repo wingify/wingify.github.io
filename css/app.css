@@ -35,7 +35,6 @@ pre, code, code * {
     border-right: 1px solid #ccc;
     border-bottom: 3px solid #ccc;
     margin-bottom: 40px;
-    margin-top: -20px;
     padding: 20px 40px;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
@@ -102,7 +101,6 @@ a {
 a:hover, a:focus {
     color: #8e44ad;
     text-decoration: none;
-    border-bottom: none!important;
 }
 img {
     max-width: 100%;
@@ -185,10 +183,6 @@ code {
     background-color: #f8f8f8;
 }
 
-.nav li {
-    padding-top: 6px;
-    padding-left: 20px;
-}
 .nav li>a:hover, .nav li>a.active {
     background: #1c263d;
     color: #fff;
@@ -198,6 +192,8 @@ code {
     font-weight: 400;
     padding: 5px 10px;
     font-size: 12px;
+    width: auto;
+    display: inline;
     color: #2c3e50;
     text-transform: uppercase;
     text-decoration: none;
@@ -263,7 +259,6 @@ code a:hover {
 }
 
 pre code {
-    padding: 20px!important;
     overflow: scroll;
     font-weight: 300;
 }
@@ -275,7 +270,6 @@ code, pre {
 
 a:hover {
     color: #e67e22;
-    border-bottom: 1px solid;
 }
 
 
@@ -300,6 +294,13 @@ a:hover {
     border-collapse: separate;
 }
 
+.flexbox--centered .flexbox__item {
+    text-align: center;
+    vertical-align: middle;
+    display:table-cell!important;
+    float:none !important;
+}
+
 .flexbox__item{
     display:table-cell;
     vertical-align:top;
@@ -318,4 +319,35 @@ a:hover {
     line-height: 22px;
     border-radius: 2px;
     border: 1px solid;
+}
+
+.site-title {
+    width:380px;
+    text-align: left!important;
+}
+
+@media (max-width: 830px) {
+
+    .header {
+        height: 170px;
+    }
+    .header .site-title {
+        font-size: 20px;
+        width: 303px;
+    }
+
+    .header .flexbox {
+        width: auto;
+        position: relative;
+    }
+
+    .header .nav-container {
+        position: absolute;
+        border-top: 1px solid #e8e8e8;
+        width: calc(100% + 80px);
+        top: 80px;
+        left: -40px;
+        padding: 20px 40px;
+    }
+
 }
