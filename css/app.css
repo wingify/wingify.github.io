@@ -327,7 +327,6 @@ a:hover {
 }
 
 @media (max-width: 830px) {
-
     .header {
         height: 170px;
     }
@@ -349,5 +348,20 @@ a:hover {
         left: -40px;
         padding: 20px 40px;
     }
+}
 
+.projects {
+    text-align: center;
+}
+
+.project-box {
+    float: left;
+    width: 50%;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    .project-box {
+        width: 100%;
+    }
 }
