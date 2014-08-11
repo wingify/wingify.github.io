@@ -81,6 +81,10 @@ For the above example, here's what the list of resulting operations would look l
 }]
 {% endhighlight %}
 
+## Live Demo
+
+[Click here](http://engineering.wingify.com/dom-comparator/live-demo.html) to view a live demo.
+
 ## What's Next
 
 The library is currently in a pre-alpha state. It works well for a good number of cases, but does not for a lot of others. And for certain complex cases, it might not be performant enough.
