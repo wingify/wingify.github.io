@@ -2,7 +2,6 @@
 layout: post
 title: Dynamic CDN
 excerpt: Insight on how we at Wingify developed our low-latency highly available dynamic CDN for VWO, the world's easiest A/B testing platform.
-permalink: /dynamic-cdn/
 date: 2014-07-23 00:00:00
 authorslug: ankit_jain
 author: Ankit Jain

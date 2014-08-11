@@ -2,7 +2,6 @@
 layout: post
 title: "Introduction: Engineering @ Wingify"
 excerpt: Introduction to Engineering @ Wingify
-permalink: /introduction/
 date: 2013-05-14 01:12:02
 authorslug: sparsh_gupta
 author: Sparsh Gupta

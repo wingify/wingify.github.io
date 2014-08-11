@@ -2,7 +2,6 @@
 layout: post
 title: Scaling with Queues
 excerpt: Scaling with Queues
-permalink: /scaling-with-queues/
 date: 2013-09-02 00:00:00
 authorslug: rohit_yadav
 author: Rohit Yadav

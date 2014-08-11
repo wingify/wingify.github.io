@@ -2,7 +2,6 @@
 layout: post
 title: Wingify at The Fifth Elephant
 excerpt: We sponsored The Fifth Elephant. This blog post is an account of what we did at the event and what we learned by sponsoring, attending and being present at the conference as an organization.
-permalink: /wingify-at-the-fifth-elephant/
 date: 2014-08-02 00:00:00
 authorslug: vaidik_kapoor
 author: Vaidik Kapoor
