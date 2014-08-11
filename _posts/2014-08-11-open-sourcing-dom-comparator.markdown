@@ -7,7 +7,13 @@ authorslug: himanshu_kapoor
 author: Himanshu Kapoor
 ---
 
-DOM Comparator is a JavaScript library that analyzes and compares two HTML strings, and returns back a diff object. It returns an output which is an array of operation objects. Here's a simple example:
+DOM Comparator is a JavaScript library that analyzes and compares two HTML strings, and returns back a diff object. It returns an output which is an array of operation objects.
+
+<div style="text-align: center;">
+	<a href="https://github.com/wingify/dom-comparator" style="padding: 20px 40px; font-size: 24px;" class="btn btn-primary">DOM Comparator on Github</a>
+</div>
+
+Here's a simple example:
 
 {% highlight js %}
 var stringA = '<ul><li class="active">list item 1</li><li>list item 2</li></ul>';
