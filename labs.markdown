@@ -18,9 +18,9 @@ permalink: /labs/
 	<div class="project-box">
 		<a href="http://github.com/wingify/agentredrabbit">
 			<img src="/images/generic_code@2x.png" width="160" height="160">
-			<h3>AgendRedRabbit</h3>
+			<h3>AgentRedRabbit</h3>
 		</a>
-		<p>Transport agent that moves data from Redis to RabbiitMQ.</p>
+		<p>Transport agent that moves data from Redis to RabbitMQ.</p>
 		<span class="pill">python</span>
 	</div>
 	<div class="project-box">
