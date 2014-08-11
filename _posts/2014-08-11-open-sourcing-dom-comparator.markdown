@@ -54,7 +54,7 @@ The Campaign Builder provides an "Edit" operation, that opens up a rich text edi
 <a href="javascript:addToCart(16);" class="add_to_cart" style="font-weight:bold;color:red;">Add to Cart</a>
 {% endhighlight %}
 
-Internally, an Edit operation is identified by the element the operation is applied on, and the new markupprovided by the user, which in this case is the above code. It means that if a Buy Now button is found on any page, it will be replaced with the above code. The jQuery code for such an operation would look something like this:
+Internally, an Edit operation is identified by the element the operation is applied on, and the new markup provided by the user, which in this case is the above code. It means that if a Buy Now button is found on any page, it will be replaced with the above code. The jQuery code for such an operation would look something like this:
 
 {% highlight js %}
 // A unique selector path to identify the element
