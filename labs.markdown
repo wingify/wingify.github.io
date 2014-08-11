@@ -25,7 +25,7 @@ permalink: /labs/
 	</div>
 	<div class="project-box">
 		<a href="/dom-comparator/">
-			<img src="/images/generic_code@2x.png" width="160" height="160">
+			<img src="/images/dom@2x.png" width="160" height="160">
 			<h3>DOMComparator</h3>
 		</a>
 		<p>A library to analyze and compare two DOM trees.</p>
