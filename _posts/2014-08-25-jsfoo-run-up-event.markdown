@@ -37,17 +37,14 @@ The best three entries in the competition will be rewarded with prizes.
 
 * Firefox Phone - XL
 * License for Sublime Text 3 / JetBrains WebStorm 8
-* One ticket to JSFoo 2014
 
 #### Second Prize
 
 * Firefox Phone - M
-* One ticket to JSFoo 2014
 
 #### Third Prize
 
 * Firefox Phone - S
-* One ticket to JSFoo 2014
 
 ## Wingify @ JSFoo
 
