@@ -13,7 +13,7 @@ Our single-page application, VWO, is powered by a nifty combination of web techn
 
 ## Sponsoring JSFoo
 
-For the very reason of communit involvement being indespensable for better development, we are sponsoring JSFoo 2014 in Bangalore this year. Our engineers will be present at the conference. Should you be interested in our work, and would like to know more about what we do, want to work with us, or just want to say Hi!, drop by our booth (INSERT BOOTH HERE), or catch any of our team members at the event.
+For the very reason of community involvement being indespensable for better development, we are sponsoring JSFoo 2014 in Bangalore this year. Our engineers will be present at the conference. Should you be interested in our work, and would like to know more about what we do, want to work with us, or just want to say Hi!, drop by our booth (INSERT BOOTH HERE), or catch any of our team members at the event.
 
 ## JSFoo Run-up Event (Delhi)
 
