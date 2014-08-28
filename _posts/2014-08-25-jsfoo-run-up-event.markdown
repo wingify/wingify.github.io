@@ -18,17 +18,25 @@ For the very reason of community involvement being indespensable for better deve
 ## JSFoo Run-up Event (Delhi)
 
 We're also hosting a run-up event at our office in Pitampura, Delhi on September 6<sup>th</sup>. There will be talks and a workshop too. 
+
 **[Join us at the run-up event](https://jsfoo.in/2014/runup-delhi)**
+
 As a part of the run-up event, we're organising an online JavaScript competition. The theme for the competition is *Visualize*.
 
 ## Online JavaScript Competition - Visualize
 
-The premise of this competition is simple - to use JavaScript to create something visually appealing. If visualizations, particle effects, fractals, interactivity, JavaScript and canvas are some of the words that excite you, this competition is for you. Below are some examples:
+The premise of this competition is simple - to use JavaScript and [HTML5 canvas](http://www.html5canvastutorials.com/) to create something visually appealing. The theme of the competition is **[SQUARES](http://en.wikipedia.org/wiki/Square)**. You are free to create anything with JavaScript, Canvas and Squares.
+
+If visualizations, particle effects, fractals, interactivity, JavaScript and canvas are some of the words that excite you, this competition is for you. Below are some examples of JS creativity:
 
 * [Branching Visualization](http://mrdoob.com/lab/javascript/effects/branching/01/)
 * [Springy Jelly](https://codepen.io/chinchang/pen/neKJD)
 * [Particles Web Matrix](http://cssdeck.com/labs/html5-canvas-particles-web-matrix)
 * [Or So They Say...](http://xplsv.com/prods/demos/xplsv_orsotheysay/)
+
+#### Example of a sample entry
+
+Tunnel of Squares - http://cssdeck.com/labs/tunnel-of-squares 
 
 ### Making Submissions
 
@@ -36,16 +44,18 @@ Submission for the online JS competition needs to be made as a deck on [CSSDeck]
 Once you are ready with you submission, you need to tweet it using the following tweet template:
 
 ```
-I submitted an entry for Wingify-JSFoo online compo: <CSSDeck link here> @wingify @jsfooindia #js
+I submitted an entry for Wingify-JSFoo online compo: <CSSDeck link here> @wingify #wingifyjsfoocompo #js
 ```
 
 ### Rules
 
 1. The deadline for the compeition is 16th September 2014, 23:59 IST.
-2. Multiple entries by a single participant are allowed.
+2. Your entry should use Javascript, HTML5 Canvas and Squares to create something visually appealing.
 3. Judgement will primarily be based on visual appeal. Secondary parameters include code quality and smoothness.
-4. Bonus points for using [vanilla JS](http://vanilla-js.com/).
-5. The results will be announced after 20th September 2014 here on the blog as well as on our twitter account: [@wingify](https://twitter.com/wingify).
+4. Multiple entries by a single participant are allowed.
+5. Bonus points for using [vanilla JS](http://vanilla-js.com/).
+6. The results will be announced after 20th September 2014 here on the blog as well as on our twitter account: [@wingify](https://twitter.com/wingify).86. If you have any questions, put them in the comments of this post.
+
 
 ### Rewards
 
