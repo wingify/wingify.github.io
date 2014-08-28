@@ -19,7 +19,7 @@ For the very reason of community involvement being indespensable for better deve
 
 We're also hosting a run-up event at our office in Pitampura, Delhi on September 6<sup>th</sup>. There will be talks and a workshop too. 
 
-**[Join us at the run-up event](https://jsfoo.in/2014/runup-delhi)**
+**[Join us at the run-up event. RSVP here.](https://jsfoo.in/2014/runup-delhi)**
 
 As a part of the run-up event, we're organising an online JavaScript competition.
 
@@ -36,7 +36,7 @@ If visualizations, particle effects, fractals, interactivity, JavaScript and can
 
 #### Example of a sample entry
 
-Tunnel of Squares - http://cssdeck.com/labs/tunnel-of-squares 
+[Tunnel of Squares - http://cssdeck.com/labs/tunnel-of-squares](http://cssdeck.com/labs/tunnel-of-squares)
 
 ### Making Submissions
 
@@ -60,20 +60,19 @@ I submitted an entry for Wingify-JSFoo online compo: <CSSDeck link here> @wingif
 
 ### Rewards
 
-The best three entries in the competition will be rewarded with prizes.
+The best two entries in the competition will be rewarded with prizes. There are three consolation prizes as well.
 
-#### First Prize
+#### Winner Prize
 
-* Firefox Phone - XL
-* License for Sublime Text 3 / JetBrains WebStorm 8
+* Firefox OS Flame Device
 
-#### Second Prize
+#### Runner-up Prize
 
-* Firefox Phone - M
+* Firefox OS ZTE Open Device
 
-#### Third Prize
+#### Consolation Prizes
 
-* Firefox Phone - S
+* Software licenses of Sublime Text or WebStorm IDE.
 
 ## Wingify @ JSFoo
 
