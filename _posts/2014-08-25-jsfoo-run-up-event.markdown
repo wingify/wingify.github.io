@@ -41,10 +41,10 @@ If visualizations, particle effects, fractals, interactivity, JavaScript and can
 ### Making Submissions
 
 Submission for the online JS competition needs to be made as a deck on [CSSDeck](http://cssdeck.com/). [Read here](http://cssdeck.com/post/67/guest-creations) to know about submitting on CSSDeck.
-Once you are ready with you submission, you need to tweet it using the following tweet template:
+Once you are ready with your submission, you need to tweet it using the following tweet template:
 
 ```
-I submitted an entry for Wingify-JSFoo online compo: <CSSDeck link here> @wingify #wingifyjsfoocompo #js
+I submitted an entry for Wingify-JSFoo online competition: <CSSDeck link here> @wingify @jsfooindia #wingifyjsfoocompo #js
 ```
 
 ### Rules
