@@ -34,7 +34,7 @@ If visualizations, particle effects, fractals, interactivity, JavaScript and can
 * [Particles Web Matrix](http://cssdeck.com/labs/full/html5-canvas-particles-web-matrix)
 * [Or So They Say...](http://xplsv.com/prods/demos/xplsv_orsotheysay/)
 
-#### Example of a sample entry
+#### Example of a sample entries
 
 - [Tunnel of Squares](http://cssdeck.com/labs/full/tunnel-of-squares)
 - [Shattering text](http://cssdeck.com/labs/full/shattering-text-effect-in-canvas)
