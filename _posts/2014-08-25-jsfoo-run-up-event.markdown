@@ -13,7 +13,7 @@ Our single-page application, VWO, is powered by a nifty combination of web techn
 
 ## Sponsoring JSFoo
 
-For the very reason of community involvement being indespensable for better development, we are sponsoring JSFoo 2014 in Bangalore this year. Our engineers will be present at the conference. Should you be interested in our work, and would like to know more about what we do, want to work with us, or just want to say Hi!, drop by our booth (INSERT BOOTH HERE), or catch any of our team members at the event.
+For the very reason of community involvement being indespensable for better development, we are sponsoring JSFoo 2014 in Bangalore this year. Our engineers will be present at the conference. Should you be interested in our work, and would like to know more about what we do, want to work with us, or just want to say Hi!, drop by our booth (B1), or catch any of our team members at the event.
 
 ## JSFoo Run-up Event (Delhi)
 
@@ -51,10 +51,11 @@ I submitted an entry for Wingify-JSFoo online compo: <CSSDeck link here> @wingif
 
 1. The deadline for the compeition is 16th September 2014, 23:59 IST.
 2. Your entry should use Javascript, HTML5 Canvas and Squares to create something visually appealing.
-3. Judgement will primarily be based on visual appeal. Secondary parameters include code quality and smoothness.
-4. Multiple entries by a single participant are allowed.
-5. Bonus points for using [vanilla JS](http://vanilla-js.com/).
-6. The results will be announced after 20th September 2014 here on the blog as well as on our twitter account: [@wingify](https://twitter.com/wingify).86. If you have any questions, put them in the comments of this post.
+3. CoffeeScript is allowed.
+4. Judgement will primarily be based on visual appeal. Secondary parameters include code quality and smoothness.
+5. Multiple entries by a single participant are allowed.
+6. Bonus points for using [vanilla JS](http://vanilla-js.com/).
+7. The results will be announced after 20th September 2014 here on the blog as well as on our twitter account: [@wingify](https://twitter.com/wingify). If you have any questions, put them in the comments of this post.
 
 
 ### Rewards
@@ -76,6 +77,6 @@ The best three entries in the competition will be rewarded with prizes.
 
 ## Wingify @ JSFoo
 
-Our engineers will be present at the conference. If you are [interested in our work](http://github.com/wingify), want to know more about what we are doing, want to work with us ([we're hiring](http://wingify.com/careers)), get some cool goodies or just want to say Hi!, please visit our booth (B7) or catch any of our team members. We’d love to talk to you!
+Our engineers will be present at the conference. If you are [interested in our work](http://github.com/wingify), want to know more about what we are doing, want to work with us ([we're hiring](http://wingify.com/careers)), get some cool goodies or just want to say Hi!, please visit our booth (B1) or catch any of our team members. We’d love to talk to you!
 
 We look forward to meeting you in Bangalore!
