@@ -25,24 +25,24 @@ As a part of the run-up event, we're organising an online JavaScript competition
 
 ## Online JavaScript Competition - Visualize
 
-The premise of this competition is simple - to use JavaScript and HTML5 canvas to create something visually appealing. The theme of the competition is **[SQUARES](http://en.wikipedia.org/wiki/Square)**. You are free to create anything with JavaScript, Canvas and Squares.
+The premise of this competition is simple - to use JavaScript and HTML5 canvas to create something visually appealing. The theme of the competition is **[Squares](http://en.wikipedia.org/wiki/Square)**. You are free to create anything with JavaScript, canvas and squares.
 
-If visualizations, particle effects, fractals, interactivity, JavaScript and canvas are some of the words that excite you, this competition is for you. Below are some examples of JS creativity:
+If visualizations, particle effects, fractals, interactivity, JavaScript and canvas are some of the words that excite you, this is the competition for you. Below are some examples of JS creativity:
 
 * [Branching Visualization](http://mrdoob.com/lab/javascript/effects/branching/01/)
 * [Springy Jelly](http://cssdeck.com/labs/full/jelly-text)
 * [Particles Web Matrix](http://cssdeck.com/labs/full/html5-canvas-particles-web-matrix)
 * [Or So They Say...](http://xplsv.com/prods/demos/xplsv_orsotheysay/)
 
-#### Example of a sample entries
+Below are some valid sample entries:
 
 - [Tunnel of Squares](http://cssdeck.com/labs/full/tunnel-of-squares)
 - [Shattering text](http://cssdeck.com/labs/full/shattering-text-effect-in-canvas)
 
 ### Making Submissions
 
-Submission for the online JS competition needs to be made as a deck on [CSSDeck](http://cssdeck.com/). [Read here](http://cssdeck.com/post/67/guest-creations) to know about submitting on CSSDeck.
-Once you are ready with your submission, please tweet it using the following tweet template:
+Submissions for the competition need to be done as a deck on [CSSDeck](http://cssdeck.com/). [Read here](http://cssdeck.com/post/67/guest-creations) to know about submitting on CSSDeck.
+Once you are ready with your submission, please tweet it using the following template:
 
 > I submitted an entry for Wingify-JSFoo online competition: <CSSDeck link here> @wingify @jsfooindia #wingifyjsfoocompo #js
 
@@ -56,8 +56,10 @@ Let the submissions begin!
 4. Judgement will primarily be based on visual appeal. Secondary parameters include code quality and smoothness.
 5. Multiple entries by a single participant are allowed.
 6. Bonus points for using [vanilla JS](http://vanilla-js.com/).
-7. The results will be announced after 20th September 2014 here on the blog as well as on our twitter account: [@wingify](https://twitter.com/wingify). If you have any questions, put them in the comments of this post.
+7. The results will be announced after 20th September 2014 here on the blog as well as on our twitter account: [@wingify](https://twitter.com/wingify).
 8. You **must be living in India** to be eligible for this competition.
+
+If you have any questions or suggestions, comment on this post or [send us an email](mailto:engineering@wingify.com).
 
 ### Rewards
 
@@ -73,10 +75,10 @@ The best two entries in the competition will be rewarded with prizes. There are 
 
 #### Consolation Prizes
 
-* Software licenses of Sublime Text or WebStorm IDE.
+* Software licenses of Sublime Text or JetBrains WebStorm.
 
 ## Wingify @ JSFoo
 
 Our engineers will be present at the conference. If you are [interested in our work](http://github.com/wingify), want to know more about what we are doing, want to work with us ([we're hiring](http://wingify.com/careers)), get some cool goodies or just want to say Hi!, please visit our booth (B1) or catch any of our team members. We’d love to talk to you!
 
-We look forward to meeting you in Bangalore and also in Delhi for the run-up event!
+We look forward to meeting in Delhi for the run-up event and in Bangalore for the conference!
