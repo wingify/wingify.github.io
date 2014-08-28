@@ -21,7 +21,7 @@ We're also hosting a run-up event at our office in Pitampura, Delhi on September
 
 **[Join us at the run-up event](https://jsfoo.in/2014/runup-delhi)**
 
-As a part of the run-up event, we're organising an online JavaScript competition. The theme for the competition is *Visualize*.
+As a part of the run-up event, we're organising an online JavaScript competition.
 
 ## Online JavaScript Competition - Visualize
 
