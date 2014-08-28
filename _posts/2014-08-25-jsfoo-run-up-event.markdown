@@ -1,8 +1,8 @@
 ---
 layout: post
-title: JSFoo 2014 Delhi Run-up Event + Contest
+title: JSFoo 2014 Delhi Run-up Event + JS Contest
 excerpt: We are sponsoring JSFoo 2014! Come, meet us during the conference in Bangalore.
-date: 2014-08-25 00:00:00
+date: 2014-08-28 00:00:00
 authorslug: himanshu_kapoor
 author: Himanshu Kapoor
 ---
@@ -36,7 +36,8 @@ If visualizations, particle effects, fractals, interactivity, JavaScript and can
 
 #### Example of a sample entry
 
-[Tunnel of Squares - http://cssdeck.com/labs/tunnel-of-squares](http://cssdeck.com/labs/tunnel-of-squares)
+- [Tunnel of Squares](http://cssdeck.com/labs/full/tunnel-of-squares)
+- [Shattering text](http://cssdeck.com/labs/full/shattering-text-effect-in-canvas)
 
 ### Making Submissions
 
@@ -66,11 +67,11 @@ The best two entries in the competition will be rewarded with prizes. There are 
 
 #### Winner Prize
 
-* Firefox OS Flame Device
+* [Firefox OS Flame Device](https://developer.mozilla.org/en-US/Firefox_OS/Developer_phone_guide/Flame)
 
 #### Runner-up Prize
 
-* Firefox OS ZTE Open Device
+* [Firefox OS ZTE Open Device](https://www.mozilla.org/en-US/firefox/os/devices/#zte_open)
 
 #### Consolation Prizes
 
