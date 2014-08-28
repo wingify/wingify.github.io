@@ -30,8 +30,8 @@ The premise of this competition is simple - to use JavaScript and HTML5 canvas t
 If visualizations, particle effects, fractals, interactivity, JavaScript and canvas are some of the words that excite you, this competition is for you. Below are some examples of JS creativity:
 
 * [Branching Visualization](http://mrdoob.com/lab/javascript/effects/branching/01/)
-* [Springy Jelly](https://codepen.io/chinchang/pen/neKJD)
-* [Particles Web Matrix](http://cssdeck.com/labs/html5-canvas-particles-web-matrix)
+* [Springy Jelly](http://cssdeck.com/labs/full/jelly-text)
+* [Particles Web Matrix](http://cssdeck.com/labs/full/html5-canvas-particles-web-matrix)
 * [Or So They Say...](http://xplsv.com/prods/demos/xplsv_orsotheysay/)
 
 #### Example of a sample entry
