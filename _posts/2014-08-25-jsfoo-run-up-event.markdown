@@ -81,4 +81,4 @@ The best two entries in the competition will be rewarded with prizes. There are 
 
 Our engineers will be present at the conference. If you are [interested in our work](http://github.com/wingify), want to know more about what we are doing, want to work with us ([we're hiring](http://wingify.com/careers)), get some cool goodies or just want to say Hi!, please visit our booth (B1) or catch any of our team members. We’d love to talk to you!
 
-We look forward to meeting you in Bangalore!
+We look forward to meeting you in Bangalore and also in Delhi for the run-up event!
