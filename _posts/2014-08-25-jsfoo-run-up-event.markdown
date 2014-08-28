@@ -59,7 +59,7 @@ Let the submissions begin!
 5. Multiple entries by a single participant are allowed.
 6. Bonus points for using [vanilla JS](http://vanilla-js.com/).
 7. The results will be announced after 20th September 2014 here on the blog as well as on our twitter account: [@wingify](https://twitter.com/wingify). If you have any questions, put them in the comments of this post.
-
+8. You **must be living in India** to be eligible for this competition.
 
 ### Rewards
 
