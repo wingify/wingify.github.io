@@ -7,7 +7,7 @@ authorslug: himanshu_kapoor
 author: Himanshu Kapoor
 ---
 
-The front-end has become the heart of todays web application development, and JavaScript drives a core part of it. New technologies, libraries, frameworks and the likes come up each day, and the existing ones continue to grow and evolve as time goes by. There is so much to learn, and so many learnings of your own to share, that community involvement becomes indispensable.
+The front-end has become the heart of today's web application development, and JavaScript drives a core part of it. New technologies, libraries, frameworks and the likes come up each day, and the existing ones continue to grow and evolve as time goes by. There is so much to learn, and so many learnings of your own to share, that community involvement becomes indispensable.
 
 Our single-page application, [VWO](http://vwo.com), is powered by a nifty combination of web technologies on the front-end, ranging from Grunt to AngularJS. The development process of the new version of the application was very rapid and full of challenges. We had dabbled into the previously unexplored territory of single-page application development at such a large scale, and having pulled it off in a relatively short span of time has been quite a feat.
 
