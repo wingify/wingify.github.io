@@ -44,7 +44,7 @@ The  last talk of the day was presented by Ankit Rastogi on **“Ten Useful Java
 
 The day ended on a high note with everyone really appreciating the speakers and the organizers for all the hard work everyone put in. There were a lot of discussion after the event on organizing more such events for different communities in Delhi NCR region. Wingify as a company believes in engaging and giving back to the community and we would be more than happy to host more such events in future. If you feel that there is any technology related  community which needs a place to host the event, please write to us at [engineering+community@wingify.com](mailto:engineering+community@wingify.com).
 
-**Presentation slides from the event:**
+## Presentation slides from the event:
 
 1. [A new approach to scientific computing using JavaScript](http://slides.com/rudimk/jsmath#/ ) - Rudi M. K.
 
@@ -57,7 +57,7 @@ Himanshu Kapoor
 
 (Remaining slides will be added here soon)
 
-**Wingify Engineering on Twitter**
+## Wingify Engineering on Twitter
 
 Also, we are happy to announce that Wingify’s engineering team is now on Twitter! Follow us on [@wingify_engg](https://twitter.com/wingify_engg) to get updates on awesome things being cooked here.
 
