@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JSFoo 2014 Delhi Run-up Event
+title: JSFoo Delhi Run-up Event @ Wingify
 excerpt: JSFoo run-up event in Delhi was a great success.
 date: 2014-08-28 00:00:00
 authorslug: suchit_puri
@@ -9,7 +9,7 @@ author: Suchit Puri
 
 Last week, we announced that Wingify would be sponsoring the [JSFoo 2014](http://engineering.wingify.com/posts/jsfoo-run-up-event/) conference in Bangalore. We have always been looking out for opportunities to give back to the community, and what could have been better than hosting a run-up event for JSFoo in Delhi. We got in touch with HasGeek and expressed interest in hosting the Delhi run-up event. They were more than happy to let us do so.
 
-Since it was the first time we hosted such a big event, we all were both excited and nervous. We had started preparing for the event about a month in advance. To market the event, we spread out information about the event on meetup groups we were connected with, and also created a [Facebook event](https://www.facebook.com/events/1464410987176966/ ) for it. In total, we received about 100-120 signups for the event. Of all the signups, we expected about one-third of them to actually turn up for the event, for whom we started to arrange for food and logistics.
+Since it was the first time we hosted such a big event, we were both excited and nervous. We had started preparing for the event about a month in advance. To market the event, we spread out information about the event on meetup groups we were connected with, and also created a [Facebook event](https://www.facebook.com/events/1464410987176966/ ) for it. In total, we received about 100-120 signups for the event. Of all the signups, we expected about one-third of them to actually turn up for the event, for whom we started to arrange for food and logistics.
 
 What’s exciting is that more than 50 external external guests from 30 different companies and colleges showed up. We were really humbled with such great turnout and would like to thank each one of you who joined us for the event.
 
