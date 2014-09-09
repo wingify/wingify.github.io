@@ -41,7 +41,7 @@ Below are some valid sample entries:
 
 ### Making Submissions
 
-Submissions for the competition need to be done as a deck on [CSSDeck](http://cssdeck.com/). [Read here](http://cssdeck.com/post/67/guest-creations) to know about submitting on CSSDeck.
+Submissions for the competition need to be done as a deck on [CSSDeck](http://cssdeck.com/). [Read here](http://cssdeck.com/post/67/guest-creations) to know about submitting on CSSDeck. Optionally, you can also submit your entry via another code submission site like [Codepen](http://codepen.io), or by uploading it on your server.
 Once you are ready with your submission, please tweet it using the following template:
 
 > I submitted an entry for Wingify-JSFoo online competition: &lt;CSSDeck link here&gt; @wingify @jsfooindia #wingifyjsfoocompo #js
