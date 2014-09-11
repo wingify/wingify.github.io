@@ -55,7 +55,7 @@ Himanshu Kapoor
 
 4. [Ten Useful JavaScript Tips & Best Practices](http://www.slideshare.net/ankit0rastogi/ten-useful-javascript-tips-best-practices) - Ankit Rastogi
 
-(Remaining slides will be added here soon)
+5. [Understanding WebRTC: A Whirlwind Tour](http://shwetankdixit.com/downloads/jsfooRunnup.pdf) - Shwetank Dixit
 
 ## Wingify Engineering on Twitter
 
