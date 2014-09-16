@@ -50,7 +50,7 @@ Let the submissions begin!
 
 ### Rules
 
-1. The deadline for the compeition is 16th September 2014, 23:59 IST.
+1. The deadline for the compeition is 20th September 2014, 23:59 IST.
 2. Your entry should use Javascript, HTML5 Canvas and Squares to create something visually appealing.
 3. CoffeeScript is allowed.
 4. Judgement will primarily be based on visual appeal. Secondary parameters include code quality and smoothness.
