@@ -82,3 +82,14 @@ The best two entries in the competition will be rewarded with prizes. There are 
 Our engineers will be present at the conference. If you are [interested in our work](http://github.com/wingify), want to know more about what we are doing, want to work with us ([we're hiring](http://wingify.com/careers)), get some cool goodies or just want to say Hi!, please visit our booth (B1) or catch any of our team members. We’d love to talk to you!
 
 We look forward to meeting in Delhi for the run-up event and in Bangalore for the conference!
+
+#### Edit - 23rd September 2014
+
+Results for our JS competition are out!
+
+- 1st prize - Amanpreet Singh - [View entry](http://anixir.com/projects/squares/index.htm)
+- 2nd prize - Shubham Jain - [View entry](http://cssdeck.com/labs/swdgqeai5m)
+- 3rd prize - Mahima Sivasankar - [View entry](http://cssdeck.com/labs/full/xeg8hfex)
+
+You will be contacted individually for further process. Congratulations!
+
