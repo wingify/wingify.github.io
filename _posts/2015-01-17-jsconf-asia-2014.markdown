@@ -11,7 +11,7 @@ author: Himanshu Kapoor
 h2 a, h3 a { text-decoration: underline; }
 </style>
 
-Back in November, some others from Wingify and I went to Singapore to attend CSSConf and JSConf Asia. A part of DevFest Asia, it is the best way to meet and connect with front-end designers and developers in South East Asia. It was the first time CSSConf was happening in Asia, and [Kushagra Gour][1] had the opportunity to [speak at it][2]. He talked about *10 Commandments for efficient CSS architecture*. The conference venue was Hotel Amara Sanctuary, on the island of Sentosa, Singapore.
+Back in November, some others from Wingify and I went to Singapore to attend CSSConf and JSConf Asia. A part of DevFest Asia, it is the best way to meet and connect with front-end designers and developers in South East Asia. It was the first time CSSConf was happening in Asia, and [Kushagra Gour][1] had the opportunity to [speak at it][2]. He talked about *[10 Commandments for efficient CSS architecture](https://speakerdeck.com/chinchang/10-commandments-for-efficient-css-architecture-cssconf-dot-asia-14)*. The conference venue was Hotel Amara Sanctuary, on the island of Sentosa, Singapore.
 
 ## CSSConf
 
