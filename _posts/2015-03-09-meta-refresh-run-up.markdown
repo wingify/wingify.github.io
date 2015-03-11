@@ -16,9 +16,9 @@ If this is a topic that interests you we encourage you to join us for the run-up
 2. **Learn** - [RSVP for the event][3] at the same link and be present for the event to learn from the community.
 3. **Interact** - Mingle and chat with us and other attendees about design, usability, or anything at all.
 
-#### Event Time: March 21, 10am - 3pm
-
 We look forward to seeing you at the event!
+
+#### Event Time: March 21, 10am - 3pm
 
 ### Location
 
