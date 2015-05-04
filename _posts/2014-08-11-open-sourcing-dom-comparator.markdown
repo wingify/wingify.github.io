@@ -2,7 +2,6 @@
 layout: post
 title: "Open Sourcing DOM Comparator"
 excerpt: Open Sourcing DOM Comparator
-date: 2014-08-11 15:00:00
 authorslug: himanshu_kapoor
 author: Himanshu Kapoor
 ---

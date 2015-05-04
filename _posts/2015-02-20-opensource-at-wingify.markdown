@@ -2,7 +2,6 @@
 layout: post
 title: Open source at Wingify
 excerpt: Open source at Wingify
-date: 2015-02-20 00:00:00
 authorslug: kushagra_gour
 author: Kushagra Gour
 ---

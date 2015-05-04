@@ -2,7 +2,6 @@
 layout: post
 title: Testing AngularJS Apps End to End Using Protractor
 excerpt: AngularJS Apps E2E Testing- Protractor
-date: 2015-02-13 00:00:00
 authorslug: kamal_sahni
 author: Kamal Sahni
 ---

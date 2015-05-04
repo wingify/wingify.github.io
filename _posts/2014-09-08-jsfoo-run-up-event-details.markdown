@@ -2,7 +2,6 @@
 layout: post
 title: JSFoo Delhi Run-up Event @ Wingify
 excerpt: JSFoo run-up event in Delhi was a great success.
-date: 2014-08-28 00:00:00
 authorslug: suchit_puri
 author: Suchit Puri
 ---

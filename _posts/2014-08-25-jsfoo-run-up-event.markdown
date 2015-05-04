@@ -2,7 +2,6 @@
 layout: post
 title: JSFoo 2014 Delhi Run-up Event + JS Contest
 excerpt: We are sponsoring JSFoo 2014! Come, meet us during the conference in Bangalore.
-date: 2014-08-28 00:00:00
 authorslug: himanshu_kapoor
 author: Himanshu Kapoor
 ---

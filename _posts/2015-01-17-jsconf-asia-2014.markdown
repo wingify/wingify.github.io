@@ -2,7 +2,6 @@
 layout: post
 title: Wingify at CSSConf / JSConf Asia 2014
 excerpt: This post describes our journey to CSSConf and JSConf Asia 2014 and what we learned from it.
-date: 2015-01-17 00:00:00
 authorslug: himanshu_kapoor
 author: Himanshu Kapoor
 ---

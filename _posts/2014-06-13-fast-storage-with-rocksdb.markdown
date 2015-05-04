@@ -2,7 +2,6 @@
 layout: post
 title: Fast Storage with RocksDB
 excerpt: Using RocksDB for persistent fast key-value storage
-date: 2014-06-13 00:00:00
 authorslug: rohit_yadav
 author: Rohit Yadav
 ---

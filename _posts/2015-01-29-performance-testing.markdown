@@ -2,7 +2,6 @@
 layout: post
 title: Overcoming the Challenges of Performance Testing Single-page Apps
 excerpt: This post describes ways to performance test ajax/javascript enabled application.
-date: 2015-01-29 00:00:00
 authorslug: rahul_jain
 author: Rahul Jain
 ---
