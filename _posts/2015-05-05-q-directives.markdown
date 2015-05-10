@@ -8,7 +8,7 @@ author: Himanshu Kapoor
 
 Performance matters, and an Angular.js developer would especially know it. Several watchers in a digest cycle can often be a bottleneck, and [Angular doesn't recommend having more than 2,000 of them in your application](http://stackoverflow.com/questions/9682092/databinding-in-angularjs).
 
-We are proud to announce [q-directives](/q-directives/), a brand new and fast directive system for Angular.js, that takes the watcher optimization to a whole new level. It was a result of several [jsperf](jsperf.com) tests and Chrome Timeline runs.
+We are proud to announce [q-directives](/q-directives/), a brand new and fast directive system for Angular.js, that takes the watcher optimization to a whole new level. It was a result of several [jsperf](http://jsperf.com) tests and Chrome Timeline runs.
 
 <div style="text-align: center;">
 	<a href="https://github.com/wingify/q-directives" style="padding: 20px 40px; font-size: 24px;" class="btn btn-primary">Q-Directives on Github</a>
@@ -32,25 +32,25 @@ Data is collected over 5 samples for both Original and Optimized situations.
 
 #### Original
 
-<a href="images/2015/05/1.png" target="_blank">![graph](images/2015/05/1.png)</a>
+<a href="/images/2015/05/1.png" target="_blank">![graph](/images/2015/05/1.png)</a>
 
 #### Optimized
 
-<a href="images/2015/05/2.png" target="_blank">![graph](images/2015/05/2.png)</a>
+<a href="/images/2015/05/2.png" target="_blank">![graph](/images/2015/05/2.png)</a>
 
 #### Optimized (+ disabling ngAnimate)
 
-<a href="images/2015/05/3.png" target="_blank">![graph](images/2015/05/3.png)</a>
+<a href="/images/2015/05/3.png" target="_blank">![graph](/images/2015/05/3.png)</a>
 
 ### Sorting the table
 
 #### Original
 
-<a href="images/2015/05/4.png" target="_blank">![graph](images/2015/05/4.png)</a>
+<a href="/images/2015/05/4.png" target="_blank">![graph](/images/2015/05/4.png)</a>
 
 #### Optimized
 
-<a href="images/2015/05/5.png" target="_blank">![graph](images/2015/05/5.png)</a>
+<a href="/images/2015/05/5.png" target="_blank">![graph](/images/2015/05/5.png)</a>
 
 <hr>
 
