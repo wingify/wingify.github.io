@@ -42,6 +42,8 @@ Next talk was presented by Vipul Taneja from AdSparkx media on "Landing Pages Op
 
 Next speaker was Taruna Manchanda, who shared her experiences and learnings while taking care of all paid acquisitions and customer case studies, as part of the Digital Marketing Team at Wingify. The attendees gathered great insights about how to best A/B Test a webpage along with the focus on what needs to be measured and how.
 
+Slides: [www.slideshare.net/tarunamanchanda23/7-cro-lessons-learned-after-going-through-100s-of-ab-testing-case-studies](http://www.slideshare.net/tarunamanchanda23/7-cro-lessons-learned-after-going-through-100s-of-ab-testing-case-studies)
+
 <div style="text-align:center; margin: 10px;">
   <img src="/images/2015/03/5.jpg">
   <div style="margin: 10px;">Saptarshi Chatterjee speaking on “How to automatically generate Test for your JavaScript file”
@@ -49,6 +51,8 @@ Next speaker was Taruna Manchanda, who shared her experiences and learnings whil
 </div>
 
 Last on the speaker line up was Saptarshi Chatterjee, Technical Lead at McKinsey, who presented on "How to automatically generate test for your JavaScript file", while introducing his Open Source Project to the world named YoSapy([yeo]man generator + [Sap]tarshi). He started off with the discussion of the importance of test cases and how he came across the idea to automate the test case creation process. He gave a hands-on demo of his project and took the rest of his time out to answer questions from the audience on how easy to have it part of their existing projects and also about how to extend / contribute to the same further.
+
+Slides: [www.slideshare.net/sapta9433/auto-generate-customized-test-suit-for-your-angularjs](http://www.slideshare.net/sapta9433/auto-generate-customized-test-suit-for-your-angularjs)
 
 ### To Sum up
 
