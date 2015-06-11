@@ -10,7 +10,7 @@ After hosting the Meta Refresh Delhi Runup Event, it was time for us at Wingify 
 
 We started off our journey from Delhi to Bangalore on 15th May, a day before the Conference, and were welcomed with an awesome weather at Bangalore. We took off early the next morning and grabbed our bags to march towards MLR Convention Centre, Bangalore to setup our Company booth. The setup didn’t take much time, and we were ready to welcome fellow attendees to share more about Wingify through our stall.
 
-While speaking to the attendees, many expressed their interest to get interviewed at Wingify. Usually, we redirect the interested candidates to mail their resume to careers@wingify.com and follow the procedure, though this time, we gave it a unique touch, while using a Hack developed by Paras(Founder), on a hack night. It was a mystery containing different hints that leads to the next clue, solved using Browser’s Developer console. It was great fun to watch attendees trying their best to crack the hints and unravel the mystery, though only a few were able to solve the same.
+While speaking to the attendees, many expressed their interest to get interviewed at Wingify. Usually, we redirect the interested candidates to mail their resume to careers@wingify.com and follow the procedure, though this time, we gave it a unique touch, while using a Hack developed by Paras (our CEO & Founder), on a hack night. It was a mystery containing different hints that leads to the next clue, solved using Browser’s Developer console. It was great fun to watch attendees trying their best to crack the hints and unravel the mystery, though only a few were able to solve the same.
 
 Some moments captured during Meta Refresh 2015:
 
@@ -38,4 +38,4 @@ A generic issue discussed in majority of the talks, was regarding the maintenanc
 
 Performance was another major topic discussed in several talks, involving not just the networking performance of web applications, but also the rendering performance as well. Another big discussion revolved around achieving jank free performance while performing animations in not just the web applications, but games as well. Several techniques and approaches were discussed in the talks that shared the experience of speakers on the quest to achieve 60fps in web applications.
 
-We had a great time being part of MetaRefresh 2015, and look forward to more such events, so stay tuned with our different social media channels([Twitter](https://twitter.com/wingify), [Facebook](https://www.facebook.com/Wingify)) to meet us at another conference.
+We had a great time being part of MetaRefresh 2015, and look forward to more such events, so stay tuned with our different social media channels ([Twitter](https://twitter.com/wingify), [Facebook](https://www.facebook.com/Wingify)) to meet us at another conference.
