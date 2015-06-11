@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Meta Refresh 2015 Delhi Runup Event hosted at Wingify"
-excerpt: Meta Refresh 2015 Delhi Runup Event hosted at Wingify
+title: "Meta Refresh 2015 Delhi Run-up Event hosted at Wingify"
+excerpt: Meta Refresh 2015 Delhi Run-up Event hosted at Wingify
 authorslug: apoorv_saxena
 author: Apoorv Saxena
 ---
 
-Giving back to the community has always been a priority at Wingify, be it through Open Sourcing internal projects of Wingify or via organizing/sponsoring Community Events, the most recent being Meta Refresh Delhi Runup Event organized and hosted by Wingify on 21st March 2015. Tony Simon from HasGeek was present from MetaRefresh Team to help us hoist this event and help us make it all the more awesome.
+Giving back to the community has always been a priority at Wingify, be it through open sourcing internal projects or via organizing / sponsoring community events, the most recent being Meta Refresh Delhi Run-up Event organized and hosted by Wingify on 21st March 2015. Tony Simon from HasGeek was present from the MetaRefresh Team to help us host this event and help us make it more awesome.
 
 <div style="text-align:center; margin: 10px;">
   <img src="/images/2015/03/1.jpg">
@@ -14,7 +14,7 @@ Giving back to the community has always been a priority at Wingify, be it throug
   </div>
 </div>
 
-The event started on time(10:30am) with Tony introducing MetaRefresh, HasGeek and Wingify to the attendees. Siddharth Deswal, Marketing Guru at Wingify kick started the event with his talk on "How to Communicate Better with Marketing, Sales and Other 'Business' Types", along with humour shots. The talk started with the narration of his own experience while wearing different hats at Wingify with him helping different departments. He concluded on a great note saying that different departments shouldn't be isolated and must focus on sharing and imparting knowledge to people from different departments specially the ones who are interdependent, the best example being that marketing team should also try to understand the technical aspects related to feature development.
+The event started on time (10:30am) with Tony introducing MetaRefresh, HasGeek and Wingify to the attendees. Siddharth Deswal, Marketing Guru at Wingify kickstarted the event with his talk on "How to Communicate Better with Marketing, Sales and Other 'Business' Types", along with shots of humour. The talk started with the narration of his own experience of wearing different hats at Wingify with him helping different departments. He concluded on a great note saying that different departments shouldn't be isolated and must focus on sharing and imparting knowledge to people from other departments, especially the ones who are interdependent; the best example being that marketing team should also try to understand the technical aspects related to feature development.
 
 <div style="text-align:center; margin: 10px;">
   <img src="/images/2015/03/2.jpg">
@@ -22,7 +22,7 @@ The event started on time(10:30am) with Tony introducing MetaRefresh, HasGeek an
   </div>
 </div>
 
-A pure technical talk related to web performance, started off with a poll to find out how many of the participants measure performance regularly and have it part of their deployment process, the feedback from the attendees depicted negligible measures taken to continously monitor product performance. Next, was the discussion of the reasons on why Performance matters, which was followed up with the discussion of various hacks that people employ to bring performance to their applications. The core part of this talk discussed the difference between using Hacks versus following different approach during development, and how each of them pays in the long run.
+A pure technical talk related to web performance, started off with a poll to find out how many of the participants measure performance regularly and have it part of their deployment process, the feedback from the attendees depicted negligible measures taken to continously monitor product performance. Next was the discussion of the reasons on why performance mattered, which was followed up with the discussion of various hacks that people employed to bring performance to their applications. The core part of this talk discussed the difference between using hacks versus following different approach during development, and how each of them paid in the long run.
 
 Slides: [www.slideshare.net/ApoorvSaxena/hacking-to-be-performant](http://www.slideshare.net/ApoorvSaxena/hacking-to-be-performant)
 
@@ -32,7 +32,7 @@ Slides: [www.slideshare.net/ApoorvSaxena/hacking-to-be-performant](http://www.sl
   </div>
 </div>
 
-Next talk was presented by Vipul Taneja from AdSparkx media on "Landing Pages Optimization - Things you can do to 'Test'", with him briefing the attendees about his visit to Vegas and his observance about the same. His talk comprised of various techniques that his company uses to maximize ROI on different landing pages of businesses that hire them. The talk comprised of the discussion of both White Hat and Black Hat techniques as well for increasing landing page conversions.
+Next talk was presented by Vipul Taneja from AdSparkx media on "Landing Pages Optimization - Things you can do to 'Test'", with him briefing the attendees about his visit to Vegas and his observance about it during that time. His talk comprised of various techniques that his company uses to maximize ROI on different landing pages of businesses that hire them. The talk comprised of the discussion of both White Hat and Black Hat techniques as well for increasing landing page conversions.
 
 <div style="text-align:center; margin: 10px;">
   <img src="/images/2015/03/4.jpg">
@@ -46,11 +46,11 @@ Slides: [www.slideshare.net/tarunamanchanda23/7-cro-lessons-learned-after-going-
 
 <div style="text-align:center; margin: 10px;">
   <img src="/images/2015/03/5.jpg">
-  <div style="margin: 10px;">Saptarshi Chatterjee speaking on “How to automatically generate Test for your JavaScript file”
+  <div style="margin: 10px;">Saptarshi Chatterjee speaking on “How to automatically generate Tests for your JavaScript file”
   </div>
 </div>
 
-Last on the speaker line up was Saptarshi Chatterjee, Technical Lead at McKinsey, who presented on "How to automatically generate test for your JavaScript file", while introducing his Open Source Project to the world named YoSapy([yeo]man generator + [Sap]tarshi). He started off with the discussion of the importance of test cases and how he came across the idea to automate the test case creation process. He gave a hands-on demo of his project and took the rest of his time out to answer questions from the audience on how easy to have it part of their existing projects and also about how to extend / contribute to the same further.
+Last on the speaker line up was Saptarshi Chatterjee, Technical Lead at McKinsey, presented on "How to automatically generate tests for your JavaScript file", while introducing his open source project to the world named YoSapy([yeo]man generator + [Sap]tarshi). He started off with the discussion of the importance of test cases and how he came across the idea to automate the test case creation process. He gave a hands-on demo of his project and took the rest of his time out to answer questions from the audience on how easy to have it part of their existing projects and also about how to extend / contribute to the same further.
 
 Slides: [www.slideshare.net/sapta9433/auto-generate-customized-test-suit-for-your-angularjs](http://www.slideshare.net/sapta9433/auto-generate-customized-test-suit-for-your-angularjs)
 
@@ -58,4 +58,4 @@ Slides: [www.slideshare.net/sapta9433/auto-generate-customized-test-suit-for-you
 
 It was a great experience hosting this event. Thanks to HasGeek for helping us with organizing the event. We hope that the conference will continue to happen in the years to come.
 
-If you were present at the Runup event and met us there, stay tuned with our different social media channels([Twitter](https://twitter.com/wingify), [Facebook](https://www.facebook.com/Wingify)) to again be a part of another event going to be hoisted by us. If you have any suggestions to make your experience better, go ahead and leave comments and we will get back to you. If you like what we do at Wingify and want to join the force, we will be more than happy to work with you. As always, We are hiring!
+If you were present at the run-up event and met us there, stay tuned with our different social media channels([Twitter](https://twitter.com/wingify_engg), [Facebook](https://www.facebook.com/Wingify)) to again be a part of another event going to be hosted by us. If you have any suggestions to make your experience better, go ahead and leave comments and we will get back to you. If you like what we do at Wingify and want to join the force, we will be more than happy to work with you. As always, we are looking for talented people to work with us!
