@@ -6,7 +6,7 @@ authorslug: apoorv_saxena
 author: Apoorv Saxena
 ---
 
-After hosting the Meta Refresh Delhi Runup Event, it was time for us at Wingify to prep up for MetaRefresh. We were very excited to contribute back to the community by not just sponsoring MetaRefresh, but also by adding content to the conference through a talk and a workshop, both focused towards Web Performance.
+After hosting the [Meta Refresh Delhi Runup Event](/posts/post-meta-refresh-run-up/), it was time for us at [Wingify](https://wingify.com/) to prep up for [MetaRefresh](https://metarefresh.in/2015/). We were very excited to contribute back to the community by not just sponsoring MetaRefresh, but also by adding content to the conference through a talk and a workshop, both focused towards Web Performance.
 
 We started off our journey from Delhi to Bangalore on 15th May, a day before the conference, and were welcomed by awesome weather at Bangalore. We took off early the next morning and grabbed our bags to march towards MLR Convention Centre, Bangalore to setup our company booth. The setup didn’t take much time, and we were ready to welcome fellow attendees to share more about Wingify through our stall.
 

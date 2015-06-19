@@ -6,7 +6,7 @@ authorslug: apoorv_saxena
 author: Apoorv Saxena
 ---
 
-Giving back to the community has always been a priority at Wingify, be it through open sourcing internal projects or via organizing / sponsoring community events, the most recent being Meta Refresh Delhi Run-up Event organized and hosted by Wingify on 21st March 2015. Tony Simon from HasGeek was present from the MetaRefresh Team to help us host this event and help us make it more awesome.
+Giving back to the community has always been a priority at [Wingify](https://wingify.com/), be it through open sourcing internal projects or via organizing / sponsoring community events, the most recent being [Meta Refresh Delhi Run-up Event](https://metarefresh.talkfunnel.com/2015-delhi/) organized and hosted by Wingify on 21st March 2015. [Tony Simon](https://in.linkedin.com/in/tonysimonodyssey) from HasGeek was present from the MetaRefresh Team to help us host this event and help us make it more awesome.
 
 <div style="text-align:center; margin: 10px;">
   <img src="/images/2015/03/1.jpg">
@@ -14,7 +14,7 @@ Giving back to the community has always been a priority at Wingify, be it throug
   </div>
 </div>
 
-The event started on time (10:30am) with Tony introducing MetaRefresh, HasGeek and Wingify to the attendees. Siddharth Deswal, Marketing Guru at Wingify kickstarted the event with his talk on "How to Communicate Better with Marketing, Sales and Other 'Business' Types", along with shots of humour. The talk started with the narration of his own experience of wearing different hats at Wingify with him helping different departments. He concluded on a great note saying that different departments shouldn't be isolated and must focus on sharing and imparting knowledge to people from other departments, especially the ones who are interdependent; the best example being that marketing team should also try to understand the technical aspects related to feature development.
+The event started on time (10:30am) with Tony introducing MetaRefresh, HasGeek and Wingify to the attendees. [Siddharth Deswal](https://twitter.com/siddharthdeswal), Marketing Guru at Wingify kickstarted the event with his talk on "How to Communicate Better with Marketing, Sales and Other 'Business' Types", along with shots of humour. The talk started with the narration of his own experience of wearing different hats at Wingify with him helping different departments. He concluded on a great note saying that different departments shouldn't be isolated and must focus on sharing and imparting knowledge to people from other departments, especially the ones who are interdependent; the best example being that marketing team should also try to understand the technical aspects related to feature development.
 
 <div style="text-align:center; margin: 10px;">
   <img src="/images/2015/03/2.jpg">
@@ -32,7 +32,7 @@ Slides: [www.slideshare.net/ApoorvSaxena/hacking-to-be-performant](http://www.sl
   </div>
 </div>
 
-Next talk was presented by Vipul Taneja from AdSparkx media on "Landing Pages Optimization - Things you can do to 'Test'", with him briefing the attendees about his visit to Vegas and his observance about it during that time. His talk comprised of various techniques that his company uses to maximize ROI on different landing pages of businesses that hire them. The talk comprised of the discussion of both White Hat and Black Hat techniques as well for increasing landing page conversions.
+Next talk was presented by [Vipul Taneja](http://vipultaneja.com/) from AdSparkx media on "Landing Pages Optimization - Things you can do to 'Test'", with him briefing the attendees about his visit to Vegas and his observance about it during that time. His talk comprised of various techniques that his company uses to maximize ROI on different landing pages of businesses that hire them. The talk comprised of the discussion of both White Hat and Black Hat techniques as well for increasing landing page conversions.
 
 <div style="text-align:center; margin: 10px;">
   <img src="/images/2015/03/4.jpg">
@@ -40,7 +40,7 @@ Next talk was presented by Vipul Taneja from AdSparkx media on "Landing Pages Op
   </div>
 </div>
 
-Next speaker was Taruna Manchanda, who shared her experiences and learnings while taking care of all paid acquisitions and customer case studies, as part of the Digital Marketing Team at Wingify. The attendees gathered great insights about how to best A/B Test a webpage along with the focus on what needs to be measured and how.
+Next speaker was [Taruna Manchanda](https://in.linkedin.com/in/tarunamanchanda), who shared her experiences and learnings while taking care of all paid acquisitions and customer case studies, as part of the Digital Marketing Team at Wingify. The attendees gathered great insights about how to best A/B Test a webpage along with the focus on what needs to be measured and how.
 
 Slides: [www.slideshare.net/tarunamanchanda23/7-cro-lessons-learned-after-going-through-100s-of-ab-testing-case-studies](http://www.slideshare.net/tarunamanchanda23/7-cro-lessons-learned-after-going-through-100s-of-ab-testing-case-studies)
 
@@ -50,7 +50,7 @@ Slides: [www.slideshare.net/tarunamanchanda23/7-cro-lessons-learned-after-going-
   </div>
 </div>
 
-Last on the speaker line up was Saptarshi Chatterjee, Technical Lead at McKinsey, presented on "How to automatically generate tests for your JavaScript file", while introducing his open source project to the world named YoSapy([yeo]man generator + [Sap]tarshi). He started off with the discussion of the importance of test cases and how he came across the idea to automate the test case creation process. He gave a hands-on demo of his project and took the rest of his time out to answer questions from the audience on how easy to have it part of their existing projects and also about how to extend / contribute to the same further.
+Last on the speaker line up was [Saptarshi Chatterjee](https://in.linkedin.com/pub/saptarshi-chatterjee/13/226/55a), Technical Lead at McKinsey, presented on "How to automatically generate tests for your JavaScript file", while introducing his open source project to the world named YoSapy([yeo]man generator + [Sap]tarshi). He started off with the discussion of the importance of test cases and how he came across the idea to automate the test case creation process. He gave a hands-on demo of his project and took the rest of his time out to answer questions from the audience on how easy to have it part of their existing projects and also about how to extend / contribute to the same further.
 
 Slides: [www.slideshare.net/sapta9433/auto-generate-customized-test-suit-for-your-angularjs](http://www.slideshare.net/sapta9433/auto-generate-customized-test-suit-for-your-angularjs)
 
@@ -58,4 +58,4 @@ Slides: [www.slideshare.net/sapta9433/auto-generate-customized-test-suit-for-you
 
 It was a great experience hosting this event. Thanks to HasGeek for helping us with organizing the event. We hope that the conference will continue to happen in the years to come.
 
-If you were present at the run-up event and met us there, stay tuned with our different social media channels([Twitter](https://twitter.com/wingify_engg), [Facebook](https://www.facebook.com/Wingify)) to again be a part of another event going to be hosted by us. If you have any suggestions to make your experience better, go ahead and leave comments and we will get back to you. If you like what we do at Wingify and want to join the force, we will be more than happy to work with you. As always, we are looking for talented people to work with us!
+If you were present at the run-up event and met us there, stay tuned with our different social media channels([Twitter](https://twitter.com/wingify_engg), [Facebook](https://www.facebook.com/Wingify)) to again be a part of another event going to be hosted by us. If you have any suggestions to make your experience better, go ahead and leave comments and we will get back to you. If you like what we do at Wingify and want to join the force, we will be more than happy to work with you. [As always, we are looking for talented people to work with us](https://wingify.com/careers)!
