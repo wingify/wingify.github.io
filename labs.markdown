@@ -8,6 +8,14 @@ permalink: /labs/
 
 <div class="projects">
 	<div class="project-box">
+		<a href="/angular-time-pciker/">
+			<img src="/images/time-picker@2x.png" width="160" height="160">
+			<h3>Time Picker Directive</h3>
+		</a>
+		<p>Lightweight Time Picker directive for Angular.js.</p>
+		<span class="pill">javascript</span>
+	</div>
+	<div class="project-box">
 		<a href="/q-directives/">
 			<img src="/images/speed@2x.png" width="160" height="160">
 			<h3>Q-Directives</h3>
