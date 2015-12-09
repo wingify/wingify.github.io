@@ -8,7 +8,7 @@ permalink: /labs/
 
 <div class="projects">
 	<div class="project-box">
-		<a href="/angular-time-pciker/">
+		<a href="/angular-time-picker/">
 			<img src="/images/time-picker@2x.png" width="160" height="160">
 			<h3>Time Picker Directive</h3>
 		</a>
