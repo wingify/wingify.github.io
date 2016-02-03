@@ -58,7 +58,7 @@ which could publish messages to a RabbitMQ broker over STOMP protocol. The libra
 opensourced for the hacker [community](https://groups.google.com/forum/?fromgroups#!forum/openresty-en).
 
 Later, I rewrote our Lua handler code using this library and ran a [loader.io](http://loader.io)
-load test. It failed this model due to very [low throughtput](http://ldr.io/154Xf1h),
+load test. It failed this model due to very [low throughput](http://ldr.io/154Xf1h),
 we performed a load test on a small 1G DigitalOcean instance for both models.
 For us, the STOMP protocol
 and slow RabbitMQ STOMP adapter were performance bottlenecks. RabbitMQ was not

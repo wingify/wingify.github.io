@@ -80,7 +80,7 @@ driver.get(page1);
 driver.click(E1);
 {% endhighlight %}
 
-Both statments would have executed synchronously as the Python (as every other language) API is blocking. But that isn't the case with JavaScript. To maintain the required sequence between various actions, WebDriverJS uses [Promises](https://code.google.com/p/selenium/source/browse/javascript/webdriver/promise.js). In short, a promise is an object that can execute whatever you give it after it has finished.
+Both statements would have executed synchronously as the Python (as every other language) API is blocking. But that isn't the case with JavaScript. To maintain the required sequence between various actions, WebDriverJS uses [Promises](https://code.google.com/p/selenium/source/browse/javascript/webdriver/promise.js). In short, a promise is an object that can execute whatever you give it after it has finished.
 
 But it doesn't stop here. Even with promises, the above code would have become:
 
@@ -225,7 +225,7 @@ e2e testing is important for the apps being written today and hence it becomes i
 
 Hope this helps you get started. So what are you waiting for, lets write some end-to-end tests!
 
-Using a e2e testing stack you want to share? Let us know in the comments.
+Using an e2e testing stack you want to share? Let us know in the comments.
 
 ## Links & references
 

@@ -52,7 +52,7 @@ In the process, we had good some good discussions and connected with good people
 
 We have not always been very focussed at doing a lot with collected data. With our latest release, we have come up with a number of features that make use of large amount of data our systems collect and our solutions to these problems were rather unconventional. With the latest release and our plans, we will be making more and more use of collected data for deriving useful insights for our customers and building new features that will help our customers optimize and increase their conversions. Since we have plans to work with data, The Fifth Elephant was an important conference for us to learn about what exactly is going on in the Big Data universe and how we can make use of all that at Wingify. Aerospike NoSQL Database, Cachebox, Imobi's Grill project are just a few things that we got introduced to and we may explore them in the future for our varied use-cases. It was interesting to see people are trying to leverage SSDs for solving different kind of problems. Aerospike is a NoSQL database optimized for SSD disks and claims to be extremely performant (200,000 QPS per node). CacheBox is an advanced caching solution that leverages flash storage for improving performance for databases.
 
-Other than these systems, there were some learning around building big data infrastructure, real-time data pipelines and data mining. There was a talk on [Lessons from Elasticsearch in Production][12] by [Swaroop CH][13] from [Helpshift][14]. We have been using Elasticsearch at Wingify and it was interesting to see that we were not facing similar problems as they were. We took that as a sign to be cautious and be prepared for firfighting such problems. These were around using Elasticsearch's Snapshot and Restore API (they say it doesn't work) and performing rolling upgrades (which is the recommended way of doing upgrades). We never had such problems but we are now aware that others have had such problems and we can be better prepared.
+Other than these systems, there were some learning around building big data infrastructure, real-time data pipelines and data mining. There was a talk on [Lessons from Elasticsearch in Production][12] by [Swaroop CH][13] from [Helpshift][14]. We have been using Elasticsearch at Wingify and it was interesting to see that we were not facing similar problems as they were. We took that as a sign to be cautious and be prepared for firefighting such problems. These were around using Elasticsearch's Snapshot and Restore API (they say it doesn't work) and performing rolling upgrades (which is the recommended way of doing upgrades). We never had such problems but we are now aware that others have had such problems and we can be better prepared.
 
 ## To sum up
 
@@ -62,7 +62,7 @@ If you were present at the conference and met us there, please do not hesitate t
 
 ### Photo Credits
 
-The beautiful photopgraphs in this post have been provided by [HasGeek][17]. You can find more photographs of The Fifth Elephant at the following links:
+The beautiful photographs in this post have been provided by [HasGeek][17]. You can find more photographs of The Fifth Elephant at the following links:
 
 * [Conference Day 1][18]
 * [Conference Day 2][19]

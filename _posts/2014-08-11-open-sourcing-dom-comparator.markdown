@@ -65,7 +65,7 @@ Notice how this would not only add the styles to that element, but also change i
 
 ## DOM Comparator to the Rescue
 
-With DOM Comparator in place, the initial markup of the Edit operation above will be compared with the final one, and a differencewould be returned. The difference would contain the minimal changes necessary to be made to the target element, thereby impacting dynamic content as less as possible.
+With DOM Comparator in place, the initial markup of the Edit operation above will be compared with the final one, and a difference would be returned. The difference would contain the minimal changes necessary to be made to the target element, thereby impacting dynamic content as less as possible.
 
 For the above example, here's what the list of resulting operations would look like:
 

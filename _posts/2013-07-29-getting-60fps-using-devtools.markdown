@@ -88,7 +88,7 @@ to stop the recording.
 You now see the frame data for your page... something like in the snapshot
 above. In the image you'll notice a vertical limit with the label 60 FPS just
 below the label for 30 FPS. These limits are for the frames under which they
-need to do their stuff if the respective framerate is to be acheived. Once you
+need to do their stuff if the respective framerate is to be achieved. Once you
 know this, you'll straight away conclude that almost all of our frames our
 crossing that limit like hell! This is the point where we have actually
 visualized and confirmed the issue. Lets find out the cause.
@@ -108,7 +108,7 @@ script.
 
 Moreover if you hover over any small horizontal yellow bars below, as show in
 the snapshot above, you'll also see the exact time that our scripts are taking
-per frame alongwith the corresponsing event that triggered it. In my case, it's
+per frame along with the corresponding event that triggered it. In my case, it's
 the scroll event (we expected that...no?). Some of those scroll events are
 taking upto *27 ms* which is much much more than our budget of 16ms per frame.
 
@@ -176,7 +176,7 @@ B. Optimize the callback's code to take less execution time
 ### FIX A. Make the Scroll event fire less frequently
 
 I could make the Scroll code fire less frequently in our case as it did not had
-any usabilty hit. In fact mostly the code thats required to be executed on
+any usability hit. In fact mostly the code thats required to be executed on
 Scroll event can be run on little longer intervals without any user experience
 loss.
 
@@ -202,7 +202,7 @@ bar at some distant from each. We'll see.
 ### TEST!
 
 We made a small change from our side. But remember, there is no point of it
-without actually testing the page and getting a performace boost. So lets
+without actually testing the page and getting a performance boost. So lets
 repeat the profiling procedure again.
 
 Here is what we got this time:
@@ -217,7 +217,7 @@ Seems to have worked quite a bit! We have lesser frames overshooting the 16ms bu
 
 Secondly, its also important to optimize the code inside that callback at that is what is causing the frames to go beyond our 16ms budget.
 
-If you look closely inside the callback's code and have a basic understanding of what not do while jQuery, you'll see some horibble things happening there. I'll not go in much details on why those things are bad as our focus is on using devtools in this article. Lets list out what all jQuery menace we see in it:
+If you look closely inside the callback's code and have a basic understanding of what not do while jQuery, you'll see some horrible things happening there. I'll not go in much details on why those things are bad as our focus is on using devtools in this article. Lets list out what all jQuery menace we see in it:
 
 - Cache jQuery objects
 

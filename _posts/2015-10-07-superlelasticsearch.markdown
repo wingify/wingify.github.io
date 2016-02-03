@@ -38,7 +38,7 @@ us were:
 2. Un-opinionated
 3. Simple design
 
-Considering all all these factors, we decided to go with the Official Python
+Considering all these factors, we decided to go with the Official Python
 Client for Elasticsearch. And we didn't really come across any issues and
 problems according to our simple requirements. It is fairly extensible and
 comes with some standard batteries included with it. For everything else, you

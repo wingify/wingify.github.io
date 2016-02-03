@@ -241,7 +241,7 @@ element(by.model('Url')).sendkeys('http://').then(function (ele){
 });
 {% endhighlight %}
 
-- Never use protractor element statments inside loop: The simple reason is that the webdriverJS (protractor) API is asynchronus. Element statements returns a promise and that promise is in unresolved state while the code below the statements continues to execute. This leads to unpredicatble results. Hence, it is advisable to use recursive functions instead of loops.
+- Never use protractor element statements inside loop: The simple reason is that the webdriverJS (protractor) API is asynchronous. Element statements returns a promise and that promise is in unresolved state while the code below the statements continues to execute. This leads to unpredictable results. Hence, it is advisable to use recursive functions instead of loops.
 
 - Debug the tests using elementexplorer.js: elementexplorer.js lets you test the page interactively. You will find this JS file in node_modules/protractor/bin directory. Start the selenium server and run command:
 
@@ -251,7 +251,7 @@ node elementexplorer https://app.vwo.com
 
 Browser will load the URL and you will see > prompt. Use browser, element and protractor variables to interact with page.
 
-**Note:** Make sure that the developer tools are closed while running commmands in elementexplorer.js prompt, otherwise you will face an unexpected error as **"TypeError: Cannot read property 'click' of null"**
+**Note:** Make sure that the developer tools are closed while running commands in elementexplorer.js prompt, otherwise you will face an unexpected error as **"TypeError: Cannot read property 'click' of null"**
 
 ### Maintaining and reusing test cases
 
