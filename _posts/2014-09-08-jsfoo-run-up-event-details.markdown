@@ -10,7 +10,7 @@ Last week, we announced that Wingify would be sponsoring the [JSFoo 2014](http:/
 
 Since it was the first time we hosted such a big event, we were both excited and nervous. We had started preparing for the event about a month in advance. To market the event, we spread out information about the event on meetup groups we were connected with, and also created a [Facebook event](https://www.facebook.com/events/1464410987176966/ ) for it. In total, we received about 100-120 signups for the event. Of all the signups, we expected about one-third of them to actually turn up for the event, for whom we started to arrange for food and logistics.
 
-What’s exciting is that more than 50 external external guests from 30 different companies and colleges showed up. We were really humbled with such great turnout and would like to thank each one of you who joined us for the event.
+What’s exciting is that more than 50 external guests from 30 different companies and colleges showed up. We were really humbled with such great turnout and would like to thank each one of you who joined us for the event.
 
 The event started on time (10:30am) with [Suchit Puri](https://twitter.com/suchitpuri) taking the stage. He welcomed us to the event and introduced the first speaker [Rudi M.K.](https://github.com/rudimk), who was about to speak on **“A new approach to scientific computing using JavaScript“**. He talked about the possibilities of using JavaScript for mathematical and scientific computing. He had a few examples of using JavaScript on the server side for complex mathematical computation. It was really enlightening to see so many libraries coming up in support of scientific computing in the  JavaScript ecosystem.
 

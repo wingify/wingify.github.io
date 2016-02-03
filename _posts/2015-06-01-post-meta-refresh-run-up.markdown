@@ -22,7 +22,7 @@ The event started on time (10:30am) with Tony introducing MetaRefresh, HasGeek a
   </div>
 </div>
 
-A pure technical talk related to web performance, started off with a poll to find out how many of the participants measure performance regularly and have it part of their deployment process, the feedback from the attendees depicted negligible measures taken to continously monitor product performance. Next was the discussion of the reasons on why performance mattered, which was followed up with the discussion of various hacks that people employed to bring performance to their applications. The core part of this talk discussed the difference between using hacks versus following different approach during development, and how each of them paid in the long run.
+A pure technical talk related to web performance, started off with a poll to find out how many of the participants measure performance regularly and have it part of their deployment process, the feedback from the attendees depicted negligible measures taken to continuously monitor product performance. Next was the discussion of the reasons on why performance mattered, which was followed up with the discussion of various hacks that people employed to bring performance to their applications. The core part of this talk discussed the difference between using hacks versus following different approach during development, and how each of them paid in the long run.
 
 Slides: [www.slideshare.net/ApoorvSaxena/hacking-to-be-performant](http://www.slideshare.net/ApoorvSaxena/hacking-to-be-performant)
 

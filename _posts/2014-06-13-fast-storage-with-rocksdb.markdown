@@ -42,7 +42,7 @@ Cassandra. In clustered deployment, reads from Cassandra were too slow and slowe
 when data size would grew. After understanding how Cassandra worked under the
 hood such as its log structured storage like LevelDB I started playing with opensource
 embeddable databases that would use similar approach such as LevelDB and Kyoto Cabinet.
-At the time, I found an embedabble persistent key-value store
+At the time, I found an embeddable persistent key-value store
 library built on LevelDB called [RocksDB](http://rocksdb.org).
 It was opensourced by Facebook and had a fairly active developer community so I
 started [playing](https://github.com/facebook/rocksdb/tree/master/examples)

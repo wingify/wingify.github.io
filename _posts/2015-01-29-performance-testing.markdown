@@ -28,7 +28,7 @@ In single-page apps, the performance equally depends on both the client-side and
 
 Since single-page apps are Javascript/Ajax enabled, measuring performance from server/API level is not enough. Even poorly written javascript code can majorly affect the performance of the app.
 
-Client-side performance testing can also be done using popular tools like [Google Page Speed](https://developers.google.com/speed/pagespeed/) or [Webpagetest.org](http://webpagetest.org). But they cannot test different modules of the application seperately. They'd just test the URLs you enter. To test different sections of your application, we can follow a different appraoch. 
+Client-side performance testing can also be done using popular tools like [Google Page Speed](https://developers.google.com/speed/pagespeed/) or [Webpagetest.org](http://webpagetest.org). But they cannot test different modules of the application separately. They'd just test the URLs you enter. To test different sections of your application, we can follow a different approach. 
 
 In this blog post, I’m going to show you how to use the most popular open-source tool (JMeter)[http://jmeter.apache.org/] to performance test AJAX-enabled websites.
 
@@ -60,7 +60,7 @@ Simply add the following to your test plan:
 
 ![](/images/2015/01/01.png)
 
-Now add the following Javacript code in WebDriver Sampler
+Now add the following JavaScript code in WebDriver Sampler
 
 {% highlight js %}
 WDS.sampleResult.sampleStart();

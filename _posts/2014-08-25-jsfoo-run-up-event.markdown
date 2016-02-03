@@ -12,7 +12,7 @@ Our single-page application, [VWO](http://vwo.com), is powered by a nifty combin
 
 ## Sponsoring JSFoo
 
-For the very reason of community involvement being indespensable for better development, we are sponsoring JSFoo 2014 in Bangalore this year. Our engineers will be present at the conference. Should you be interested in our work, and would like to know more about what we do, want to work with us, or just want to say Hi!, drop by our booth (B1), or catch any of our team members at the event.
+For the very reason of community involvement being indispensable for better development, we are sponsoring JSFoo 2014 in Bangalore this year. Our engineers will be present at the conference. Should you be interested in our work, and would like to know more about what we do, want to work with us, or just want to say Hi!, drop by our booth (B1), or catch any of our team members at the event.
 
 ## JSFoo Run-up Event (Delhi)
 
@@ -49,7 +49,7 @@ Let the submissions begin!
 
 ### Rules
 
-1. The deadline for the compeition is 20th September 2014, 23:59 IST.
+1. The deadline for the competition is 20th September 2014, 23:59 IST.
 2. Your entry should use Javascript, HTML5 Canvas and Squares to create something visually appealing.
 3. CoffeeScript is allowed.
 4. Judgement will primarily be based on visual appeal. Secondary parameters include code quality and smoothness.
