@@ -15,7 +15,7 @@ In essence, the interpreter pattern consists of dynamically generating and trans
 
 However, I believe that modern functional programming provides us some alternatives that provide functionality approaching that of embedding a lisp interpreter in our runtime, but also with some measures of type safety. I'm going to describe Free Objects, and how they can be used as a substitute for an interpreter.
 
-At wingify, we have several important interpreters floating around in our (currently very experimental) event driven notification system. In this post I'll show how Free Boolean Algebras can drastically simplify the process of defining custom events.
+At Wingify, we have several important interpreters floating around in our (currently very experimental) event driven notification system. In this post I'll show how Free Boolean Algebras can drastically simplify the process of defining custom events.
 
 # Algebraic structures
 
