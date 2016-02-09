@@ -264,7 +264,7 @@ We can then partially evaluate our predicates:
     def partiallyEvaluatePredicate(e: EventPredicate) =
       nat( (e:EventSpec) => {
         partialEvaluate(e).fold( e )(x => {
-          if (x) { True } else { False}
+          if (x) { True } else { False }
           })
         })
 
