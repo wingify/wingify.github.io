@@ -35,42 +35,12 @@ We used the above mentioned solution but instead of dividing the content into 4 
 
 ![](/images/2016/04/pseudo-layout.png)
 
-
 So basically the pseudo structure always stays on the screen with all the custom content going and coming over it and giving an illusion that custom content renders inside those sections - just what we wanted for the end user!
 
-### Basic CSS for our illusion
+## Final result and code
 
-{% highlight css %}
-.faux-wrapper {
-  background: transparent;
-
-  &:before {
-    content: '';
-    position: fixed;
-    top: $header-height;
-    left: 0;
-    width: calc((#{100%} - #{$nav-width}) * 0.75 + #{$nav-width});
-    height: 100%;
-    /* Black navigation bar + white content thereafter */
-    background: linear-gradient(90deg, #2B3945 80px, white 80px);
-    border-right: 1px $base-ui-color solid;
-    z-index: -1;
-    }
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: $nav-width;
-    right: 0;
-    z-index: -1;
-    height: 157px;
-    /* white page title section followed by 1px border, a tab menu and again a 1px border */
-    background: linear-gradient(180deg, #e8ebef  40px, white 40px, white 120px, #C3CAD3 121px, #E8EBEF 122px, #e8ebef 156px, #C3CAD3 157px);
-  }
-}
-{% endhighlight %}
-
+<iframe height='358' scrolling='no' src='//codepen.io/chinchang/embed/YqEzEQ/?height=358&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/chinchang/pen/YqEzEQ/'>Pseudo layout illusion</a> by Kushagra Gour (<a href='http://codepen.io/chinchang'>@chinchang</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
 
 ## In the End
 
