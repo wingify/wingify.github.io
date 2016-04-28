@@ -47,17 +47,23 @@ Next was to decide the winner, and after a lot of discussions and speculations, 
 2. [Hemkaran Raghav](http://hemkaranraghav.in) - Runner Up (Got Drone without Camera as second prize)
 
 <div style="text-align:center; margin: 10px;">
-  <img src="/images/2016/04/CITD_5.JPG">
+  <img src="/images/2016/04/CITD_5.jpeg">
   <div style="margin: 10px;">Sparsh Gupta getting his prize as Winner of the event
   </div>
 </div>
 
 <div style="text-align:center; margin: 10px;">
-  <img src="/images/2016/04/CITD_5.JPG">
+  <img src="/images/2016/04/CITD_6.jpeg">
   <div style="margin: 10px;">Hemkaran Raghav getting his prize as Runner up of the event
   </div>
 </div>
 
 It was a great experience to participate in the event. Thanks to Kushagra Gour and Rahul Kumar for organizing the awesome blossom event. We hope that this type of events will continue to happen in the time to come.
+
+You can watch a glimpse of the event here:
+
+<div style="text-align:center; margin: 10px;">
+  <iframe src="https://drive.google.com/a/wingify.com/file/d/0B1QCaF7s3JsrU1RhME9UaC1XNlk/preview" width="780" height="480"></iframe>
+</div>
 
 If you want to know more about the events and happenings at wingify, please follow us on ([Twitter](https://twitter.com/wingify_engg), or [Facebook](https://www.facebook.com/Wingify)). If you have any suggestions for the different type of events that we can organize, go ahead and leave comments and we will get back to you. If you like what we do at Wingify and want to join the force, we will be more than happy to work with you. [As always, we are looking for talented people to work with us](https://wingify.com/careers)!
