@@ -10,7 +10,7 @@ author: Hemkaran Raghav
   <img src="/images/2016/04/CITD_1.JPG">
 </div>
 
-Coding is always fun at [Wingify](https://wingify.com/), be it a Wingify Camp or a Fun Friday. And to add to the fun, in a Fun Friday [Code In the Dark](http://codeinthedark.com/) was organized by Wingify on 15th April 2016 at NDM-1, Wingify's Delhi office. The event is a front-end (HTML, CSS) competition, where each contestant compete to implement a website design given only a screenshot. The catch is, no previews of the results are allowed during the implementation, and no measuring tools can be used. There are some simple rules of the event:
+Coding is always fun at [Wingify](https://wingify.com/), be it a Wingify Camp or a Fun Friday. And to add to the fun, in a Fun Friday [Code In the Dark](http://codeinthedark.com/) was organized by Wingify on 15th April 2016 in both Wingify's Delhi and Pune office. The event is a front-end (HTML, CSS) competition created by the folks at [Tictail](https://tictail.com/), where each contestant compete to implement a website design given only a screenshot. The catch is, no previews of the results are allowed during the implementation, and no measuring tools can be used. There are some simple rules of the event:
 
 * Duration: 15 min
 * Technology: HTML/CSS
@@ -25,20 +25,20 @@ The event started at 5 o'clock in the evening and was divided into two slots, ea
   </div>
 </div>
 
-After the completion of the allotted time, two participants from each team were selected based on the audience voting.
-
 <div style="text-align:center; margin: 10px;">
-  <img src="/images/2016/04/CITD_3.jpg">
-  <div style="margin: 10px;">A glipmse of the screenshot provided
+  <img src="/images/2016/04/CITD_6.jpg">
+  <div style="margin: 10px;">Contestants coding in the dark
   </div>
 </div>
 
-A final round was organized between selected "Fantastic Four" participants from the 2 slots which were [Sparsh Gupta](https://www.linkedin.com/in/sparshgupta),  [Hemkaran Raghav](http://hemkaranraghav.in/),  [Ashish Bardhan](https://www.linkedin.com/in/ashish-bardhan-07654a26), Dheeraj Joshi.
+After the completion of the allotted time, two participants from each team were selected based on the audience voting.
+
+A final round was organized between selected "Fantastic Four" participants from the 2 slots which were [Sparsh Gupta](https://www.linkedin.com/in/sparshgupta),  [Hemkaran Raghav](http://hemkaranraghav.in/),  [Ashish Bardhan](https://www.linkedin.com/in/ashish-bardhan-07654a26), [Dheeraj Joshi](https://twitter.com/dheerajhere).
 
 Meanwhile some people were busy in eating delicious sandwiches and having some beer to quench their thirst.
 
 <div style="text-align:center; margin: 10px;">
-  <img src="/images/2016/04/CITD_4.jpg">
+  <img src="/images/2016/04/CITD_4.JPG">
 </div>
 
 Next was to decide the winner, and after a lot of discussions and speculations, finally they declared the winners.
@@ -46,15 +46,14 @@ Next was to decide the winner, and after a lot of discussions and speculations, 
 1. [Sparsh Gupta](https://www.linkedin.com/in/sparshgupta) - Winner (Got Drone with attached Camera as first prize)
 2. [Hemkaran Raghav](http://hemkaranraghav.in) - Runner Up (Got Drone without Camera as second prize)
 
-<div style="text-align:center; margin: 10px;">
-  <img src="/images/2016/04/CITD_5.jpeg">
-  <div style="margin: 10px;">Sparsh Gupta getting his prize as Winner of the event
-  </div>
-</div>
+Also, The winners form Pune office were:
+
+1. [Paras Chopra](http://paraschopra.com/) - Winner
+2. [Rachit Gulati](http://rachitgulati.com/) - Runner Up
 
 <div style="text-align:center; margin: 10px;">
-  <img src="/images/2016/04/CITD_6.jpeg">
-  <div style="margin: 10px;">Hemkaran Raghav getting his prize as Runner up of the event
+  <img src="/images/2016/04/CITD_5.jpg">
+  <div style="margin: 10px;">Sparsh Gupta and Hemkaran Raghav getting his prize
   </div>
 </div>
 
