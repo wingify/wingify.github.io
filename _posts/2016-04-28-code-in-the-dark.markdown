@@ -35,7 +35,7 @@ After the completion of the allotted time, two participants from each team were 
 
 A final round was organized between selected "Fantastic Four" participants from the 2 slots which were [Sparsh Gupta](https://www.linkedin.com/in/sparshgupta),  [Hemkaran Raghav](http://hemkaranraghav.in/),  [Ashish Bardhan](https://www.linkedin.com/in/ashish-bardhan-07654a26), [Dheeraj Joshi](https://twitter.com/dheerajhere).
 
-Meanwhile some people were busy in eating delicious sandwiches and having some beer to quench their thirst.
+Meanwhile, some people were busy in eating delicious sandwiches and having some beer to quench their thirst.
 
 <div style="text-align:center; margin: 10px;">
   <img src="/images/2016/04/CITD_4.JPG">
@@ -43,10 +43,10 @@ Meanwhile some people were busy in eating delicious sandwiches and having some b
 
 Next was to decide the winner, and after a lot of discussions and speculations, finally they declared the winners.
 
-1. [Sparsh Gupta](https://www.linkedin.com/in/sparshgupta) - Winner (Got Drone with attached Camera as first prize)
-2. [Hemkaran Raghav](http://hemkaranraghav.in) - Runner Up (Got Drone without Camera as second prize)
+1. [Sparsh Gupta](https://www.linkedin.com/in/sparshgupta) - Winner
+2. [Hemkaran Raghav](http://hemkaranraghav.in) - Runner Up
 
-Also, The winners form Pune office were:
+Also, The winners from Pune office were:
 
 1. [Paras Chopra](http://paraschopra.com/) - Winner
 2. [Rachit Gulati](http://rachitgulati.com/) - Runner Up
@@ -57,7 +57,7 @@ Also, The winners form Pune office were:
   </div>
 </div>
 
-It was a great experience to participate in the event. Thanks to Kushagra Gour and Rahul Kumar for organizing the awesome blossom event. We hope that this type of events will continue to happen in the time to come.
+It was a great experience to participate in the event. Thanks to Kushagra Gour for organizing the awesome blossom event. We hope that this type of events will continue to happen in the time to come.
 
 You can watch a glimpse of the event here:
 
@@ -65,4 +65,4 @@ You can watch a glimpse of the event here:
   <iframe src="https://drive.google.com/a/wingify.com/file/d/0B1QCaF7s3JsrU1RhME9UaC1XNlk/preview" width="780" height="480"></iframe>
 </div>
 
-If you want to know more about the events and happenings at wingify, please follow us on ([Twitter](https://twitter.com/wingify_engg), or [Facebook](https://www.facebook.com/Wingify)). If you have any suggestions for the different type of events that we can organize, go ahead and leave comments and we will get back to you. If you like what we do at Wingify and want to join the force, we will be more than happy to work with you. [As always, we are looking for talented people to work with us](https://wingify.com/careers)!
+If you want to know more about the events and happenings at Wingify, please follow us on ([Twitter](https://twitter.com/wingify_engg), or [Facebook](https://www.facebook.com/Wingify)). If you have any suggestions for the different type of events that we can organize, go ahead and leave comments and we will get back to you. If you like what we do at Wingify and want to join the force, we will be more than happy to work with you. [As always, we are looking for talented people to work with us](https://wingify.com/careers)!
