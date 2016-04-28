@@ -41,15 +41,25 @@ Meanwhile, some people were busy in eating delicious sandwiches and having some 
   <img src="/images/2016/04/CITD_4.JPG">
 </div>
 
-Next was to decide the winner, and after a lot of discussions and speculations, finally they declared the winners.
+Meanwhile in Wingify's Pune office...
+/
+<div style="text-align:center; margin: 10px;" class="galleria">
+  <img src="/images/2016/04/CITD_pune3.jpg">
+  <img width="49%" src="/images/2016/04/CITD_pune2.jpg">
+  <img width="49%" src="/images/2016/04/CITD_pune1.jpg">
+</div>
 
-1. [Sparsh Gupta](https://www.linkedin.com/in/sparshgupta) - Winner
+Next was to decide the winner, and after voting by everyone finally we had the winners.
+
+1. [Sparsh Gupta](https://www.linkedin.com/in/sparshgupta) (Our CTO) - Winner
 2. [Hemkaran Raghav](http://hemkaranraghav.in) - Runner Up
 
 Also, The winners from Pune office were:
 
-1. [Paras Chopra](http://paraschopra.com/) - Winner
+1. [Paras Chopra](http://paraschopra.com/) (Our CEO) - Winner
 2. [Rachit Gulati](http://rachitgulati.com/) - Runner Up
+
+Yeah, our CEO & CTO are code-in-dark experts :) Checkout the awesome prizes that winners got:
 
 <div style="text-align:center; margin: 10px;">
   <img src="/images/2016/04/CITD_5.jpg">
@@ -62,7 +72,7 @@ It was a great experience to participate in the event. Thanks to Kushagra Gour f
 You can watch a glimpse of the event here:
 
 <div style="text-align:center; margin: 10px;">
-  <iframe src="https://drive.google.com/a/wingify.com/file/d/0B1QCaF7s3JsrU1RhME9UaC1XNlk/preview" width="780" height="480"></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/x3PoYQtsVjE" frameborder="0" allowfullscreen></iframe>
 </div>
 
-If you want to know more about the events and happenings at Wingify, please follow us on ([Twitter](https://twitter.com/wingify_engg), or [Facebook](https://www.facebook.com/Wingify)). If you have any suggestions for the different type of events that we can organize, go ahead and leave comments and we will get back to you. If you like what we do at Wingify and want to join the force, we will be more than happy to work with you. [As always, we are looking for talented people to work with us](https://wingify.com/careers)!
+If you want to know more about the events and happenings at Wingify, follow us on ([Twitter](https://twitter.com/wingify_engg), or [Facebook](https://www.facebook.com/Wingify)). If you have any suggestions for different type of events that we can organize, go ahead and leave comments and we will get back to you. If you like what we do at Wingify and want to join the force, we will be more than happy to work with you. [As always, we are looking for talented people to work with us](https://wingify.com/careers)!
