@@ -22,7 +22,7 @@ Day 1 was about keynotes, new tools and sponsor stands. HP launches lean UFT, in
 
 There was no hurry to reach the venue today as the streets were all mapped a day before, suits and boots were tied up. It was the day to present, world's first ever open source automation tool for push notifications - _PushKnot_
 
-Push notifications allow users to opt-in to timely updates from sites they love and allow you to effectively re-engage them with customized, engaging content.
+Push notifications let users to opt into timely updates from sites they love and allow you to effectively re-engage them with customized, engaging content.
 As per recent surveys, push notifications are turning out to be better than email notifications.
 
 Since it's a relatively new technology which is booming, the SDLC flows goes like this specs written, functionality developed, unit tests written, how about testing it end to end?
@@ -81,15 +81,21 @@ chromeOptions: {
 
 
 
-<a href='http:///www.slideshare.net/ankitagupta2309/pushknot' target='_blank'>Slides deck</a> from the talk:
+<a href='http:///www.slideshare.net/ankitagupta2309/pushknot' target='_blank'>Slides deck</a> from the talk.
 
 <div style="width: 100%">
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/jinpOBbAaNDv54" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 </div>
 
-<a href='http://www.slideshare.net/ankitagupta2309/pushknot-demo' target='_blank'>Demo</a> from the talk:
+<a href='http://www.slideshare.net/ankitagupta2309/pushknot-demo' target='_blank'>Demo</a> from the talk.
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/LsA1VDNjsPPfR0" width="595" height="335" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+
+<a href='https://www.youtube.com/watch?v=Lj9HD-1Pikc' target='_blank'>Video</a> of the talk.
+
+<iframe src="//www.youtube.com/embed/Lj9HD-1Pikc" width="595" height="335" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
 
 
   [1]: https://wingify.com/
