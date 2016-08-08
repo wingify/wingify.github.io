@@ -80,7 +80,6 @@ chromeOptions: {
 {% endhighlight %}
 
 
-
 <a href='http:///www.slideshare.net/ankitagupta2309/pushknot' target='_blank'>Slides deck</a> from the talk.
 
 <div style="width: 100%">
@@ -96,6 +95,6 @@ chromeOptions: {
 
 <iframe src="//www.youtube.com/embed/Lj9HD-1Pikc" width="595" height="335" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
-
+It was a great learning experience. Received good feedback on our tool, some of which have already been implemented. Write back to us if you have any feedback or queries.
 
   [1]: https://wingify.com/
