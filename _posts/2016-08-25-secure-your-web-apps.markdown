@@ -8,8 +8,8 @@ author: Dheeraj Joshi
 
 
 
-Recently I spoke about Securing Web Applications at [JSChannel Conference’16][1]. The conference venue was The Ritz-Carlton, Bangalore.
-JSChannel is a great conference to attend and to connect with some great people. And when I say great, I literally mean it, Yehuda Katz (one of the creators of Ember.js), Lea Verou (Expert in the W3C CSS Working Group) & Chris Lilley (Father of SVG) and experts from McKinsey.
+Recently, I spoke about Securing Web Applications at [JSChannel Conference’16][1]. The conference venue was The Ritz-Carlton, Bangalore.
+JSChannel is a great conference to attend and to connect with some great people. And when I say great, I literally mean it. Yehuda Katz (one of the creators of Ember.js), Lea Verou (Expert in the W3C CSS Working Group) & Chris Lilley (Father of SVG) and experts from McKinsey.
 
 <p style="text-align: center;">
     <img width="480" height="360px" src="/images/2016/08/jschannel_speakers.jpg">
@@ -22,18 +22,18 @@ Three Wingifighters flew to attend and listen to this amazing conference and her
     <img style="width:320px !important" src="/images/2016/08/wingifighters.jpg">
 </p>
 
-Day 1 was amazing and Rachit, having attended almost all the sessions, has shared his learning experience at the conference on the [Team Wingify’s Space][2].
+Day 1 was amazing. Rachit, having attended almost all the sessions, has shared his learning experience at the conference on the [Team Wingify’s Space][2].
 
 ### BEFORE SPEAKING
 Speaking at a conference is a lot of work before getting on stage. Preparation is crucial. I spent a good number of hours to jot down a list of security vulnerabilities to talk about and the mitigation steps for the same. I had to make sure none of my demonstrations exposed the vulnerabilities of the websites I chose to talk about.
 
-And guess what, In my preparation for the demo, I actually found another way to bypass a previous reported vulnerability in time before the conference.
-Keeping in mind the JavaScript conference and the audience, everything was related to Browser level attacks and Node.js applications.
+And guess what, in my preparation for the demo, I actually found another way to bypass a previously reported vulnerability in time just before the conference.
+Keeping in mind the JavaScript conference and the audience, everything was related to Browser level and Node.js application attacks.
 
 ### THE TALK
 <div style="width: 100%">
     <script async class="speakerdeck-embed" data-id="73bbddb59072472a88de3b22005089f1" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
-    <p>If the slides are not enough and you want to  see yours truly speaking, scroll down to the end of the post.</p>
+    <p>If the slides are not enough and you want to see yours truly, speaking, scroll down to the end of the post.</p>
 </div>
 It all started with a humorous introduction and a show of my prowess!
 > Security is like the elephant in the room where everyone agrees that it's very important but only a few take it very seriously.
@@ -52,11 +52,11 @@ A sample web application using Node.js, Express and Angular that is vulnerable t
 
 
 ### What could possibly go wrong?
-The talk ended with a live demonstration of an interesting and a serious vulnerability found on a popular hiring platform, RecruiterBox. A JavaScript injection using which an attacker can upload a maliciously crafted resume and perform Cross-site Scripting attacks. I used Burp Suite, an interceptor proxy to bypass the fix deployed by Recruiterbox, for the demonstration purpose.
+The talk ended with a live demonstration of an interesting and a serious vulnerability found on a popular hiring platform, RecruiterBox. A JavaScript injection using which an attacker can upload a maliciously crafted resume and can perform Cross-site Scripting attacks. I used Burp Suite, an interceptor proxy to bypass the fix deployed by Recruiterbox, for the demonstration purpose.
 To know more about the vulnerability, [read this][3].
 
 ### Feedback:
-After the talk, it was rewarding to see good response and queries from the audience. One comment I received from an audience was "We just realized that our services are vulnerable to one of the attack I demonstrated and we never gave a thought to it. Thank you!".
+After the talk, it was rewarding to see good response and queries from the audience. One comment I received from audience was "We have just realized that our services are vulnerable to one of the attack I demonstrated and we never gave a thought to it. Thank you!".
 <script>Galleria.run('#jschannel-gallery');</script>
 <div id="jschannel-gallery" style="height: 400px;">
     <img src="/images/2016/08/jschannel_resp1.png">
@@ -73,7 +73,7 @@ __Key takeaways:__
 1.  Never blindly trust user input.
 2.  Always use proven sanitizers and tools.
 3.  Perform Security Audits.
-4.  Keep discussing vulnerabilities because the Internet has a bunch of weird old stuff that not necessarily every software developer knows about.
+4.  Keep discussing vulnerabilities because the Internet has a bunch of weird old stuff that, not necessarily, every software developer knows about.
 
 
 #### Video.
