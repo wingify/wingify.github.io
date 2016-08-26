@@ -38,6 +38,7 @@ Keeping in mind the JavaScript conference and the audience, I made sure everythi
 </div>
 
 It all started with a humorous introduction and a show of my prowess!
+
 > Security is like the elephant in the room where everyone agrees that it's very important but only a few take it very seriously.
 
 I touched upon the recent Github reused password attack and why we should follow a good password hygiene and move towards multi-factor authentication (MFA).
