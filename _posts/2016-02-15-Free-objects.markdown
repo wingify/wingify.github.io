@@ -116,7 +116,7 @@ A free object is a version of an algebraic structure which has no interpretation
 way of representing that algebra. But the important thing about the free object is that it gives interpretation almost
 for free.
 
-More concretely, a a Free Object is a [Functor](http://eed3si9n.com/learning-scalaz/Functor.html) with a particular natural transformation. I.e., for any type `T`, there is a type `FreeObj[T]` with the following properties:
+More concretely, a Free Object is a [Functor](http://eed3si9n.com/learning-scalaz/Functor.html) with a particular natural transformation. I.e., for any type `T`, there is a type `FreeObj[T]` with the following properties:
 
 1. For any object `t` of type `T`, there is a corresponding object `t.point[FreeObj]` having type `FreeObj[T]`. I.e., objects outside the functor can be lifted into it.
 2. Let `X` be another object having the same algebraic structure (e.g., `X` is any boolean algebra). Then for any function `f: T => X`, there is a natural transformation `nat(f): FreeObj[T] => X` with the properties that (a) `nat(f)(t.point) = f(t)` and (b) `nat(f)` preserves the structure of the underlying algebra.
@@ -218,7 +218,7 @@ To handle this case, we'd tweak the underlying definition of our predicates a bi
 
 We'll approach this problem in two ways. First, we'll build a *translation* layer - a way to translate `FreeBool[EventSpec] => FreeBool[PrimitiveEventSpec]`.
 Then we'll build the *evaluation* layer - a way to compute `FreeBool[PrimitiveEventSpec] => Boolean`. With this structure, we only need to
-define evaluation on the primtives.
+define evaluation on the primitives.
 
 The translation is actually very simple with `nat`. First we define a mapping from `EventSpec => FreeBool[PrimitiveEventSpec]`, and then we use `nat` to lift this function to `FreeBool`:
 
