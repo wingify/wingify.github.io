@@ -27,6 +27,12 @@ Apart from the tools placed to measure performance, we’d also been busy shippi
 
 2. **Move to HTTP/2 Protocol** — [HTTP/2 protocol][5], the successor of the HTTP 1.1 protocol and based loosely on the SPDY protocol provides several benefits. It enables multiplexing of resources across single TCP connection, compressing and reducing HTTP headers and also supports Server Push (The server can optimistically push resources to the browser which it understands that the browser might require). HTTP/2 has good browser support and is backward compatible with HTTP 1.1 which means browsers not supporting it can fallback to the older protocol.
 
+<div style="text-align:center; margin: 20px;">
+  <img src="/images/2016/09/http2-browser-support.png">
+  <div style="margin: 10px;">HTTP/2 browser support information on Can I Use
+  </div>
+</div>
+
 3. **Move to HTTPS** — HTTPS is a precondition for HTTP/2. So, yay!
 
 4. **Reduce the initial app content on bootstrap** — We’ve reduced the initial app loading size by more than a 100 KBs (and more… or should I say **less**… to come). This has been achieved due to the combined result of:
@@ -41,6 +47,8 @@ Apart from the tools placed to measure performance, we’d also been busy shippi
 7. **Split vendor files into primary and secondary** — It is a common practice in web development to combine all the libraries, required by the app, into a single file. Usually, this is called the vendor file and it gets downloaded entirely in the beginning. Often, several components of the vendor file aren’t required in the usual app usage, but they still get downloaded since it is a single bundle. We’ve divided the vendor file into two and split their content based on the frequency of usage. The first vendor file contains all the libraries which are absolutely necessary for the application to load. For example, AngularJS and its dependencies. The second vendor file is loaded on demand, based on modules which require less frequently required libraries, for example, Graph libraries to show graphs. By doing so we’ve cut a good chunk of approximately 200 KBs from the original monolithic vendor file, a considerable amount by any standard.
 
 8. **Implement login page in vanilla JS** — The VWO app is written in AngularJS framework. AngularJS is a heavy framework. To add to the woe it has tons of dependencies. The benefit of moving the login page out of AngularJS context, and keeping it in plain JS has a two-fold benefit. Firstly, the login page becomes lighter since it isn’t dependant on the framework anymore. Secondly, by utilising the time that the user takes in filling his credentials we can load, as much of the app, in the background, as possible. Thus, when the user is done signing in, a major portion of the app, if not all, would’ve already been downloaded.
+
+9. **Optimize images** - Though we used to optimize images earlier, it required the developers to manually run the task and commit those images to the repository. This was cumbersome and often developers would miss doing it. This has now been incorporated into our build process. Each image that now reaches the browser is optimized. 
 
 We’ve come a long way from the initial VWO app that was made two years back. And we still have a lot to cover. As we see it, this is just the tip of the iceberg. We’ll be publishing more posts on the improvements that we push to the app. If you have any suggestions, queries or concerns feel free to drop a comment.
 
