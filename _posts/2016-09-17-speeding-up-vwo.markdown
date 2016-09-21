@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Speeding up VWO"
+title: "Speeding Up VWO"
 excerpt: How we optimized the performance of the VWO app
 authorslug: dinkar_pundir
 author: Dinkar Pundir
@@ -26,12 +26,10 @@ Apart from the tools placed to measure performance, we’d also been busy shippi
 1. **Upgrade to AngularJS 1.5** — While making the VWO App, two years back, the most stable version of AngularJS present was 1.2. Since then several versions have released with the latest one being 1.5. The [features][4] and performance benefits of 1.5 over 1.2 were convincing enough to make the move. But there were plenty of breaking changes which kept the Dev team as well as the QA team busy for quite some time in making sure that the upgraded code was bug free and the customers had a seamless transition. I’m glad to share that we’ve finally made the transition.
 
 2. **Move to HTTP/2 Protocol** — [HTTP/2 protocol][5], the successor of the HTTP 1.1 protocol and based loosely on the SPDY protocol provides several benefits. It enables multiplexing of resources across single TCP connection, compressing and reducing HTTP headers and also supports Server Push (The server can optimistically push resources to the browser which it understands that the browser might require). HTTP/2 has good browser support and is backward compatible with HTTP 1.1 which means browsers not supporting it can fallback to the older protocol.
+  
+    ![HTTP/2 support](/images/2016/09/http2-browser-support.png)
 
-<div style="text-align:center; margin: 20px;">
-  <img src="/images/2016/09/http2-browser-support.png">
-  <div style="margin: 10px;">HTTP/2 browser support information on Can I Use
-  </div>
-</div>
+    <div style="text-align:center">HTTP/2 browser support information on Can I Use</div>
 
 3. **Move to HTTPS** — HTTPS is a precondition for HTTP/2. So, yay!
 
