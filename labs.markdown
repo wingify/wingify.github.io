@@ -12,7 +12,7 @@ permalink: /labs/
 			<img src="/images/across-tabs@2x.png" width="160" height="160">
 			<h3>AcrossTabs</h3>
 		</a>
-		<p>Easily communicate among browser tabs(supports cross-origin)</p>
+		<p>Easily communicate among browser tabs.</p>
 		<span class="pill">javascript</span>
 	</div>
 	<div class="project-box">
