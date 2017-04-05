@@ -8,7 +8,7 @@ author: Hemkaran Raghav
 
 Whether it's daily work or any other competition or hackathon, Wingifighters always choose to give their best. Recently, Wingify had organised 24 hours [Internal Hackathon](https://medium.com/@wingify/hacking-away-the-night-at-wingify-cbe33a39f28d) where developers from Wingify created lot of awesome projects for the daily use. The theme was "Solve Daily Problems". Be it a generic problem or an internal team problem, Hackers from Wingify tried to solve many problems over the night. So, I along with [Pramod Dutta](https://www.linkedin.com/in/pramoddutta/) created a chrome extension "VWO X-Ray" (One of the Winners), which is very helpful for our internal team.
 
-VWO X-Ray is created to easily debug the VWO smart code on a website. Whether it is a Developer or a Customer Happiness Engineer or a Client, they need some basic information about VWO running on a particular page. This chrome extension enables the user to view account id on the page, running VWO campaigns and cookies created by VWO. The basic features of the extension are:
+VWO X-Ray was created to easily debug the VWO smart code on a website. Whether it is a Developer or a Customer Happiness Engineer or a Client, they need some basic information about VWO running on a particular page. This chrome extension enables the user to view account id on the page, running VWO campaigns and cookies created by VWO. The basic features of the extension are:
 
 1. View account ID on the page and impersonate into it directly.
 2. <i>Home Tab</i> will show all campaigns on the page and their information like is campaign running, segmentation passed.
