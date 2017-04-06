@@ -19,7 +19,7 @@ VWO X-Ray was created to easily debug the VWO smart code on a website. Whether i
 7. The <i>Full Data Tab</i> will give you a glimpse of the app dashboard. You can change the account ID to get any other account's data.
 8. The <i>Session Data Tab</i> will show current session's information (Track and Analyse), various campaigns' data and goals' data (which ones have been triggered and which ones have not been).
 9. The <i>Impersonate Tab</i> will enable you to impersonate into any account and campaign directly. Just enter the account ID and campaign ID(optional).
-10. This extension, by default, makes 100% sampling rate for Track and Analyse campaigns (most wanted feature by our QA team and Customer Happiness Engineers team).
+10. This extension, by default, makes 100% sampling rate for Track and Analyse campaigns (most wanted feature for our QA team and Customer Happiness Engineers team).
 
 Here are some screenshots of the VWO X-Ray extension running on our [vwo.com](http://vwo.com) website:
 
