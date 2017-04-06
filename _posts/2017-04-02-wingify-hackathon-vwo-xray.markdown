@@ -6,26 +6,26 @@ authorslug: hemkaran_raghav
 author: Hemkaran Raghav
 ---
 
-Whether it's daily work or any other competition or hackathon, Wingifighters always choose to give their best. Recently, Wingify had organised 24 hours [Internal Hackathon](https://medium.com/@wingify/hacking-away-the-night-at-wingify-cbe33a39f28d) where developers from Wingify created lot of awesome projects for the daily use. The theme was "Solve Daily Problems". Be it a generic problem or an internal team problem, Hackers from Wingify tried to solve many problems over the night. So, I along with [Pramod Dutta](https://www.linkedin.com/in/pramoddutta/) created a chrome extension "VWO X-Ray" (One of the Winners), which is very helpful for our internal team.
+Whether it's daily work or any other competition or hackathon, Wingifighters always choose to give their best. Recently, Wingify had organised 24-hour [Internal Hackathon](https://medium.com/@wingify/hacking-away-the-night-at-wingify-cbe33a39f28d) where developers from Wingify created a lot of awesome projects for the daily use. The theme was <i><b>"Solve Daily Problems"</b></i>. Be it a generic problem or an internal team problem, hackers from Wingify tried to solve many problems over the night. So, I along with [Pramod Dutta](https://www.linkedin.com/in/pramoddutta/) created a Google Chrome extension <b>"VWO X-Ray"</b> (<i>one of the winners</i>), which has proved to be helpful to our internal team.
 
-VWO X-Ray was created to easily debug the VWO smart code on a website. Whether it is a Developer or a Customer Happiness Engineer or a Client, they need some basic information about VWO running on a particular page. This chrome extension enables the user to view account id on the page, running VWO campaigns and cookies created by VWO. The basic features of the extension are:
+VWO X-Ray was created to easily debug the VWO smart code on a website. Whether it is a developer or a Customer Happiness Engineer or a client, they need some basic information about VWO running on a particular page. This Google Chrome extension enables the user to view account ID on that page, running VWO campaigns and cookies created by VWO. The basic features of the extension are:
 
 1. View account ID on the page and impersonate into it directly.
-2. <i>Home Tab</i> will show all campaigns on the page and their information like is campaign running, segmentation passed.
-3. Directly open a specific campaign in single click into the VWO app.
+2. The <i>Home Tab</i> will show all campaigns on the page and their information like whether campaigns are running, segmentations passed etc.
+3. Directly open a specific campaign with single click into the VWO app.
 4. Directly copy the "Share report link" of the campaign and share it with anyone.
-5. View VWO cookies information in detailed and clear view.
+5. View VWO cookies information in a detailed and clear view.
 6. Notification feature when any campaign variation is applied on the page or any goal has been triggered.
-7. <i>Full Data Tab</i> will give you a glimpse of app dashboard. You can change account id to get any other account's data.
-8. <i>Session Data Tab</i> will show current session information (Track and Analyse), various campaigns data and Goal data (which are triggered and which are not).
-9. <i>Impersonate Tab</i> will enable you to impersonate into any account and campaign directly. Just enter Account id and Campaign id (optional).
-10. This extension by default makes 100% sampling rate for Track and Analyse campaigns (most wanted feature for our QA and Customer Happiness Engineers team).
+7. The <i>Full Data Tab</i> will give you a glimpse of app dashboard. You can change account ID to get any other account's data.
+8. The <i>Session Data Tab</i> will show current session information (Track and Analyse), various campaigns' data and Goal's data (which ones are triggered and which ones are not).
+9. The <i>Impersonate Tab</i> will enable you to impersonate into any account and campaign directly. Just enter account ID and Campaign ID (optional).
+10. This extension, by default, makes 100% sampling rate for Track and Analyse campaigns (most wanted feature for our QA and Customer Happiness Engineers team).
 
-We are running VWO X-Ray on our [vwo.com](http://vwo.com) website. Here is the screenshot of extension on the website:
+Here are some screenshots of the VWO X-Ray extension running on our [vwo.com](http://vwo.com) website:
 
 <div style="text-align:center; margin: 10px;">
   <img src="/images/2017/04/vwo_xray_1.png" style="box-shadow: 1px 2px 10px 1px #aaa">
-  <div style="margin: 10px;">This is showing various campaigns running on the page and their status</div>
+  <div style="margin: 10px;">The various campaigns running on the page and their statuses</div>
 </div>
 
 <br/>
@@ -34,7 +34,7 @@ We are running VWO X-Ray on our [vwo.com](http://vwo.com) website. Here is the s
   <div style="margin: 10px;">Session data information in clear view</div>
 </div>
 
-We are shortly releasing it to our clients also so that they can get basic information using this extension only.
+We will also be shortly releasing this to our clients, so that they too can get basic information just by using the extension.
 
 Here is the demo of VWO X-Ray:
 <div style="text-align:center; margin: 10px;" style="box-shadow: 1px 2px 10px 1px #aaa">
