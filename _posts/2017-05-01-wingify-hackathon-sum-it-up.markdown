@@ -22,7 +22,7 @@ My idea was simple, and I knew that I could build it alone. So I was a one-perso
 
 The idea was not just to build, but also to learn something new because that's the whole purpose of attending a hackathon, right? Since I had never built a Chrome extension before, I started reading about how to build an extension and took some guidance from our in-house [frontend God, a.k.a chinchang](https://twitter.com/chinchang457) 😛 . I devoted some good chunk of time to decide my strategy for building the product.
 
-So, after spending an entire night on coke and pizzas, I was able to build a beautiful extension which was working, and solving, at least, my problem of highlighting parts of articles that I liked on the web. I really hope it helps a lot of people (read: readers) as well.
+So, after spending an entire night on coke and pizzas, I was able to build a beautiful extension which was working, and solving, at least my problem of highlighting parts of articles that I liked on the web. I really hope it helps a lot of people (read: readers) as well.
 
 [Download](http://rachitgulati.com/sum-it-up/) this awesome application now 🤘 .
 
@@ -38,17 +38,17 @@ Here are a few glimpses of my hack.
 
 <b>Prohibited content (Only for geeks):</b>
 
-<i>As soon as the user selects some text on the page (HTML) and right click on it, (s)he is shown an option to 'Save to Sum it up' in the context menu. On clicking the option, Sum It Up saves the highlighted data (color, text, DOM Node, page url, timestamp etc) in the JSON format of the local storage (So no breachment of privacy) inside the Chrome browser. The main challenge was to maintain the highlighter for the partial DOM selection which I have solved by putting the custom span tag to all the elements resides in that selected area.</i>
+<i>As soon as the user selects some text on the page (HTML) and right clicks on it, (s)he is shown an option to 'Save to Sum it up' in the context menu. On clicking the option, Sum It Up saves the highlighted data (color, text, DOM node, page URL, timestamp etc.) in the JSON format to the local storage (so no breachment of privacy) inside the Chrome browser. The main challenge was to maintain the highlighter for the partial DOM selection which I have solved by putting the custom span tag to all the elements which reside in that selected area.</i>
 
 Some features that you might find useful are:
-1. (High) light it up
-2. Collect your notes
+1. (High) light it up.
+2. Collect your notes.
 3. Email them.
-4. Searching made easy
-5. Tweet your note
-6. Are you a markdown lover? Yes you can export in markdown too
-7. Directly jump to the micro section of the website
+4. Searching made easy.
+5. Tweet your note.
+6. Are you a markdown lover? Yes you can export in markdown too.
+7. Directly jump to the micro section of the website.
 
-Sum It Up got featured on [Product Hunt](https://www.producthunt.com/posts/sum-it-up) too! Yippee :) (My very first submission on product hunt and that too got featured, it's like Diwali Bonus 😀 )
+Sum It Up got featured on [Product Hunt](https://www.producthunt.com/posts/sum-it-up) too! Yippee :) (My very first submission on Product Hunt and that too got featured, it's like Diwali Bonus 😀 )
 
 PS: This is my first blog post so please be kind to me. I am open to any feedback 😀
