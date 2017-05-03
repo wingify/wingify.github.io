@@ -360,6 +360,12 @@ a:hover {
     padding: 20px;
 }
 
+.post-info-box {
+  padding: 20px;
+  border-radius: 4px;
+  background: #f0f4ff;
+}
+
 @media (max-width: 600px) {
     .project-box {
         width: 100%;

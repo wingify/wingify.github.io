@@ -8,6 +8,17 @@ author: Rachit
 
 I am a frontend developer at Wingify and I am building a really awesome product, [PushCrew](https://pushcrew.com/). Last month, [we had a hackathon](https://medium.com/@wingify/hacking-away-the-night-at-wingify-cbe33a39f28d). The idea was to <b>'Solve Daily Problems'</b>, interesting right? 😃
 
+<div class="post-info-box">
+  <p>This post is a part of March'17 Hackathon Project series. Here are the other posts in the series:</p>
+  <ul>
+    <li>
+      <a href="/posts/wingify-hackathon-vwo-xray/">
+        VWO X-Ray
+      </a>
+    </li>
+  </ul>
+</div>
+
 I am an avid reader and I read a lot of stuff on the web, but I often find myself copying parts of different articles and pasting in my notepad. I always thought that it would be a great idea to have all my summaries at single place. I wanted a platform that could show all the highlighted parts of the articles that I have liked without me having to juggle between different tabs. So instead of waiting for an app like this to be built, I went ahead and created a micro bookmarker at the hackathon.
 
 <div style="text-align:center; margin: 10px;">
