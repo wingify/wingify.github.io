@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Highlighted the Hacky Night - Sum It Up"
-excerpt: Highlighted the Hacky Night - Sum It Up
+title: "Wingify Hackathon - Sum It Up"
+excerpt: Wingify Hackathon - Sum It Up
 authorslug: rachit
 author: Rachit
 ---
