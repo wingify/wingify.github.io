@@ -5,16 +5,18 @@ excerpt: PyData at Wingify - My Experience.
 authorslug: pramod_dutta
 author: Pramod Dutta
 ---
+ 
+<img src="/images/2017/06/6.jpg">
 
 
 ### About PyData 
 
-Recently I got an opportunity to Speak at PyData as Speaker. PyData is chapter in Delhi and other region where Python enthusiast share there ideas, projects related to Data Analysis and Machine learning. 
+Recently I got an opportunity to speak at PyData as Speaker. PyData is chapter in New Delhi and other region where Python enthusiast share there ideas, projects related to Data Analysis and Machine learning. 
 
 
 ### Background about My Talk
 
-Let me give a little background, It was Friday before one day of the PyData Meetup/Conference , It was Chill day ☀️ . All of our engineering team was doing there daily task. I had just taken up the coffee to alienate my laziness 😩. Suddenly Our Engineering lead came up and Ask if anyone can Present anything on the PyData that we are going to organise in the Next 24 hour. I can clearly sees that most of the people avoided the eye contact with the Lead as Saturday Holiday was at Risk (My Personal Opinion) but I had something different in my mind and during this transition or confusion  I said  I can do it I had one Project that I did a  back in  College when I was Learning Python I can present it. He said very well, Keep the slides ready.
+Let me give a little background, It was Friday before one day of the PyData Meetup/Conference , It was Chill day ☀️ . All of our engineering team was doing there daily task. I had just taken up the coffee to alienate my laziness 😩. Suddenly our engineering lead came up and Ask if anyone can present anything on the PyData that we are going to organise in the Next 24 hour. I can clearly sees that most of the people avoided the eye contact with the lead as saturday holiday was at risk (My Personal Opinion) but I had something different in my mind and during this transition or confusion  I said  I can do it 🤓 I had one project that I did a back when I was Learning Python I can present it. He said very well, Keep the slides ready.
 
 ### Preparing the Project &  Slides	
 That Friday Night, I was just searching the old files which i have used, Finally I found all of them on my website, downloaded it and  ran the code it was working like a Charm 😍,  Yeah so I quickly created the slides around it,  after finishing smiled and slept at 4.30am.
@@ -77,23 +79,26 @@ With this method you can have winner's data from a Data set. For Example. Suppos
 has a maximum probability to win the match. What you can do is Parse the IPLT20(iplt20) website for last 5 year data and select the top 5 batmans and 6 bowler 😎. 
 
 
-### Other Talks
+### Other Talks at PyData
 
-There are other Talk realted to the Machine Learning related to the Topic - Tensor Flow, Data layer at Wingify which were very good and are in Depth also. In the Talk 'Data layer at Wingify' By Manish where manish talked about how we handle millions of request at Wingify.
+There are other Talk realted to the Machine Learning related to the Topic - Tensor Flow, Data layer at Wingify which were very good and are in Depth also. In the Talk 'Data layer at Wingify' By Manish 🤓 where manish talked about how we handle millions of request at Wingify.
 You can find the slides here. 
-
 
 ### Conclusion
 
-I totally Understand that this may not be a complete project for the Data analysis. I am still learning I showed What i did. I believe it severed my Purpose.
+I totally understand that this may not be a best project for the Data analysis. I am still learning I showed What i did. I believe it severed my Purpose.
 
 I will be doing more research in Data analysis area in Python specially. Thanks for reading this.
+If you would like to see the source code. [You can have a look here](https://github.com/PramodDutta/ScrapToDataAnalysis)
 
-
-Slides - 
-
+Slides :- 
 <iframe src='http://py.scrolltest.com/#/' height="500px" width="100%" />
 
-If you would like to source code. You can have a look here [https://github.com/PramodDutta/ScrapToDataAnalysis].
+
+
+
+
+
+
 
  
