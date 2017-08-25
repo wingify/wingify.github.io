@@ -163,8 +163,3 @@ This is what we needed, now we can keep the endpoint same and tweak with fields 
 ### Try it out
 
 Well if you think GraphQL is promising go ahead and try it out. There is much more to it that you will love to learn. Check out its <a href="http://graphql.org/learn/">official documentation</a>. It has been implemented in all the well known languages and you can find it all <a href="http://graphql.org/code/">here</a>.
-
-
-
-
-
