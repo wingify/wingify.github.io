@@ -59,7 +59,7 @@ if __name__=="__main__":
     main()
 {% endhighlight %}
 
-Now that we have data lets analyse it with the other libraries
+Now that we have data let's analyse it with the other libraries
 
 <script>Galleria.run('#fifth-elephant-gallery');</script>
 <div id="fifth-elephant-gallery" style="height: 600px;">
