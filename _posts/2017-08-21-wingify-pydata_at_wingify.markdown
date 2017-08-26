@@ -5,33 +5,35 @@ excerpt: PyData at Wingify - My Experience.
 authorslug: pramod_dutta
 author: Pramod Dutta
 ---
- 
+
 <img src="/images/2017/06/6.jpg">
 
 
-### About PyData 
+### About PyData
 
-Recently I got an opportunity to speak at PyData as Speaker. PyData is chapter in New Delhi and other region where Python enthusiast share there ideas, projects related to Data Analysis and Machine learning. 
+Recently, I got an opportunity to speak at PyData. PyData is a tech group, with chapters in New Delhi and other regions, where Python enthusiasts share their ideas and projects related to Data Analysis and Machine Learning.
 
 
-### Background about My Talk
+### Background About My Talk
 
-Let me give a little background, It was Friday before one day of the PyData Meetup/Conference , It was Chill day ☀️ . All of our engineering team was doing there daily task. I had just taken up the coffee to alienate my laziness 😩. Suddenly our engineering lead came up and Ask if anyone can present anything on the PyData that we are going to organise in the Next 24 hour. I can clearly sees that most of the people avoided the eye contact with the lead as saturday holiday was at risk (My Personal Opinion) but I had something different in my mind and during this transition or confusion  I said  I can do it 🤓 I had one project that I did a back when I was Learning Python I can present it. He said very well, Keep the slides ready.
+Let me give you a little background. It was the Friday before the PyData Meetup/Conference. It was chill day ☀️ . Our engineering team was doing its daily tasks. I had just grabbed coffee to shun my laziness. Suddenly, our engineering lead came and asked us whether anyone could present on a topic at the PyData that we were to organise the very next day. An initial speaker, who had confirmed earlier, backed out at the last moment because he had fallen sick. I could see that most of the team members tried to avoid volunteering in such a short notice and also probably because the next day was a Saturday (though this is my personal opinion). But I had something different on my mind and during this planning or confusion, I volunteered for it 🤓. I had a project that I had done, back when I was learning Python. So I offered to present it. He agreed to it and asked me to keep the presentation ready.
 
-### Preparing the Project &  Slides	
-That Friday Night, I was just searching the old files which i have used, Finally I found all of them on my website, downloaded it and  ran the code it was working like a Charm 😍,  Yeah so I quickly created the slides around it,  after finishing smiled and slept at 4.30am.
+### Preparing the Project & Slides
+That Friday night, I started searching for the old files which I had used. Finally, I found all of them on my website, downloaded them and ran the code. It worked like a charm 😍. Yeah! I quickly created the slides around it, and after finishing, smiled and went to sleep at 4.30 am.
 
 
 ### Little About the Basics and My Talk.
 
-The Presentation I did was related to the Learning Data Analysis by Scrapping Websites. During may College Days we heavily used the BeautifulSoup Library in Python to scrap websites for the many personal projects. In this project I had an Idea if I can scrap the data from the websites which have data for the movies I can create a list  which all movies I definitely watch and have released date  after 2000 at least(I don’t like to watch Movies with rating > 8 but year > 2000). 
+The presentation that I gave was on *Learning Data Analysis by Scraping Websites*. During my college days, we heavily used the BeautifulSoup Library in Python to scrape websites for the many personal projects. During this project I got the idea to scrape data from the websites which aggregated movies related data. By doing that, I thought that I could create a list of all movies that I must definitely watch. The movies had to satisfy the following criteria:
+1. Release date post-2000
+2. Rating > 8
 
-It was not the best idea at that time to scrap the website and then analyse(Data frame) but I learned lots of things by Scrapping data from Website using Beautifulsoup and then Data Analysis using Pandas & Data Visualization using MatplotLib (Python library) and then coming to conclusion about my movies list.
+It was not the best idea at that time to scrape websites and then analyse(Data frame). But I learnt a lot of things by scraping data from the website using Beautifulsoup, then analyzing data using Pandas, visualizing data using MatplotLib (a Python library) and finally coming to conclusion about my movies recommedation.
 
-Now coming to Objective - Which movie to watch First from the Year 2000-2017(If year < 2000 then I don't want to watch them) -
-Let's scrap the imdb for movies Data From 2000-2017 From and see.
+Coming back to the objective - *Finding and sorting the movies released between 2000-2017 in the order of relevance* (I didn't want to watch movies < 2000) -
+Lets scrape [IMDB](http://www.imdb.com/) for movies data from 2000-2017 and see.
 
-```
+{% highlight python %}
 from
 bs4 import BeautifulSoup
 import urllib2
@@ -55,10 +57,9 @@ def main():
     print mymovieslist
 if __name__=="__main__":
     main()
-```
+{% endhighlight %}
 
-Now we have data lets analyse it with the other libraries
-
+Now that we have data lets analyse it with the other libraries
 
 <script>Galleria.run('#fifth-elephant-gallery');</script>
 <div id="fifth-elephant-gallery" style="height: 600px;">
@@ -73,25 +74,24 @@ Now we have data lets analyse it with the other libraries
     <img src="/images/2017/06/9.jpg">
 </div>
 
-### Take away From Talk
+### Take-away from the Talk
 
-With this method you can have winner's data from a Data set. For Example. Suppose You want to create a Cricket Team ( IPLT20) which
-has a maximum probability to win the match. What you can do is Parse the IPLT20(iplt20) website for last 5 year data and select the top 5 batmans and 6 bowler 😎. 
+With this method you would have winner's data from the data set. For example, suppose you want to create a Cricket Team(IPLT20) which has the maximum probability to win the match, what you can do is parse the [IPLT20](http://www.iplt20.com/)) website for last 5 years' data and select the top 5 batsmen and 6 bowlers 😎.
 
 
 ### Other Talks at PyData
 
-There are other Talk realted to the Machine Learning related to the Topic - Tensor Flow, Data layer at Wingify which were very good and are in Depth also. In the Talk 'Data layer at Wingify' By Manish 🤓 where manish talked about how we handle millions of request at Wingify.
-You can find the slides here. 
+The other talks at PyData were on Machine Learning using Tensor Flow, Data Layer at Wingify etc., which were all through and excellent. In the talk, 'Data layer at Wingify' By Manish Gill 🤓, he talked about how we handle millions of request at Wingify.
+You can find the slides here.
 
 ### Conclusion
 
-I totally understand that this may not be a best project for the Data analysis. I am still learning I showed What i did. I believe it severed my Purpose.
+I totally understand that this may not be a best project for the data analysis. I am still learning I showed what had done. I believe that it served my purpose.
 
-I will be doing more research in Data analysis area in Python specially. Thanks for reading this.
+I will be doing more research on data analysis in Python. Thanks for reading this.
 If you would like to see the source code. [You can have a look here](https://github.com/PramodDutta/ScrapToDataAnalysis)
 
-Slides :- 
+### Slides:
 <iframe src='http://py.scrolltest.com/#/' height="500px" width="100%" />
 
 
@@ -101,4 +101,3 @@ Slides :-
 
 
 
- 
