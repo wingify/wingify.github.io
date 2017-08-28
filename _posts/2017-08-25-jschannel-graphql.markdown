@@ -1,27 +1,27 @@
 ---
 layout: post
-title: "Demand Driven API's Using GraphQL"
-excerpt: Demand Driven API's Using GraphQL.
+title: "Demand Driven APIs Using GraphQL"
+excerpt: Demand Driven APIs Using GraphQL.
 authorslug: sahilbatla
 author: Sahil Batla
 ---
 
 ### Introduction
 
-This article will deal with issues we face with current API architecture (mostly REST) and why demand driven API's seems a perfect replacement for it. We will also talk in brief about <a href="http://graphql.org/learn/">GraphQL</a> and how it is a feasible solution for implementing demand driven applications.
+This article will deal with issues we face with current API architecture (mostly REST) and why demand driven APIs seems a perfect replacement for it. We will also talk in brief about <a href="http://graphql.org/learn/">GraphQL</a> and how it is a feasible solution for implementing demand driven applications.
 
 Note:- This article is inspired from <a href="https://www.slideshare.net/vincirufus/demand-driven-applications-with-graphql-78403822"> Demand Driven Applications with GraphQL </a> by <a href="https://www.linkedin.com/in/vinci"> Vinci Rufus </a> in <a href="http://2017.jschannel.com/">JS Channel 2017</a>.
 
 ### Why Demand Driven API? What's wrong with REST?
 
-Lets take a simple example of author & articles. Now if we are given a requirement to develop an API to fetch authors or articles, it will most probably go like this if we follow REST:-
+Let's take a simple example of author & articles. If we are given a requirement to develop an API to fetch authors or articles, it will most probably go like this if we follow REST:-
 
 <ul>
   <li> GET /authors/:authorId </li>
   <li> GET /articles/:articleId </li>
 </ul>
 
-Now if we have to show a article synopsis on my websites dashboard we would need its **title, description & author name**. So we hit the latter end point and it will give a response like this:-
+Lets taken an example where we have to show a article snippet on my websites dashboard we would need its **title, description & author name**. So we hit the latter end point and it will give a response like this:-
 
 {% highlight js %}
 {
@@ -35,11 +35,11 @@ Now if we have to show a article synopsis on my websites dashboard we would need
 }
 {% endhighlight %}
 
-Now you see there are two problems with this :-
+There are two problems with this response :-
 
 1) **Extra information** :- We only needed the **title** & **description** but we got everything related to the article and we cannot get rid of this extra payload as this extra information might be getting consumed at some other page i.e. Edit Article Page.
 
-2) **Missing information** :- We were expecting **author name** but instead we got **authorId**, now this is bad and to solve this we would probably be making another network call on the former end point to get the author name. Its an overhead making 2 network calls just to fetch 3 parameters, don't you think? Also, it will just get more complex as we include more resources i.e comments, images etc.
+2) **Missing information** :- We were expecting **author name** but instead we got **authorId**, this is bad and to solve this we would probably be making another network call on the former end point to get the author name. Its an overhead making 2 network calls just to fetch 3 parameters, don't you think? Also, it will just get more complex as we include more resources i.e comments, images etc.
 
 
 ### How Demand Driven Applications work?
@@ -116,7 +116,7 @@ And each field in our schema can have a function to fetch that piece of informat
 
 {% endhighlight %}
 
-Now when we query for the data i.e.
+On querying the data, we get i.e.
 
 {% highlight js %}
 
@@ -132,7 +132,7 @@ curl -XGET http://myapp/articles -d "query={
 
 {% endhighlight %}
 
-I will get like this :-
+We will get like this :-
 
 {% highlight js %}
 {
@@ -146,7 +146,7 @@ I will get like this :-
 
 This is what we needed, now we can keep the endpoint same and tweak with fields required to display relevant information at any page of our website.
 
-### Advantages of Demand Driven Api's
+### Advantages of Demand Driven Apis
 
 1) Single End Point for serving any piece of information.
 
@@ -154,7 +154,7 @@ This is what we needed, now we can keep the endpoint same and tweak with fields 
 
 3) Versioning of API's become simpler as we can control the exact information required.
 
-### Disadvantages of Demand Driven Api's
+### Disadvantages of Demand Driven Apis
 
 1) Latency may increase due to a single end point handling all the querying of data.
 
