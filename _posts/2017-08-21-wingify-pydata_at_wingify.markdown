@@ -11,11 +11,11 @@ author: Pramod Dutta
 
 ### About PyData
 
-Recently,I got an opportunity to speak,as A speaker at PyData.PyData is a tech group, with chapters in New Delhi and other regions, where Python enthusiasts share their ideas and projects related to Data Analysis and Machine Learning.
+Recently, I got an opportunity to speak, as a speaker, at PyData. PyData is a tech group, with chapters in New Delhi and other regions, where Python enthusiasts share their ideas and projects related to Data Analysis and Machine Learning.
 
 ### Talks at PyData
 
-There are about 3 talks at PyData which were on ```Machine Learning using Tensor Flow```, ```Data Layer at Wingify ```, mine realted to ``` Learning Data Analysis by Scraping Websites ```, which were all through and excellent. In the talk, 'Data layer at Wingify' By Manish Gill 🤓, he talked about how we handle millions of request at Wingify.
+There were three talks at PyData, namely **Machine Learning using Tensor Flow**, **Data Layer at Wingify** and mine, **Learning Data Analysis by Scraping Websites**. All the talks were thorough and excellent! In the talk, **Data layer at Wingify** By [Manish Gill](https://twitter.com/mgill25) 🤓, he talked about how we handle millions of requests at Wingify.
 
 
 ### Some of Images of the PyData Hosted by Wingify.
@@ -33,7 +33,7 @@ There are about 3 talks at PyData which were on ```Machine Learning using Tensor
 
 ### Background About My Talk
 
-Let me give you a little background. It was the Friday before the PyData Meetup/Conference.Our engineering team was doing its daily tasks. I had just grabbed coffee to shun my laziness. Suddenly, our engineering lead came and asked us whether anyone could present on a topic at the PyData that we were to organise the very next day. An initial speaker, who had confirmed earlier, backed out at the last moment because he had fallen sick. I could see that most of the team members tried to avoid volunteering in such a short notice and also probably because the next day was a Saturday (though this is my personal opinion). But I had something different on my mind and during this planning or confusion, I volunteered for it 🤓. I had a project that I had done, back when I was learning Python. So I offered to present it. He agreed to it and asked me to keep the presentation ready.
+Let me give you a little background. It was the Friday before the PyData Meetup/Conference. Our engineering team was doing its daily tasks. I had just grabbed coffee to alleviate my laziness. Suddenly, our engineering lead came and asked us whether anyone could present on a topic at the PyData that we were to organise the very next day. An initial speaker, who had confirmed earlier, backed out at the last moment because he had fallen sick. I could see that most of the team members tried to avoid volunteering in such a short notice and also probably because the next day was a Saturday (though this is my personal opinion). But I had something different on my mind and during this planning or confusion, I volunteered for it 🤓. I had a project that I had done, back when I was learning Python. So I offered to present it. He agreed to it and asked me to keep the presentation ready.
 
 ### Preparing the Project & Slides
 
@@ -42,7 +42,7 @@ That Friday night, I started searching for the old files which I had used. Final
 
 ### Little About the Basics of My Talk.
 
-The presentation that I gave was on *Learning Data Analysis by Scraping Websites*. During my college days, we heavily used the BeautifulSoup Library in Python to scrape websites for the many personal projects. During this project I got the idea to scrape data from the websites which aggregated movies related data. By doing that, I thought that I could create a list of all movies that I must definitely watch. The movies had to satisfy the following criteria:
+The presentation that I gave was on **Learning Data Analysis by Scraping Websites**. During my college days, we heavily used the BeautifulSoup Library in Python to scrape websites for the many personal projects. During this project I got the idea to scrape data from the websites which aggregated movies related data. By doing that, I thought that I could create a list of all movies that I must definitely watch. The movies had to satisfy the following criteria:
 
 1. Release date post-2000
 2. Rating > 8
@@ -50,7 +50,7 @@ The presentation that I gave was on *Learning Data Analysis by Scraping Websites
 It was not the best idea at that time to scrape websites and then analyse(Data frame). But I learnt a lot of things by scraping data from the website using Beautifulsoup, then analyzing data using Pandas, visualizing data using MatplotLib (a Python library) and finally coming to conclusion about my movies recommedation.
 
 Coming back to the objective - ``` Finding and sorting the movies released between 2000-2017 in the order of relevance ``` (I didn't want to watch movies < 2000).
-Below is the code to scrape [IMDB](http://www.imdb.com/) for movies data from 2000-2017. 
+Below is the code to scrape [IMDB](http://www.imdb.com/) for movies data from 2000-2017.
 
 {% highlight js %}
 from bs4 import BeautifulSoup
@@ -104,17 +104,17 @@ You can see the trends like  ```Maximum Rating - Sorted by Rating```  , ```Year 
 </div>
 
 
-### Take-away from the Talk
+### Takeaway from the Talk
 
 With this method you would have winner's data from the data set. For example, suppose you want to create a Cricket Team(IPLT20) which has the maximum probability to win the match, what you can do is parse the [IPLT20](http://www.iplt20.com/)) website for last 5 years' data and select the top 5 batsmen and 6 bowlers 😎.
 
 
 ### Conclusion
 
-I totally understand that this may not be a best project for the data analysis. I am still learning I showed what had done. I believe that it served my purpose.
+I totally understand that this may not be a best project for the data analysis. I am still learning and I showed what had done. I believe that it served my purpose.
 
 I will be doing more research on data analysis in Python. Thanks for reading this.
-Below are the slides which i used. 
+Below is the slide deck which I had used.
 
 ### Slides:
 <iframe src='http://py.scrolltest.com/#/' height="500px" width="100%" />
