@@ -47,7 +47,7 @@ The presentation that I gave was on **Learning Data Analysis by Scraping Website
 1. Release date post-2000
 2. Rating > 8
 
-It was not the best idea at that time to scrape websites and then analyse(Data frame). But I learnt a lot of things by scraping data from the website using Beautifulsoup, then analyzing data using Pandas, visualizing data using MatplotLib (a Python library) and finally coming to conclusion about my movies recommedation.
+It was not the best idea at that time to scrape websites and then analyze(Data frame). But I learned a lot of things by scraping data from the website using Beautifulsoup, then analyzing data using Pandas, visualizing data using MatplotLib (a Python library) and finally coming to conclusion about my movies recommendation.
 
 Coming back to the objective - ``` Finding and sorting the movies released between 2000-2017 in the order of relevance ``` (I didn't want to watch movies < 2000).
 Below is the code to scrape [IMDB](http://www.imdb.com/) for movies data from 2000-2017.
@@ -111,9 +111,9 @@ With this method you would have winner's data from the data set. For example, su
 
 ### Conclusion
 
-I totally understand that this may not be a best project for the data analysis. I am still learning and I showed what I had done.
+I totally understand that this may not be a best project for the data analysis. I am still learning and I showed what I had done. I will be doing more research on data analysis in Python.
 
-I will be doing more research on data analysis in Python. Thanks for reading this.
+Thanks for reading this.
 Below is the slide deck which I had used.
 
 ### Below is my talk slides:
