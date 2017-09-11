@@ -15,12 +15,12 @@ Recently, I got an opportunity to speak, as a speaker, at PyData. PyData is a te
 
 ### Talks at PyData
 
-There were three talks at PyData, namely **Machine Learning using Tensor Flow**, **Data Layer at Wingify** and mine, **Learning Data Analysis by Scraping Websites**. All the talks were thorough and excellent! In the talk, **Data layer at Wingify** By [Manish Gill](https://twitter.com/mgill25) 🤓, he talked about how we handle millions of requests at Wingify.
+There were three talks at PyData, namely **Machine Learning using Tensor Flow**, **Data Layer at Wingify** and mine, **Learning Data Analysis by Scraping Websites**. All the talks were thorough and excellent! In the talk, **Data layer at Wingify** by [Manish Gill](https://twitter.com/mgill25) 🤓, he talked about how we handle millions of requests at Wingify.
 
 
-### Some of Images of the PyData Hosted by Wingify.
-<script>Galleria.run('#fifth-elephant-gallery');</script>
-<div id="fifth-elephant-gallery" style="height: 600px;">
+### Some of Images of the PyData Meetup Hosted by Wingify
+<script>Galleria.run('#pydata-meetup-gallery');</script>
+<div id="pydata-meetup-gallery" style="height: 600px;">
     <img src="/images/2017/06/0.jpg">
     <img src="/images/2017/06/8.jpg">
     <img src="/images/2017/06/7.jpg">
@@ -33,7 +33,7 @@ There were three talks at PyData, namely **Machine Learning using Tensor Flow**,
 
 ### Background About My Talk
 
-Let me give you a little background. It was the Friday before the PyData Meetup/Conference. Our engineering team was doing its daily tasks. I had just grabbed coffee to alleviate my laziness. Suddenly, our engineering lead came and asked us whether anyone could present on a topic at the PyData that we were to organise the very next day. An initial speaker, who had confirmed earlier, backed out at the last moment because he had fallen sick. I could see that most of the team members tried to avoid volunteering in such a short notice and also probably because the next day was a Saturday (though this is my personal opinion). But I had something different on my mind and during this planning or confusion, I volunteered for it 🤓. I had a project that I had done, back when I was learning Python. So I offered to present it. He agreed to it and asked me to keep the presentation ready.
+Let me give you a little background. It was the Friday before the PyData Meetup/Conference. Our engineering team was doing its daily tasks. I had just grabbed the coffee to alleviate my laziness. Suddenly, our engineering lead came and asked us whether anyone could present on a topic at the PyData that we were to organize the very next day. An initial speaker, who had confirmed earlier, backed out at the last moment because he had fallen sick. I could see that most of the team members tried to avoid volunteering in such a short notice and also probably because the next day was a Saturday (though this is my personal opinion). But I had something different in my mind and during this planning or confusion, I volunteered for it 🤓. I had a project that I had done, back when I was learning Python. So I offered to present it. He agreed to it and asked me to keep the presentation ready.
 
 ### Preparing the Project & Slides
 
@@ -111,12 +111,12 @@ With this method you would have winner's data from the data set. For example, su
 
 ### Conclusion
 
-I totally understand that this may not be a best project for the data analysis. I am still learning and I showed what had done. I believe that it served my purpose.
+I totally understand that this may not be a best project for the data analysis. I am still learning and I showed what I had done.
 
 I will be doing more research on data analysis in Python. Thanks for reading this.
 Below is the slide deck which I had used.
 
-### Slides:
+### Below is my talk slides:
 <iframe src='http://py.scrolltest.com/#/' height="500px" width="100%" />
 
 
