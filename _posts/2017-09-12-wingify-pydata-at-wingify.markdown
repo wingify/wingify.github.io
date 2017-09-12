@@ -6,7 +6,7 @@ authorslug: pramod_dutta
 author: Pramod Dutta
 ---
 
-<img src="/images/2017/06/6.jpg">
+<img src="/images/2017/06/pydata_6.jpg">
 
 
 ### About PyData
@@ -21,14 +21,14 @@ There were three talks at PyData, namely **Machine Learning using Tensor Flow**,
 ### Some of Images of the PyData Meetup Hosted by Wingify.
 <script>Galleria.run('#pydata-meetup-gallery');</script>
 <div id="pydata-meetup-gallery" style="height: 600px;">
-    <img src="/images/2017/06/0.jpg">
-    <img src="/images/2017/06/8.jpg">
-    <img src="/images/2017/06/7.jpg">
-    <img src="/images/2017/06/2.jpg">
-    <img src="/images/2017/06/1.jpg">
-    <img src="/images/2017/06/5.jpg">
-    <img src="/images/2017/06/4.jpg">
-    <img src="/images/2017/06/9.jpg">
+    <img src="/images/2017/06/pydata_0.jpg">
+    <img src="/images/2017/06/pydata_8.jpg">
+    <img src="/images/2017/06/pydata_7.jpg">
+    <img src="/images/2017/06/pydata_2.jpg">
+    <img src="/images/2017/06/pydata_1.jpg">
+    <img src="/images/2017/06/pydata_5.jpg">
+    <img src="/images/2017/06/pydata_4.jpg">
+    <img src="/images/2017/06/pydata_9.jpg">
 </div>
 
 ### Background About My Talk
@@ -85,21 +85,21 @@ You can see the trends like  ```Maximum Rating - Sorted by Rating```  , ```Year 
 
 
 <div style="text-align:center; margin: 10px;">
-  <img src="/images/2017/06/1_M.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+  <img src="/images/2017/06/pydata_1_M.png" style="box-shadow: 2px 2px 10px 1px #aaa">
   <div style="margin: 10px;"><b>DataFrame  - Rating is Set as Index</b></div>
 </div>
 
 <br>
 
 <div style="text-align:center; margin: 10px;">
-  <img src="/images/2017/06/tt.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+  <img src="/images/2017/06/pydata_tt.png" style="box-shadow: 2px 2px 10px 1px #aaa">
   <div style="margin: 10px;"><b>Maximum Rating - Sorted by Rating</b></div>
 </div>
 
 <br>
 
 <div style="text-align:center; margin: 10px;">
-  <img src="/images/2017/06/graph.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+  <img src="/images/2017/06/pydata_graph.png" style="box-shadow: 2px 2px 10px 1px #aaa">
   <div style="margin: 10px;"><b>Year Vs Rating Trend</b></div>
 </div>
 
