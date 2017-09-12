@@ -42,7 +42,7 @@ That Friday night, I started searching for the old files which I had used. Final
 
 ### Little About the Basics of My Talk.
 
-The presentation that I gave was on **Learning Data Analysis by Scraping Websites**. During my college days, we heavily used the BeautifulSoup Library in Python to scrape websites for the many personal projects. During this project I got the idea to scrape data from the websites which aggregated movies related data. By doing that, I thought that I could create a list of all movies that I must definitely watch. The movies had to satisfy the following criteria:
+The presentation that I gave was on **Learning Data Analysis by Scraping Websites**. During my college days, we heavily used the BeautifulSoup Library in Python to scrape websites for the many personal projects. During this project, I got the idea to scrape data from the websites which aggregated movies related data. By doing that, I thought that I could create a list of all movies that I must definitely watch. The movies had to satisfy the following criteria:
 
 1. Release date >= 2000
 2. Rating > 8
@@ -77,9 +77,9 @@ if __name__=="__main__":
     main()
 {% endhighlight %}
 
-[Click here](https://github.com/PramodDutta/ScrapToDataAnalysis) to have a look for the full source code.
+[Click here](https://github.com/PramodDutta/ScrapToDataAnalysis) to have a look at the full source code.
 
-You can see the trends like  ```Maximum Rating - Sorted by Rating```  , ```Year Vs Rating Trend```
+You can see the trends like  ```Maximum Rating - Sorted by Rating```, ```Year Vs Rating Trend```
 
 
 
@@ -104,7 +104,7 @@ You can see the trends like  ```Maximum Rating - Sorted by Rating```  , ```Year 
 </div>
 
 
-### Takeaway from the Talk
+### Take away from the Talk
 
 With this method, you would have winner's data from the data set. For example, suppose you want to create a Cricket Team(IPLT20) which has the maximum probability to win the match, what you can do is parse the [IPLT20](http://www.iplt20.com/)) website for last 5 years' data and select the top 5 batsmen and 6 bowlers 😎.
 
