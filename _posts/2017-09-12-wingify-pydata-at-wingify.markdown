@@ -117,8 +117,8 @@ I will be doing more research on data analysis in Python. Thanks for reading thi
 Below is my talk slides:
 
 ### Slides:
-<iframe src='http://py.scrolltest.com/#/' height="500px" width="100%" />
-
+Slides :- 
+<iframe src="//slides.com/pramoddutta-1/deck/embed" width="100%" height="600px" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 
 
