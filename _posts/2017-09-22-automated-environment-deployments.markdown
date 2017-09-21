@@ -14,15 +14,15 @@ Shipping a bug-free feature is always important in every release. To ensure this
 
 With multiple features in development simultaneously and multiple environments to deploy, automated deployment becomes very important to ensure frictionless and fast feature lifecycle. In this post, I'll try to explain how to manage all these environment deployments through automation, especially for our product VWO.
 
-## Testapps
+## Tests
 
-As mentioned above, *tests* are very lightweight environments which developers generally create to share their WIP feature branch with other developers, QA or someone from marketing/product to gather feedback. Our app consists of various components: frontend, main-backend and various other micro-services. So each *test* environment is a combination of different branches from each of the constituent components. For example our app have following components: frontend, backend and Service-1. So our *tests* can look like so:
+As mentioned above, *tests* are very lightweight environments which developers generally create to share their WIP feature branch with other developers, QA or someone from marketing/product to gather feedback. Our app consists of various components: frontend, main-backend and various other micro-services. So each *test* environment is a combination of different branches from each of the constituent components. For example our app have following components: frontend, backend and Service-1. So our *tests* can look like:
 
 Test #1 - *master* (frontend) + *feature-notifications* (backend) + *master* (service-1)
 
 Test #2 - *feature-auth* (frontend) + *feature-auth* (backend) + *master* (service-1)
 
-And as these testapp should have a unique sharable URL, they can be given names like: `feat1.vwo.com` or `heatmap-optimizations.vwo.com`
+And as these *tests* should have a unique sharable URL, they can be given names like: `feat1.vwo.com` or `heatmap-optimizations.vwo.com`
 
 ### Deployment
 
@@ -56,7 +56,7 @@ So it's similar to a *test* deployment, except that before deploying it required
 
 ![](https://www.dropbox.com/s/4x3g4gapyz61chw/Screenshot%202017-08-28%2010.53.33.png?dl=0)
 
-Note: While building a branch we also inform the job about the environment to build for (eg. stagingapp above) because right now the code needs to be a bit tweaked according to the domain its deployed on.
+Note: While building a branch we also inform the job about the environment to build for (eg. *stagingapp* above) because right now the code needs to be a bit tweaked according to the domain its deployed on.
 
 And once *Ramukaka* confirms a successful build, the developer can deploy the *staging* with that branch:
 
@@ -64,7 +64,7 @@ And once *Ramukaka* confirms a successful build, the developer can deploy the *s
 
 ### Some more commands
 
-As I had mentioned, we have just one *staging* (single outlet to production). Therefore, each deployment overwrites the previous deployment. And so it becomes important that developers do not overwrite each other's deployment by mistake. To prevent this, we have an additional command in *Ramukaka* called `currentBranch`. Through this command anyone can check which branch is deployed for a particular component on the *staging*. Eg. if I need to check the frontend branch on stagingapp, I would do so:
+As I had mentioned, we have just one *staging* (single gateway to production). Therefore, each deployment overwrites the previous deployment. And so it becomes important that developers do not overwrite each other's deployment by mistake. To prevent this, we have an additional command in *Ramukaka* called `currentBranch`. Through this command anyone can check which branch is deployed for a particular component on the *staging*. Eg. if I need to check the frontend branch on *staging*, I would do so:
 
 ![](https://www.dropbox.com/s/ekfge22ie0pvqtv/Screenshot%202017-08-28%2011.01.29.png?dl=0)
 
