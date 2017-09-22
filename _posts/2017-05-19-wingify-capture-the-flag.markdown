@@ -64,7 +64,7 @@ Last week, Wingify hosted a [PyData Meetup][3] and attendees played a quick roun
     <img src="/images/2017/05/ctf_meetup.jpg">
     <img src="/images/2017/05/ctf_meetup2.jpg">
     <img src="/images/2017/05/ctf_meetup3.jpg">
-    <img src="/images/2017/05/ctf_scoreboard.jpg">
+    <img src="/images/2017/05/ctf_scoreboard.JPG">
     <img src="/images/2017/05/ctf_prize1.jpg">
     <img src="/images/2017/05/ctf_prize2.jpg">
 </div>
