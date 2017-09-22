@@ -40,7 +40,7 @@ Now, even this job would require the developer to open Jenkins webapp, go to job
 
 With Ramukaka in the picture, our *test* deployment looks like so:
 
-![](https://www.dropbox.com/s/rbr1vpr7ambnpy0/Screenshot%202017-08-28%2010.45.14.png)
+![](/images/2017/09/autodeploy-1.png)
 
 Note: We have 3 components and have only 2 branches are specified. That is because the developer can skip a component if the branch to be deployed is default i.e. *master*. Also, the same command just pulls the latest changes in case the *test* instance already exists.
 
@@ -54,19 +54,19 @@ Neat, right?
 
 So it's similar to a *test* deployment, except that before deploying it required the developer to build his/her branch like so:
 
-![](https://www.dropbox.com/s/4x3g4gapyz61chw/Screenshot%202017-08-28%2010.53.33.png?dl=0)
+![](/images/2017/09/autodeploy-2.png)
 
 Note: While building a branch we also inform the job about the environment to build for (eg. *stagingapp* above) because right now the code needs to be a bit tweaked according to the domain its deployed on.
 
 And once *Ramukaka* confirms a successful build, the developer can deploy the *staging* with that branch:
 
-![](https://www.dropbox.com/s/06gfn1iyd5523av/Screenshot%202017-08-28%2010.54.50.png?dl=0)
+![](/images/2017/09/autodeploy-3.png)
 
 ### Some more commands
 
 As I had mentioned, we have just one *staging* (single gateway to production). Therefore, each deployment overwrites the previous deployment. And so it becomes important that developers do not overwrite each other's deployment by mistake. To prevent this, we have an additional command in *Ramukaka* called `currentBranch`. Through this command anyone can check which branch is deployed for a particular component on the *staging*. Eg. if I need to check the frontend branch on *staging*, I would do so:
 
-![](https://www.dropbox.com/s/ekfge22ie0pvqtv/Screenshot%202017-08-28%2011.01.29.png?dl=0)
+![](/images/2017/09/autodeploy-4.png)
 
 Now the developer can take appropriate actions based on the deployed branch.
 
@@ -80,7 +80,7 @@ The production is no different from the *staging*. Once the final round of testi
 
 All the 3 tasks are handled through a single command on *Ramukaka*:
 
-![](https://www.dropbox.com/s/mduhqnwikd9fmn8/Screenshot%202017-08-28%2011.08.34.png?dl=0)
+![](/images/2017/09/autodeploy-5.png)
 
 And the frontend gets deployed on production, just like that!
 
