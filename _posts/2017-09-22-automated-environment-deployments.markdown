@@ -36,7 +36,7 @@ Once this job runs, it pulls on all the above 3 branches on a remote server, doe
 
 ### More automation
 
-Now, even this job would require the developer to open Jenkins webapp, go to job page, put in inputs and then run it. But we avoid that too - enter **Ramukaka**!. Ramukaka is our Skype bot ([that we have open-sourced as well](https://github.com/wingify/heybot)) which we use for various grunt tasks, such as running a Jenkins job!
+Now, even this job would require the developer to open Jenkins webapp, go to job page, put in inputs and then run it. But we avoid that too - enter **Ramukaka**! Ramukaka is our Skype bot ([that we have open-sourced as well](https://github.com/wingify/heybot)) which we use for various grunt tasks, such as running a Jenkins job!
 
 With Ramukaka in the picture, our *test* deployment looks like so:
 
@@ -56,7 +56,7 @@ So it's similar to a *test* deployment, except that before deploying it required
 
 ![](/images/2017/09/autodeploy-2.png)
 
-Note: While building a branch we also inform the job about the environment to build for (eg. *stagingapp* above) because right now the code needs to be a bit tweaked according to the domain its deployed on.
+*Note:* While building a branch we also inform the job about the environment to build for (eg. *stagingapp* above) because right now the code needs to be a bit tweaked according to the domain its deployed on.
 
 And once *Ramukaka* confirms a successful build, the developer can deploy the *staging* with that branch:
 
