@@ -10,11 +10,11 @@ author: Varun Malhotra
 
 ![](/images/2017/10/migration.png)
 
-For the past couple of years, we have been using [require.js](http://requirejs.org/) for module loading and [Grunt](https://gruntjs.com/) for automating tasks on front-end, for one out of many projects we have in Wingify. The project has a huge code-base and has many independent components inside it with some shared utilities. As we are constantly developing features on a regular basis, the code-base is also getting extended but we didn't have any concrete build system which could be scaled upon adding newer components.
+For the past couple of years, we have been using [require.js](http://requirejs.org/) for module loading and [Grunt](https://gruntjs.com/) for automating tasks on front-end, for one out of many projects we have in Wingify. The project has a huge code-base and has many independent components inside it with some shared utilities. As we are constantly developing features on a regular basis, the code-base is getting larger as well but we didn't have any concrete build system which could be scaled upon adding newer components.
 
-**Require.js** was being used for having a good code-structure and managing modules and their loading. All the different modules were having their own `require-config.js` file for defining rules for a particular module.
+**Require.js** was being used for good code-structuring, managing modules and their loading. All the different modules were having their own `require-config.js` file to define rules for a particular module.
 
-**Grunt** was being used for automating different tasks required to speed up mundane work. We were having a number of tasks like a [require-amdclean](https://github.com/gfranko/amdclean) task, concatenating different script / CSS files, minification of files, cache-busting mechanism and so on.
+**Grunt** was being used for automating different tasks required to speed up mundane work. We had a number of tasks like the [require-amdclean](https://github.com/gfranko/amdclean) task, concatenating different script / CSS files, minification of files, cache-busting mechanism and so on.
 
 Following are some benefits we were getting from the `require-amdclean` task:
 
@@ -23,13 +23,13 @@ Following are some benefits we were getting from the `require-amdclean` task:
 * Get rid of file size/source code readability concerns.
 * It was a great fit to be used as a standalone Javascript library, which is exactly our case.
 
-Everything was working as expected but maintainance, performance, and scale were the issues. We had so many healthy discussions regarding improving things and thus we thought of upgrading our tech stack too. Also, as I mentioned we didn't have the concrete build system; it was the right time to investigate further. We were ready to spend some quality time in researching for technologies which could fit in our build system. [Gaurav Nanda](https://twitter.com/gauravmuk) and I took a break from our daily chores and read a lot of articles/blogs and the *not-so-useful* official docs to get a good command over various technologies. Migrating from `Grunt` to `Gulp` wasn't helping us since build time was nearly the same. The task which was taking a lot of time was the `require-amdclean` task, taking around `10 seconds` even for adding just a single character like `;` while working in the development environment.
+Everything was working as expected but maintenance, performance, and scale were the issues. We had so many healthy discussions regarding improving things and thus we thought of upgrading our tech stack too. Also, as I mentioned we didn't have a concrete build system; it was the right time to investigate further. We were ready to spend some quality time in researching technologies which could fit in our build system. [Gaurav Nanda](https://twitter.com/gauravmuk) and I took a break from our daily chores and read many articles/blogs and the *not-so-useful* official docs to get a good command over various technologies. Migrating from `Grunt` to `Gulp` wasn't helping us since build time was nearly the same. The task which took a lot of time was the `require-amdclean` task, taking around `10 seconds` even for adding just a single character like `;` while working in the development environment.
 
 ### Migrating from NPM to Yarn - First step towards a new journey
 
-After reading about [Yarn](https://yarnpkg.com/en/), the team was really curious to play with this yet new package manager aka dependency manager. When we benchmarked the results, we were literally stunned by the time difference between NPM and Yarn in fetching up resources. Yarn achieves this fastness by introducing parallelism and its performance and security via maintaining a `yarn.lock` file.
+After reading about [Yarn](https://yarnpkg.com/en/), the team was really curious to play with this yet new package manager aka dependency manager. When we benchmarked the results, we were literally stunned by the time difference between NPM and Yarn in fetching up resources. Yarn achieves this speed by introducing parallelism and its performance and security via maintaining a `yarn.lock` file.
 
-For a total of `34` packages in total, following stats would please your eyes too :)
+For a total of `34` packages in total, the following stats would please your eyes too :)
 
 > yarn@1.0.2
 > npm@3.10.10
@@ -42,7 +42,7 @@ For a total of `34` packages in total, following stats would please your eyes to
 |   `yarn` *(without yarn.lock file)*     | **1 minute 33 seconds** |
 |   `yarn` *(with yarn.lock file)*        | **16 seconds** |
 
-#### Running commands with already installed packages
+#### Running the commands with already installed packages
 
 | Package manager                         | Time taken     |
 |-----------------------------------------|----------------|
@@ -51,19 +51,19 @@ For a total of `34` packages in total, following stats would please your eyes to
 
 ![](/images/2017/10/yarn-benchmarking.png)
 
-Yarn offers a lot more besides its fast speed, security, and reliability. Check [these](https://yarnpkg.com/en/docs/cli/) commands Yarn offers us.
+Yarn offers a lot more besides its fast speed, security, and reliability. Check [these](https://yarnpkg.com/en/docs/cli/) commands Yarn offers.
 
-Since we were using [bower](( https://bower.io/)) too, our first step was to port all the dependencies and dev-dependencies listed in our `bower.json` file to `package.json`. This was a time-consuming task since we had a huge list of packages. After successful porting of packages and validating the version numbers with the previous packages, we were all set to switch to Yarn. This also helped in having just one file for managing packages. We no longer are using bower. Even bower's [official site](https://bower.io/) recommends using Yarn and Webpack :)
+Since we were using [bower](( https://bower.io/)) too, our first step was to port all the dependencies and dev-dependencies listed in our `bower.json` file to `package.json`. This was a time-consuming task since we had a huge list of packages. After successful porting of packages and validating the version numbers with the previous packages, we were all set to switch to Yarn. This also helped in keeping just one file for managing packages. We are no longer using bower. Even bower's [official site](https://bower.io/) recommends using Yarn and Webpack :)
 
-### Why switching to Webpack 2
+### Why switch to Webpack 2
 
 It wasn't an easy task to accomplish since Webpack is a module bundler rather than a task runner. We were so accustomed to using task runners along with the old-fashioned `require.js` based module management that it took a good amount of time figuring out how to proceed with our mini-app's new build system.
 
-Apart from having numerous benefits of using Webpack, the most notable features, especially for our codebase and the build system, were:
+Apart from the numerous benefits of using Webpack, the most notable features, especially for our codebase and the build system, were:
 
-1. Easy integration with `npm`/`yarn` and seamless handling of multiple module formats. We are now using two of its kind, one is `UMD` and the other one is `this` target option (we have such a requirement).
+1. Easy integration with `npm`/`yarn` and seamless handling of multiple module formats. We now use two of its kind, one is `UMD` and the other one is `this` target option (we have such a requirement).
 2. Single main entry and one single bundled output - exactly what we needed.
-3. Cache bursting(hashing) - Very very easy to implement and get benefitted.
+3. Cache busting(hashing) - Very very easy to implement and get benefitted.
 4. Building different, independent, and standalone modules simultaneously. Thanks to [parallel-webpack](https://github.com/trivago/parallel-webpack)!
 5. Using webpack-loaders -
    * [babel-loader](https://github.com/babel/babel-loader) - so that we could start writing `ES6` compatible code even with our `require.js` module management system.
@@ -81,7 +81,7 @@ Problems which we need to tackle were:
 1. Different modules in the same app, having different configuration files
 2. Webpack config should be modular in itself and be able to run multiple configs at once so that we should be able to add/remove a new module easily without affecting any existing one.
 
-#### Installing Wepack
+#### Installing Webpack
 
 **Via Yarn** *(recommended)*
 
@@ -179,7 +179,7 @@ We used `expose-loader` and `imports-loader` depending on the use-case.
 
 [imports-loader](https://github.com/webpack-contrib/imports-loader) - is useful for third-party modules that rely on global variables like $ or this being the window object. The imports loader can add the necessary require('whatever') calls, so those modules work with Webpack.
 
-This is an obvious thing that we were having same third-party libraries, wrappers over external libraries, and self-baked useful utilities shared across different modules. This means that our module-specific webpack config file would have the same set of repeated rules and aliases. Code duplication might seem a good fit here for readability but is really painful to maintain in a long run.
+This is an obvious thing that we had same third-party libraries, wrappers over external libraries, and self-baked useful utilities shared across different modules. This means that our module-specific webpack config file would have the same set of repeated rules and aliases. Code duplication might seem a good fit here for readability but is really painful to maintain in a long run.
 
 Below is how we managed to share the common module rules and resolve aliases across the different modules.
 
@@ -258,7 +258,7 @@ module.exports = {
 };
 ```
 
-We now had a common file where we could easily add/update/remove and rule and its corresponding alias. Now we needed to have a utility which combines the common rules and aliases with the already defined rules and alaises in a particular modules' config file.
+We now had a common file where we could easily add/update/remove and rule and its corresponding alias. Now we needed to have a utility which combines the common rules and aliases with the already defined rules and aliases in a particular modules' config file.
 
 ```
 // Filename: rulesAndAliasUtil.js
