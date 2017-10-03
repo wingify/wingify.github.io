@@ -32,7 +32,7 @@ With the topic of the DevFest clear, finding speakers was the next challenge, or
 2. **[Saurabh Shandilya](https://twitter.com/shadyshandilya) spoke on ToR 101**
 3. **[Deepak Pathania](https://twitter.com/pathaniadeepak7) spoke on Performance Optimization for the mobile web**
 4. **[Neha Sharma](https://twitter.com/hellonehha) spoke on Web apps and Performance**
-5. **[Manish Gill](https://twitter.com/mgill25) spoke on Gyaan in Scalability**
+5. **[Manish Gill](https://twitter.com/mgill25) spoke on [Gyaan in Scalability](https://speakerdeck.com/mgill25/lessons-in-scalability)**
 
 <script>Galleria.run('#devfest-speakers-gallery');</script>
 <div id="devfest-speakers-gallery" style="height: 600px;">
