@@ -64,7 +64,7 @@ With a quick lunch, after Deepak's talk, it was Capture the Flag time! [Dheeraj 
 <script>Galleria.run('#devfest-capture-the-flag-gallery');</script>
 <div id="devfest-capture-the-flag-gallery" style="height: 600px;">
 	<img src="/images/2017/10/devfest-ctf-1.jpg">
-	<img src="/images/2017/10/devfest-ctf-2.jpg">
+	<img src="/images/2017/10/devfest-ctf-2.JPG">
 </div>
 
 Succeeding the CTF, was [Neha Sharma](https://twitter.com/hellonehha) who spoke about **Web Apps and Performance**. Neha is a tech speaker and founder of the renowned JSLovers Community and we were lucky to have her in the list of speakers. Given the breadth of her topic and the limited time she had for her talk, she could only give an abridged snippet of how developers can improve their website's' performance by using several best practices.
