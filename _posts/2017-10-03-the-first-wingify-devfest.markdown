@@ -75,9 +75,9 @@ We finally finished the day with Code in the Dark. It was a long long day, and w
 
 <script>Galleria.run('#devfest-code-in-the-dark-gallery');</script>
 <div id="devfest-code-in-the-dark-gallery" style="height: 600px;">
-	<img src="/images/2017/10/devfest-citd-1.jpg">
-	<img src="/images/2017/10/devfest-citd-2.jpg">
-	<img src="/images/2017/10/devfest-citd-3.jpg">
+	<img src="/images/2017/10/devfest-citd-1.JPG">
+	<img src="/images/2017/10/devfest-citd-2.JPG">
+	<img src="/images/2017/10/devfest-citd-3.JPG">
 </div>
 
 All that, in one day. Achievement level: 50,000.
@@ -90,16 +90,16 @@ Some moments captured during the DevFest:
 
 <script>Galleria.run('#devfest-day-gallery');</script>
 <div id="devfest-day-gallery" style="height: 600px;">
-	<img src="/images/2017/10/devfest-gallery-1.jpg">
-	<img src="/images/2017/10/devfest-gallery-2.jpg">
-	<img src="/images/2017/10/devfest-gallery-3.jpg">
-	<img src="/images/2017/10/devfest-gallery-4.jpg">
+	<img src="/images/2017/10/devfest-gallery-1.JPG">
+	<img src="/images/2017/10/devfest-gallery-2.JPG">
+	<img src="/images/2017/10/devfest-gallery-3.JPG">
+	<img src="/images/2017/10/devfest-gallery-4.JPG">
 	<img src="/images/2017/10/devfest-gallery-5.jpg">
-	<img src="/images/2017/10/devfest-gallery-6.jpg">
-	<img src="/images/2017/10/devfest-gallery-7.jpg">
-	<img src="/images/2017/10/devfest-gallery-8.jpg">
-	<img src="/images/2017/10/devfest-gallery-9.jpg">
-	<img src="/images/2017/10/devfest-gallery-10.jpg">
+	<img src="/images/2017/10/devfest-gallery-6.JPG">
+	<img src="/images/2017/10/devfest-gallery-7.JPG">
+	<img src="/images/2017/10/devfest-gallery-8.JPG">
+	<img src="/images/2017/10/devfest-gallery-9.JPG">
+	<img src="/images/2017/10/devfest-gallery-10.JPG">
 </div>
 
 ### Conclusion
