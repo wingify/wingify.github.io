@@ -84,7 +84,7 @@ All the 3 tasks are handled through a single command on *Ramukaka*:
 
 And the frontend gets deployed on production, just like that!
 
-Note: Right now only the frontend deployment is automated for production. But we plan to do it for all the components of the app.
+*Note:* Right now only the frontend deployment is automated for production. But we plan to do it for all the components of the app.
 
 ## Going Ahead
 
