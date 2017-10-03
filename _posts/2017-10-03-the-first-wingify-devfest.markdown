@@ -107,4 +107,4 @@ Some moments captured during the DevFest:
 
 Our quest to have a community of like-minded people has just started. The first instance of the DevFest has been a stepping-stone for us and it'll only get better from here. Stay tuned for the next DevFest. It's going to be legen..... wait for it!
 
-PS: A big shoutout to the members of the organising team; [Akash Tyagi](https://twitter.com/akashtyagi027), [Dheeraj Joshi](https://twitter.com/dheerajhere), [Jatin Makhija](https://twitter.com/notjustbond), [Kushagra Gour](https://twitter.com/chinchang457) and [Sahil Bathla](https://twitter.com/sahilbathla) for all the hard work they’ve put into making the DevFest a success.
+PS: A big shoutout to the members of the organising team; [Akash Tyagi](https://twitter.com/akashtyagi027), [Dheeraj Joshi](https://twitter.com/dheerajhere), [Jatin Makhija](https://twitter.com/notjustbond), [Kushagra Gour](https://twitter.com/chinchang457), [Sahil Bathla](https://twitter.com/sahilbathla) and also the volunteers for all the hard work they’ve put into making the DevFest a success.
