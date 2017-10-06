@@ -10,7 +10,7 @@ author: Varun Malhotra
 
 ![](/images/2017/10/migration.png)
 
-For the past couple of years, we have been using [require.js](http://requirejs.org/) for module loading and [Grunt](https://gruntjs.com/) for automating tasks on front-end, for one out of many projects we have in Wingify. The project has a huge code-base and has many independent components inside it with some shared utilities. As we are constantly developing features on a regular basis, the code-base is getting larger as well but we didn't have any concrete build system which could be scaled upon adding newer components.
+For the past couple of years, we have been using [require.js](http://requirejs.org/) for module loading and [Grunt](https://gruntjs.com/) for automating tasks on front-end, for one out of many projects we have in Wingify. The project has a huge code-base and has many independent components inside it with some shared utilities. Also, there was no concrete build system which could be scaled upon adding new components.
 
 **Require.js** was being used for good code-structuring, managing modules and their loading. All the different modules were having their own `require-config.js` file to define rules for a particular module.
 
@@ -72,13 +72,13 @@ Apart from the numerous benefits of using Webpack, the most notable features, es
 
 ### Converting to Webpack 2 - A transcendent journey ahead
 
-In the beginning, it looked like just porting the `require.js` configuration to Webpack and we're done. A big NO! This thought is absolutely wrong. There were so many scenarios we had to deal with. We will discuss this in detail as we move along.
+In the beginning, it looked like just porting the `require.js` configuration to Webpack and we're done. A big NO! This thought was absolutely wrong. There were so many scenarios we had to deal with. We will discuss this in detail as we move along.
 
-First thing first, a clear understanding of what exactly Webpack is and how does it bundle your modules is must. Simply copy-pasting the configuration file from the official website and tweaking it won't help in long run. One must be very clear regarding the fundamentals on which Webpack is built upon.
+First thing first, a clear understanding of what exactly Webpack is and how does it bundle the modules are must. Simply copy-pasting the configuration file from the official website and tweaking it won't help in a long run. One must be very clear regarding the fundamentals on which Webpack is built upon.
 
-Problems which we need to tackle were:
+Problems which we needed to tackle were:
 
-1. Different modules in the same app, having different configuration files
+1. Different modules in the same app, having different configuration files.
 2. Webpack config should be modular in itself and be able to run multiple configs at once so that we should be able to add/remove a new module easily without affecting any existing one.
 
 #### Installing Webpack
@@ -181,9 +181,9 @@ We used `expose-loader` and `imports-loader` depending on the use-case.
 
 This is an obvious thing that we had same third-party libraries, wrappers over external libraries, and self-baked useful utilities shared across different modules. This means that our module-specific webpack config file would have the same set of repeated rules and aliases. Code duplication might seem a good fit here for readability but is really painful to maintain in a long run.
 
-Below is how we managed to share the common module rules and resolve aliases across the different modules.
+Let's discuss how we managed to share the common module rules and resolve aliases across the different modules.
 
-This is a generic utility file which tells has two methods. One outputs whether a passed argument is an Object and the other one outputs whether its an array.
+Below is a generic utility file’s code which has two methods. One outputs whether a passed argument is an Object and the other one outputs whether it’s an array.
 
 ```
 // Filename: GenericUtils.js
@@ -258,7 +258,7 @@ module.exports = {
 };
 ```
 
-We now had a common file where we could easily add/update/remove and rule and its corresponding alias. Now we needed to have a utility which combines the common rules and aliases with the already defined rules and aliases in a particular modules' config file.
+We now had a common file where we could easily add/update/remove any rule and its corresponding alias. Now we needed to have a utility which combines the common rules and aliases with the already defined rules and aliases in a particular modules' config file.
 
 ```
 // Filename: rulesAndAliasUtil.js
@@ -540,7 +540,7 @@ module.exports = {
 };
 ```
 
-The above configuration output two bundled CSS files i.e. css-file-1.min.css & css-file.min.css, and css-file-1-8fb1ed.min.css & css-file-2-6ed3c1.min.css if its a prod build.
+The above configuration outputs two bundled CSS files i.e. css-file-1.min.css & css-file.min.css, and css-file-1-8fb1ed.min.css & css-file-2-6ed3c1.min.css if it's a prod build.
 
 We are using [ExtractTextPlugin](https://github.com/webpack-contrib/extract-text-webpack-plugin), which extracts text from a bundle, or bundles, into a separate file, along with [css-loader](https://github.com/webpack-contrib/css-loader)
 
@@ -552,12 +552,13 @@ options: {
 }
 ```
 
-Following are few more plugins we are using:
+Few more plugins that we are using are:
 
 1. [CleanWebpackPlugin](https://github.com/johnagan/clean-webpack-plugin) - to remove/clean the styles folder inside the build folder before building
 
-2. [ManifestPlugin](https://github.com/danethurber/webpack-manifest-plugin) - for generating an asset manifest
-To generate a file in JSON format so that the hash appended(prod build) can be later read by another file. Eg. one CSS file is shared among different modules so its hash needs to be stored somewhere to be read later by modules to update the hash in corresponding `index.html` files.
+2. [ManifestPlugin](https://github.com/danethurber/webpack-manifest-plugin) - for generating an asset manifest file with a mapping of all source file names to their corresponding output file
+This plugin generates a JSON file so that the hash appended(prod build) after a JS file can be later read by another file. Eg. one CSS file is shared among different modules so its hash needs to be stored somewhere to be read later by other modules to update the hash in their corresponding `index.html` files.
+
 
 3. [CopyWebpackPlugin](https://github.com/kevlened/copy-webpack-plugin) - to copy individual files or entire directories to the build directory
 
