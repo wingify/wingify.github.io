@@ -2,7 +2,7 @@
 layout: post
 title: "Migrating towards Yarn and Webpack"
 excerpt: How we migrated to Yarn and Webpack at VWO.
-authorslug: softvar
+authorslug: s0ftvar
 author: Varun Malhotra
 ---
 
@@ -691,7 +691,7 @@ In our `package.json` file, we created different scripts for running either a de
 
 ### Upgrading to 3
 
-According to Sean T. Larkin in the [release blog post](https://medium.com/webpack/webpack-3-official-release-15fd2dd8f07b): “Migrating from webpack 2 to 3, should involve no effort beyond running the upgrade commands in your terminal. We are using `Webpack@3.6.0` and `yarn@1.0.2` now :)
+According to Sean T. Larkin in the [release blog post](https://medium.com/webpack/webpack-3-official-release-15fd2dd8f07b): "webpack 3: Official Release!!", migrating from webpack 2 to 3 should involve no effort beyond running the upgrade commands in your terminal. We are using `Webpack@3.6.0` and `yarn@1.0.2` now :)
 
 ### Last but not the least - Stepping towards a long journey
 
@@ -702,4 +702,6 @@ This was just the beginning of stepping towards researching different technologi
 * [Getting Started with Webpack 2](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783)
 * [Configuring webpack for production: High Performance webpack config](https://www.codementor.io/drewpowers/high-performance-webpack-config-for-front-end-delivery-90sqic1qa)
 
-We would be willing to have your feedback and would love to take upon queries, suggestions, or any doubt regarding this article.
+Should you have any feedback regarding this article, please share your thoughts via comments.
+
+If you like this article, do share it on social networking sites.
