@@ -8,7 +8,7 @@ author: Varun Malhotra
 
 ## Migrating towards Yarn and Webpack
 
-![](/images/2017/10/migration.png)
+![](/images/2017/10/migration.jpg)
 
 For the past couple of years, we have been using [require.js](http://requirejs.org/) for module loading and [Grunt](https://gruntjs.com/) for automating tasks on front-end, for one out of many projects we have in Wingify. The project has a huge code-base and has many independent components inside it with some shared utilities. Also, there was no concrete build system which could be scaled upon adding new components.
 
