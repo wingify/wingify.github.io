@@ -702,7 +702,7 @@ This was just the beginning of stepping towards researching different technologi
 * [Getting Started with Webpack 2](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783)
 * [Configuring webpack for production: High Performance webpack config](https://www.codementor.io/drewpowers/high-performance-webpack-config-for-front-end-delivery-90sqic1qa)
 
-### Before you go...
+### Feedback
 
 Should you have any feedback regarding this article, please share your thoughts via comments.
 
