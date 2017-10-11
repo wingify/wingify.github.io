@@ -538,7 +538,7 @@ module.exports = {
 };
 {% endhighlight %}
 
-The above configuration outputs two bundled CSS files i.e. css-file-1.min.css & css-file.min.css, and css-file-1-8fb1ed.min.css & css-file-2-6ed3c1.min.css if it's a prod build.
+The above configuration outputs two bundled CSS files i.e. `css-file-1.min.css` & `css-file.min.css`, and `css-file-1-8fb1ed.min.css` & `css-file-2-6ed3c1.min.css` if it's a prod build.
 
 We are using [ExtractTextPlugin](https://github.com/webpack-contrib/extract-text-webpack-plugin), which extracts text from a bundle, or bundles, into a separate file, along with [css-loader](https://github.com/webpack-contrib/css-loader)
 
