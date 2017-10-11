@@ -6,9 +6,7 @@ authorslug: varun_malhotra
 author: Varun Malhotra
 ---
 
-## Migrating towards Yarn and Webpack
-
-![](/images/2017/10/migration.jpg)
+![](/images/2017/10/migrating-towards-yarn-webpack-header.jpg)
 
 For the past couple of years, we have been using [require.js](http://requirejs.org/) for module loading and [Grunt](https://gruntjs.com/) for automating tasks on front-end, for one out of many projects we have in Wingify. The project has a huge code-base and has many independent components inside it with some shared utilities. Also, there was no concrete build system which could be scaled upon adding new components.
 
@@ -49,7 +47,7 @@ For a total of `34` packages in total, the following stats would please your eye
 |    `npm`                                | **7 seconds** |
 |   `yarn` *(with yarn.lock file)*        | **6 seconds** |
 
-![](/images/2017/10/yarn-benchmarking.png)
+![](/images/2017/10/migrating-towards-yarn-webpack-benchmark.png)
 
 Yarn offers a lot more besides its fast speed, security, and reliability. Check [these](https://yarnpkg.com/en/docs/cli/) commands Yarn offers.
 
@@ -689,9 +687,9 @@ In our `package.json` file, we created different scripts for running either a de
 }
 {% endhighlight %}
 
-### Upgrading to 3
+### Upgrading to `Webpack@3`
 
-According to Sean T. Larkin in the [release blog post](https://medium.com/webpack/webpack-3-official-release-15fd2dd8f07b): "webpack 3: Official Release!!", migrating from webpack 2 to 3 should involve no effort beyond running the upgrade commands in your terminal. We are using `Webpack@3.6.0` and `yarn@1.0.2` now :)
+According to *Sean T. Larkin* in the [release blog post](https://medium.com/webpack/webpack-3-official-release-15fd2dd8f07b): "webpack 3: Official Release!!", migrating from webpack 2 to 3 should involve no effort beyond running the upgrade commands in your terminal. We are using `Webpack@3.6.0` and `yarn@1.0.2` now :)
 
 ### Last but not the least - Stepping towards a long journey
 
@@ -706,4 +704,4 @@ This was just the beginning of stepping towards researching different technologi
 
 Should you have any feedback regarding this article, please share your thoughts via comments.
 
-If you like this article, do share it on social networking sites.
+If you like this article, do share it :)
