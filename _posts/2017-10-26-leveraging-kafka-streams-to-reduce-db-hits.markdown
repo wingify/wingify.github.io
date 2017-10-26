@@ -16,6 +16,7 @@ Kafka 0.10 came out with out of the box support for **Stream Processing**. This 
 
 Around 3 months back when our team started stress testing backend stores by generating a lot of data, our backend stores started to give up due to the high number of insertion and updates. We didn’t have the choice to add more hardware as 1 were already using a lot of resources and wanted a solution that fits our current bill. Our data team had lot of discussions and I heard a lot of people talk about things like [***Apache Samza***](http://samza.apache.org/ "Apache Samza"), [***Apache Spark***](https://spark.apache.org/ "***Apache Spark***"), [***Apache Flink***](https://flink.apache.org/ "***Apache Flink***") etc. Because, we have a small team, adding another component in technology stack was not a good idea and I didn’t want team to spend time learning about these technologies with product release around the corner. 
 Since our data pipeline is built around Kafka, I started playing around with data. The idea was to convert multiple updates to the backend stores into a single update/insert to ensure that number of hits that our DB is taking is reduced. Since, we process a lot of data we thought about windowing our events based on time and aggregating them. I started to work on it and in matter of hours my streaming application was ready. We started with 1 minute window and we were surprised with the result. We were able to reduce DB hits by 70%. **YES 70 PERCENT….!!!!!!.** 
+
 Here are the screenshots  from one of our servers that shows the impact of window aggregation.
 #### Before Aggregation
 ![Before Aggregation](/images/2017/10/kafka-streams-before-aggregation.png "Before Aggregation")
@@ -59,7 +60,7 @@ Let the json structure be as follows:
 
 Ingestion at above mentioned pace in a DB or ensuring that these events gets stored in DB in itself is a challenge. A lot of hardware will be required to cope with this traffic as it is. Hence, it doesn’t make sense to store data directly in DB. A streaming application is a very good fit here. A streaming application is going to leverage the fact that for most of the user the clicks and page views will be concentrated in a time window. So it is possible that in 5 minutes a user might be clicking x times and giving y pageviews on an average. We can introduce a 5 minute window and club these request to form a single equivalent DB request. Hence reducing (x+y) hits to 1 hit in a window of 5 minutes. Thus reducing the traffic to 1/(x+y) of what was coming earlier. 
 
-I have written a [**Sample Kafka Streams Project**](http:// https://github.com/aman1064/kafka-streams-example " Sample Project") to make it easier for you to understand.
+I have written a [**Sample Kafka Streams Project**](https://github.com/aman1064/kafka-streams-example " Sample Project") to make it easier for you to understand.
 Let’s take a look at sequence diagram below. This diagram shows how various components of sample project interact with each other.
 ![Kafka Streams Sequence Diagram](/images/2017/10/kafka-streams-aggregation-sequence.png "Kafka Streams Sequence Diagram")
 
