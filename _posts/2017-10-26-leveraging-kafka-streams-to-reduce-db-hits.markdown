@@ -33,6 +33,7 @@ Kafka Streams allows us to perform stream processing, hence requires some sort o
 
 #### KStream and KTable
 **KStream** is an abstraction of a record stream of Key-Value pairs. So if you have a click stream coming in, and you are trying to aggregate session level information, the key will be session id and the other information will be the value. Similarly for URL level aggregation, a combination of URL and session will be the key.
+
 **KTable** is an abstraction of a changelog stream from a primary-keyed table. Each record in this stream is an update on the primary-keyed table with the record key as the primary key. 
 The aggregation results are stored in KTable. Intermediate aggregation uses a RocksDB instance as key-value state store that also persists to local disk. Flushing to disk happens asynchronously to keep it fast and non blocking. An internal compacted changelog topic is also created. The state store sends changes to the changelog topic in a batch, either when a default batch size has been reached or when the commit interval is reached.
 A pictorial representation of what happens under the hood is given below
