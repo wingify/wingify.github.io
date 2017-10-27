@@ -32,7 +32,7 @@ With the topic of the DevFest clear, finding speakers was the next challenge, or
 2. **[Saurabh Shandilya](https://twitter.com/shadyshandilya) spoke on ToR 101**
 3. **[Deepak Pathania](https://twitter.com/pathaniadeepak7) spoke on Performance Optimization for the mobile web**
 4. **[Neha Sharma](https://twitter.com/hellonehha) spoke on Web apps and Performance**
-5. **[Manish Gill](https://twitter.com/mgill25) spoke on Gyaan in Scalability**
+5. **[Manish Gill](https://twitter.com/mgill25) spoke on [Gyaan in Scalability](https://speakerdeck.com/mgill25/lessons-in-scalability)**
 
 <script>Galleria.run('#devfest-speakers-gallery');</script>
 <div id="devfest-speakers-gallery" style="height: 600px;">
@@ -64,7 +64,7 @@ With a quick lunch, after Deepak's talk, it was Capture the Flag time! [Dheeraj 
 <script>Galleria.run('#devfest-capture-the-flag-gallery');</script>
 <div id="devfest-capture-the-flag-gallery" style="height: 600px;">
 	<img src="/images/2017/10/devfest-ctf-1.jpg">
-	<img src="/images/2017/10/devfest-ctf-2.jpg">
+	<img src="/images/2017/10/devfest-ctf-2.JPG">
 </div>
 
 Succeeding the CTF, was [Neha Sharma](https://twitter.com/hellonehha) who spoke about **Web Apps and Performance**. Neha is a tech speaker and founder of the renowned JSLovers Community and we were lucky to have her in the list of speakers. Given the breadth of her topic and the limited time she had for her talk, she could only give an abridged snippet of how developers can improve their website's' performance by using several best practices.
@@ -75,9 +75,9 @@ We finally finished the day with Code in the Dark. It was a long long day, and w
 
 <script>Galleria.run('#devfest-code-in-the-dark-gallery');</script>
 <div id="devfest-code-in-the-dark-gallery" style="height: 600px;">
-	<img src="/images/2017/10/devfest-citd-1.jpg">
-	<img src="/images/2017/10/devfest-citd-2.jpg">
-	<img src="/images/2017/10/devfest-citd-3.jpg">
+	<img src="/images/2017/10/devfest-citd-1.JPG">
+	<img src="/images/2017/10/devfest-citd-2.JPG">
+	<img src="/images/2017/10/devfest-citd-3.JPG">
 </div>
 
 All that, in one day. Achievement level: 50,000.
@@ -90,16 +90,16 @@ Some moments captured during the DevFest:
 
 <script>Galleria.run('#devfest-day-gallery');</script>
 <div id="devfest-day-gallery" style="height: 600px;">
-	<img src="/images/2017/10/devfest-gallery-1.jpg">
-	<img src="/images/2017/10/devfest-gallery-2.jpg">
-	<img src="/images/2017/10/devfest-gallery-3.jpg">
-	<img src="/images/2017/10/devfest-gallery-4.jpg">
+	<img src="/images/2017/10/devfest-gallery-1.JPG">
+	<img src="/images/2017/10/devfest-gallery-2.JPG">
+	<img src="/images/2017/10/devfest-gallery-3.JPG">
+	<img src="/images/2017/10/devfest-gallery-4.JPG">
 	<img src="/images/2017/10/devfest-gallery-5.jpg">
-	<img src="/images/2017/10/devfest-gallery-6.jpg">
-	<img src="/images/2017/10/devfest-gallery-7.jpg">
-	<img src="/images/2017/10/devfest-gallery-8.jpg">
-	<img src="/images/2017/10/devfest-gallery-9.jpg">
-	<img src="/images/2017/10/devfest-gallery-10.jpg">
+	<img src="/images/2017/10/devfest-gallery-6.JPG">
+	<img src="/images/2017/10/devfest-gallery-7.JPG">
+	<img src="/images/2017/10/devfest-gallery-8.JPG">
+	<img src="/images/2017/10/devfest-gallery-9.JPG">
+	<img src="/images/2017/10/devfest-gallery-10.JPG">
 </div>
 
 ### Conclusion
@@ -107,4 +107,4 @@ Some moments captured during the DevFest:
 
 Our quest to have a community of like-minded people has just started. The first instance of the DevFest has been a stepping-stone for us and it'll only get better from here. Stay tuned for the next DevFest. It's going to be legen..... wait for it!
 
-PS: A big shoutout to the members of the organising team; [Akash Tyagi](https://twitter.com/akashtyagi027), [Dheeraj Joshi](https://twitter.com/dheerajhere), [Jatin Makhija](https://twitter.com/notjustbond), [Kushagra Gour](https://twitter.com/chinchang457) and [Sahil Bathla](https://twitter.com/sahilbathla) for all the hard work they’ve put into making the DevFest a success.
+PS: A big shoutout to the members of the organising team; [Akash Tyagi](https://twitter.com/akashtyagi027), [Dheeraj Joshi](https://twitter.com/dheerajhere), [Jatin Makhija](https://twitter.com/notjustbond), [Kushagra Gour](https://twitter.com/chinchang457), [Sahil Bathla](https://twitter.com/sahilbathla) and also the volunteers for all the hard work they’ve put into making the DevFest a success.
