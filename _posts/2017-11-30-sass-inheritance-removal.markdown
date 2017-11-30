@@ -122,7 +122,7 @@ Generated Code:
 
 The generated code is highly unreadable and not at all lucid. This particular code has rules staggered at 4 places just for class .tile--200.
 
-## SOLUTION TO @extend
+## Solution to @extend
 We solved these problems with the help of [mixins](http://sass-lang.com/guide#topic-6) or directly writing the rule if it’s a one liner.
 
 For e.g. in above example: SASS would be
