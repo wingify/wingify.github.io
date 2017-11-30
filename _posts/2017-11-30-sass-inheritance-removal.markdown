@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Why we have removed Inheritance/Extend from SASS and you should do the same!"
-excerpt: Why we have removed Inheritance/Extend from SASS and you should do the same!
+title: "Why we've removed Inheritance/Extend from SASS & you should do the same!"
+excerpt: Why we've removed Inheritance/Extend from SASS & you should do the same!
 authorslug: chhavi_khandelwal
 author: Chhavi Khandelwal
 ---
