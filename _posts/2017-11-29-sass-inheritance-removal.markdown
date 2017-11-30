@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Why we removed Inheritance/Extend from SASS and you should do the same!"
-excerpt: Why we removed Inheritance/Extend from SASS and you should do the same!
+title: "Why we have removed Inheritance/Extend from SASS and you should do the same!"
+excerpt: Why we have removed Inheritance/Extend from SASS and you should do the same!
 authorslug: chhavi_khandelwal
 author: Chhavi Khandelwal
 ---
@@ -11,7 +11,7 @@ SASS is a preprocessor that provides features like variables, nesting, mixins, i
 The [@extend](http://sass-lang.com/guide#topic-7)  directive in SASS allows us to easily share styles between selectors.
 But its usage can have adverse effects when used with bigger projects. Lets see how.
 
-In VWO’s SASS code, we have more than 50 files. The need of inheritance removal came when the code started to become unpredictable and difficult to debug. Difficulty in debugging made us override the CSS as and when new requirement came; otherwise it requires a lot of time to understand existing code of inheritance before starting, so that any new rule addition does not break the existing CSS. That’s how the need of @extend removal came.
+In [VWO’s](https://app.vwo.com) SASS code, we have more than 50 files. The need of inheritance removal came when the code started to become unpredictable and difficult to debug. Difficulty in debugging made us override the CSS as and when new requirement came; otherwise it requires a lot of time to understand existing code of inheritance before starting, so that any new rule addition does not break the existing CSS. That’s how the need of @extend removal came.
 
 Here are the reasons why we discarded @extend.
 
@@ -44,13 +44,16 @@ This is because on compilation the result looks like this:
 
 {% highlight css %}
 .title , label {
-	text-transform: uppercase; }
+	text-transform: uppercase; 
+}
 
 label {
-	font-size: 13px; }
+	font-size: 13px; 
+}
 
 .title , label {
-	font-size: 12px; }
+	font-size: 12px; 
+}
 {% endhighlight %}
 
 `label` shares the rules at the last definition of `.title`.
@@ -186,4 +189,5 @@ Generated CSS code will be:
 This code has rules for every class maintained at just one place making it easier to understand and lucid which results in easy debugging and requires low maintenance.
 
 All these reasons forced us to remove @extend from our SASS and hence our code and coders lived happily ever after!
+
 **Cheers!**
