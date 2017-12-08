@@ -11,10 +11,10 @@ This article is inspired from Animation in [Vue JS by Sarah Drasner](http://slid
 ### Problem Statement - Why Animation?
 **Website UI Development** is not about making things beautiful. It’s all about website performance and customer experience. According to studies from **Amazon** and **Walmart**, they discovered a drop of conversion rate/revenue on increasing the user interaction time as the user feels interrupted during the interaction. Another study discovered that a customised animated loader made a higher wait time and lower abandon rate compared to generic one as the user felt more interactive with the former loader.
 
-In a nutshell, the animation of your application should be more interactive and engaging with user, kind of like **a cinema booking application** and **a form inside a location tag** for example.
+In a nutshell, the animation of your application should be more interactive and engaging for the user, kind of like **a cinema booking application** and **a form inside a location tag** for example.
 
 ### What is VueJS?
-For those who are familiar with **Angular** and **ReactJS**, **VueJS** is a progressive Javascript framework that supports some features:
+For those who are familiar with **Angular** and **ReactJS**, **VueJS** is a progressive JavaScript framework that supports some features:
 
 - A virtual DOM
 - Declarative Rendering
@@ -22,10 +22,10 @@ For those who are familiar with **Angular** and **ReactJS**, **VueJS** is a prog
 - Reactive components
 - Conditional rendering … to name a few
 
-Some of these features are similar to what **Angular** and **ReactJS** already provide. However, you can check [comparison oj VueJS with other frameworks](https://vuejs.org/v2/guide/comparison.html).
+Some of these features are quite similar to what **Angular** and **ReactJS** already provide. However, you can check [its comparison with other frameworks](https://vuejs.org/v2/guide/comparison.html).
 
-### ToDo List Example
-Let’s take a simple example of **ToDo List**, containing a list of tasks and functionality of adding/removing a task to/from the list.
+### Todo List Example
+Let’s take a simple example of **Todo list**, containing a list of tasks with the functionality of adding/removing a task to/from the list.
 
 This will be our view in **HTML** file, assuming that you’ve included **VueJS** in a `script` tag already.
 
@@ -64,11 +64,11 @@ var app = new Vue({
 
 The code itself is self-explanatory. It simply adds a `task` inside the `todoList` using `addTaskToList` method and removes from the list using `removeTaskFromList`.
 
-The event binding and loops syntax in the HTML looks similar to what you see in **AngularJS**. However, the syntax of variables and methods is different in JS, which reminds you of private variables and public methods you used to code in **C++**. You can view the demo here.
+The event binding and loops syntax in the HTML looks similar to what you see in **AngularJS**. However, the syntax of variables and methods is different in VueJS, which reminds you of private variables and public methods you used to code in **C++**. You can view the [demo](https://codepen.io/AshBardhan/pen/XzLxbE).
 
-Let’s add more interaction in this. A confirmation popup should come up with `OK` and `Cancel` options, where the particular task if only you press the former option. Regardless of the option chosen, the popup should be closed later on.
+Let’s add more interaction in this. A confirmation pop-up should appear with `OK` and `Cancel` options. Regardless of the option chosen, the pop-up should be closed later on.
 
-In **HTML**, Let’s modify the list element
+In **HTML**, let’s modify the list element
 
 {% highlight html %}
 <li v-for="(todo, index) in todoList">
@@ -77,11 +77,11 @@ In **HTML**, Let’s modify the list element
 </li>
 {% endhighlight %}
 
-And add a new popup element
+And add a new pop-up element
 
 {% highlight html %}
 <div v-show="isPopupOpen">
-    Are you sure you want to remove this from ToDo List?<br/>
+    Are you sure you want to remove this from Todo List?<br/>
     <input type="button" value="OK" v-on:click="confirmRemove()"/>
     <input type="button" value="Cancel" v-on:click="cancelRemove()"/>
 </div>
@@ -116,12 +116,12 @@ methods : {
 
 Let’s add some animation into it.
 
-For the fading-in/out the popup, you need to wrap our popup inside `transition` tag.
+For the fading-in/out the pop-up, you need to wrap our pop-up inside `transition` tag.
 
 {% highlight html %}
 <transition name="fade">
     <div v-show="isPopupOpen">
-        … Popup element content
+        … Pop-up element content
     </div>
 </transition>
 {% endhighlight %}
@@ -140,11 +140,11 @@ This element takes care of the transition logic. You don’t need to bother when
 
 **Note:** The `fade` prefix used in this class should match the `name` attribute of the `transition` component.
 
-For blurring the form and the list elements once the popup appears, they should be wrapped inside a contained conditionally bounded using `v-bind` attribute.
+For blurring the form and the list elements once the pop-up appears, they should be wrapped inside a contained conditionally bounded using `v-bind` attribute.
 
 {% highlight html %}
 <div v-bind:class="[isPopupOpen ? 'disabled' : '', ‘container’]">
-    … Form and ToDo List element content
+    … Form and Todo List element content
 </div>
 {% endhighlight %}
 
@@ -158,15 +158,15 @@ And add the required **CSS**
 .disabled {
     filter: blur(2px);
     opacity: 0.4;
-    pointer-events: none;  // This makes sure that nothing else is clicked other than popup options
+    pointer-events: none;  // This makes sure that nothing else is clicked other than pop-up options
 }
 {% endhighlight %}
 
-You can check the complete code and view demo here.
+You can check the complete code and view [demo](https://codepen.io/AshBardhan/pen/zPVmvj).
 
 ### Advantages
 - Clean 
 - Semantic
 - Maintainable
 
-This is how you can create applications and make animations in more simpler and semantic way. However, you must have intermediate knowledge of **HTML**, **CSS** and **JavaScript**. If you think **VueJS** is promising go ahead and try it out. There is much more that you will love to learn about. Check out the [official documentation](https://vuejs.org/v2/guide/).
+This is how you can create applications and make animations in more simpler and semantic way. However, you must have intermediate knowledge of **HTML**, **CSS** and **JavaScript**. If you think **VueJS** is promising, go ahead and try it out. There is much more that you will love to learn about. Check out the [official documentation](https://vuejs.org/v2/guide/).
