@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Animation in VueJS
+title: Animations in VueJS
 excerpt: Vue JS
 authorslug: ashish_bardhan
 author: Ashish Bardhan
 ---
 
-This article is inspired from Animation in [Vue JS by Sarah Drasner](http://slides.com/sdrasner/animating-vue-keynote) at [JS Channel 2017](http://2017.jschannel.com/).
+This article is inspired from [Animating Vue JS by Sarah Drasner](http://slides.com/sdrasner/animating-vue-keynote) at [JS Channel 2017](http://2017.jschannel.com/).
 
 ### Problem Statement - Why Animation?
 **Website UI Development** is not about making things beautiful. It’s all about website performance and customer experience. According to studies from **Amazon** and **Walmart**, they discovered a drop of conversion rate/revenue on increasing the user interaction time as the user feels interrupted during the interaction. Another study discovered that a customised animated loader made a higher wait time and lower abandon rate compared to generic one as the user felt more interactive with the former loader.
