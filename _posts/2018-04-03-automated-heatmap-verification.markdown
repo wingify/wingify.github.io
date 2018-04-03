@@ -8,6 +8,11 @@ author: Sahil Goyal
 
 Heatmaps record visitor data on the live state of your website, which can be used to interpret user behavior on elements like modal boxes, pages behind logins, and dynamic URLs.
 
+<div style="text-align:center; margin: 10px;">
+  <img src="/images/2018/04/heatmap.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+  <div style="margin: 10px;"><b>Before Aggregation</b></div>
+</div>
+
 But here comes a question, how to verify Heatmap E2E using automation? How to check if clicks are being plotted correctly? How to check if there is no data loss while plotting the clicks?
 
 The answer to above questions comes from [HTML Canvas](https://en.wikipedia.org/wiki/Canvas_element). As VWO heatmaps are rendered on HTML canvas, we decided to leverage that to verify Heatmap E2E as well. The best part of this is that, this can beintegrated easily with your existing selenium scripts.
