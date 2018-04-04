@@ -10,7 +10,7 @@ Heatmaps record visitor clicks on the live state of your website, which can be u
 
 <div style="text-align:center; margin: 10px;">
   <img src="/images/2018/04/heatmap.png" style="box-shadow: 2px 2px 10px 1px #aaa">
-  <div style="margin: 10px;"><b>Before Aggregation</b></div>
+  <div style="margin: 10px;"><b>VWO Heatmap in action on vwo.com</b></div>
 </div>
 
 But here comes a question, how to verify Heatmap E2E using automation? How to check if clicks are being plotted correctly? How to check if there is no data loss while plotting the clicks?
