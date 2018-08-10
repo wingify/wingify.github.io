@@ -8,15 +8,16 @@ author: Surbhi Mahajan
 
 Recently we migrated one of our webapps to the webpack 4 which decreases build time and reduces chunk size by using split chunks plugin. It automatically identifies modules which should be split by heuristics and splits the chunks. This blog post deals with our efforts in understanding the mysterious split chunks plugin.
 ### The Problem
-Despite using efficient [code splitting mechanism](https://webpack.js.org/plugins/split-chunks-plugin/) in our app, we noticed that a module of large size 550kb was duplicated in 4 async chunks. So, our goal was specifically to decrease the bundle size and utilize a better code splitting mechanism in the app.
+The problem we were facing with [default](https://webpack.js.org/plugins/split-chunks-plugin/#optimization-splitchunks) splitChunks config is that a module of large size 550kb was duplicated in 4 async chunks. So, our goal was specifically to decrease the bundle size and utilize a better code splitting mechanism in the app.
 
-Our webpack configuration file looks like:
+Our webpack configuration file looks like this:
 
 ```javascript
     // Filename: webpack.config.js
 
     const webpack = require('webpack');
     module.exports = {
+       //...
        optimization: {
         splitChunks: {
           chunks: 'all'
@@ -25,17 +26,15 @@ Our webpack configuration file looks like:
     };
 ```
 
-We used [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) to get a nice view of our problem:
+We used [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) to get a nice view of our problem
 
 ![](/images/2018/04/duplicated_chunks_view.png)
 ### Observation
-By default split chunks plugin only affects on-demand chunks and it split chunks based on conditions:
+By default split chunks plugin only affects on-demand chunks and it split chunks based on [conditions](https://webpack.js.org/plugins/split-chunks-plugin/#defaults):
 1. A new chunk can be shared or modules are from the node_modules folder
 2. New chunk would be bigger than 30kb.
 3. Maximum number of parallel requests when loading chunks on demand would be lower or equal to 5
 4. Maximum number of parallel requests at initial page load would be lower or equal to 3
-
-For better understanding of these conditions, checkout [this](https://webpack.js.org/plugins/split-chunks-plugin/)
 
 In our case, a separate chunk of large-sized library would not be created.
 
@@ -46,13 +45,14 @@ It satisfies first and second conditions as it is being used in 4 chunks and its
 We can have more control over this functionality. We can change default configuration in the following ways:
 1. Increasing maxAsyncRequests result in more chunks. In Http2, 20 maxAsyncRequests improves performance but in HTTP 1.1, this result in more number of requests thus affects performance. So, this configuration should be preferred in case of Http2 only.
 
-    Now webpack configuration file looks like:
+    Now let’s take a look at webpack configuration file after this change:
 
     ```javascript
         // Filename: webpack.config.js
 
         const webpack = require('webpack');
         module.exports = {
+            //...
            optimization: {
             splitChunks: {
               chunks: 'all',
@@ -65,13 +65,14 @@ We can have more control over this functionality. We can change default configur
 
 2. Increasing minSize can also give the desired result. Some modules with higher usage in our app and size less than minSize would not be included in separate chunks as they all violate the second condition like in case of minSize 100kb, modules greater than 100kb are considered giving more possibilities for creating chunks containing large-sized modules.
 
-    Now webpack configuration file looks like:
+    Now let’s take a look at webpack configuration file after this change:
 
      ```javascript
         // Filename: webpack.config.js
 
         const webpack = require('webpack');
         module.exports = {
+            //...
            optimization: {
             splitChunks: {
               chunks: 'all',
@@ -123,6 +124,7 @@ After this change our bundles looked like this:
 ### Conclusion
 
 Increasing minSize and maxAsyncRequests both decreases the size of campaign.triggered.details chunk.
+
 The second approach can result in multiple big chunks having multiple duplicated small-sized modules.
 On the other hand, the first approach will result in multiple small chunks which do not have any duplicated module. Loading multiple small chunks increases the loading time of page but with Http2, it will work efficiently.
 
