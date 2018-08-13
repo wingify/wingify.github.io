@@ -28,7 +28,7 @@ Our Webpack configuration file looks like this:
 
 We used [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) to get a nice view of our problem.
 
-![](/images/2018/04/duplicated_chunks_view.png)
+![](/images/2018/08/split-chunks-duplicated-view.png)
 ### Observation
 By default, Split Chunks plugin only affects on-demand chunks and it split chunks based on [conditions](https://webpack.js.org/plugins/split-chunks-plugin/#defaults):
 1. A new chunk can be shared or modules are from the node_modules folder
@@ -102,7 +102,7 @@ We can have more control over this functionality. We can change default configur
 
 After this change our bundles looked like this:
 
-![](/images/2018/04/maxAsyncRequests_view.png)
+![](/images/2018/08/split-chunks-maxAsyncRequests-view.png)
 
 **Results with second approach(varying the minSize property):**
 
@@ -115,7 +115,7 @@ After this change our bundles looked like this:
 
 After this change our bundles looked like this:
 
-![](/images/2018/04/minSize_view.png)
+![](/images/2018/08/split-chunks-minSize-view.png)
 
 **Note**: async.chunk.2 chunk size in case of 50 KB minSize configuration is 188 KB whereas its size is reduced to 78.4 KB in case of 100 KB minSize configuration. This is because one more module of size 146 KB that are shared among four other chunks are extracted into a separate chunk decreasing overall bundle size to 78.4 KB (Awesome!).
 ### Conclusion
