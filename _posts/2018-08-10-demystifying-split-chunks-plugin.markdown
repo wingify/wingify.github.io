@@ -143,6 +143,6 @@ The second approach can result in multiple large-sized chunks, each one having m
 On the other hand, the first approach will result in a large number of small chunks which do not have any duplicated module. Loading multiple small chunks increases the loading time of page but with HTTP/2, it will work efficiently.
 
 Finally, we achieved what we wanted, a big library is now separated from our bundles and lazy loaded on demand. Thanks to [Dinkar Pundir](https://twitter.com/dinkarpundir) for helping me in solving the above problem.
-If you have any doubt feel free to drop a comment or tweet us at @wingify_engg.
+If you have any doubt feel free to drop a comment or tweet us at [@wingify_engg](https://twitter.com/wingify_engg).
 
 **Happy Chunking...** !!
