@@ -30,11 +30,11 @@ We used [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bun
 
 ![](/images/2018/08/split-chunks-duplicated-view.png)
 ### Observation
-By default, Split Chunks plugin only affects on-demand chunks and it split chunks based on [conditions](https://webpack.js.org/plugins/split-chunks-plugin/#defaults):
-1. A new chunk can be shared or modules are from the node_modules folder
-2. New chunk would be bigger than 30 KB.
-3. Maximum number of parallel requests when loading chunks on demand would be lower or equal to 5
-4. Maximum number of parallel requests at initial page load would be lower or equal to 3
+By default, Split Chunks plugin only affects on-demand chunks and it split chunks based on following [conditions](https://webpack.js.org/plugins/split-chunks-plugin/#defaults):
+1. A new chunk should be shared or containing modules should be from the node_modules folder.
+2. New chunk should be bigger than 30 KB.
+3. Maximum number of parallel requests when loading chunks on demand should be lower or equal to 5.
+4. Maximum number of parallel requests at initial page load should be lower or equal to 3.
 
 In our case, a separate chunk of the large-sized library would not be created.
 
