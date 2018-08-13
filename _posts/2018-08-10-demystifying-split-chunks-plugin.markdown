@@ -69,7 +69,6 @@ We can have more control over this functionality. We can change default configur
         };
     {% endhighlight %}
 
-
 2. Increasing [minSize](https://webpack.js.org/plugins/split-chunks-plugin/#splitchunks-minsize) also gives the desired result. Some modules with higher usage in our app and size less than minSize would not be included in separate chunks as they all violate the second condition like in case of minSize 100 KB, modules greater than 100 KB are considered giving more possibilities for creating chunks containing large-sized modules.
 
     Now let’s take a look at Webpack configuration file after this change:
@@ -108,7 +107,7 @@ We can have more control over this functionality. We can change default configur
 |          20          |            1524.3 KB             |          79.1 KB           |
 </pre>
 
-After this change our bundles looked like this:
+After this change our bundles look like this:
 
 ![](/images/2018/08/split-chunks-maxAsyncRequests-view.png)
 
@@ -127,7 +126,7 @@ After this change, a separate chunk named **vendors~async.chunk.1~async.chunk.2~
 |        100 KB       |            1521.4 KB             |          78.4 KB           |
 </pre>
 
-After this change our bundles looked like this:
+After this change our bundles look like this:
 
 ![](/images/2018/08/split-chunks-minSize-view.png)
 
