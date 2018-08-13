@@ -111,7 +111,7 @@ After this change our bundles look like this:
 
 ![](/images/2018/08/split-chunks-maxAsyncRequests-view.png)
 
-After this change, a separate chunk named **vendors~async.chunk.1~async.chunk.2~async.chunk.3~async.chunk.4** is created
+With this configuration, a separate chunk named **vendors~async.chunk.1~async.chunk.2~async.chunk.3~async.chunk.4** is created which is shown below:
 
 ![](/images/2018/08/split-chunks-maxAsyncRequests-build-view.png)
 
@@ -130,7 +130,7 @@ After this change our bundles look like this:
 
 ![](/images/2018/08/split-chunks-minSize-view.png)
 
-After this change, a separate chunk named **vendors~async.chunk.1~async.chunk.2~async.chunk.3~async.chunk.4** is created
+In this case too, a large-sized library is extracted into a separate chunk named **vendors~async.chunk.1~async.chunk.2~async.chunk.3~async.chunk.4** which is shown below:
 
 ![](/images/2018/08/split-chunks-minSize-build-view.png)
 
