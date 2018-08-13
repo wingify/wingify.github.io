@@ -6,7 +6,7 @@ authorslug: surbhi_mahajan
 author: Surbhi Mahajan
 ---
 
-Recently, we migrated one of our web apps to the Webpack 4 which decreases build time and reduces chunk size by using Split Chunks plugin. It automatically identifies modules which should be split by heuristics and splits the chunks. This blog post deals with our efforts in understanding the mysterious Split Chunks plugin.
+Recently, we migrated one of our web apps to the Webpack 4, which decreases build time and reduces chunk size by using Split Chunks plugin. It automatically identifies modules which should be split by heuristics and splits the chunks. This blog post deals with our efforts in understanding the mysterious Split Chunks plugin.
 ### The Problem
 The problem we were facing with [default](https://webpack.js.org/plugins/split-chunks-plugin/#optimization-splitchunks) Split Chunks config is that a module of large size **550 KB** was duplicated in 4 async chunks. So, our goal was specifically to decrease the bundle size and utilize a better code splitting mechanism in the app.
 
@@ -42,7 +42,7 @@ In our case, a separate chunk of the large-sized library would not be created.
 
 It satisfies first and second conditions as it is being used in 4 chunks and its size (550 KB) is bigger than 30 KB so concludes that it should be in a new chunk. But it does not satisfy the third one as 5 chunks were already created at each dynamic import which is the maximum limit for async requests. We observed that the first 4 chunks include all modules which are shared among 7,6,5,5 async chunks respectively and the last one is its own chunk. Modules on which a maximum number of async chunks are dependent on have been given priority and as a library is required by only 4 async chunks, a chunk containing it would not be created.
 
-When we run yarn build to build our assets, a chunk named **vendors~async.chunk.1~async.chunk.2~async.chunk.3~async.chunk.4** is not found in the output:
+When we run `yarn build` to build our assets, a chunk named **vendors~async.chunk.1~async.chunk.2~async.chunk.3~async.chunk.4** is not found in the output:
 
 ![](/images/2018/08/split-chunks-default-build-view-1.png)
 
