@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Demystifying Webpack 4 Split Chunks plugin   Volume 1
+title: Demystifying Webpack 4 Split Chunks Plugin 
 excerpt: Webpack 4 Split Chunks plugin
 authorslug: surbhi_mahajan
 author: Surbhi Mahajan
