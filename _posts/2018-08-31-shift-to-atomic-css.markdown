@@ -6,11 +6,11 @@ authorslug: kushagra_gour
 author: Kushagra Gour
 ---
 
-For the past few months, we at Wingify, have been working on making a common base for different products - so that things get reused across products and re-inventing the wheel doesn't happen. This also had additional benefits like enforcing common good practices across products, easier switching for developer across products and more. As part of the same endeavor, our Frontend team has been working hard on a Design System and a frontend boilerplate app over that. The boilerplate is something which any product at Wingify can simply fork and build a new frontend app, using the reusable components provided by the base Design System. More about the boilerplate and Design System later, but in this post want to specifically talk about a very import part of our Design System - **our CSS**.
+For the past few months, we at Wingify, have been working on making a common platform for different products - so that things get reused across products and re-inventing the wheel doesn't happen. This also has additional benefits like enforcing common good practices across products, easier switching for developer across products and more. As part of the same endeavor, our Frontend team has been working hard on a Design System and a frontend boilerplate app over that. The boilerplate is something which any product at Wingify can simply fork and build a new frontend app, using the reusable components provided by the base Design System. More about the boilerplate and Design System later, but in this post want to specifically talk about a very import part of our Design System - **our CSS**.
 
 ## Issues with current CSS
 
-First, why did we even start looking for a new way to write CSS? Previously, we were using a mix of BEM and some helper classes. Occasional classes which belonged to neither of those two categories could be seen in the code base too! 😅 This approach led to the following issues:
+First, why did we even start looking for a new way to write CSS? Previously, we were using a mix of [BEM](http://getbem.com/introduction/) and some helper classes. Occasional classes which belonged to neither of those two categories could be seen in the code base too! 😅 This approach led to the following issues:
 
 - **Naming classes was always a problem** - Often, someone was commenting the pull requests that this class name doesn't make sense and should be changed to something more _"meaningful"_. Finding _"meaningful"_ names is tough!
 - **Unused CSS** - Automated tools to detect unused CSS are not very reliable, especially with Single Page Apps. Our CSS kept growing over time and definitely one main reason for that was no one ever cared to remove the unused CSS.
@@ -52,7 +52,7 @@ I am a button
 
 On top of usual benefits of Atomic CSS approach, ACSS' automatic CSS generation means that we never get a single byte of CSS that we are not using in an app! What we use in HTML, lands in the final CSS file. In fact, ACSS generates such small CSS that it's practically possible to inline your complete CSS - i.e. your complete CSS can become your critical CSS!
 
-We were free from documentation as the only thing a developer needs to write ACSS is their [awesome, searchable reference](https://acss.io/reference). We were free from naming things of course.
+We were free from documentation as the only thing a developer needs to write ACSS is their [awesome, searchable reference](https://acss.io/reference). There is also a [VSCode extension](https://github.com/acss-io/vscode-atomizer) which even removes the need for the reference. We were free from naming things of course.
 
 It may seem that a developer might have to write same set of classes again and again to create the same things, but that is not true. ACSS or any Atomic CSS approach requires a templating/component system where you can reuse a piece of HTML without duplicating. We use Vue.js to build our small reusable components.
 
