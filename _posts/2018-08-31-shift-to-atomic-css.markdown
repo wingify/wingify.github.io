@@ -40,7 +40,7 @@ Yeah, lots of parameters. We evaluated very critically 😀. Also, notice that I
 
 We evaluated lots of known frameworks and libraries out there like pure BEM, Tachyons, Styled Components, Vue's scoped CSS, CSS modules. But We found that atomic CSS approach met most of our requirements as mentioned above. Also known as helper/utility classes approach, Atomic CSS requires no naming, documentation would be available if we go with a well-known library, its themable, lintable. Refactoring is also easier as all you need to do is remove classes from your HTML and never touch CSS.
 
-But even in various atomic CSS libraries available out there, we decided to go with [ACSS](https://acss.io/)(I know, the name is little too generic as they call themselves Atomic CSS!). We got introduced to ACSS by our resident UX engineer, [Jitendra Vyas](https://twitter.com/jitendravyas). Along with him, we discussed a lot of points about ACSS with one of the developers of ACSS, [Thierry Koblentz](https://github.com/thierryk). ACSS was also mentioned by [Addy Osmani at Google IO](https://twitter.com/roderickhsiao/status/922620291527852032). 
+But even in various atomic CSS libraries available out there, we decided to go with [ACSS](https://acss.io/)(I know, the name is little too generic as they call themselves Atomic CSS!). We got introduced to ACSS by our resident UX engineer, [Jitendra Vyas](https://twitter.com/jitendravyas). Along with him, we discussed a lot of points about ACSS with one of the developers of ACSS, [Thierry Koblentz](https://github.com/thierryk). ACSS was also mentioned by [Addy Osmani at Google IO](https://twitter.com/roderickhsiao/status/922620291527852032).
 
 ACSS comes with very strong benefits which no other library had. You don't write CSS in ACSS, in fact you don't even download a CSS file and use in ACSS. ACSS comes with a tool called [Atomizer](https://github.com/acss-io/atomizer) which detects the use of ACSS classes in your HTML (or any file) and generates the corresponding CSS for those detected classes. Here is a sample HTML you would write with ACSS:
 
@@ -50,13 +50,13 @@ I am a button
 </button>
 {% endhighlight %}
 
-On top of usual benefits of Atomic CSS approach, ACSS' automatic CSS generation means that we never get a single byte of CSS that we are not using in an app! What we use in HTML, lands in the final CSS file. In fact, ACSS generates such small CSS that it's practically possible to inline your complete CSS - i.e. your complete CSS can become your critical CSS!
+On top of usual benefits of Atomic CSS approach, ACSS's automatic CSS generation means that we never get a single byte of CSS that we are not using in an app! What we use in HTML, lands in the final CSS file. In fact, ACSS generates such small CSS that it's practically possible to inline your complete CSS - i.e. your complete CSS can become your critical CSS!
 
 We were free from documentation as the only thing a developer needs to write ACSS is their [awesome, searchable reference](https://acss.io/reference). There is also a [VSCode extension](https://github.com/acss-io/vscode-atomizer) which even removes the need for the reference. We were free from naming things of course.
 
 It may seem that a developer might have to write same set of classes repeatedly to create the same things, but that is not true. ACSS or any Atomic CSS approach requires a templating/component system where you can reuse a piece of HTML without duplicating. We use Vue.js to build our small reusable components.
 
-Of course they are some cons in ACSS as well. For example, inside a particular component's HTML, you cannot find what any tag is about because there are no descriptive classes. This can be somewhat be fixed by using semantic tags. Basically, the pros are way too strong over it's cons.
+Of course they are some cons in ACSS, as well. For example, inside a particular component's HTML, you cannot find what any tag is about because there are no descriptive classes. This can be somewhat be fixed by using semantic tags. Basically, the pros are way too strong over its cons.
 
 ## The end result
 
