@@ -1,8 +1,8 @@
 ---
 layout: post
 title: JS13K Games
-excerpt: JS13K Games
-authorslug: aditya_mishra, punit_gupta
+excerpt: This post describes our experience of the game development competition JS13kGames 2018
+authorslug: aditya_mishra_punit_gupta
 author: Aditya Mishra, Punit Gupta
 ---
 
@@ -31,6 +31,9 @@ Some of the fun challenges involved with this one were:
 
 There was a lot to learn from these challenges as it involved playing with vectors, coming up with algorithms to generate & render the sliced shapes on a 2D canvas, to infer the desired action from simple input events etc.
 
+[demo](https://js13kgames.com/games/twisty-polyhedra/index.html)
+|
+[source](https://github.com/aditya-r-m/twisty-polyhedra)
 
 ### [Keep-Alive](https://js13kgames.com/entries/keep-alive)
 
@@ -40,17 +43,20 @@ The idea of this game is inspired by ‘Duet’. Although the gameplay is based 
 
 A few of the interesting challenges with this were:
 * Collision detection & revert effects
-* Special effects for tail & kill effects
+* Special effects for tail & kill animations
 * Dynamic level defintions
 
 Since a lot of these effects were algorithmically generated, size limit was not a concern for this entry. The primary learning experience here was integrating deterministic dynamic stages, cool effects & structuring the implementation.
 
+[demo](https://js13kgames.com/games/keep-alive/index.html)
+|
+[source](https://github.com/surbhi-mahajan/keep-alive)
 
 ### [Anti_Virus](https://js13kgames.com/entries/antivirus)
 
-The idea of this game was inspired from a classic game 'snow bros' but with a very different flavour. We all use various offline storage devices to save our precious data. But inevitably, sometimes the data gets corrupted due to viruses. The goal in this game is to go into those devices, kill those viruses and save the data. The gameplay involves moving around, climbing the platforms, freezing the opponents and throwing them over other enemies.
+This game is inspired from a classic game 'snow bros' but with a very different flavour. We all use various offline storage devices to save our precious data. But inevitably, sometimes the data gets corrupted due to viruses. The goal in this game is to go into those devices, kill those viruses and save the data. The gameplay involves moving around, climbing the platforms, freezing the opponents and throwing them over other enemies.
 
-TODO: insert GIF
+![](/images/2018/09/anti_virus.gif)
 
 Some of the major challenges involved with this idea are:
 * Detecting collisions among platforms, walls, opponents, shooters and player.
@@ -59,15 +65,21 @@ Some of the major challenges involved with this idea are:
 
 The physics & special effects being the most fun part of implementation, Squeezing all these things into the required size & keeping gameplay smooth also involved quite a lot of optimizations & polishing.
 
+[demo](https://js13kgames.com/games/antivirus/index.html)
+|
+[source](https://github.com/pntgupta/anti-virus)
 
 ## [Sum It Up](https://js13kgames.com/entries/sum-it-up)
 
 This game is inspired from one of the most popular games of all time, ‘spider solitaire’. In this one, you don’t have to stack the cards in increasing order. Instead, numbers are written on these cards and you have to stack identical cards over each other causing them to merge into a new card with double value. Your goal is to create the highest score possible.
 
-TODO: insert GIF
+![](/images/2018/09/sum-it-up.gif)
 
 The most fun parts of this implementation was creating smooth & beautiful animations.
 
+[demo](https://js13kgames.com/games/sum-it-up/index.html)
+|
+[source](https://github.com/hemkaran/sum-it-up-game)
 
 ### [Up & Down](https://js13kgames.com/entries/up-down)
 
@@ -82,12 +94,15 @@ This involved problems like:
 
 Although created in a very short amount of time, not only were these things fun to solve, these simple problems lead the way towards a wide variety of techniques related to mathematical ideas & design principes in general.
 
+[demo](https://js13kgames.com/games/up-down/index.html)
+|
+[source](https://github.com/dinkar/up-and-down-js13k-2018)
 
 ### [Robo Galactic Shooter](https://js13kgames.com/entries/robo-galactic-shooter)
 
 The idea for this entry was to create a classic 2D Shoot'em up style & nostalgic retro feel. You need to survive a barrage of asteroids for as long as possible, the good thing is that you're given some solid guns! The robot is flying towards the right into the coming Asteroids of different sizes. The gameplay involes either dodging them or shooting them till they disintegrate.
 
-TODO: insert GIF
+![](/images/2018/09/robo-galactic-shooter.gif)
 
 Plenty of effort went into the following parts:
 * Creating cool background effects, handling sprites
@@ -96,7 +111,9 @@ Plenty of effort went into the following parts:
 
 Considering how many effects & elements were integrated, there were a lot of optimizations to be made here to fit it all in 13KB. The game also incorporated sound effects using a micro-library called jsfxr. 
 
-
+[demo](https://js13kgames.com/games/robo-galactic-shooter/index.html)
+|
+[source](https://github.com/AshBardhan/robo-galactic-shooter)
 
 ## What we Learned
 
@@ -113,3 +130,7 @@ In some cases we even avoided using closure compiler, as arrow functions & class
 ## Conclusion
 
 This event was not something of business value but proved to be an amazing experience not only in terms of what we learned from it, but also in how much fun we had while implementing these concepts. After all, game development is as fun as it gets when it comes to programming - creating a tiny universe of your own, the laws of physics are what you want them to be, things evolve how you tell them to. And we certainly managed to pick up some nice ideas along the way.
+
+We would love to hear your feedback or answer any queries you might have, feel free to drop a comment or tweet us at [@wingify_engg](https://twitter.com/wingify_engg).
+
+### Game on!
