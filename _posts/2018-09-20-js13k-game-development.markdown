@@ -27,7 +27,9 @@ Author: [Aditya Mishra](https://twitter.com/Aditya_r_m)
 
 The concept behind this one is simple, You will have access to Rubik's cube variants of different sizes & shapes to solve. You're likely familiar with the standard size 3 Rubik's cube. But what you may not be aware of is that it's actually just one item from a huge family of puzzles with rich mathematical structures. This game was to be built so that it can at least support face turning Tetrahedra & Octahedra apart from the standard cubes.
 
-![](/images/2018/09/js13k_twisty_polyhedra.gif)
+<div style="text-align:center;">
+  <img src="/images/2018/09/js13k_twisty_polyhedra.gif" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
 
 Some of the fun challenges involved with this one were:
 * Composing & rendering the shape
@@ -48,7 +50,9 @@ Author: [Surbhi Mahajan](https://twitter.com/surbhi_mahajan)
 
 The idea of this game is inspired by ‘Duet’. Although the gameplay is based on the classic game, it offers extended features and new visuals. There are 3 self-contained levels each with a unique challenge. The player rotates colored orbs in a circular track, guiding them to avoid incoming obstacles. It's required to keep all the orbs intact to keep going. The orbs only collide with obstacles of a different color than them & pass unharmed through obstacles otherwise.
 
-![](/images/2018/09/js13k_keep_alive.gif)
+<div style="text-align:center;">
+  <img src="/images/2018/09/js13k_keep_alive.gif" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
 
 A few of the interesting challenges with this were:
 * Collision detection & revert effects
@@ -69,7 +73,9 @@ Author: [Punit Gupta](https://twitter.com/PunitGu22548112)
 
 This game is inspired by a classic game 'Snow Bros' but with a very different flavor. We all use various offline storage devices to save our precious data. But inevitably, sometimes the data gets corrupted due to viruses. The goal here is to go into those devices, kill those viruses and save the data. The gameplay involves moving around, climbing the platforms, freezing the opponents and throwing them over other enemies.
 
-![](/images/2018/09/js13k_anti_virus.gif)
+<div style="text-align:center;">
+  <img src="/images/2018/09/js13k_anti_virus.gif" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
 
 Some of the major challenges involved with this idea are:
 * Detecting collisions among platforms, walls, opponents, shooters and player.
@@ -89,7 +95,9 @@ Author: [Hemkaran Raghav](https://twitter.com/hemkaranraghav)
 
 This game is inspired by one of the most popular games of all time, ‘Spider Solitaire’. In this one, you don’t have to stack the cards in increasing order. Instead, numbers are written on these cards and you have to stack identical cards over each other causing them to merge into a new card with double value. Your goal is to create the highest score possible.
 
-![](/images/2018/09/js13k_sum_it_up.gif)
+<div style="text-align:center;">
+  <img src="/images/2018/09/js13k_sum_it_up.gif" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
 
 The most fun parts of this implementation were creating smooth & beautiful animations.
 
@@ -105,7 +113,9 @@ Author: [Dinkar Pundir](https://twitter.com/dinkarpundir)
 
 Inspired by vvvvvv, this game is based on playing with gravity. Apart from the ability to move left/right, you can toggle the direction of the pull. On the click of a button, this direction can be flipped upside-down. This basic idea when combined with adding obstacles in creative ways can lead to plenty of possibilities for a platformer.
 
-![](/images/2018/09/js13k_up&down.gif)
+<div style="text-align:center;">
+  <img src="/images/2018/09/js13k_up&down.gif" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
 
 This involved problems like:
 * Implementing smooth discrete integration that provides a nice balanced difficulty
@@ -126,7 +136,9 @@ Author: [Ashish Bardhan](https://twitter.com/CreativeBakchod)
 
 The idea for this entry was to create a classic 2D Shoot'em up style & nostalgic retro feel. You need to survive a barrage of asteroids for as long as possible. The good thing is that you're given some solid guns! The robot is flying towards the right into the coming asteroids of different sizes & velocities. The gameplay involves either dodging them or shooting them till they disintegrate.
 
-![](/images/2018/09/js13k_robo_galactic_shooter.gif)
+<div style="text-align:center;">
+  <img src="/images/2018/09/js13k_robo_galactic_shooter.gif" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
 
 Plenty of effort went into the following parts:
 * Creating cool background effects, handling sprites
