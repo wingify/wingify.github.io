@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JS13K Games
+title: JS13K Games 2K18
 excerpt: This post describes our experience of the game development competition JS13kGames 2018
 authorslug: aditya_mishra_punit_gupta
 author: Aditya Mishra, Punit Gupta
