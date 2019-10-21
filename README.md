@@ -1,2 +1,2 @@
 Engineering @ Wingify
-http://engineering.wingify.com
+https://engineering.wingify.com
