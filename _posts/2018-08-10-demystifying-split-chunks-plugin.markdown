@@ -63,7 +63,7 @@ We can have more control over this functionality. We can change default configur
            optimization: {
               splitChunks: {
                  chunks: 'all',
-                 maxAysncRequests: 20
+                 maxAsyncRequests: 20
               }
            }
         };
