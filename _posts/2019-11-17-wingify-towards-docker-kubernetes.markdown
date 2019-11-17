@@ -1,0 +1,355 @@
+---
+layout: post
+title: Wingify towards docker and kubernetes
+excerpt: Journey towards Docker and Kubernetes
+authorslug: punit_gupta_kamal_sehrawat
+author: Punit Gupta, Kamal Sehrawat
+---
+
+## Introduction:
+
+In wingify, we follow micro service architecture to leverage it's great scalability benefits. We have a lot of micro services along with a complex networking setup among them. Currently all the services are deployed on virtual machines on the cloud. As the micro services are growing in number as well as the load they have to handle, we are experiencing repercussion with the existing setup that requires a lot of manual effort. To avoid all this we are moving towards the docker and kubernetes world!
+
+
+## Why we needed docker and kubernetes?
+
+The problems we are facing with the existing architecture:
+
+* **Setup a new environment**
+  - To create a new staging/prod environment requires to setup all the services, DBs and other tools along with the networking between them.
+  - It takes a lot of manual effort and it's very error prone.
+  - Can't even think of setting up on local system.
+
+* **Staging issues**
+  - Maintaining the services uptime on multiple staging environments is huge pain even with the health check APIs.
+  - Consumes a lot of developer and QA time with no productivity.
+
+* **Local development**
+  - It's not easy to develop and debug a service locally and connect it to the rest of the services running on staging.
+  - Consantly redeploying on staging to test the changes is time consuming.
+
+* **Auto scaling**
+  - The load on the services can never be the same all the time.
+  - Keeping the services up for the whole year just to handle the peak load which comes on few days of festive season is waste of resources.
+  - Regularly benchmarking the load to scale the services with time is not an optimal way.
+
+* **Auto service restarts**
+  - If the service goes in hanged state or terminates due to memory leak, resource polling deadlocks, file discriptors issues or anything else, how it's going to restart automatically?
+  - Although there are different tools available for multiple languages but setting them ip for each service on every server is not ideal.
+
+* **Load balancing**
+  - Adding and maintaning an extra entry point like nginx just to provide load balancing is an overhead.
+
+We are trying to tackle all these problems in a much automated and easy way using docker and kubernetes and few open source tools.
+
+## Our Journey
+
+We started out from the scratch. Read a lot of articles, documentations and tutorials. Gone through some existing staging and production level open source projects. Some of them solved few of our problems, for some we found our own way and rest of them are yet to be solved!
+
+Below is the brief idea of all the ideas and approaches we found to solve many of our problems, the final approach we took and comparison between them:
+
+### Common repository approach
+
+Every dockerised service starts with a Dockerfile. But the initial issue is where to put them? There will be a lot of Dockerfiles combining all the services.
+
+There are two ways to put them:
+  1. **Each service contains it's own dockerfile**
+      - All the repositories has separate dockerfiles specific to that service.
+  2. **A common repository of all dockerfiles**
+      - All the dockerfiles of every service is added in a common repository.
+
+Below is the comparison among them:
+
+|    | Common Repository                                                            | Separate Repositories                                           |
+|----|------------------------------------------------------------------------------|-----------------------------------------------------------------|
+| 1. | Need a proper structure to distinguish dockerfiles                           | Separation of concerns                                          |
+| 2. | Common Linters and Formatters                                                | Each repo has to add the same linter and formatter repetitively |
+| 3. | Common githooks to regulate commit messages, pre commit, pre push etc. tasks | Same githooks in every service                                  |
+| 4. | Can contain reusable docker base files                                       | No central place to put reusable dockerfiles                    |
+| 5. | Central place for Devops to manage the permissions of all dockerfiles        | Very difficult to manage dockerfiles individually by Devops     |
+
+You maybe thinking about the ease of local development using volumes in the separate repository approach. We will get back to that later and show how easy it will be in common repository approach.
+
+So, the common repository approach is clear winner among them. But what about the structure of it? Below can the structure for same:
+
+<div style="text-align:center;">
+  <img src="/images/2019/11/docker_common_repo_structure.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
+
+Next, we will discuss the reusable base images concept.
+
+### Reusable docker base images
+
+It's very common that a lot of services needs same OS, tools, libraries etc like all the node services may need debian stretch OS with node.js and yarn installed of a particular version. So, instead of adding them in all such docker files, we can create some reusable, pluggable docker base images.
+
+Below is the example of a Node.js service which requires:
+  - Debian stretch OS
+  - Node.js version 9.11.2 + Yarn
+  - Apache thrift version 0.10.0
+
+**Node.js base image:**
+
+```dockerfile
+FROM debian:stretch-slim
+
+# Install Node 9.11.x
+ARG buildDeps=" \
+    curl \
+    g++ \
+    make"
+
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+# hadolint ignore=DL3008,DL3015
+RUN apt-get update && apt-get install -y $buildDeps \
+    && curl -sL https://deb.nodesource.com/setup_9.x | bash - && apt-get install -y nodejs=9.11.* \
+    && npm i -g yarn@1.19.1 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+```
+
+Let's consider we build this with name 'wingify-node-9.11.2:1.0.5'. Where 'wingify-node-9.11.2' represents docker image type and '1.0.5' is the image tag.
+
+**Apache thrift base image:**
+
+```dockerfile
+# Default base image
+ARG BASE=wingify-node-9.11.2:1.0.5
+
+# hadolint ignore=DL3006
+FROM ${BASE}
+
+ARG THRIFT_VERSION=0.10.0
+
+# Referred from https://github.com/ahawkins/docker-thrift/blob/master/0.10/Dockerfile
+# hadolint ignore=DL3008,DL3015
+RUN apt-get update \
+    && curl -sSL "http://apache.mirrors.spacedump.net/thrift/$THRIFT_VERSION/thrift-$THRIFT_VERSION.tar.gz" -o thrift.tar.gz \
+    && mkdir -p /usr/src/thrift \
+    && tar zxf thrift.tar.gz -C /usr/src/thrift --strip-components=1 \
+    && rm thrift.tar.gz \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /usr/src/thrift
+RUN ./configure  --without-python --without-cpp \
+    && make \
+    && make install \
+    && rm -rf /usr/src/thrift
+```
+
+Here by default we are using above created node's docker image. But we can pass any other environment's base image as argument to install thrift there. So, it's pluggable anwhere.
+
+Finally the actual service can use above as base image for it's dockerfile.
+
+### Access private repository dependencies
+
+We have multiple services that have some dependencies which are fetched from private repositories. Like in our node service we below as a dependency in package.json.
+
+```js
+  {
+    "my-dependency": "git+ssh://git@stash/link/of/repo:v1.0.0",
+  }
+```
+    
+Normally we need ssh keys to fetch these dependencies, but a docker container won't be having it. Below are the few ways of solving this:
+
+  * **Way 1:** Install dependencies externally (local or jenkins) and docker will copy them directly
+    * **Advantages:**
+      - No SSH key required by docker.
+    * **Downsides:**
+      - Dependencies installation won't be cached auto as it's happening outside the docker.
+      - Some modules like bcrypt have binding issues if not installed directly on same machine.
+
+  * **Way 2:** Pass SSH key as an argument in dockerfile or copy it from system to the working directory and let dockerfile copy it. Docker container can then install dependencies.
+    * **Advantages:**
+      - Caching is achieved.
+      - No module binding issues.
+    * **Downside:**
+      - SSH key would be exposed in docker container if not handled correctly.
+      - Single SSH key will have security issues and different ones will be difficult to manage.
+
+  * **Way 3:** Host the private repos globally like our own private npm (in case of node.js) and add it's host entry on the system. Docker container can then install dependencies by fetching from our private npm.
+    * **Advantages:**
+      - Caching is acheived
+      - No SSH key required
+    * **Disadvantages:**
+      - One time setup of hosting.
+      - Need to publish the private repos each time we create a new tag.
+
+Way 3 proved to be much better in our case and we moved ahead with it.
+
+### Service Dockerfile
+
+The final dockerfile of the service implementing all above will be like:
+
+```dockerfile
+  ARG BASE=wingify-node-9.11.2-thrift-0.10.0:1.0.5
+
+  # hadolint ignore=DL3006
+  FROM ${BASE}
+
+  RUN mkdir -p /opt/my-service/
+  WORKDIR /opt/my-service
+
+  # Dependency installation separately for caching
+  COPY ./package.json ./yarn.lock ./.npmrc ./
+  RUN yarn install
+
+  COPY . .
+
+  CMD ["yarn", "start:docker"]
+```
+
+Here '.npmrc' contains the registry which points to our own private npm. We are copying it so that docker container can fetch our private repos from it.
+
+### Cacheing
+
+Everytime we change our code, we don't want docker container to install dependencies again (unless changed). For this we divided the 'COPY' step in above dockerfile in 2 parts:
+
+```dockerfile
+  # Here we are copying the package.json and yarn.lock files and doing dependencies installation.
+  # This step will always be cached in docker unless there is change in any of these files
+  COPY ./package.json ./yarn.lock ./.npmrc ./
+  RUN yarn install
+
+  COPY . .
+```
+
+Doing all this will reduce the docker image build time to just few seconds!
+
+### Auto tagging and rollback
+
+Tagging is important for any rollbacks on productions. Fortunately it's easy to do in docker. While building and pushing an image on kubernetes we can specify the tag version with a colon. We can then use this tag in kubernetes yaml file to deploy on the pods.
+
+```bash
+  docker build -t org/my-service .
+  docker build -t org/my-service:1.2.3 .
+
+  docker push org/my-service .
+  docker push org/my-service:1.2.3 .
+```
+
+This works fine, but still we manually have to increment the tag. What if there is auto tagging?
+
+First lets find out the latest tag. To get from GCP:
+
+```bash
+  gcloud container images list-tags image-name --sort-by=~TAGS --limit=1 --format=json
+```
+
+We can use this in a custom node script which will return the new incremented version. We just have to pass the image name and the release type i.e. major/minor/patch to it.
+
+```js
+  // Usage: node file-name image-name patch
+  const exec = require('child_process').execSync;
+
+  const TAG_TYPES = {
+    PATCH: 'patch',
+    MINOR: 'minor',
+    MAJOR: 'major'
+  };
+
+  const VERSONING_REGEX = /^(v)?(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/m;
+
+  class Autotag {
+    constructor(imageName = '', tagType = TAG_TYPES.PATCH) {
+      this._validateParams(imageName, tagType);
+      this.imageName = imageName;
+      this.tagType = tagType.toLowerCase();
+    }
+
+    // Private functions
+    _validateParams(imageName, tagType) {
+      if (!imageName) {
+        throw new Error('Image name is mandatory.');
+      }
+
+      if (!Object.values(TAG_TYPES).includes(tagType)) {
+        throw new Error(
+          `Invalid tag type specified. Possible values are ${Object.values(
+            TAG_TYPES
+          ).join(', ')}.`
+        );
+      }
+    }
+
+    _fetchTagsFromGCP() {
+      return exec(
+        `gcloud container images list-tags ${
+          this.imageName
+        } --sort-by=~TAGS --limit=1 --format=json`
+      ).toString();
+    }
+
+    // Public functions
+    increment() {
+      const stringifiedTags = this._fetchTagsFromGCP();
+
+      if (stringifiedTags) {
+        try {
+          const { tags } = JSON.parse(stringifiedTags)[0];
+
+          for (let i = tags.length - 1; i >= 0; i--) {
+            const tag = tags[i];
+            if (VERSONING_REGEX.test(tag)) {
+              let [
+                prefix = '',
+                major = 0,
+                minor = 0,
+                patch = 0
+              ] = VERSONING_REGEX.exec(tag).slice(1);
+
+              switch (this.tagType) {
+                case TAG_TYPES.PATCH:
+                  patch++;
+                  break;
+                case TAG_TYPES.MINOR:
+                  patch = 0;
+                  minor++;
+                  break;
+                case TAG_TYPES.MAJOR:
+                  patch = 0;
+                  minor = 0;
+                  major++;
+                  break;
+              }
+
+              return `${prefix}${major}.${minor}.${patch}`;
+            }
+          }
+        } catch (e) {}
+      }
+
+      // Return default tag if none already exists.
+      return '0.0.1';
+    }
+  }
+
+  try {
+    console.log(new Autotag(...process.argv.slice(2)).increment());
+  } catch (e) {
+    console.log(e.toString());
+  }
+```
+
+Thanks [Gaurav Nanda](https://twitter.com/gauravmuk) for the above script.
+
+### Production stage rollout
+
+Our ultimate goal is to migrate everything from existing setup to GCP with docker and kubernetes. Setting the whole system in one go on production is time consuming as well as risky.
+
+To avoid this we are targeting individual services one by one. So, a service will run on GCP as well as on existing server with their databases pointing to the old setup. We will open them for a few accounts at beginning. The rest of the accounts will work as before. This will ensure that if any issue comes in new setup, we can easily switch back to the old setup while fixing it.
+
+<div style="text-align:center;">
+  <img src="/images/2019/11/docker_stage_rollout.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
+
+## Next steps
+
+  * Integrate health check APIs with kubernetes
+  * Development environment usking [telepresence](http://telepresence.io/)
+  * Add service discovery tool like [consul](https://www.consul.io/)
+  * Better logging
+  * Integrate [helm](https://helm.sh/) to manage the kubernetes cluster
+  * Docker image size management
+  * Add support for blue green deployments
