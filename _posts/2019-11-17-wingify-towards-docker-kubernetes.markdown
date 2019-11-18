@@ -1,28 +1,25 @@
 ---
 layout: post
-title: Wingify towards docker and kubernetes
+title: Wingify towards docker and Kubernetes
 excerpt: Journey towards Docker and Kubernetes
 authorslug: punit_gupta_kamal_sehrawat
 author: Punit Gupta, Kamal Sehrawat
 ---
 
 ## Introduction:
+ 
+At Wingify, we follow microservice architecture to leverage it's great scalability benefits. We have a lot of microservices along with a complex networking setup among them. Currently, all the services are deployed on virtual machines on the cloud. We wanted to improve this architecture set up and use the latest technologies available. To avoid all this we are moving towards the docker and Kubernetes world!
 
-At Wingify, we follow micro service architecture to leverage it's great scalability benefits. We have a lot of micro services along with a complex networking setup among them. Currently all the services are deployed on virtual machines on the cloud. We wanted to improve this architecture setup and use the latest technologies available. To avoid all this we are moving towards the docker and kubernetes world!
 
-
-## Why we needed docker and kubernetes?
+## Why Docker and Kubernetes?
 
 The problems we are facing with the existing architecture:
 
-* **Setup a new environment**
-  - To create a new staging/prod environment requires to setup all the services, DBs and other tools along with the networking between them.
-  - It takes a lot of manual effort and it's very error prone.
-  - Can't even think of setting up on local system.
-
-* **Staging issues**
-  - Maintaining the services uptime on multiple staging environments is huge pain even with the health check APIs.
-  - Consumes a lot of developer and QA time with no productivity.
+* **Standardization and consistency**
+  - There is always an issue of a consistent/standard environment between production and development.
+  - Our mostly time goes in creating a prod level environment in development face to actually fix or create any new feature
+  - By using this, now we are more equipped to efficiently analyze and fix bugs within the application. This reduces the amount of time wasted on defects and increases the amount of time available for feature development.
+  - Docker provides a repeatable dev prod environment and Eliminates the "it works on my machine" problem once and for all.
 
 * **Local development**
   - It's not easy to develop and debug a service locally and connect it to the rest of the services running on staging.
@@ -40,35 +37,35 @@ The problems we are facing with the existing architecture:
 * **Load balancing**
   - Adding and maintaning an extra entry point like nginx just to provide load balancing is an overhead.
 
-We are trying to tackle all these problems in a much automated and easy way using docker and kubernetes and few open source tools.
+We are trying to tackle all these problems in a much automated and easy way using docker and Kubernetes and few open source tools.
 
 ## Our Journey
-
-We started out from the scratch. Read a lot of articles, documentations and tutorials. Gone through some existing staging and production level open source projects. Some of them solved few of our problems, for some we found our own way and rest of them are yet to be solved!
-
+ 
+We started out from scratch. Read a lot of articles, documentation, and tutorials. Gone through some existing staging and production level open source projects. Some of them solved a few of our problems, for some we found our own way and the rest of them are yet to be solved!
+ 
 Below is the brief idea of all the ideas and approaches we found to solve many of our problems, the final approach we took and comparison between them:
 
 ### Common repository approach
 
-Every dockerised service starts with a Dockerfile. But the initial issue is where to put them? There will be a lot of Dockerfiles combining all the services.
+Every dockerized service starts with a Dockerfile. But the initial issue is where to put them? There will be a lot of Dockerfiles combining all the services.
 
 There are two ways to put them:
   1. **Each service contains it's own dockerfile**
-      - All the repositories has separate dockerfiles specific to that service.
+      - All the repositories have separate dockerfiles specific to that service.
   2. **A common repository of all dockerfiles**
-      - All the dockerfiles of every service is added in a common repository.
+      - All the dockerfiles of every service are added to a common repository.
 
 Below is the comparison among them:
 
-|    | Common Repository                                                            | Separate Repositories                                           |
-|----|------------------------------------------------------------------------------|-----------------------------------------------------------------|
-| 1. | Need a proper structure to distinguish dockerfiles                           | Separation of concerns                                          |
-| 2. | Common Linters and Formatters                                                | Each repo has to add the same linter and formatter repetitively |
-| 3. | Common githooks to regulate commit messages, pre commit, pre push etc. tasks | Same githooks in every service                                  |
-| 4. | Can contain reusable docker base files                                       | No central place to put reusable dockerfiles                    |
-| 5. | Central place for Devops to manage the permissions of all dockerfiles        | Very difficult to manage dockerfiles individually by Devops     |
+|    | Common Repository                                                             | Separate Repositories                                           |
+|----|-------------------------------------------------------------------------------|-----------------------------------------------------------------|
+| 1. | Need a proper structure to distinguish dockerfiles                            | Separation of concerns                                          |
+| 2. | Common Linters and Formatters                                                 | Each repo has to add the same linter and formatter repetitively |
+| 3. | Common githooks to regulate commit messages, pre-commit, pre-push, etc. tasks | Same githooks in every service                                  |
+| 4. | Can contain reusable docker base files                                        | No central place to put reusable dockerfiles                    |
+| 5. | Central place for DevOps to manage the permissions of all dockerfiles         | Very difficult to manage dockerfiles individually by Devops     |
 
-You maybe thinking about the ease of local development using volumes in the separate repository approach. We will get back to that later and show how easy it will be in common repository approach.
+You may be thinking about the ease of local development using volumes in the separate repository approach. We will get back to that later and show how easy it will be in a common repository approach.
 
 So, the common repository approach is clear winner among them. But what about the structure of it? Below can the structure for same:
 
@@ -80,7 +77,7 @@ Next, we will discuss the reusable base images concept.
 
 ### Dockerfile Linter
 
-There are many opensource linters available for docker files. We found [hadolint](https://github.com/hadolint/hadolint) meets most of the standards that docker recommends. So, to lint all the files we just have to issue a simple command which can be easily integrated in the githooks.
+There are many opensource linters available for docker files. We found [hadolint](https://github.com/hadolint/hadolint) meets most of the standards that docker recommends. So, to lint all the files we just have to issue a simple command which can be easily integrated into the githooks.
 
 ```bash
   hadolint **/*Dockerfile
@@ -93,7 +90,7 @@ We searched and tried multiple formatters, but none of them worked as per our re
 
 ### Reusable docker base images
 
-It's very common that a lot of services needs same OS, tools, libraries etc like all the node services may need debian stretch OS with node.js and yarn installed of a particular version. So, instead of adding them in all such docker files, we can create some reusable, pluggable docker base images.
+It's very common that a lot of services need the same OS, tools, libraries, etc like all the node services may need Debian stretch OS with node.js and yarn installed of a particular version. So, instead of adding them in all such docker files, we can create some reusable, pluggable docker base images.
 
 Below is the example of a Node.js service which requires:
   - Debian stretch OS
@@ -106,18 +103,22 @@ Below is the example of a Node.js service which requires:
 FROM debian:stretch-slim
 
 # Install Node 9.11.x
-ARG buildDeps=" \
+# Defining builDeps as an argument in alphabetical order for better readability and avoiding duplicacy.
+ARG buildDeps=" \  
     curl \
     g++ \
     make"
 
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+# It causes a pipeline to produce a failure return code if any command results in an error.
+SHELL ["/bin/bash", "-o", "pipefail", "-c"] 
 # hadolint ignore=DL3008,DL3015
-RUN apt-get update && apt-get install -y $buildDeps \
+RUN apt-get update && apt-get install -y —- no-install-recommends $buildDeps \
+    # Use --no-install-recommends to avoid installing packages that aren't technically dependencies but are recommended to be installed alongside packages.
     && curl -sL https://deb.nodesource.com/setup_9.x | bash - && apt-get install -y nodejs=9.11.* \
     && npm i -g yarn@1.19.1 \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean \ 
+    # Remove apt-cache to make the image smaller
+    && rm -rf /var/lib/apt/lists/* 
 ```
 
 Let's consider we build this with name 'wingify-node-9.11.2:1.0.5'. Where 'wingify-node-9.11.2' represents docker image type and '1.0.5' is the image tag.
@@ -131,7 +132,8 @@ ARG BASE=wingify-node-9.11.2:1.0.5
 # hadolint ignore=DL3006
 FROM ${BASE}
 
-ARG THRIFT_VERSION=0.10.0
+# Declaring argument to be used in dockerfile to make it reusable.
+ARG THRIFT_VERSION=0.10.0 
 
 # Referred from https://github.com/ahawkins/docker-thrift/blob/master/0.10/Dockerfile
 # hadolint ignore=DL3008,DL3015
@@ -140,19 +142,22 @@ RUN apt-get update \
     && mkdir -p /usr/src/thrift \
     && tar zxf thrift.tar.gz -C /usr/src/thrift --strip-components=1 \
     && rm thrift.tar.gz \
+    # Clean the apt cache on.
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    # Remove apt cache to make the image smaller.
+    && rm -rf /var/lib/apt/lists/* 
 
 WORKDIR /usr/src/thrift
 RUN ./configure  --without-python --without-cpp \
     && make \
     && make install \
+    # Removing the souce code after installation
     && rm -rf /usr/src/thrift
 ```
 
-Here by default we are using above created node's docker image. But we can pass any other environment's base image as argument to install thrift there. So, it's pluggable anwhere.
+Here, by default, we are using the above created node's docker image. But we can pass any other environment's base image as an argument to install thrift there. So, it's pluggable everywhere.
 
-Finally the actual service can use above as base image for it's dockerfile.
+Finally, the actual service can use above as a base image for it's dockerfile.
 
 ### Access private repository dependencies
 
@@ -166,28 +171,28 @@ We have multiple services that have some dependencies which are fetched from pri
     
 Normally we need ssh keys to fetch these dependencies, but a docker container won't be having it. Below are the few ways of solving this:
 
-  * **Way 1:** Install dependencies externally (local or jenkins) and docker will copy them directly
+  * **Way 1:** Install dependencies externally (local or Jenkins) and docker will copy them directly
     * **Advantages:**
       - No SSH key required by docker.
     * **Downsides:**
       - Dependencies installation won't be cached auto as it's happening outside the docker.
-      - Some modules like bcrypt have binding issues if not installed directly on same machine.
+      - Some modules like bcrypt have binding issues if not installed directly on the same machine.
 
   * **Way 2:** Pass SSH key as an argument in dockerfile or copy it from system to the working directory and let dockerfile copy it. Docker container can then install dependencies.
     * **Advantages:**
       - Caching is achieved.
       - No module binding issues.
     * **Downside:**
-      - SSH key would be exposed in docker container if not handled correctly.
+      - SSH key would be exposed in a docker container if not handled correctly.
       - Single SSH key will have security issues and different ones will be difficult to manage.
 
   * **Way 3:** Host the private repos globally like our own private npm (in case of node.js) and add it's host entry on the system. Docker container can then install dependencies by fetching from our private npm.
     * **Advantages:**
-      - Caching is acheived
+      - Caching is achieved
       - No SSH key required
     * **Disadvantages:**
       - One time setup of hosting.
-      - Need to publish the private repos each time we create a new tag.
+      - We need to publish the private repos each time we create a new tag.
 
 Way 3 proved to be much better in our case and we moved ahead with it.
 
@@ -213,11 +218,11 @@ The final dockerfile of the service implementing all above will be like:
   CMD ["yarn", "start:docker"]
 ```
 
-Here '.npmrc' contains the registry which points to our own private npm. We are copying it so that docker container can fetch our private repos from it.
+Here '.npmrc' contains the registry which points to our own private npm. We are copying it so that the docker container can fetch our private repos from it.
 
 ### Cacheing
 
-Everytime we change our code, we don't want docker container to install dependencies again (unless changed). For this we divided the 'COPY' step in above dockerfile in 2 parts:
+Every time we change our code, we don't want docker container to install dependencies again (unless changed). For this we divided the 'COPY' step in above dockerfile into 2 parts:
 
 ```dockerfile
   # Here we are copying the package.json and yarn.lock files and doing dependencies installation.
@@ -228,11 +233,11 @@ Everytime we change our code, we don't want docker container to install dependen
   COPY . .
 ```
 
-Doing all this will reduce the docker image build time to just few seconds!
+Doing all this will reduce the docker image build time to just a few seconds!
 
-### Auto tagging and rollback
+### Auto-tagging and rollback
 
-Tagging is important for any rollbacks on productions. Fortunately it's easy to do in docker. While building and pushing an image on kubernetes we can specify the tag version with a colon. We can then use this tag in kubernetes yaml file to deploy on the pods.
+Tagging is important for any rollback on productions. Fortunately, it's easy to do in docker. While building and pushing an image on Kubernetes we can specify the tag version with a colon. We can then use this tag in Kubernetes YAML file to deploy on the pods.
 
 ```bash
   docker build -t org/my-service .
@@ -242,9 +247,9 @@ Tagging is important for any rollbacks on productions. Fortunately it's easy to 
   docker push org/my-service:1.2.3 .
 ```
 
-This works fine, but still we manually have to increment the tag. What if there is auto tagging?
+This works fine, but still, we manually have to increment the tag. What if there is auto-tagging?
 
-First lets find out the latest tag. For finding from GCP the command is:
+First, let's find out the latest tag. For finding from GCP the command is:
 
 ```bash
   gcloud container images list-tags image-name --sort-by=~TAGS --limit=1 --format=json
@@ -347,11 +352,11 @@ We can use this in a custom node script which will return the new incremented ve
 
 Thanks [Gaurav Nanda](https://twitter.com/gauravmuk) for the above script.
 
-### Production stage rollout
+### Production staged rollout
 
-Our ultimate goal is to migrate everything from existing setup to GCP with docker and kubernetes. Setting the whole system in one go on production is time consuming as well as risky.
+Our ultimate goal is to migrate everything from the existing setup to GCP with Docker and Kubernetes. Setting the whole system in one go on production is time-consuming as well as risky.
 
-To avoid this we are targeting individual services one by one. So, a service will run on GCP as well as on existing server with their databases pointing to the old setup. We will open them for a few accounts at beginning. The rest of the accounts will work as before. This will ensure that if any issue comes in new setup, we can easily switch back to the old setup while fixing it.
+To avoid this we are targeting individual services one by one. So, a service will run on GCP as well as on the existing server with their databases pointing to the old setup. We will open them for a few accounts at the beginning. The rest of the accounts will work as before. This will ensure that if any issue comes in a new setup, we can easily switch back to the old setup while fixing it.
 
 <div style="text-align:center;">
   <img src="/images/2019/11/docker_stage_rollout.png" style="box-shadow: 2px 2px 10px 1px #aaa">
@@ -359,13 +364,15 @@ To avoid this we are targeting individual services one by one. So, a service wil
 
 ## Next steps
 
-  * Integrate health check APIs with kubernetes
+  * Integrate health check APIs with Kubernetes
   * Development environment usking [telepresence](http://telepresence.io/)
   * Add service discovery tool like [consul](https://www.consul.io/)
   * Add a vault system for secrets
   * Better logging
-  * Integrate [helm](https://helm.sh/) to manage the kubernetes cluster
+  * Integrate [helm](https://helm.sh/) to manage the Kubernetes cluster
   * Docker image size management
   * Add support for blue green deployments
 
-We may be using some things differently that can be improved upon. There can be better tools that we are yet to explore. We are open for any suggestions that can help us in improving what we already are doing and what we will require in the future. This is just a start, we will try to improve in every iteration and solve new challenges.
+We may be using some things differently that can be improved upon. There can be better tools that we are yet to explore. We are open to any suggestions that can help us in improving what we are already doing and what we will require in the future. This is just a start, we will try to improve in every iteration and solve new challenges.
+
+Thanks to [Gaurav Nanda](https://twitter.com/gauravmuk) for mentoring and guiding us for everything.
