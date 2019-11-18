@@ -8,7 +8,7 @@ author: Punit Gupta, Kamal Sehrawat
 
 ## Introduction:
 
-In wingify, we follow micro service architecture to leverage it's great scalability benefits. We have a lot of micro services along with a complex networking setup among them. Currently all the services are deployed on virtual machines on the cloud. As the micro services are growing in number as well as the load they have to handle, we are experiencing repercussion with the existing setup that requires a lot of manual effort. To avoid all this we are moving towards the docker and kubernetes world!
+At Wingify, we follow micro service architecture to leverage it's great scalability benefits. We have a lot of micro services along with a complex networking setup among them. Currently all the services are deployed on virtual machines on the cloud. We wanted to improve this architecture setup and use the latest technologies available. To avoid all this we are moving towards the docker and kubernetes world!
 
 
 ## Why we needed docker and kubernetes?
@@ -77,6 +77,19 @@ So, the common repository approach is clear winner among them. But what about th
 </div>
 
 Next, we will discuss the reusable base images concept.
+
+### Dockerfile Linter
+
+There are many opensource linters available for docker files. We found [hadolint](https://github.com/hadolint/hadolint) meets most of the standards that docker recommends. So, to lint all the files we just have to issue a simple command which can be easily integrated in the githooks.
+
+```bash
+  hadolint **/*Dockerfile
+```
+
+### Dockerfile Formatter
+
+We searched and tried multiple formatters, but none of them worked as per our requirements. We found [dockfmt](https://github.com/jessfraz/dockfmt) was close to our requirements but it also has some issues like it removes all the comments from dockerfile. So, we are yet to find a better formatter.
+
 
 ### Reusable docker base images
 
@@ -231,7 +244,7 @@ Tagging is important for any rollbacks on productions. Fortunately it's easy to 
 
 This works fine, but still we manually have to increment the tag. What if there is auto tagging?
 
-First lets find out the latest tag. To get from GCP:
+First lets find out the latest tag. For finding from GCP the command is:
 
 ```bash
   gcloud container images list-tags image-name --sort-by=~TAGS --limit=1 --format=json
@@ -349,7 +362,10 @@ To avoid this we are targeting individual services one by one. So, a service wil
   * Integrate health check APIs with kubernetes
   * Development environment usking [telepresence](http://telepresence.io/)
   * Add service discovery tool like [consul](https://www.consul.io/)
+  * Add a vault system for secrets
   * Better logging
   * Integrate [helm](https://helm.sh/) to manage the kubernetes cluster
   * Docker image size management
   * Add support for blue green deployments
+
+We may be using some things differently that can be improved upon. There can be better tools that we are yet to explore. We are open for any suggestions that can help us in improving what we already are doing and what we will require in the future. This is just a start, we will try to improve in every iteration and solve new challenges.
