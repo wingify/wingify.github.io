@@ -69,8 +69,8 @@ You may be thinking about the ease of local development using volumes in the sep
 
 So, the common repository approach is a clear winner among them. But what about its folder structure? We gave it plenty of thoughts and finally, this is our Docker repository folder structure:
 
-<div style="text-align:center;">
-  <img src="/images/2019/11/docker_common_repo_structure.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+<div style="text-align:center;margin:50px">
+  <img src="/images/2019/11/docker_common_repo_structure.png" style="height:500px;box-shadow: 2px 2px 10px 1px #222">
 </div>
   
 The folder structure is broadly categorized into 2 parts:
@@ -373,7 +373,7 @@ Our ultimate goal is to migrate everything from the existing setup to GCP with D
 
 To avoid this we are targeting individual services one by one. Initially, a service will run on GCP as well as on the existing server with their databases pointing to the old setup. We will open them for a few accounts at the beginning. The rest of the accounts will work as before. This will ensure that if any issue comes in a new setup, we can easily switch back to the old setup while fixing it.
 
-<div style="text-align:center;">
+<div style="text-align:center;margin:50px;">
   <img src="/images/2019/11/docker_stage_rollout.png" style="box-shadow: 2px 2px 10px 1px #aaa">
 </div>
 
@@ -396,3 +396,5 @@ Thanks to [Gaurav Nanda](https://twitter.com/gauravmuk) for mentoring and guidin
   * https://docs.docker.com/get-started/
   * https://kubernetes.io/docs/concepts/
   * https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/
+  * https://runnable.com/blog/9-common-dockerfile-mistakes
+  * https://github.com/wsargent/docker-cheat-sheet
