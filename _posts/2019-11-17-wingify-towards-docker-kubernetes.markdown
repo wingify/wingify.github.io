@@ -235,7 +235,7 @@ The final dockerfile of the service implementing all above will be like:
 
 Here '.npmrc' contains the registry which points to our own private npm. We are copying it so that Docker container can fetch our private repos from it.
 
-### Cacheing
+### Caching
 
 Every time we change our code, we don't want Docker container to install dependencies again (unless changed). For this we divided the 'COPY' step in above dockerfile into 2 parts:
 
