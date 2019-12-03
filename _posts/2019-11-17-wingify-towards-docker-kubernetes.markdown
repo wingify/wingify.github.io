@@ -2,7 +2,7 @@
 layout: post
 title: Wingify towards Docker and Kubernetes
 excerpt: Journey towards Docker and Kubernetes
-author slug: punit_gupta_kamal_sehrawat
+authorslug: punit_gupta_kamal_sehrawat
 author: Punit Gupta, Kamal Sehrawat
 ---
 
