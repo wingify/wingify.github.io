@@ -35,7 +35,7 @@ The problems we are facing with the existing infrastructure:
   - Although there are different tools available for multiple languages but setting them up for each service on every server is not ideal.
 
 * **Load balancing**
-  - Adding and maintaning an extra entry point like nginx just to provide load balancing is an overhead.
+  - Adding and maintaining an extra entry point like nginx just to provide load balancing is an overhead.
 
 We are trying to tackle all these problems in an automated and easy way using Docker, Kubernetes and few open-source tools.
 
@@ -380,7 +380,7 @@ To avoid this we are targeting individual services one by one. Initially, a serv
 ## Next steps
 
   * Integrate health check APIs with Kubernetes.
-  * Development environment usking [telepresence](http://telepresence.io/).
+  * Development environment using [telepresence](http://telepresence.io/).
   * Add service discovery tool like [consul](https://www.consul.io/).
   * Add a vault system for secrets.
   * Better logging.
@@ -393,8 +393,8 @@ We may be using some things differently that can be improved upon. There can be 
 Thanks to [Gaurav Nanda](https://twitter.com/gauravmuk) for mentoring and guiding us for everything.
 
 ## References
-  * https://docs.docker.com/get-started/
-  * https://kubernetes.io/docs/concepts/
-  * https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/
-  * https://runnable.com/blog/9-common-dockerfile-mistakes
-  * https://github.com/wsargent/docker-cheat-sheet
+  * [https://docs.docker.com/get-started/](https://docs.docker.com/get-started/)
+  * [https://kubernetes.io/docs/concepts/](https://kubernetes.io/docs/concepts/)
+  * [https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/](https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/)
+  * [https://runnable.com/blog/9-common-dockerfile-mistakes](https://runnable.com/blog/9-common-dockerfile-mistakes)
+  * [https://github.com/wsargent/docker-cheat-sheet](https://github.com/wsargent/docker-cheat-sheet)
