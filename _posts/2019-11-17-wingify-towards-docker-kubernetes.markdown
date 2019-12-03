@@ -8,22 +8,22 @@ author: Punit Gupta, Kamal Sehrawat
 
 ## Introduction:
  
-At Wingify, we follow microservice architecture to leverage it's great scalability benefits. We have a lot of microservices along with a complex networking setup among them. Currently, all the services are deployed on virtual machines on the cloud. We wanted to improve this architecture set up and use the latest technologies available. To avoid all this we are moving towards the [Docker](https://www.docker.com/) and [Kubernetes](https://kubernetes.io/) world!.
+At Wingify, we follow microservices based architecture to leverage it's great scalability benefits. We have a lot of microservices along with a complex networking setup among them. Currently, all the services are deployed on virtual machines on the cloud. We wanted to improve this architecture set up and use the latest technologies available. To avoid all this we are moving towards [Docker](https://www.docker.com/) and [Kubernetes](https://kubernetes.io/) world!.
 
 
 ## Why Docker and Kubernetes?
 
-The problems we are facing with the existing architecture:
+The problems we are facing with the existing infrastructure:
 
 * **Standardization and consistency**
   - There is always an issue of a consistent/standard environment between production and development.
-  - Most of our time goes in creating a prod level environment in development face to actually fix or create any new feature.
+  - Most of our time goes in creating a production like environment during development to rollout bugfixes or create any new features.
   - With the new architecture, now we are more equipped to efficiently analyze and fix bugs within the application. It has drastically reduced the time wasted on "local environment issues" and in turn increased time available to fix actual issues and new feature development.
-  - Docker provides a repeatable dev prod environment and eliminates the "it works on my machine" problem once and for all.
+  - Docker provides a repeatable production live development environment and eliminates the "it works on my machine" problem once and for all.
 
 * **Local development**
-  - It's not easy to develop and debug a service locally and connect it to the rest of the services running on testing environment.
-  - Constantly redeploying on testing environment to test the changes is time consuming.
+  - It's not easy to develop and debug a service locally and connect it to the rest of the services running on local environment.
+  - Constantly redeploying on local environment to test the changes is time consuming.
 
 * **Auto scaling**
   - The load on the services can never be the same all the time.
@@ -37,13 +37,13 @@ The problems we are facing with the existing architecture:
 * **Load balancing**
   - Adding and maintaning an extra entry point like nginx just to provide load balancing is an overhead.
 
-We are trying to tackle all these problems in a much automated and easy way using Docker, Kubernetes and few open-source tools.
+We are trying to tackle all these problems in an automated and easy way using Docker, Kubernetes and few open-source tools.
 
 ## Our Journey
  
 We started out from scratch. Read a lot of articles, documentation, and tutorials. Gone through some existing testing and production level open source projects. Some of them solved a few of our problems, for some we found our own way and the rest of them are yet to be solved!.
  
-Below is the brief idea of all the ideas and approaches we found to solve many of our problems, the final approach we took and comparison between them:
+Below is a brief idea of all the ideas and approaches we found to solve many of our problems, the final approach we took and comparison between them:
 
 ### Common repository approach
 
@@ -190,7 +190,7 @@ Normally we need ssh keys to fetch these dependencies, but a Docker container wo
     * **Advantages:**
       - No SSH key required by docker.
     * **Disadvantages:**
-      - Dependencies installation won't be cached auto as it's happening outside the docker.
+      - Dependencies installation won't be cached automatically as it's happening outside the docker.
       - Some modules like bcrypt have binding issues if not installed directly on the same machine.
 
   * **Option 2:** Pass SSH key as an argument in dockerfile or copy it from system to the working directory and let dockerfile copy it. Docker container can then install dependencies.
@@ -233,7 +233,7 @@ The final dockerfile of the service implementing all above will be like:
   CMD ["yarn", "start:docker"]
 ```
 
-Here '.npmrc' contains the registry which points to our own private npm. We are copying it so that theDdocker container can fetch our private repos from it.
+Here '.npmrc' contains the registry which points to our own private npm. We are copying it so that Docker container can fetch our private repos from it.
 
 ### Cacheing
 
