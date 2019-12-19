@@ -36,7 +36,7 @@ The venue for this event was at the Facebook office and I was thrilled to visit 
 </div>
 
 
-* **Facebook and Google swags** : Just a cherry on the top!
+* **Facebook and Google swags:** Just a cherry on the top!
 
 Anyways, the objective of this competition was to perform passive recon (the number of flags planted wasn&#39;t revealed) against the target (Google and Facebook) and capture as many flags as possible. Most of the challenges were related to OSINT and some of them were related to Web, Cryptography, steganography, and Reverse Engineering.
 
@@ -60,7 +60,7 @@ The first thing that comes to mind when relating CTF and the executable(APK) fil
 
 I quickly downloaded the latest app from [https://www.facebook.com/android\_upgrade](https://www.facebook.com/android_upgrade).
 
-Using the all-purpose decompiler tool([https://ibotpeaches.github.io/Apktool/](https://ibotpeaches.github.io/Apktool/)) as my first resort, I found the first flag in the AndroidManifest.xml file.
+Using the all-purpose decompiler [tool](https://ibotpeaches.github.io/Apktool/) as my first resort, I found the first flag in the AndroidManifest.xml file.
 
 <div style="text-align:center;margin:50px">
   <img src="/images/2019/12/bountycon_manifest_flag.png" style="box-shadow: 1px 1px 10px 1px #222; width: 820px; height: auto;">
@@ -70,7 +70,7 @@ But wait, **this is not the solution for Deeplink Challenge** :P
 
 The second flag was even more elusive. To solve the Deeplink challenge, I had to download and decompile the previous release of the facebook app.
 
-I downloaded the previous-release(Facebook 203.0.0.16.293) of the Facebook app from **apkmirror** ([https://www.apkmirror.com/apk/facebook-2/facebook/facebook-203-0-0-16-293-release/](https://www.apkmirror.com/apk/facebook-2/facebook/facebook-203-0-0-16-293-release/)) and decompiled the resources using apktool.
+I downloaded the previous-release(Facebook 203.0.0.16.293) of the Facebook app from [**apkmirror**](https://www.apkmirror.com/apk/facebook-2/facebook/facebook-203-0-0-16-293-release/) and decompiled the resources using apktool.
 
 After searching for some time, I found an interesting file called PSaaActivity.smali.
 
@@ -100,28 +100,28 @@ We reached at around 7:00 PM to the venue of the meetup, Lazada Visitor Centre. 
 <div style="text-align:center;margin:50px">
   <img src="/images/2019/12/alibaba_1.png" style="box-shadow: 1px 1px 10px 1px #222; width: 700px; height: auto;">
   <div style="text-align:center;margin-top:5px;">
-  	Picture Courtesy : <a href="https://twitter.com/AsrcSecurity">@AsrcSecurity</a>
+  	Picture Courtesy: <a href="https://twitter.com/AsrcSecurity">@AsrcSecurity</a>
   </div>
 </div>
 
 <div style="text-align:center;margin:50px">
   <img src="/images/2019/12/alibaba_2.png" style="box-shadow: 1px 1px 10px 1px #222; width: 300px; height: auto;">
   <div style="text-align:center;margin-top:5px;">
-  	Picture Courtesy : <a href="https://twitter.com/AsrcSecurity">@AsrcSecurity</a>
+  	Picture Courtesy: <a href="https://twitter.com/AsrcSecurity">@AsrcSecurity</a>
   </div>
 </div>
 
 <div style="text-align:center;margin:50px">
   <img src="/images/2019/12/alibaba_3.png" style="box-shadow: 1px 1px 10px 1px #222; width: 700px; height: auto;">
   <div style="text-align:center;margin-top:5px;">
-  	Picture Courtesy : <a href="https://twitter.com/AsrcSecurity">@AsrcSecurity</a>
+  	Picture Courtesy: <a href="https://twitter.com/AsrcSecurity">@AsrcSecurity</a>
   </div>
 </div>
 
 <div style="text-align:center;margin:50px">
   <img src="/images/2019/12/alibaba_4.png" style="box-shadow: 1px 1px 10px 1px #222; width: 700px; height: auto;">
   <div style="text-align:center;margin-top:5px;">
-  	Picture Courtesy : <a href="https://twitter.com/AsrcSecurity">@AsrcSecurity</a>
+  	Picture Courtesy: <a href="https://twitter.com/AsrcSecurity">@AsrcSecurity</a>
   </div>
 </div>
 
@@ -141,7 +141,7 @@ The long first day ended with a good dinner at Cook &amp; Brew at The Westin Hot
 
 ## Second Day of BountyCon
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On the second day of BountyCon, Facebook kicked off with a live hacking event where researchers were challenged to report security bugs across both Facebook and Google. On that day, researchers from various APAC regions and few top researchers from Hackerone had submitted 40 bugs in total and Facebook awarded over $ 120k for valid submissions. The top three researchers with maximum points were [Dzmitry Lukyanenka](https://twitter.com/xdzmitry), [Shubham Shah](https://twitter.com/infosec_au) and [Anbu Selvam Mercy](https://twitter.com/Im_AnbuSelvam). After the award ceremony, the event was wrapped up with an amazing dinner at Nude Grills and a few drinks.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On the second day of BountyCon, Facebook kicked off with a live hacking event where researchers were challenged to report security bugs across both Facebook and Google. On that day, researchers from various APAC regions and few top researchers from Hackerone had submitted 40 bugs in total and Facebook awarded over $120k for valid submissions. The top three researchers with maximum points were [Dzmitry Lukyanenka](https://twitter.com/xdzmitry), [Shubham Shah](https://twitter.com/infosec_au) and [Anbu Selvam Mercy](https://twitter.com/Im_AnbuSelvam). After the award ceremony, the event was wrapped up with an amazing dinner at Nude Grills and a few drinks.
 
 Overall it was a worthy learning experience and I would like to thank **Facebook** and **Google** for their effort in organizing this event.
 
@@ -150,27 +150,27 @@ Here are some of the photos that we took in Singapore and BountyCon:
 <div style="text-align:center;margin:50px">
   <img src="/images/2019/12/bountycon_1.png" style="box-shadow: 1px 1px 10px 1px #222; width: 700px; height: auto;">
   <div style="text-align:center;margin-top:5px;">
-  	Picture Courtesy : <a href="https://twitter.com/rraahhuullk">@rraahhuullk</a>
+  	Picture Courtesy: <a href="https://twitter.com/rraahhuullk">@rraahhuullk</a>
   </div>
 </div>
 
 <div style="text-align:center;margin:50px">
   <img src="/images/2019/12/bountycon_2.png" style="box-shadow: 1px 1px 10px 1px #222; width: 700px; height: auto;">
   <div style="text-align:center;margin-top:5px;">
-  	Picture Courtesy : <a href="https://twitter.com/GoogleVRP">@GoogleVRP</a>
+  	Picture Courtesy: <a href="https://twitter.com/GoogleVRP">@GoogleVRP</a>
   </div>
 </div>
 
 <div style="text-align:center;margin:50px">
   <img src="/images/2019/12/bountycon_3.png" style="box-shadow: 1px 1px 10px 1px #222; width: 700px; height: auto;">
   <div style="text-align:center;margin-top:5px;">
-  	Picture Courtesy : <a href="https://twitter.com/ajdumanhug">@ajdumanhug</a>
+  	Picture Courtesy: <a href="https://twitter.com/ajdumanhug">@ajdumanhug</a>
   </div>
 </div>
 
 <div style="text-align:center;margin:50px">
   <img src="/images/2019/12/bountycon_4.png" style="box-shadow: 1px 1px 10px 1px #222; width: 700px; height: auto;">
   <div style="text-align:center;margin-top:5px;">
-  	Picture Courtesy : <a href="https://twitter.com/InfoSecJon">@InfoSecJon</a>
+  	Picture Courtesy: <a href="https://twitter.com/InfoSecJon">@InfoSecJon</a>
   </div>
 </div>
