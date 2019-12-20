@@ -12,7 +12,7 @@ author: Varun PK
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In January 2019, Facebook and Google launched a **Capture the Flag** competition (CTF) for the first time to identify new whitehats in the Asia-Pacific region. Like everyone, we signed up for this competition and were super excited about this event.
 
-So there were several reasons that led me to attend this competition:
+So there were several reasons that led me to participate in this competition.
 
 * **Chance to visit Singapore:** 
 Top 20 winners were to be awarded free flight tickets and accommodations in Singapore to attend the event.
@@ -78,7 +78,7 @@ After searching for some time, I found an interesting file called PSaaActivity.s
   <img src="/images/2019/12/bountycon_deeplink_flag.png" style="box-shadow: 1px 1px 10px 1px #222; width: 420px; height: auto;">
 </div>
 
-after going through the assembly code and some debugging I finally found the second flag **BountyCon{cr4zy\_d33pl1nk\_m461c}**.
+After going through the assembly code and some debugging I finally found the second flag **BountyCon{cr4zy\_d33pl1nk\_m461c}**.
 
 
 By the end of the competition, I solved 18 challenges and earned a total of 943 points. Though it was nowhere near the 1200+ points achieved by Ankit and Dheeraj, I really enjoyed the competition :P :P
@@ -129,9 +129,9 @@ The rest of our day consisted of an awesome dinner and afterward, we returned to
 
 ## First Day of BountyCon
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On the 30th March 2017, the first day of BountyCon, We reached at around 8:30 AM to the venue of BountyCon, Facebook APAC HQ. After registration, we got a cool badge, a BountyCon goodie bag with Google Tshirt, a BountyCon hoodie, a thermos flask and Notepad in it.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On the 30th March 2017, the first day of BountyCon, we reached at the venue of BountyCon, Facebook APAC HQ at around 8:30 AM. After registration, we got a cool badge, a BountyCon goodie bag with Google Tshirt, a BountyCon hoodie, a thermos flask and Notepad in it.
 
-The first talk was of @Frans Rosen, Security Advisor at Detectify, he gave a walkthrough on methodology and strategies to win big bounties. Here is a link to his [presentation](https://speakerdeck.com/fransrosen/live-hacking-like-a-mvh-a-walkthrough-on-methodology-and-strategies-to-win-big).
+The first talk was by [Frans Rosen](https://twitter.com/fransrosen), Security Advisor at Detectify, he gave a walkthrough on methodology and strategies to win big bounties. Here is a link to his [presentation](https://speakerdeck.com/fransrosen/live-hacking-like-a-mvh-a-walkthrough-on-methodology-and-strategies-to-win-big).
 
 Some of the top Security Researchers and Security Engineers that included [Jack](https://twitter.com/fin1te)[Whitton](https://twitter.com/fin1te), [Maciej Szawłowsk](https://www.linkedin.com/in/maciej-szaw%C5%82owski-90b18951), [Yasin Soliman](https://twitter.com/securityyasin), Richard Neal, [Pranav Hivarekar](https://twitter.com/hivarekarpranav), [João Lucas Melo Brasio](https://twitter.com/whhackersbr), Mykola Babii, and [Michael Jezierny](https://www.linkedin.com/in/mjezierny/) also shared tips like chaining vulnerabilities to increase the impact and also gave some guidelines to pentest android application. The content of the talks was quite interesting, informative and gave a broad overview of the entire bug bounty process.
 
