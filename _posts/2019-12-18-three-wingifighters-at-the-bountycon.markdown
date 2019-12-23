@@ -129,7 +129,7 @@ The rest of our day consisted of an awesome dinner and afterward, we returned to
 
 ## First Day of BountyCon
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On the 30th March 2017, the first day of BountyCon, we reached at the venue of BountyCon, Facebook APAC HQ at around 8:30 AM. After registration, we got a cool badge, a BountyCon goodie bag with Google Tshirt, a BountyCon hoodie, a thermos flask and Notepad in it.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On the 30th March 2019, the first day of BountyCon, we reached at the venue of BountyCon, Facebook APAC HQ at around 8:30 AM. After registration, we got a cool badge, a BountyCon goodie bag with Google Tshirt, a BountyCon hoodie, a thermos flask and Notepad in it.
 
 The first talk was by [Frans Rosen](https://twitter.com/fransrosen), Security Advisor at Detectify, he gave a walkthrough on methodology and strategies to win big bounties. Here is a link to his [presentation](https://speakerdeck.com/fransrosen/live-hacking-like-a-mvh-a-walkthrough-on-methodology-and-strategies-to-win-big).
 
