@@ -2,7 +2,7 @@
 layout: post
 title: Three Wingifighters at the BountyCon
 excerpt: Three Wingifighters at the BountyCon
-author slug: varun_pk
+authorslug: varun_pk
 author: Varun PK
 ---
 
@@ -14,7 +14,7 @@ author: Varun PK
 
 So there were several reasons that led me to participate in this competition.
 
-* **Chance to visit Singapore:** 
+* **Chance to visit Singapore:**
 Top 20 winners were to be awarded free flight tickets and accommodations in Singapore to attend the event.
 
 <div style="text-align:left;margin:50px">
