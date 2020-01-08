@@ -1,12 +1,10 @@
 ---
 layout: post
-title: Performance improvements in VWO Smart Code
-excerpt: Performance improvements in VWO Smart Code
+title: Performance improvements in VWO Smartcode
+excerpt: Performance improvements in VWO Smartcode
 authorslug: shubham_soni_udit_chawla
 author: Shubham Soni, Udit Chawla
 ---
-# Performance improvements in VWO Smart Code
-
 VWO puts a lot of focus on ensuring websites remain performant enough while using VWO. We have been increasing the efforts in this area and due to this, we are able to bring two very big optimizations which would directly reduce the impact on the performance of the website.
 
 ## jQuery Dependency Removed
@@ -19,18 +17,18 @@ To improve the performance of the library we decided to write a small alternativ
 
 Why not jQuery
 
--   jQuery is huge in uncompressed size.
+-  jQuery is huge in uncompressed size (70.5KB).
     
 
--   jQuery needs to take care of all the browser quirks and in all possible ways, a method is called.
+    -   jQuery needs to take care of all the browser quirks and in all possible ways, a method is called.
     
 
 -   We were also not using all the features that it had to offer.
     
 
--   jQuery provides a lot of methods and not all of them are required for our purpose, For example, we don’t require animation support in CSS
+    -   jQuery provides a lot of methods and not all of them are required for our purpose, For example, we don’t require animation support in CSS
     
--   It provides a [custom builder](https://projects.jga.me/jquery-builder/) that allows users to skip certain modules but the resulting JS size was still a lot as it has unwanted things not used by us.
+    -   It provides a [custom builder](https://projects.jga.me/jquery-builder/) that allows users to skip certain modules but the resulting JS size was still a lot as it has unwanted things not used by us.
     
 
   
@@ -41,7 +39,7 @@ So, the solution was to create our own alternative of jQuery which would meet th
     
 2.  It should conform to jQuery API so that almost no change is required in the code using jQuery earlier.
     
-3.  It should be as stable as jQuery.
+3.  It should be as stable as jQuery. 
     
 
 ### Steps we took to migrate to “no jQuery”
@@ -61,16 +59,16 @@ So, the solution was to create our own alternative of jQuery which would meet th
 7.  Once all testing passed, we decided to enable this new library for [vwo.com](https://vwo.com/) as the website uses VWO itself to monitor the errors in production.
     
 
-1.  This was required to test the library in production with all sorts of devices and browsers visitors come from.
+	  -  This was required to test the library in production with all sorts of devices and browsers visitors come from.
     
-2.  The website has [sentry](https://sentry.io/organizations/vwo/issues/) in place to track any errors coming on the website.
+	  - The website has [sentry](https://sentry.io/organizations/vwo/issues/) in place to track any errors coming on the website.
     
-3.  We monitored the errors for a few days and were able to identify a few bugs from it which neither our automation and manual testing was able to catch.
+	  - We monitored the errors for a few days and were able to identify a few bugs from it which neither our automation and manual testing was able to catch.
     
 
-9.  After the bugs were fixed, we monitored for a few more days just to be sure and then we enabled it for all the new users signing up for VWO. It isn’t possible to enable it for existing accounts as they might be using some methods of jQuery directly.
+8.  After the bugs were fixed, we monitored for a few more days just to be sure and then we enabled it for all the new users signing up for VWO. It isn’t possible to enable it for existing accounts as they might be using some methods of jQuery directly.
     
-10.  Next, we would be working on a way to reliably identify accounts for which the new library can be automatically enabled.
+9.  Next, we would be working on a way to reliably identify accounts for which the new library can be automatically enabled.
     
 
 Below are the performance stats for a static and local website (we chose this to eliminate network fluctuations) using the two different versions of our library. All the stats are median of five performance audits we did.
@@ -129,27 +127,27 @@ Brotli Compression was something that would be enabled for all of our customers 
 -   We compressed all the static files during our NodeJS based Build process with the highest level of compression Level(i.e. 11)
     
 
--   The built files contained three versions of the files
+    -   The built files contained three versions of the files
     
 
--   Uncompressed
+        -   Uncompressed
     
--   Brotli Compressed (.br)
+        -   Brotli Compressed (.br)
     
--   Gzip Compressed (.gz)
+        -   Gzip Compressed (.gz)
     
 
--   Earlier we used [https://github.com/foliojs/brotli.js](https://github.com/foliojs/brotli.js) but we found that it failed to compress small files([https://github.com/foliojs/brotli.js/issues/19](https://github.com/foliojs/brotli.js/issues/19)). So, we moved to [https://github.com/MayhemYDG/iltorb](https://github.com/MayhemYDG/iltorb). Our automation caught this bug. More on automation later.
+    -   Earlier we used [https://github.com/foliojs/brotli.js](https://github.com/foliojs/brotli.js) but we found that it failed to compress small files([https://github.com/foliojs/brotli.js/issues/19](https://github.com/foliojs/brotli.js/issues/19)). So, we moved to [https://github.com/MayhemYDG/iltorb](https://github.com/MayhemYDG/iltorb). Our automation caught this bug. More on automation later.
     
 
 -   We use OpenResty at our [CDN](https://engineering.wingify.com/posts/dynamic-cdn/) and we already had certain rewrite rules in Lua in place to be able to serve different content to different browsers. There we added support for serving already compressed brotli files.
     
 
--   We read the ‘Accept-Encoding’ header and identified the encoding supported by the UserAgent from there.
+    -   We read the ‘Accept-Encoding’ header and identified the encoding supported by the UserAgent from there.
     
--   If the UserAgent claimed to support brotli we served brotli otherwise, we served gzip. We assume that there is no browser that doesn’t support gzip which is validated by [https://caniuse.com/#search=gzip](https://caniuse.com/#search=gzip)
+    -   If the UserAgent claimed to support brotli we served brotli otherwise, we served gzip. We assume that there is no browser that doesn’t support gzip which is validated by [https://caniuse.com/#search=gzip](https://caniuse.com/#search=gzip)
     
--   We made sure the Vary: Accept-Encoding response header is set in all cases. More on this later.
+    -   We made sure the Vary: Accept-Encoding response header is set in all cases. More on this later.
     
 
 -   Before making it to the production we wanted to be sure that in the production all browsers which claim to have the support of brotli are able to decompress at the highest level of compression. For this, we decided to compress our most used library and served it on vwo.com as an independent request. We identified a particular string in the library and made sure that it was present every time. In case it’s not present or the response code wasn’t 200 we logged it as an error on Sentry. We monitored the logs for 2 days and found no issues. So, all ok from this angle.
@@ -187,3 +185,10 @@ With Brotli![](https://lh3.googleusercontent.com/vz5mP0MKAT96YM_zx3ZrJPVLxxb-PE_
 ### The importance of Vary Header
 
 To make sure that any HTTP Cache does not cache a specific compressed file and serve it for all UserAgents regardless of the decompression support at that UserAgent, we are using the vary header with Accept-Encoding to make sure the right file is served to the User-Agent. You can read more about it at [https://www.fastly.com/blog/best-practices-using-vary-header](https://www.fastly.com/blog/best-practices-using-vary-header)
+
+### Future Plans
+
+Currently this library is available for new customers only. But we are planning to deploy this library for all of our existing customers. It would require to figure out if they are using any jQuery method directly or not.
+Also, we would be experimenting with brotli compression on the fly for our non-static files.
+
+This is not the end of our performance improvement journey. Stay tuned !
