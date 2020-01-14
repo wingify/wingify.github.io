@@ -5,7 +5,7 @@ excerpt: Performance improvements in VWO Smartcode
 authorslug: shubham_soni_udit_chawla
 author: Shubham Soni, Udit Chawla
 ---
-VWO puts a lot of focus on ensuring websites remain performant enough while using VWO. We have been increasing the efforts in this area and due to this, we are able to bring two very big optimizations which would directly reduce the impact on the performance of the website.
+VWO puts a lot of focus on ensuring websites remain performant enough while using VWO. We have been increasing the efforts in this area and due to this, we are able to bring two very big optimizations which would directly reduce the impact on the performance of the websites.
 
 ## jQuery Dependency Removed
 
@@ -50,7 +50,7 @@ So, the solution was to create our own alternative of jQuery which would meet th
     
 3.  We started taking the implementation of the methods from the latest jQuery version as-is and started removing the code that wasn’t for us.
     
-4.  We took the tests from cash.js and ran its tests. We chose cash.js tests for this because it’s functionality is a very small subset if jQuery and is mostly a superset of our requirements. A lot of tests failed and we identified which failures are acceptable and which are not and accordingly modified the tests.
+4.  We took the tests from cash.js and ran its tests. We chose cash.js tests for this because it’s functionality is a very small subset of jQuery and is mostly a superset of our requirements. A lot of tests failed and we identified which failures are acceptable and which are not and accordingly modified the tests.
     
 5.  We integrated the new library with our codebase and ran tests. We have a good number of Integration tests and E2E Tests apart from Unit tests for our libraries using the jQuery. Even though our existing Unit Tests didn’t help here but good coverage with Integration and E2E tests helped in finding bugs.
     
@@ -63,7 +63,7 @@ So, the solution was to create our own alternative of jQuery which would meet th
     
 	  - The website has [sentry](https://sentry.io/organizations/vwo/issues/) in place to track any errors coming on the website.
     
-	  - We monitored the errors for a few days and were able to identify a few bugs from it which neither our automation and manual testing was able to catch.
+	  - We monitored the errors for a few days and were able to identify a few bugs from it which neither our automation nor manual testing was able to catch.
     
 
 8.  After the bugs were fixed, we monitored for a few more days just to be sure and then we enabled it for all the new users signing up for VWO. It isn’t possible to enable it for existing accounts as they might be using some methods of jQuery directly.
@@ -178,11 +178,15 @@ Our Testing library - Most Used[Sizes are with the new version in which jQuery d
 
 With gzip
 
-![](https://lh5.googleusercontent.com/K0nSieGujQMDGsTKQxSSkbNe0rF8AW9KBjBCkU5q_6Vb0nMdFplvepsoXO6z6YkGzBNficiHPJXBtkPeE_2DWgwvUIyIE8pbljCR1mY4RL3nowFYECmOfB9TMAOiyfZ4wbr5LoRe)
+![](https://lh5.googleusercontent.com/tgRjC_VNMrWMr0Lirng3CyPMQzxfFEsfvCbWf4WpPkvP-9ArudoMXCP8OhHbWxhOi-bAMAHAW_w1eFBs2A-cb9TWQBcQ0k3icv1Lvv9FZO43uWpSuHQiV_jIhPntr4xNKoG5ggfB)
 
-With Brotli![](https://lh3.googleusercontent.com/vz5mP0MKAT96YM_zx3ZrJPVLxxb-PE_AxIHMlgBchBGebRr8FOSZ4dLzri9aaWEccuMLif1x_x3lFwgv5C54_Lh79FhIepZ9DFIjJrw8OCT4DaP3eg8ViSaS99bjQmDM-ZQVg2zi)
+With Brotli
+
+![](https://lh6.googleusercontent.com/knj7kYBN3217lPwqPC25gsL4lwB9u0L2r2XYOTnjnvzzCZoCIAmJgn-6Esh-eLZmLQOn0MUV-XO_c7ocZhoi_2l8xUIII_88hU7z6aMS30e6fKudh42HdUOAKqZ5W4WemHVhVGOp)
 
 ### The importance of Vary Header
+
+
 
 To make sure that any HTTP Cache does not cache a specific compressed file and serve it for all UserAgents regardless of the decompression support at that UserAgent, we are using the vary header with Accept-Encoding to make sure the right file is served to the User-Agent. You can read more about it at [https://www.fastly.com/blog/best-practices-using-vary-header](https://www.fastly.com/blog/best-practices-using-vary-header)
 
