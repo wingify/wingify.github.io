@@ -8,6 +8,14 @@ permalink: /labs/
 
 <div class="projects">
 	<div class="project-box">
+		<a href="http://github.com/wingify/lua-resty-pubsub">
+			<img src="/images/generic_code@2x.png" width="160" height="160">
+			<h3>lua-resty-pubsub</h3>
+		</a>
+		<p>Lua Pubsub client driver for the ngx_lua based on the cosocket API.</p>
+		<span class="pill">lua</span>
+	</div>
+	<div class="project-box">
 		<a href="/across-tabs/">
 			<img src="/images/across-tabs@2x.png" width="160" height="160">
 			<h3>AcrossTabs</h3>
