@@ -12,7 +12,7 @@ permalink: /labs/
 			<img src="/images/generic_code@2x.png" width="160" height="160">
 			<h3>lua-resty-pubsub</h3>
 		</a>
-		<p>Lua Pubsub client driver for the ngx_lua based on the cosocket API.</p>
+		<p>Pubsub client driver for the <i>ngx_lua</i> using <i>cosocket</i> API.</p>
 		<span class="pill">lua</span>
 	</div>
 	<div class="project-box">
