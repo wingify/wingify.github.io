@@ -26,6 +26,9 @@
             height: 200px;
             overflow: hidden;
             text-align: center;
+            img {
+                min-height: 100%;
+            }
         }
 
         .author-name {
