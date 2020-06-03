@@ -5,6 +5,10 @@ const siteConfig = require("./data/SiteConfig");
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const slugify = require("slug");
 const execSync = require('child_process').execSync;
+const markdown = require( "markdown" ).markdown;
+const cheerio = require('cheerio');
+const Entities = require('html-entities').AllHtmlEntities;
+const entities = new Entities();
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
@@ -15,6 +19,13 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       /^\/([\d]{4}-[\d]{2}-[\d]{1,2})-{1}(.+)\/$/
     );
     const value = `/posts/${title}/`;
+    let html = entities.decode(markdown.toHTML(node.rawMarkdownBody));
+    const $ = cheerio.load(`<section>${html}</section>`);
+    if ($('section').find('img').length > 0) {
+      createNodeField({ node, name: `thumbnail_url`, value: $('section').find('img:nth-of-type(1)').attr('src').replace(/<em>/g, '_').replace(/<\/em>/g, '_') });
+    } else {
+      createNodeField({ node, name: `thumbnail_url`, value: 'https://wingify.com/wp-content/themes/wingify/images/labs/engg_blog.png'})
+    }
     createNodeField({ node, name: `slug`, value });
     createNodeField({ node, name: `date`, value: moment(date).toISOString() });
   }

@@ -31,6 +31,7 @@ export const pageQuery = graphql`
       edges {
         node {
           fields {
+            thumbnail_url
             slug
             date(formatString: "MMMM DD, YYYY")
           }

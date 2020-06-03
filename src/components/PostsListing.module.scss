@@ -7,6 +7,31 @@
         display: inline-block;
         width: auto;
         transition: all 0.25s ease;
+        padding-top: 20px;
+
+        .author-image {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            border-radius: 15px;
+            margin-bottom: 0;
+        }
+
+        .author-description {
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .thumbnail-container {
+            height: 200px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .author-name {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
 
         &:hover {
             cursor: pointer;
@@ -18,7 +43,6 @@
             margin-top: -20px;
 
             .meta {
-                margin-top: -15px;
                 margin-bottom: 20px;
                 font-size: 0.7rem;
             }
