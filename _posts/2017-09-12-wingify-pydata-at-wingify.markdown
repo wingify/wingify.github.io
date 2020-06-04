@@ -19,8 +19,7 @@ There were three talks at PyData, namely **Machine Learning using Tensor Flow**,
 
 
 ### Some of Images of the PyData Meetup Hosted by Wingify.
-<script>Galleria.run('#pydata-meetup-gallery');</script>
-<div id="pydata-meetup-gallery" style="height: 600px;">
+<div id="pydata-meetup-gallery">
     <img src="/images/2017/06/pydata_0.jpg">
     <img src="/images/2017/06/pydata_8.jpg">
     <img src="/images/2017/06/pydata_7.jpg">
