@@ -23,7 +23,7 @@ Let's take a simple example of author & articles. If we are given a requirement 
 
 Let's taken an example where we have to show an article snippet on my website's dashboard. We would need its **title, description & author name**. So we hit the latter end point and it will give a response like:
 
-{% highlight js %}
+```javascript
 {
   title: 'Demand Driven APIs Using GraphQL',
   createdAt: '2017-04-25',
@@ -33,7 +33,7 @@ Let's taken an example where we have to show an article snippet on my website's 
   status: 'published',
   description: 'Lorem Ipsum...'
 }
-{% endhighlight %}
+```
 
 There are two problems with this response:
 
@@ -48,7 +48,7 @@ Now that we understand few issues with REST based APIs, we need a smart system w
 
 Let's try to solve our problem using GraphQL. The exact information that our client need can be represented in GraphQL as:
 
-{% highlight js %}
+```javascript
 {
   article (id: articleId)
   {
@@ -59,11 +59,11 @@ Let's try to solve our problem using GraphQL. The exact information that our cli
     }
   }
 }
-{% endhighlight %}
+```
 
 The server can have a single end point with the following [schema](http://graphql.org/learn/schema/):
 
-{% highlight js %}
+```javascript
 
 type Article(id: Integer) {
   title: String,
@@ -88,11 +88,11 @@ type Picture(id: Integer) {
   imgWidth: Integer
 }
 
-{% endhighlight %}
+```
 
 And each field in our schema can have a function to fetch that piece of information. In our case:
 
-{% highlight js %}
+```javascript
 
   function Article(id) {
     return Article.find(id);
@@ -114,11 +114,11 @@ And each field in our schema can have a function to fetch that piece of informat
     return author.name;
   }
 
-{% endhighlight %}
+```
 
 On querying the data, we get i.e.
 
-{% highlight js %}
+```javascript
 
 curl -XGET http://myapp/articles -d "query={
   article(id: 1) {
@@ -130,11 +130,11 @@ curl -XGET http://myapp/articles -d "query={
   }
 }"
 
-{% endhighlight %}
+```
 
 We will get like this:
 
-{% highlight js %}
+```javascript
 {
   title: 'Demand Driven APIs Using GraphQL',
   description: 'Lorem Ipsum...',
@@ -142,7 +142,7 @@ We will get like this:
     name: 'Sahil Batla'
   }
 }
-{% endhighlight %}
+```
 
 This is what we needed, now we can keep the endpoint same and tweak with fields required to display relevant information at any page of our website.
 

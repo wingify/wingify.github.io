@@ -70,14 +70,14 @@ __Steps:__
      * Set browser preference `'profile.default_content_setting_values.notifications': 1`
 
 
-{% highlight js %}
+```javascript
 chromeOptions: {
 	'args': ['--ignore-certificate-errors'],
 	prefs: {
 		'profile.default_content_setting_values.notifications': 1
 	}
 }
-{% endhighlight %}
+```
 
 
 <a href='http:///www.slideshare.net/ankitagupta2309/pushknot' target='_blank'>Slides deck</a> from the talk.

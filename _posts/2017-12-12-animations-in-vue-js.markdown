@@ -29,7 +29,7 @@ Let’s take a simple example of **Todo list**, containing a list of tasks with 
 
 This will be our view in **HTML** file, assuming that you’ve included **VueJS** in a `script` tag already.
 
-{% highlight html %}
+```html
 <div id="app">
     <input type="text" v-model="task"/>
     <input type="button" value="Add" v-on:click="addTaskToList"/>
@@ -40,11 +40,11 @@ This will be our view in **HTML** file, assuming that you’ve included **VueJS*
         </li>
     </ul>
 </div>
-{% endhighlight %}
+```
 
 Meanwhile, our **JS** file looks like this.
 
-{% highlight js %}
+```javascript
 var app = new Vue({
     el: '#app',
     data: {
@@ -60,7 +60,7 @@ var app = new Vue({
         }
     }
 });
-{% endhighlight %}
+```
 
 The code itself is self-explanatory. It simply adds a `task` inside the `todoList` using `addTaskToList` method and removes from the list using `removeTaskFromList`.
 
@@ -70,35 +70,35 @@ Let’s add more interaction in this. A confirmation pop-up should appear with `
 
 In **HTML**, let’s modify the list element
 
-{% highlight html %}
+```html
 <li v-for="(todo, index) in todoList">
     {% raw %}{{ todo }}{% endraw %}
     <input type="button" value="Remove" v-on:click="onRemoveTask(index)"/>
 </li>
-{% endhighlight %}
+```
 
 And add a new pop-up element
 
-{% highlight html %}
+```html
 <div v-show="isPopupOpen">
     Are you sure you want to remove this from Todo List?<br/>
     <input type="button" value="OK" v-on:click="confirmRemove()"/>
     <input type="button" value="Cancel" v-on:click="cancelRemove()"/>
 </div>
-{% endhighlight %}
+```
 
 Meanwhile in **JS**, initialize new data variables inside
 
-{% highlight js %}
+```javascript
 data: {
     isPopupOpen : false,
     currentIndex: -1
 }
-{% endhighlight %}
+```
 
 And also, add some methods
 
-{% highlight js %}
+```javascript
 methods : {
     onRemoveTask : function(index) {
         this.isPopupOpen = true;
@@ -112,23 +112,23 @@ methods : {
         this.isPopupOpen = false;
     }
 }
-{% endhighlight %}
+```
 
 Let’s add some animation into it.
 
 For the fading-in/out the pop-up, you need to wrap our pop-up inside `transition` tag.
 
-{% highlight html %}
+```html
 <transition name="fade">
     <div v-show="isPopupOpen">
         … Pop-up element content
     </div>
 </transition>
-{% endhighlight %}
+```
 
 This element takes care of the transition logic. You don’t need to bother when to start or stop transition. All you’ve to mention is what kind of transition you want to see and for how long. This can be done using some CSS classes provided by VueJS.
 
-{% highlight css %}
+```css
 .fade-enter-active, .fade-leave-active {
     transition: opacity 0.5s ease-out;
 }
@@ -136,21 +136,21 @@ This element takes care of the transition logic. You don’t need to bother when
 .fade-enter, .fade-leave-to {
     opacity: 0;
 }
-{% endhighlight %}
+```
 
 **Note:** The `fade` prefix used in this class should match the `name` attribute of the `transition` component.
 
 For blurring the form and the list elements once the pop-up appears, they should be wrapped inside a contained conditionally bounded using `v-bind` attribute.
 
-{% highlight html %}
+```html
 <div v-bind:class="[isPopupOpen ? 'disabled' : '', ‘container’]">
     … Form and Todo List element content
 </div>
-{% endhighlight %}
+```
 
 And add the required **CSS**
 
-{% highlight css %}
+```css
 .container {
     transition: all 0.05s ease-out;
 }
@@ -160,7 +160,7 @@ And add the required **CSS**
     opacity: 0.4;
     pointer-events: none;  // This makes sure that nothing else is clicked other than pop-up options
 }
-{% endhighlight %}
+```
 
 You can check the complete code and view [demo](https://codepen.io/AshBardhan/pen/zPVmvj).
 

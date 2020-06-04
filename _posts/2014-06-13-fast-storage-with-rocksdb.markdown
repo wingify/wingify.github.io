@@ -78,7 +78,7 @@ The _HarvestDB_ service implements five remote procedures - ping, get,
 put, search and purge. The following [Thrift IDL](http://thrift.apache.org/docs/idl)
 describes this service.
 
-{% highlight cpp %}
+```cpp
 
 namespace cpp harvestdb
 namespace go harvestdb
@@ -111,7 +111,7 @@ service HarvestDB {
                      5:i32 timeout),
     bool purge(1:i32 prefix, 2:i64 timestamp)
 }
-{% endhighlight %}
+```
 
 Clients use `ping` to check _HarvestDB_ server connectivity before executing
 other procedures. RabbitMQ consumers consume collected URLs and `put` them to

@@ -124,7 +124,7 @@ here. Next step in our debug process is finding *WHY* it is causing it.
 
 Our code for the callback bound to the Scroll event is as follows:
 
-{% highlight js %}
+```javascript
 $(window).scroll(function() {
     var currentScroll = $(this).scrollTop();
 
@@ -155,7 +155,7 @@ $(window).scroll(function() {
         $("a#scrollUp").fadeOut();
     });
 });
-{% endhighlight %}
+```
 
 This callback function will be our target from now on.
 
@@ -186,13 +186,13 @@ written for throttling/debouncing functions. Its very easy to use too. Simply
 get the plugin into your page and pass the throttled function to Scroll event
 like so:
 
-{% highlight js %}
+```javascript
 var callback = function () {
   ...
 }
 
 $(window).scroll( $.throttle(350, callback));
-{% endhighlight %}
+```
 
 As you see in above code, I have made my callback to fire atmost once within
 *350 ms*. In other words, there will be atleast an interval of *350 ms* between
@@ -225,31 +225,31 @@ At many places, jQuery is being used to reference element by passing their selec
 
 Some of the lines where jQuery is being used unnecessarily: 
 
-{% highlight js %}
+```javascript
   var currentScroll = $(this).scrollTop(); // this is always window object
-{% endhighlight %}
+```
 
-{% highlight js %}
+```javascript
   $("#main_form, .social-icons").css("visibility", "visible");
 
   $("a#scrollDown").fadeOut();
   $("a#autoscroll").fadeOut();
-{% endhighlight %}
+```
 
-{% highlight js %}
+```javascript
   $("a#scrollUp").fadeIn();
-{% endhighlight %}
+```
 
-{% highlight js %}
+```javascript
   $("a#scrollUp").fadeOut();
-{% endhighlight %}
+```
 
 
 - Unnecessary animation
 
 Have a look at the following code snippet:
 
-{% highlight js %}
+```javascript
 if(i == checkpoints.length - 1) {
   socialIcons.css("visibility", "visible");
 
@@ -262,7 +262,7 @@ else {
   scrollDownBtn.fadeIn();
   scrollAutoBtn.fadeIn();
 }
-{% endhighlight %}
+```
 
 The first <code>if</code> checks if we are on the last iteration of the loop or not. If not, then the <code>else</code> part executes. Which means if the loop runs 100 times, 99 times the <code>else</code> part executes. Moreover if you see carefully the code in the <code>else</code> block, it will keep fading in/out certain elements on each iteration, even when it has done the same thing in past iteration. Taking account the heavy animation account cost in jQuery, this is absolutely unnecessary work being done here.
 
@@ -272,7 +272,7 @@ We could simply do that stuff once and set a flag which will be checked next tim
 
 After the above 2 fixes, here is how our Scroll event callback looks like:
 
-{% highlight js %}
+```javascript
 function scrollHandling() {
   var currentScroll = $window.scrollTop();
 
@@ -309,7 +309,7 @@ function scrollHandling() {
 }
 
 $window.scroll( $.throttle(250, scrollHandling));
-{% endhighlight %}
+```
 
 
 ## TEST AGAIN!

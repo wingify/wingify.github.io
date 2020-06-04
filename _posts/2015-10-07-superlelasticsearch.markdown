@@ -62,7 +62,7 @@ operations is semantically different than the API for individual operations.
 Consider this. If you were to index a new document, update an existing document
 and delete another existing document in Elasticsearch, you can do it like so:
 
-{% highlight python %}
+```python
 from elasticsearch import Elasticsearch
 
 client = Elasticsearch(hosts=['localhost:9200'])
@@ -77,12 +77,12 @@ client.update(index='test_index_3', doc_type='test_doc_type',
               })
 client.delete(index='test_index_2', doc_type='test_doc_type',
               id=123)
-{% endhighlight %}
+```
 
 If you were to achieve the same thing using Bulk APIs, you would end up writing
 code like this:
 
-{% highlight python %}
+```python
 from elasticsearch import Elasticsearch
 
 client = Elasticsearch(hosts=['localhost:9200'])
@@ -102,7 +102,7 @@ bulk_body += '{ "delete" : { "_index" : "test_index_2", "_type" : "test_doc_type
 
 # finally, make the request
 client.bulk(body=bulk_body)
-{% endhighlight %}
+```
 
 There is a ton of difference in how bulk operations work on the code and API
 level as compared to individual operations.
@@ -136,7 +136,7 @@ on a very high level in the `BulkClient`.
 
 This is how the `BulkClient` works:
 
-{% highlight python %}
+```python
 from elasticsearch import Elasticsearch
 
 client = Elasticsearch(hosts=['localhost:9200'])
@@ -154,7 +154,7 @@ bulk.update(index='test_index_3', doc_type='test_doc_type',
                 }
             })
 resp = bulk.execute()
-{% endhighlight %}
+```
 
 ## Scroll API
 
@@ -187,7 +187,7 @@ Our solution to this problem was to create a separate wrapper API only for this
 purpose and use that everywhere in our project. So we wrote a simple function
 that would do the book-keeping for us and it could be used like so:
 
-{% highlight python %}
+```python
 def scrolled_search(es, scroll, *args, **kwargs):
     '''
     Iterator for Elasticsearch Scroll API.
@@ -206,7 +206,7 @@ es = Elasticsearch(hosts=['localhost:9200'])
 for docs in scrolled_search(es, '10m', index='tweets'):
     for doc in docs:
         print doc
-{% endhighlight %}
+```
 
 ### Iterator based Scrolling in elasticsearch-py
 
@@ -225,7 +225,7 @@ we went ahead and sub-classed the existing client class Elasticsearch to make
 it easier to use the new APIs. You can use the sub-classed client
 SuperElasticsearch like so:
 
-{% highlight python %}
+```python
 from superelasticsearch import SuperElasticsearch
 
 client = SuperElasticsearch(hosts=['localhost:9200'])
@@ -251,7 +251,7 @@ bulk.update(index='test_index_3', doc_type='test_doc_type',
                 }
             })
 resp = bulk.execute()
-{% endhighlight %}
+```
 
 This has also made it easy for us to do releases of SuperElasticsearch.
 SuperElasticsearch does not depend on the official client in ways that it will

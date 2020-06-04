@@ -54,12 +54,12 @@ For instance, when you select an element in the child frame, it creates a new
 `VWO.Element` instance in the parent frame and asks it to open a context menu. The
 code looked something like this:
 
-{% highlight js %}
+```javascript
   $(elementSelectorPath).click(function() {
     var element = parent.VWO.Element.create(elementSelectorPath);
     parent.VWO.ContextMenu.showForElement(element);
   });
-{% endhighlight %}
+```
 
 While, it might seem like a trivial problem to solve on the cover, deep
 underneath, we were faced with a race condition. The `Element.create` method
@@ -84,7 +84,7 @@ prior to it to have been executed fully, could now be made possible without
 giving a lot of thought. In the above example, the transition to `please.js`
 looked like this:
 
-{% highlight js %}
+```javascript
   $(elementSelectorPath).click(function() {
     please(parent)
       .call('VWO.Element.create', elementSelectorPath)
@@ -93,7 +93,7 @@ looked like this:
               .call('VWO.ContextMenu.showForElement', element);
     });
   });
-{% endhighlight %}
+```
 
 Although this seems hackish at the first glance, it was a way to rapidly
 iterate over synchronous code and convert it to use promises and callbacks
@@ -111,7 +111,7 @@ certain frequent tasks easier. For instance, getting / setting a property and
 calling a function were the most common tasks we performed. The code for these
 tasks now looked like this:
 
-{% highlight js %}
+```javascript
   please(parent).get('window.location').then(function(location) {
     // use location here
   });
@@ -123,7 +123,7 @@ tasks now looked like this:
   // reload the child window.
   var childWindow = $('iframe#child').get(0).contentWindow;
   please(childWindow).call('window.location.reload');
-{% endhighlight %}
+```
 
 A paradigm shift, yet the logic remained unaffected. Exactly what we wanted.
 
@@ -135,7 +135,7 @@ But we came up with a smart solution. We know that jQuery is a wrapper around
 the traditional DOM. We created a PostMessage wrapper around jQuery itself!
 Which makes impossible turn possible:
 
-{% highlight js %}
+```javascript
   // set #bar's height in child = foo's height in child
   var pls = please($('iframe#child').get(0).contentWindow);
   pls.$('div#foo').height().then(function (fooHeight) {
@@ -147,7 +147,7 @@ Which makes impossible turn possible:
   pls.$('<div>hello world</div>').then(function (newDiv) {
     pls.$(newDiv).appendTo('body');
   });
-{% endhighlight %}
+```
 
 This was something that I thought of during one of the [hackathons](http://team.wingify.com/friday-engineering-talks-at-wingify)
 we host at Wingify. Turned out to be very fruitful!

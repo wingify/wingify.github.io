@@ -44,11 +44,11 @@ But even in various atomic CSS libraries available out there, we decided to go w
 
 ACSS comes with very strong benefits which no other library had. You don't write CSS in ACSS, in fact you don't even download a CSS file and use in ACSS. ACSS comes with a tool called [Atomizer](https://github.com/acss-io/atomizer) which detects the use of ACSS classes in your HTML (or any file) and generates the corresponding CSS for those detected classes. Here is a sample HTML you would write with ACSS:
 
-{% highlight html %}
+```html
 <button class="Bgc(blue) C(white) P(10px) D(ib) Cur(p) Bgc(red):h">
 I am a button
 </button>
-{% endhighlight %}
+```
 
 On top of usual benefits of Atomic CSS approach, ACSS's automatic CSS generation means that we never get a single byte of CSS that we are not using in an app! What we use in HTML, lands in the final CSS file. In fact, ACSS generates such small CSS that it's practically possible to inline your complete CSS - i.e. your complete CSS can become your critical CSS!
 
