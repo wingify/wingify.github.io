@@ -26,8 +26,13 @@
             height: 200px;
             overflow: hidden;
             text-align: center;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ececec;
             img {
-                min-height: 100%;
+                margin-bottom:0;
             }
         }
 
