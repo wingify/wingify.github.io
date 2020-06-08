@@ -38,7 +38,6 @@ const LabsPage = () => (
                 <p>Easily communicate among browser tabs.</p>
                 <span class="pill">javascript</span>
               </div>
-              <div style="clear: both"></div>
               <div class="project-box">
                 <a href="/angular-time-picker/">
                   <img src="/images/time-picker@2x.png" width="160" height="160">
