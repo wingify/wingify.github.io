@@ -15,6 +15,14 @@ const LabsPage = () => (
           __html: `
             <div class="projects">
               <div class="project-box">
+                <a href="https://github.com/wingify/marque">
+                  <img src="/images/generic_code@2x.png" width="160" height="160">
+                  <h3>Marque</h3>
+                </a>
+                <p>Tag Versioning Helper.</p>
+                <span class="pill">javascript</span>
+              </div>
+              <div class="project-box">
                 <a href="http://github.com/wingify/lua-resty-pubsub">
                   <img src="/images/generic_code@2x.png" width="160" height="160">
                   <h3>lua-resty-pubsub</h3>
