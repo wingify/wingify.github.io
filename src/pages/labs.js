@@ -16,7 +16,7 @@ const LabsPage = () => (
             <div class="projects">
               <div class="project-box">
                 <a href="https://github.com/wingify/marque">
-                  <img src="/images/generic_code@2x.png" width="160" height="160">
+                  <img src="/images/marque.png" width="160" height="160">
                   <h3>Marque</h3>
                 </a>
                 <p>Tag Versioning Helper.</p>
