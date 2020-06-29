@@ -1,0 +1,83 @@
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
+<script src="js/script.js"></script><script>navigateHome()</script>
+
+## Live Demo
+
+<div ng-cloak class="angular-time-picker-live-demo" ng-app="testAPp" ng-controller="testController">
+
+<strong>Example 1: </strong> Single Time Picker with custom <strong><i>black theme</i></strong>, using <strong><i>12</i></strong> hour format and <strong><i>dropdown state</i></strong> being open by default.
+<pre style="margin-bottom: 40px;">`<wy-time-picker
+	data-dropdown-toggle-state="settings.third.dropdownToggleState"
+	data-time-settings="settings.third.time"
+	data-theme="settings.third.theme"
+	data-no-range="settings.third.noRange"
+	data-format="settings.third.format"
+	data-apply-callback="onApplyTimePicker()"
+	data-clear-callback="onClearTimePicker()">
+</wy-time-picker>`</pre>
+
+
+	<wy-time-picker
+		data-dropdown-toggle-state="settings.third.dropdownToggleState"
+		data-time-settings="settings.third.time"
+		data-theme="settings.third.theme"
+		data-no-range="settings.third.noRange"
+		data-format="settings.third.format"
+		data-apply-callback="onApplyTimePicker()"
+		data-clear-callback="onClearTimePicker()">
+	</wy-time-picker>
+
+<p style="margin-top: 80px;">
+	<strong>Example 2: </strong> Time Range Picker with default settings and <strong><i>custom initial time settings</i></strong>. By default, <strong><i>time validation</i></strong> will work.
+</p>
+<pre style="margin-bottom: 40px;">`<wy-time-picker
+	data-dropdown-toggle-state="settings.first.dropdownToggleState"
+	data-time-settings="settings.first.time"
+	data-apply-callback="onApplyTimePicker()"
+	data-clear-callback="onClearTimePicker()">
+</wy-time-picker>`</pre>
+
+	<wy-time-picker
+		data-dropdown-toggle-state="settings.first.dropdownToggleState"
+		data-time-settings="settings.first.time"
+		data-apply-callback="onApplyTimePicker()"
+		data-clear-callback="onClearTimePicker()">
+	</wy-time-picker>
+
+<p style="margin-top: 80px;">
+	<strong>Example 3: </strong> Time Range Picker with default settings and custom initial time settings.<strong><i>Time validation</i></strong> is purposely turned off.
+</p>
+<pre style="margin-bottom: 40px;">`<wy-time-picker
+	data-dropdown-toggle-state="settings.second.dropdownToggleState"
+	data-time-settings="settings.second.time"
+	data-apply-callback="onApplyTimePicker()"
+	data-clear-callback="onClearTimePicker()"
+	data-no-validation="settings.second.noValidation">
+</wy-time-picker>`</pre>
+
+	<wy-time-picker
+		data-dropdown-toggle-state="settings.second.dropdownToggleState"
+		data-time-settings="settings.second.time"
+		data-apply-callback="onApplyTimePicker()"
+		data-clear-callback="onClearTimePicker()"
+		data-no-validation="settings.second.noValidation">
+	</wy-time-picker>
+
+	<p style="margin-top:20px;">
+		<strog>Note: </strog> One can easily change the styling of the template inside the <i>angular-time-picker.js</i>.
+	</p>
+</div>
+
+
+<script type="text/javascript">
+	var i = setInterval(function () {
+		if (!$('[ng-app]').length || typeof angular == 'undefined') {
+			return;
+		}
+
+		clearInterval(i);
+		angular.bootstrap(document, ['testApp']);
+	}, 10);
+</script>

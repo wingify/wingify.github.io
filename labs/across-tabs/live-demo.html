@@ -1,0 +1,23 @@
+<script src="js/script.js"></script><script>navigateHome()</script>
+
+## Live Demo
+
+<strong>Instantiating `Parent`</strong>
+<pre style="margin-bottom: 40px;">var config = {
+	onHandshakeCallback: function () { },
+	onPollingCallback: function () { }
+}
+var parent = new AcrossTabs.Parent(config);
+</pre>
+
+<button onclick="openNewTab()">Open New tab</button>
+
+<div id="tabs" style="visibility: hidden">
+	<h3>List of all Tabs</h3>
+	<div id="all-tabs"></div>
+	<h3>List of Opened Tabs</h3>
+	<div id="opened-tabs"></div>
+	<h3>List of Closed Tabs</h3>
+	<div id="closed-tabs"></div>
+	<button onclick="closeAllTabs()">Close All</button>
+</div>

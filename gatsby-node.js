@@ -89,7 +89,7 @@ exports.createPages = ({ graphql, actions }) => {
           }
         });
       });*/
-      execSync("mkdir -p public/images && cp -R images/* public/images && cp robots.txt public/robots.txt");
+      execSync("mkdir -p public/images && cp -R images/* public/images && cp robots.txt public/robots.txt && cp -R labs/* public/ && cp -R css public/");
       resolve();
     });
   });

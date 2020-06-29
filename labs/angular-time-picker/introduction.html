@@ -1,0 +1,119 @@
+<script src="js/script.js"></script><script>navigateHome()</script>
+
+## Introduction
+
+A very basic and lightweight time picker directive for Angular.js.
+
+### Features
+
+* With no external dependency, angular-time-picker is lighter and faster.
+* It can be used for picking a single time or a range of time.
+* Many different configurable options like:
+	* Setting the initial display time as per the requirements
+	* Two minimalistic different themes viz light and dark
+	* Precisely configure/update the range of time as per the needs
+	* Robust validation exclusively for time range picker
+	* Provide custom callbacks for apply / cancel operations
+
+### Options
+
+There are a number of options that can be configured with inline attributes. All are optional.
+
+<table class="table table-striped table-bordered">
+	<thead>
+		<tr>
+			<th>Option</th>
+			<th>Default</th>
+			<th>Possible Values</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>data-dropdown</td>
+			<td>false</td>
+			<td><code>false</code>, <code>true</code></td>
+			<td>Time picker dropdown initial state.</td>
+		</tr>
+		<tr>
+			<td>data-time-settings</td>
+			<td>{}</td>
+			<td><code>-</code></td>
+			<td>Initial time settings eg. {fromHour: '01',fromMinute: '00',toHour: '20',toMinute: '50'}</td>
+		</tr>
+		<tr>
+			<td>data-theme</td>
+			<td>light</td>
+			<td><code>light</code>, <code>dark</code></td>
+			<td>Theme for the time picker button and the dropdown</td>
+		</tr>
+		<tr>
+			<td>data-no-range</td>
+			<td>null</td>
+			<td><code>false</code>, <code>true</code></td>
+			<td>Pick just a ime or a range of time</td>
+		</tr>
+		<tr>
+			<td>data-format</td>
+			<td>24</td>
+			<td><code>12</code>, <code>24</code></td>
+			<td>Time Format(hours)</td>
+		</tr>
+		<tr>
+			<td>data-no-validation</td>
+			<td>null</td>
+			<td><code>false</code>, <code>true</code></td>
+			<td>Validation checks for time range picker(useful for preventing misleading data)</td>
+		</tr>
+		<tr>
+			<td>data-apply-callback</td>
+			<td>null</td>
+			<td><code>function</code></td>
+			<td>Callback to be invoked when APPLY button is being pressed to update time</td>
+		</tr>
+		<tr>
+			<td>data-clear-callback</td>
+			<td>null</td>
+			<td><code>function</code></td>
+			<td>Callback to be invoked when CANCEL button is being pressed to cancel current operation</td>
+		</tr>
+	</tbody>
+</table>
+
+**Example:**
+
+```js
+// Set initial time range to be 05:30 - 10:10
+$scope.settings = {
+	dropdownToggleState: false,
+	time: {
+		fromHour: '05',
+		fromMinute: '30',
+		toHour: '10',
+		toMinute: '10'
+	},
+	theme: 'dark',
+	noRange: false,
+	format: 24,
+	noValidation: false
+};
+$scope.onApplyTimePicker = function () {
+	console.log('Time range applied.');
+};
+$scope.onClearTimePicker = function () {
+	console.log('Time range current operation cancelled.');
+};
+```
+
+```html
+<wy-time-picker
+	data-dropdown-toggle-state="settings.dropdownToggleState"
+	data-time-settings="settings.time"
+	data-theme="settings.theme"
+	data-no-range="settings.noRange"
+	data-format="settings.format"
+	data-no-validation="settings.noValidation"
+	data-apply-callback="onApplyTimePicker()"
+	data-clear-callback="onClearTimePicker()">
+</wy-time-picker>
+```
