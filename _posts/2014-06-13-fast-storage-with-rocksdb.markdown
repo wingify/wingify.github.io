@@ -19,12 +19,11 @@ internal servers on private network. This post talks about how we were able to
 make such a system using C++11, [RocksDB](http://rocksdb.org) and [Thrift](http://thrift.apache.org).
 
 First, let me start by sharing the use cases of such a system in VWO; the
-following screenshot shows a feature where users can enter a URL to check if VWO
-Smart Code was installed on it.
+following screenshot shows a feature where users can enter a URL to check if VWO SmartCode was installed on it.
 
 <div style="text-align:center; margin:5px">
 <img src="/images/2014/06/0.png"><br>
-<p>VWO Smart Code checker</p>
+<p>VWO SmartCode checker</p>
 </div>
 
 The following screenshot shows another feature where users can see a list of URLs

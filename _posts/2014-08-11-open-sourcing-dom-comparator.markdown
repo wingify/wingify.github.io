@@ -37,7 +37,7 @@ expect(result[0]).toEqual({
 
 ## Motivation
 
-[The Campaign Builder](https://vwo.com/knowledge/about-vwo-campaign-builder) is one of the core components of our A/B testing software [VWO](http://vwo.com). It allows you to make changes to any website on the fly. Assuming the target website has a small snippet of [VWO Smart Code](https://vwo.com/knowledge/folder-vwo-smart-code) (Javascript) inserted, the changes made by the user are applied when the A/B test is run. These changes are little snippets of jQuery operations that are applied on the client-end.
+[The Campaign Builder](https://vwo.com/knowledge/about-vwo-campaign-builder) is one of the core components of our A/B testing software [VWO](http://vwo.com). It allows you to make changes to any website on the fly. Assuming the target website has a small snippet of [VWO SmartCode](https://vwo.com/knowledge/folder-vwo-smart-code) (Javascript) inserted, the changes made by the user are applied when the A/B test is run. These changes are little snippets of jQuery operations that are applied on the client-end.
 
 One of the major problems faced when applying such changes that they did not regard for dynamic content that might have been rendered by the client's website's backend. Let us consider a simple example:
 
