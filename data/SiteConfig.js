@@ -15,7 +15,8 @@ const config = {
   copyright: 'Copyright © Wingify. All rights reserved.', // Copyright string for the footer of the website and RSS feed.
   themeColor: '#c62828', // Used for setting manifest and progress theme colors.
   backgroundColor: 'red', // Used for setting manifest background color.
-  pathPrefix: ''
+  pathPrefix: '',
+  gtmID: 'GTM-T9CS925'
 }
 
 // Validate
