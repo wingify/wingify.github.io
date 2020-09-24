@@ -1,0 +1,44 @@
+<script src="js/script.js"></script><script>navigateHome()</script>
+
+## Basic Usage
+
+### Installation
+
+Install Angular Time Picker with [Bower](http://bower.io)
+
+```bash
+bower install angular-time-picker --save
+```
+
+### Usage
+
+**Include the required libraries in your index.html / corresponding html file(s)**
+
+```html
+<!-- css file in head tag-->
+<link rel="stylesheet" type="text/css" href="bower_components/angular-time-picker/dist/angular-time-picker.min.css">
+<!-- js files, either inside <head>...</head> or just before the </body> -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-time-picker/dist/angular-time-picker.min.js"></script>
+<!-- your app.js goes here -->
+```
+
+**Inject the `wingify.timePicker` module into your app**
+
+```js
+angular.module('myApp', ['wingify.timePicker']);
+```
+
+```html
+<wy-time-picker
+    data-dropdown-toggle-state="settings.dropdownToggleState"
+    data-time-settings="settings.time"
+    data-theme="settings.theme"
+    data-no-range="settings.noRange"
+    data-format="settings.format"
+    data-no-validation="settings.noValidation"
+    data-apply-callback="onApplyTimePicker()"
+    data-clear-callback="onClearTimePicker()">
+</wy-time-picker>
+
+```

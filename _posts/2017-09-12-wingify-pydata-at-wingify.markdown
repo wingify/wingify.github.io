@@ -19,8 +19,7 @@ There were three talks at PyData, namely **Machine Learning using Tensor Flow**,
 
 
 ### Some of Images of the PyData Meetup Hosted by Wingify.
-<script>Galleria.run('#pydata-meetup-gallery');</script>
-<div id="pydata-meetup-gallery" style="height: 600px;">
+<div id="pydata-meetup-gallery">
     <img src="/images/2017/06/pydata_0.jpg">
     <img src="/images/2017/06/pydata_8.jpg">
     <img src="/images/2017/06/pydata_7.jpg">
@@ -52,7 +51,7 @@ It was not the best idea at that time to scrape websites and then analyse(Data f
 Coming back to the objective - ``` Finding and sorting the movies released between 2000-2017 in the order of relevance ``` (I didn't want to watch movies < 2000).
 Below is the code to scrape [IMDB](http://www.imdb.com/) for movies data from 2000-2017.
 
-{% highlight js %}
+```javascript
 from bs4 import BeautifulSoup
 import urllib2
 def main():
@@ -75,7 +74,7 @@ def main():
     print mymovieslist
 if __name__=="__main__":
     main()
-{% endhighlight %}
+```
 
 [Click here](https://github.com/PramodDutta/ScrapToDataAnalysis) to have a look at the full source code.
 

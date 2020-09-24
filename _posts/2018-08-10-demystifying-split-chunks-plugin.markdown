@@ -12,7 +12,7 @@ The problem we were facing with [default](https://webpack.js.org/plugins/split-c
 
 Our Webpack configuration file looks like this:
 
-{% highlight js %}
+```javascript
 // Filename: webpack.config.js
 
 const webpack = require('webpack');
@@ -24,7 +24,7 @@ module.exports = {
       }
    }
 };
-{% endhighlight %}
+```
 
 We used [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) to get a nice view of our problem.
 
@@ -54,7 +54,7 @@ We can have more control over this functionality. We can change default configur
 
     Now let’s take a look at Webpack configuration file after this change:
 
-    {% highlight js %}
+    ```javascript
         // Filename: webpack.config.js
 
         const webpack = require('webpack');
@@ -67,13 +67,13 @@ We can have more control over this functionality. We can change default configur
               }
            }
         };
-    {% endhighlight %}
+    ```
 
 2. Increasing [minSize](https://webpack.js.org/plugins/split-chunks-plugin/#splitchunks-minsize) also gives the desired result. Some modules with higher usage in our app and size less than minSize would not be included in separate chunks as they all violate the second condition like in case of minSize 100 KB, modules greater than 100 KB are considered giving more possibilities for creating chunks containing large-sized modules.
 
     Now let’s take a look at Webpack configuration file after this change:
 
-     {% highlight js %}
+     ```javascript
         // Filename: webpack.config.js
 
         const webpack = require('webpack');
@@ -86,7 +86,7 @@ We can have more control over this functionality. We can change default configur
               }
            }
         };
-     {% endhighlight %}
+     ```
 
 
 ### Experiment

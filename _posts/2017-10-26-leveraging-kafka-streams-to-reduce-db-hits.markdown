@@ -59,14 +59,14 @@ Imagine a stream of such events coming to server for a very high traffic website
 
 Let the JSON structure be as follows:
 
-{% highlight json %}
+```json
 {
   "uuid":"user id",
   "session_id": "some uuid",
   "event": "click/page_view",
   "time_spent":14
 }
-{% endhighlight %}
+```
 
 Ingestion at above mentioned pace in a DB or ensuring that these events gets stored in DB in itself is a challenge. A lot of hardware will be required to cope with this traffic as it is. Hence, it doesn’t make sense to store data directly in DB. A streaming application is a very good fit here. A streaming application is going to leverage the fact that for most of the user the clicks and page views will be concentrated in a time window. So it is possible that in 5 minutes a user might be clicking x times and giving y pageviews on an average. We can introduce a 5 minute window and club these request to form a single equivalent DB request. Hence reducing (x+y) hits to 1 hit in a window of 5 minutes. Thus reducing the traffic to 1/(x+y) of what was coming earlier.
 
@@ -82,7 +82,7 @@ Let’s take a look at sequence diagram below. This diagram shows how various co
 
 All this flow is defined with the help of Kafka Streams DSL, the code snippet is given below
 
-{% highlight java %}
+```java
 //Defining Source Streams from multiple topics.
 KStream<String, ClickStream> clickStream = kStreamBuilder.stream(stringSerde, clickStreamSerde,
      Main.TOPIC_PROPERTIES.getProperty("topic.click.input").split(","));
@@ -98,7 +98,7 @@ clickStream
            TimeWindows.of(1 * 60 * 1000), collectorSerde,
            Main.TOPIC_PROPERTIES.getProperty("topic.click.aggregation"))
      .to(windowedSerde, collectorSerde, new ClickStreamPartitioner(), Main.TOPIC_PROPERTIES.getProperty("topic.click.summary"));
-{% endhighlight %}
+```
 
 It’s worth noting that for each step we need to define a serializer and deserializer. In above code snippet
 - ***stringSerde: Defines the Serialization and Deserialization for String***

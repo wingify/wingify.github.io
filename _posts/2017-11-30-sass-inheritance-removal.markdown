@@ -17,7 +17,7 @@ Here are the reasons why we discarded @extend.
 
 ## High maintainability 
 
-{% highlight css %}
+```css
 .title {
 	text-transform: uppercase;
 	font-size: 11px;
@@ -27,22 +27,22 @@ label {
 	@extend .title;
 	font-size: 13px;
 }
-{% endhighlight %}
+```
 
 …and in the end of the file somewhere adding,
 
-{% highlight css %}
+```css
 .title {
 	font-size: 12px;
 }
-{% endhighlight %}
+```
 
 If this file is opened and looked up for the `label` rules, one would expect it to be of 13px but in reality, it will be of 12px.
 `<label>I will always be 12px</label>`
 
 This is because on compilation the result looks like this:
 
-{% highlight css %}
+```css
 .title , label {
 	text-transform: uppercase; 
 }
@@ -54,7 +54,7 @@ label {
 .title , label {
 	font-size: 12px; 
 }
-{% endhighlight %}
+```
 
 `label` shares the rules at the last definition of `.title`.
 
@@ -71,7 +71,7 @@ After we removed @extend from all our sass files, size got reduced from 164KB =>
 The code for one class should be contained at one place rather than distributed at many places. Classes or Placeholders extended in virtue of maintaining the code actually make it untidy and difficult to understand in case of multiple CSS files or long CSS code.
 Here’s an example:
 
-{% highlight css %}
+```css
 .font--13 {
 	font-size: 13px;
 }
@@ -96,11 +96,11 @@ Here’s an example:
 .circle--200 {
 	@extend %size--200;
 }
-{% endhighlight %}
+```
 
 Generated Code:
 
-{% highlight css %}
+```css
 .font--13, .tile, .tile--200 {
 	font-size: 13px;
 }
@@ -118,7 +118,7 @@ Generated Code:
 .tile--200 {
 	font-size: 14px;
 }
-{% endhighlight %}
+```
 
 The generated code is highly unreadable and not at all lucid. This particular code has rules staggered at 4 places just for class .tile--200.
 
@@ -127,7 +127,7 @@ We solved these problems with the help of [mixins](http://sass-lang.com/guide#to
 
 For e.g. in above example: SASS would be
 
-{% highlight css %}
+```css
 .font--13 {
 	font-size: 13px;
 }
@@ -156,11 +156,11 @@ For e.g. in above example: SASS would be
 .circle--200 {
 	@include size--200;
 }
-{% endhighlight %}
+```
 
 Generated CSS code will be:
 
-{% highlight css %}
+```css
 .font--13 {
 	font-size: 13px;
 }
@@ -184,7 +184,7 @@ Generated CSS code will be:
 	width: 200px;
 	height: 200px;
 }
-{% endhighlight %}
+```
 
 This code has rules for every class maintained at just one place making it easier to understand and lucid which results in easy debugging and requires low maintenance.
 

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Performance improvements in VWO Smartcode
-excerpt: Performance improvements in VWO Smartcode
+title: Performance improvements in VWO SmartCode
+excerpt: Performance improvements in VWO SmartCode
 authorslug: shubham_soni_udit_chawla
 author: Shubham Soni, Udit Chawla
 ---

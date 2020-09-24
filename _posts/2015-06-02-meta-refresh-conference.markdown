@@ -14,8 +14,7 @@ While speaking to the attendees, many expressed their interest to get interviewe
 
 Some moments captured during Meta Refresh 2015:
 
-<script>Galleria.run('#fifth-elephant-gallery');</script>
-<div id="fifth-elephant-gallery" style="height: 600px;">
+<div id="fifth-elephant-gallery">
     <img src="/images/2015/03/conference/0.jpg">
     <img src="/images/2015/03/conference/1.jpg">
     <img src="/images/2015/03/conference/3.jpg">

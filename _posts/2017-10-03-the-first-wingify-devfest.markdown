@@ -34,8 +34,7 @@ With the topic of the DevFest clear, finding speakers was the next challenge, or
 4. **[Neha Sharma](https://twitter.com/hellonehha) spoke on Web apps and Performance**
 5. **[Manish Gill](https://twitter.com/mgill25) spoke on [Gyaan in Scalability](https://speakerdeck.com/mgill25/lessons-in-scalability)**
 
-<script>Galleria.run('#devfest-speakers-gallery');</script>
-<div id="devfest-speakers-gallery" style="height: 600px;">
+<div id="devfest-speakers-gallery">
 	<img src="/images/2017/10/devfest-speakers-1.jpg">
 	<img src="/images/2017/10/devfest-speakers-2.jpg">
 	<img src="/images/2017/10/devfest-speakers-3.jpg">
@@ -61,8 +60,7 @@ Next in line was [Deepak Pathania](https://twitter.com/pathaniadeepak7). Althoug
 
 With a quick lunch, after Deepak's talk, it was Capture the Flag time! [Dheeraj Joshi](https://twitter.com/dheerajhere) from the organising team, had managed to craft some mind-tickling questions for the participants to rack their brains on. For the next two hours everyone was glued to the event, trying to find ways to get to the hidden flags. At the end of the day, Capture the Flag turned out the be the star attraction of the DevFest.
 
-<script>Galleria.run('#devfest-capture-the-flag-gallery');</script>
-<div id="devfest-capture-the-flag-gallery" style="height: 600px;">
+<div id="devfest-capture-the-flag-gallery">
 	<img src="/images/2017/10/devfest-ctf-1.jpg">
 	<img src="/images/2017/10/devfest-ctf-2.JPG">
 </div>
@@ -73,8 +71,7 @@ After Neha it was [Manish Gill's](https://twitter.com/mgill25) turn. Manish is a
 
 We finally finished the day with Code in the Dark. It was a long long day, and we're glad we chose to end with it. Our in-house DJ, [Ashish Bardhan](https://twitter.com/creativebakchod/), played the best of the best Techno music that we could've asked for. The dark settings along with the laser lights and the music set the right ambience to get the adrenaline pumping. It was intense! By the time the Code in the Dark ended everyone was rejuvenated.
 
-<script>Galleria.run('#devfest-code-in-the-dark-gallery');</script>
-<div id="devfest-code-in-the-dark-gallery" style="height: 600px;">
+<div id="devfest-code-in-the-dark-gallery">
 	<img src="/images/2017/10/devfest-citd-1.JPG">
 	<img src="/images/2017/10/devfest-citd-2.JPG">
 	<img src="/images/2017/10/devfest-citd-3.JPG">
@@ -88,8 +85,7 @@ There were many things we did well, and there were many things we could've done 
 
 Some moments captured during the DevFest:
 
-<script>Galleria.run('#devfest-day-gallery');</script>
-<div id="devfest-day-gallery" style="height: 600px;">
+<div id="devfest-day-gallery">
 	<img src="/images/2017/10/devfest-gallery-1.JPG">
 	<img src="/images/2017/10/devfest-gallery-2.JPG">
 	<img src="/images/2017/10/devfest-gallery-3.JPG">

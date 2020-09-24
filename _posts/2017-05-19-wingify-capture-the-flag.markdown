@@ -59,8 +59,7 @@ Each participant from the top two teams was given [Yubikey][16] and Bluetooth Sp
 ### Mini CTF (External)
 Last week, Wingify hosted a [PyData Meetup][3] and attendees played a quick round of CTF. You can find the pictures below.
 
-<script>Galleria.run('#fifth-elephant-gallery');</script>
-<div id="fifth-elephant-gallery" style="height: 600px;">
+<div id="fifth-elephant-gallery">
     <img src="/images/2017/05/ctf_meetup.jpg">
     <img src="/images/2017/05/ctf_meetup2.jpg">
     <img src="/images/2017/05/ctf_meetup3.jpg">

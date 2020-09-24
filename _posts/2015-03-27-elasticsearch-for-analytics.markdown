@@ -229,7 +229,7 @@ we create a document for a unique visitor per account per campaign in
 Elasticsearch. This document stores user meta data, data for segmentation and
 goal conversion tracking data. A typical visitor document looks like this:
 
-{% highlight json %}
+```json
 {
    "_index": "february-2015",
    "_type": "123",
@@ -292,7 +292,7 @@ goal conversion tracking data. A typical visitor document looks like this:
       "email_traffic": false
    }
 }
-{% endhighlight %}
+```
 
 `_id` is the UUID of the visitor. Most of the other fields have
 information extracted out from the IP address, the User Agent, the URL and the

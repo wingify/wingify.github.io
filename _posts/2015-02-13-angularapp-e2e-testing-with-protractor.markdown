@@ -28,13 +28,13 @@ Test Scenario and Test Data follow a one-to-many relationship, so we can't hardc
 `xlsjs` npm module lets us fetch the data from an .xls file and use it in script. Follow the below mentioned steps to set it up :
 
 - Install xlsjs
-{% highlight bash %}
+```bash
 npm install xlsjs
-{% endhighlight %}
+```
 
 - Define a JavaScript utility function as :
 
-{% highlight javascript %}
+```javascript
 cellFromXLS = function (cellId) {
     'use strict';
     //Define sheetNumber
@@ -52,13 +52,13 @@ cellFromXLS = function (cellId) {
     var value = workbook.Sheets[sheetNamelist[sheetNumber]][cellId].v;
     return value;
 };
-{% endhighlight %}
+```
 
 - Call function as:
 
-{% highlight javascript %}
+```javascript
 var email = cellFromXLS('B1');
-{% endhighlight %}
+```
 
 
 ### Test both Angular.js and non-Angular.js based pages
@@ -66,20 +66,20 @@ var email = cellFromXLS('B1');
 Our use case involves using Protractor for an Angular.js based app, but it works pretty well for non-Angular.js pages as well.
 Simply set the following flag to true and access the webdriver instance using browser.driver instead of element as shown below :
 
-{% highlight javascript %}
+```javascript
 beforeEach(function() {
 browser.ignoreSynchronization = true;
 });
-{% endhighlight %}
+```
 
 For instance, the following code for an angular page:
 
-{% highlight javascript %} element(by.css('#elementid').click(); {% endhighlight %}
+```javascript element(by.css('#elementid').click(); ```
 
 would be written as shown below for non angular page:
-{% highlight javascript %}
+```javascript
 browser.driver.findElement(by.css('#elementid')).click();
-{% endhighlight %}
+```
 
 Sounds cool? Now let's dig deeper in the protractor world.
 
@@ -87,7 +87,7 @@ Sounds cool? Now let's dig deeper in the protractor world.
 
 Before we start with the advance functions, let's have a look at a simple login test case, where we verify that the user should be redirected to a welcome page after login.
 
-{% highlight javascript %}
+```javascript
 //Jasmine describe statement : Describes the test
  describe('APP LOGIN::', function() {
     //before Each :  This piece of code executes before all it statement
@@ -116,7 +116,7 @@ Before we start with the advance functions, let's have a look at a simple login 
     });
     /* Write other it blocks */
 });
-{% endhighlight %}
+```
 
 #### Let's study the code:
 
@@ -126,7 +126,7 @@ Before we start with the advance functions, let's have a look at a simple login 
 
 **Tip:** To control its execution you can use a flag variable as shown in the code below.
 
-{% highlight javascript %}
+```javascript
 //use pageLoadedStatus flag
 var pageLoadedStatus = false;
 beforeEach(function() {
@@ -137,13 +137,13 @@ beforeEach(function() {
             pageLoadedStatus = true;
         }
 });
-{% endhighlight %}
+```
 
 **Multiple ways to select elements:**
 
-{% highlight javascript %}
+```javascript
 by.css		 by.model	   by.repeater		by.id		by.binding	    by.xpath
-{% endhighlight %}
+```
 
 
 **Interacting with the DOM:**
@@ -163,7 +163,7 @@ Let's take this example of clicking on a date from a calendar.
 
 All the dates elements have the same selector. Therefore, define a filter function as :
 
-{% highlight javascript %}
+```javascript
 clickDateByText = function (tileText) {
     'use strict';
     //Select all date elements and apply filter function
@@ -178,38 +178,38 @@ clickDateByText = function (tileText) {
         filteredElements[0].click();
     });
 };
-{% endhighlight %}
+```
 
 Now to click on date 17, simply call the function as :
 
-{% highlight javascript %}
+```javascript
 clickDateByText(17);
-{% endhighlight %}
+```
 
 - `each` : Use it when the same action has to be taken for all elements having common selector. For example : clearing the list of input fields in a Signup form.
 
-{% highlight javascript %}
+```javascript
 element.all(by.css('form>input')).each(function (inputs) {
     inputs.clear();
 });
-{% endhighlight %}
+```
 
 - `map` : Mapping a collection of elements in an array without use of protractor `map`  function involves a lot of code to deal with all the proimises one by one. On the contrary, using map function for the same purpose is a piece of cake. Map function iterates through each element found with the locator and then resolves all the promises to return a promise with an array of values. For example : To get the text of all elements (with ng-repeat = 'option in Options') in an array, write the code as :
 
-{% highlight javascript %}
+```javascript
 var optionTexts = element.all(by.repeater('option in Options')).map(function (Options) {
     return Options.getText();
 });
 optionTexts.then(function (array) {
     console.log(array);
 });
-{% endhighlight %}
+```
 
 ### Tips and tricks
 
 - Manage Browser logs: There will always be certain scenarios which would not be covered in e2e scripts. Therefore, it is a smart move to always check browser console errors for any unexpected issue in the app. The following piece of code allows you to keep a check at browser logs and fails the test cases if there are any errors :
 
-{% highlight javascript %}
+```javascript
 afterEach(function () {
 	browser.manage().logs().get('browser').then(function (browserLog) {
 		expect(browserLog.length).toEqual(0);
@@ -218,15 +218,15 @@ afterEach(function () {
 		}
 	});
 });
-{% endhighlight %}
+```
 
 - Combine element statements to move around the dom : Xpath provides an excellent way to move up and down the dom.
-{% highlight javascript %}
+```javascript
 // use '..' to select parent of an element
 element(by.css('input')).element(by.xpath('..')); // Resulting element will be the parent of input
 // use 'following-sibling' to select the sibling
 element(by.css('input')).element(by.xpath('following-sibling::span'))
-{% endhighlight %}
+```
 
 Common UseCase: Error messages are often displayed as a sibling to input or submit types. Therefore, instead of using a different selector path for error message, xpath can be used to pick the sibling.
 
@@ -235,19 +235,19 @@ Common UseCase: Error messages are often displayed as a sibling to input or subm
 </div>
 
 To verify the error message "invalid URL", simply write the assertion as:
-{% highlight javascript %}
+```javascript
 element(by.model('Url')).sendkeys('http://').then(function (ele){
 	expect(ele.element(by.xpath('following-sibling::span')).getText()).toEqual('Invalid URL');
 });
-{% endhighlight %}
+```
 
 - Never use protractor element statements inside loop: The simple reason is that the webdriverJS (protractor) API is asynchronous. Element statements returns a promise and that promise is in unresolved state while the code below the statements continues to execute. This leads to unpredictable results. Hence, it is advisable to use recursive functions instead of loops.
 
 - Debug the tests using elementexplorer.js: elementexplorer.js lets you test the page interactively. You will find this JS file in node_modules/protractor/bin directory. Start the selenium server and run command:
 
-{% highlight bash %}
+```bash
 node elementexplorer https://app.vwo.com
-{% endhighlight %}
+```
 
 Browser will load the URL and you will see > prompt. Use browser, element and protractor variables to interact with page.
 
@@ -265,7 +265,7 @@ Let's admit it, e2e test cases are not easy to be maintained and updated. You ha
 
 Our Application has more than 50 screens. Therefore we list all the page-objects i.e. dom elements of each screen in a seprate JS file. Take a look at login screen page-object file :
 
-{% highlight javascript %}
+```javascript
 /*File Name : loginPage.js*/
 var loginPage = function () {
     'use strict';
@@ -284,11 +284,11 @@ var loginPage = function () {
 module.exports = {
     log: new loginPage()
 };
-{% endhighlight %}
+```
 
 - **common-module**: The idea is to divide the entire e2e scenario in small reusable functions in a way that these functions can be used in other e2e scenarios as well. These reusable functions can be grouped in different files for maintainblity. The login and logout module is used in many e2e scenarios. So, both can be clubbed in a file as shown below :
 
-{% highlight javascript %}
+```javascript
 /*File Name : LoginOut.js*/
 var loginPage = require('loginPage.js'),
     userName = 'test@wingify.com',
@@ -314,11 +314,11 @@ exports.login = function () {
 exports.logout = function () {
     //logout script
 };
-{% endhighlight %}
+```
 
 - **e2e-scripts**: Include all the common-module functions to write the complete e2e-script as shown below :
 
-{% highlight javascript %}
+```javascript
 /*File Name : CreateNewUserE2E.js*/
 var loginMod = require('loginOut.js');
 describe('Create a new user in the account and verify', function () {
@@ -332,7 +332,7 @@ describe('Create a new user in the account and verify', function () {
         loginMod.logout();
     });
 };
-{% endhighlight %}
+```
 
 ## To conclude
 

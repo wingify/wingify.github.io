@@ -62,11 +62,11 @@ Simply add the following to your test plan:
 
 Now add the following JavaScript code in WebDriver Sampler
 
-{% highlight js %}
+```javascript
 WDS.sampleResult.sampleStart();
 WDS.browser.get('http://wingify.com');
 WDS.sampleResult.sampleEnd();
-{% endhighlight %}
+```
 
 The only problem with approach is that the automation capability is limited. But again that depends on the application. 
 
@@ -82,7 +82,7 @@ Using this method all we need to do is create a JAR file using Eclipse and expor
 
 2. Write the following selenium code to open your homepage.
 
-{% highlight java %}
+```java
 package wing;
 
 import static org.junit.Assert.*;
@@ -107,7 +107,7 @@ public class home {
 	}
 
 }
-{% endhighlight %}
+```
 
 **Note**: In the above code we are using RemoteWebDriver to open the browser on a different machine since we will integrate our test with jenkins.
 

@@ -14,7 +14,7 @@ DOM Comparator is a JavaScript library that analyzes and compares two HTML strin
 
 Here's a simple example:
 
-{% highlight js %}
+```javascript
 var stringA = '<ul><li class="active">list item 1</li><li>list item 2</li></ul>';
 var stringB = '<ul><li>list item 1</li><li>list item 2</li></ul>';
 
@@ -33,33 +33,33 @@ expect(result[0]).toEqual({
         class: 'active'
     }
 });
-{% endhighlight %}
+```
 
 ## Motivation
 
-[The Campaign Builder](https://vwo.com/knowledge/about-vwo-campaign-builder) is one of the core components of our A/B testing software [VWO](http://vwo.com). It allows you to make changes to any website on the fly. Assuming the target website has a small snippet of [VWO Smart Code](https://vwo.com/knowledge/folder-vwo-smart-code) (Javascript) inserted, the changes made by the user are applied when the A/B test is run. These changes are little snippets of jQuery operations that are applied on the client-end.
+[The Campaign Builder](https://vwo.com/knowledge/about-vwo-campaign-builder) is one of the core components of our A/B testing software [VWO](http://vwo.com). It allows you to make changes to any website on the fly. Assuming the target website has a small snippet of [VWO SmartCode](https://vwo.com/knowledge/folder-vwo-smart-code) (Javascript) inserted, the changes made by the user are applied when the A/B test is run. These changes are little snippets of jQuery operations that are applied on the client-end.
 
 One of the major problems faced when applying such changes that they did not regard for dynamic content that might have been rendered by the client's website's backend. Let us consider a simple example:
 
 Imagine somebody wanting to run an A/B test on all the product pages of an eCommerce website. He wants to modify the "Buy Now" button on all such pages and make it appear bigger and bolder, so that it captures the end-user's attention better. He navigates to some product page, selects the button and tries to edit it. Assume that that button has markup that looks like below:
 
-{% highlight html %}
+```html
 <a href="javascript:addToCart(16);" class="add_to_cart">Add to Cart</a>
-{% endhighlight %}
+```
 
 The Campaign Builder provides an "Edit" operation, that opens up a rich text editor for the user to make changes to any element with ease. Assuming, he makes the text of the button bolder and changes the color to a bright red, here's what the resulting markup would look like:
 
-{% highlight html %}
+```html
 <a href="javascript:addToCart(16);" class="add_to_cart" style="font-weight:bold;color:red;">Add to Cart</a>
-{% endhighlight %}
+```
 
 Internally, an Edit operation is identified by the element the operation is applied on, and the new markup provided by the user, which in this case is the above code. It means that if a Buy Now button is found on any page, it will be replaced with the above code. The jQuery code for such an operation would look something like this:
 
-{% highlight js %}
+```javascript
 // A unique selector path to identify the element
 var selector = '#product_description > P:first-child + P > A:first-child';
 $(selector).replaceWith('<a href="javascript:addToCart(16);" class="add_to_cart" style="font-weight:bold;color:red;">Add to Cart</a>');
-{% endhighlight %}
+```
 
 Notice how this would not only add the styles to that element, but also change its `href` to always execute `addToCart(16);` regardless of the product page the user is on. Essentially, the dynamic content rendered by the client's backend has now been replaced with static content.
 
@@ -69,7 +69,7 @@ With DOM Comparator in place, the initial markup of the Edit operation above wil
 
 For the above example, here's what the list of resulting operations would look like:
 
-{% highlight json %}
+```json
 [{
     "name": "css",
     "selectorPath": "#product_description > P:first-child + P > A:first-child",
@@ -78,7 +78,7 @@ For the above example, here's what the list of resulting operations would look l
         "color": "red"
     }
 }]
-{% endhighlight %}
+```
 
 ## Live Demo
 

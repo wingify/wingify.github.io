@@ -83,21 +83,21 @@ Problems which we needed to tackle were:
 
 **Via Yarn** *(recommended)*
 
-{% highlight js %}
+```javascript
 yarn add --dev webpack
-{% endhighlight %}
+```
 
 **Via NPM**
 
-{% highlight js %}
+```javascript
 npm install webpack --save-dev
-{% endhighlight %}
+```
 
 **Configuration** -
 
 A basic configuration file looks like:
 
-{% highlight js %}
+```javascript
 // Filename: webpack.config.js
 
 const path = require('path');
@@ -112,13 +112,13 @@ module.exports = {
     filename: '[name].bundle.js',
   },
 };
-{% endhighlight %}
+```
 
 Check [this](https://webpack.js.org/configuration/#options) for knowing the role of each key.
 
 Since we needed to support different modules we had to have different config files for each of our module.
 
-{% highlight js %}
+```javascript
 // Filename webpack.config.js
 
 /**
@@ -158,7 +158,7 @@ multipleConfigs.map((config) => {
 });
 
 module.exports = multipleConfigs;
-{% endhighlight %}
+```
 
 The above configuration is capable of handling `n` number of modules. Different modules will have at least one bundled JS file as the output. But we also needed to have a bundled CSS file corresponding to each module. So, we decided to have two different config files for every module which has both JS and CSS bundling, one for bundling JS and other for managing assets and bundling CSS files. Tasks like copying files from src to dist, updating the JS file name with a cache-busting hash(prod build) in the index.html file and so on were taken care of inside the assets config file.
 
@@ -183,7 +183,7 @@ Let's discuss how we managed to share the common module rules and resolve aliase
 
 Below is a generic utility file’s code which has two methods. One outputs whether a passed argument is an Object and the other one outputs whether it’s an array.
 
-{% highlight js %}
+```javascript
 // Filename: GenericUtils.js
 
 module.exports = {
@@ -194,11 +194,11 @@ module.exports = {
         return Object.prototype.toString.call(arr) === '[object Array]';
     }
 };
-{% endhighlight %}
+```
 
 Here's a list of common rules and aliases defined explicitly in a separate file.
 
-{% highlight js %}
+```javascript
 // Filename: webpack.common-module-rules-and-alias.js
 
 const path = require('path');
@@ -254,11 +254,11 @@ module.exports = {
         // ....more
     ]
 };
-{% endhighlight %}
+```
 
 We now had a common file where we could easily add/update/remove any rule and its corresponding alias. Now we needed to have a utility which combines the common rules and aliases with the already defined rules and aliases in a particular modules' config file.
 
-{% highlight js %}
+```javascript
 // Filename: rulesAndAliasUtil.js
 
 const moduleRulesAndAlias = require('./webpack.common-module-rules-and-alias');
@@ -292,13 +292,13 @@ module.exports = {
         return config;
     }
 };
-{% endhighlight %}
+```
 
 Time to write our module specific config file. We'll demonstrate just one config file i.e. for moduleA and the others would look exactly the same except the options' value as per module.
 
 Here's the full webpack config file for `moduleA`.
 
-{% highlight js %}
+```javascript
 // Filename: webpack.moduleA.js
 
 const path = require('path');
@@ -356,7 +356,7 @@ config = rulesAndAliasUtil.mergeRulesAndUpdate(testRules, config);
 config = rulesAndAliasUtil.mergeAliasAndUpdate(moduleAlias, config);
 
 module.exports = config;
-{% endhighlight %}
+```
 
 This is a complete webpack config file for bundling JS file for `moduleA`. While configuring it, we defined different options, each one has its own purpose. To know more about each option, please refer [this](https://webpack.js.org/configuration/#options).
 
@@ -371,7 +371,7 @@ We introduced two loaders for bundling JS resources inside our app.
 
 Since we needed these two loaders for all our modules, we defined them in the same file we discussed earlier - `rulesAndAliasUtil.js`
 
-{% highlight js %}
+```javascript
 // Filename: rulesAndAliasUtil.js
 
 let defaultLoaders = [{
@@ -399,11 +399,11 @@ let defaultLoaders = [{
     }
   }
 }];
-{% endhighlight %}
+```
 
 And updating the method: `mergeRulesAndUpdate` as follows
 
-{% highlight js %}
+```javascript
 mergeRulesAndUpdate: function(testRules, config) {
     if (testRules && config && config.module && config.module.rules &&
         genericUtil.isObject(config) &&
@@ -421,13 +421,13 @@ mergeRulesAndUpdate: function(testRules, config) {
     }
     return config;
 }
-{% endhighlight %}
+```
 
 This was all about bundling of JS modules. The same approach was followed for different modules. Now we were left with the bundling of our CSS files and the obvious chores like copying, replacing, etc.
 
 ### Webpack Bundling of CSS files
 
-{% highlight js %}
+```javascript
 // Filename: webpack.moduleA.assets.js
 
 const fs = require('fs');
@@ -536,7 +536,7 @@ module.exports = {
     })
   ].concat(buildPlugins)
 };
-{% endhighlight %}
+```
 
 The above configuration outputs two bundled CSS files i.e. `css-file-1.min.css` & `css-file.min.css`, and `css-file-1-8fb1ed.min.css` & `css-file-2-6ed3c1.min.css` if it's a prod build.
 
@@ -544,11 +544,11 @@ We are using [ExtractTextPlugin](https://github.com/webpack-contrib/extract-text
 
 We faced a very weird issue and thus worth mentioning here explicitly. `ExtractTextPlugin` tries to process URL like in background-image, url(), etc. We need to stop that behavior so we need to set `url:false` inside the options like:
 
-{% highlight js %}
+```javascript
 options: {
      url: false
 }
-{% endhighlight %}
+```
 
 Few more plugins that we are using are:
 
@@ -570,7 +570,7 @@ This was all about bundling of CSS file.
 
 First, we created a file to read arguments that could be read in our `webpack.config.js` file via a `package.json` script.
 
-{% highlight js %}
+```javascript
 // Filename: webpack.env.js
 
 // Webpack doesn't pass Webpack env in env variable when using multiple configs, so writing custom code
@@ -597,11 +597,11 @@ module.exports = {
   env,
   targetModules
 };
-{% endhighlight %}
+```
 
 We tweaked our main `webpack.config.js` to make it module-aware.
 
-{% highlight js %}
+```javascript
 // Filename: webpack.config.js
 
 const targetModules = require('./build/webpack.env').targetModules;
@@ -660,11 +660,11 @@ multipleConfigs.map((config) => {
 });
 
 module.exports = multipleConfigs;
-{% endhighlight %}
+```
 
 In our `package.json` file, we created different scripts for running either a development build or production-ready build(minification, cache-busting, and purification) and either to run build for all modules or for just selective modules.
 
-{% highlight js %}
+```javascript
 // Filename: package.json
 
 "scripts": {
@@ -685,7 +685,7 @@ In our `package.json` file, we created different scripts for running either a de
   "lint":         "eslint 'src/**/*.js'  --cache --config .eslintrc --ignore-path .eslintignore",
   "lint-fix":     "eslint 'src/**/*.js' --fix  --cache --config .eslintrc --ignore-path .eslintignore"
 }
-{% endhighlight %}
+```
 
 ### Upgrading to `Webpack@3`
 

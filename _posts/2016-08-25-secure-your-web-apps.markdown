@@ -65,8 +65,7 @@ To know more about the vulnerability, [click here][3].
 
 After the talk, it was rewarding to see a good response and interesting queries from the audience. One comment I received from audience was "We have just realized that our services are vulnerable to one of the attacks you have demonstrated and we never gave a thought to it. Thank you!".
 
-<script>Galleria.run('#jschannel-gallery');</script>
-<div id="jschannel-gallery" style="height: 400px;">
+<div id="jschannel-gallery">
     <img src="/images/2016/08/jschannel_resp1.png">
     <img src="/images/2016/08/jschannel_resp2.png">
 </div>

@@ -19,11 +19,11 @@ We are proud to announce [please.js](https://github.com/wingify/please.js), a Re
 
 please.js is a Request/Response based wrapper around the PostMessage API that makes use of jQuery Promises. Here's a quick example to load an iframe window's location:
 
-{% highlight js %}
+```javascript
 var frameWindow = $('iframe').get(0).contentWindow;
 
 please(frameWindow).call('window.location.reload');
-{% endhighlight %}
+```
 
 please.js is based on top of jQuery and the jQuery Promise API. jQuery version 1.6 or above is preferred. To make the communication between two windows on different domains work, both of them must be injected with the same version of jQuery and please.js.
 
