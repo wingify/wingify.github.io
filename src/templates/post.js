@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../layout'
 import Bio from '../components/Bio'
-import PostTags from '../components/PostTags'
+import PostTags from '../components/PostTags' // eslint-disable-line no-unused-vars
 import SocialLinks from '../components/SocialLinks'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'

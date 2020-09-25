@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../layout'
 import config from '../../data/SiteConfig'
-import styles from '../../css/app.css'
+import styles from '../../css/app.css' // eslint-disable-line no-unused-vars
 
 const LabsPage = () => (
     <Layout>
