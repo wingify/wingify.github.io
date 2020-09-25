@@ -30,8 +30,8 @@ A lot of our automation frameworks are run on our test-apps, but now moving them
 
 ```
 
-Then use the claim of target_audience which you get as the client ID in the previous step, to generate a JWT based token. You can also get the client ID by going to the IAP page, select the resource under consideration, click on the ellipses and then click on Edit OAuth Client. On the subsequent page you get the client ID associated with the resource.
-Now, mind you, generating the JSON Web Token (JWT) in itself is a separate task, for which you’d need some JWT library. And then the JWT itself needs to be signed with RSA-256 using the private key which is in the service account JSON file. The signature bytes are then to be added to the token as:
+Then use the claim of `target_audience` which you get as the client ID in the previous step, to generate a JWT based token. You can also get the client ID by going to the IAP page, select the resource under consideration, click on the ellipses and then click on **Edit OAuth Client**. On the subsequent page, you get the **client ID** associated with the resource.
+Now, mind you, generating the JSON Web Token (JWT) in itself is a separate task, for which you’d need some JWT library. And then the JWT itself needs to be signed with RSA-256 using the private key which is in the service account JSON file. The signature bytes are then to be added to the token, with dot separators, as:
 
 ```json
 {
@@ -39,7 +39,7 @@ Now, mind you, generating the JSON Web Token (JWT) in itself is a separate task,
  "typ": "JWT",
  "kid": "PRIVATE_KEY_ID"
 }
-...
+.
 {
  "iss": "someone@PROJECT_ID.iam.gserviceaccount.com",
  "sub": "someone@PROJECT_ID.iam.gserviceaccount.com",
@@ -47,31 +47,31 @@ Now, mind you, generating the JSON Web Token (JWT) in itself is a separate task,
  "iat": 1600948084,
  "exp": 1600951684
 }
-...
+.
 {
    [signature bytes]
 }
 ```
 
-The signed JWT along with the signature bytes addendum and base64url encoded would like like this:
+The signed JWT along with the signature bytes addendum and base64url encoded would look something like this:
 
 ```
 eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI3NjEzMjY3OTgwNjktcjVtbGpsbG4xcmQ0bHJiaGc3NWVmZ2lncDM2bTc4ajVAZGV2ZWxvcGVyLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJzY29wZSI6Imh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL2F1dGgvcHJlZGljdGlvbiIsImF1ZCI6Imh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL29hdXRoMi92NC90b2tlbiIsImV4cCI6MTMyODU1NDM4NSwiaWF0IjoxMzI4NTUwNzg1fQ.UFUt59SUM2_AW4cRU8Y0BYVQsNTo4n7AFsNrqOpYiICDu37vVt-tw38UKzjmUKtcRsLLjrR3gFW3dNDMx_pL9DVjgVHDdYirtrCekUHOYoa1CMR66nxep5q5cBQ4y4u2kIgSvChCTc9pmLLNoIem-ruCecAJYgI9Ks7pTnW1gkOKs0x3YpiLpzplVHAkkHztaXiJdtpBcY1OXyo6jTQCa3Lk2Q3va1dPkh_d--GU2M5flgd8xNBPYw4vxyt0mP59XZlHMpztZt0soSgObf7G3GXArreF_6tpbFsS3z2t5zkEiHuWJXpzcYr5zWTRPDEHsejeBSG8EgpLDce2380ROQ
 
 ```
 
-Once you have the signed JWT, you have to base64url encode it and then make an OIDC access token request. This request would be a *POST* request and should be made to the URL `https://oauth2.googleapis.com/token`. Two parameters, `grant_type` and `assertion` are to be added to this request. `grant_type` has the string value of `urn:ietf:params:oauth:grant-type:jwt-bearer` while the `assertion` parameter has the signed JWT, including the signature bytes, as it's value.
+Once you have the signed JWT, you have to base64url encode it and then make an **OIDC** access token request. This request would be a **POST** request and should be made to the Google OAuth API URL. Two parameters, `grant_type` and `assertion` are to be added to this request. `grant_type` has the string value of `urn:ietf:params:oauth:grant-type:jwt-bearer` while the `assertion` parameter has the signed JWT, including the signature bytes, as it's value.
 
 ```
 POST /token HTTP/1.1
-Host: oauth2.googleapis.com
+Host: GOOGLE_OAUTH_API_URL
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI3NjEzMjY3OTgwNjktcjVtbGpsbG4xcmQ0bHJiaGc3NWVmZ2lncDM2bTc4ajVAZGV2ZWxvcGVyLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJzY29wZSI6Imh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL2F1dGgvcHJlZGljdGlvbiIsImF1ZCI6Imh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbS9vL29hdXRoMi90b2tlbiIsImV4cCI6MTMyODU3MzM4MSwiaWF0IjoxMzI4NTY5NzgxfQ.ixOUGehweEVX_UKXv5BbbwVEdcz6AYS-6uQV6fGorGKrHf3LIJnyREw9evE-gs2bmMaQI5_UbabvI4k-mQE4kBqtmSpTzxYBL1TCd7Kv5nTZoUC1CmwmWCFqT9RE6D7XSgPUh_jF1qskLa2w0rxMSjwruNKbysgRNctZPln7cqQ
 
 ```
 
-The received response would contain the Bearer access token. This token then needs to be incorporated in all the requests that are made to the resources which are present behind the IAP.
+The received response would contain the **Bearer** access token. This token then needs to be incorporated in all the requests that are made to the resources which are present behind the IAP.
 
 At the onset, if you read the description above, and if that description is not daunting enough, then [read the documentation itself](https://cloud.google.com/iap/docs/authentication-howto#iap_make_request-nodejs); The steps seem to be confusing and seems like it could do some rework in being more comprehendible.
 
@@ -99,7 +99,7 @@ function main(targetAudience = 'CLIENT_ID_GOES_HERE') {
 main();
 ```
 
-This was used to generate the Bearer auth token that could then be further used in making requests to our test apps under automation testing.
+This was used to generate the **Bearer** auth token that could then be further used in making requests to our test apps under automation testing.
 
 In the app automation where we required browser instances from Protractor to run automations on test-apps, we made use of the node implementation of [browsermob-proxy](https://github.com/zzo/browsermob-node) along with the [browsermob-proxy server](https://github.com/lightbody/browsermob-proxy).
 Using Protractor’s lifecycle method `beforeAll`, we made sure that the token is fetched and ready to be used before any of the spec files are executed.
@@ -151,7 +151,7 @@ proxy: {
 }
 ```
 
-In our node-based automations, where we were making use of the request module to make API calls for their assertion.
+In our Node.js-based automations, we were making use of the **request** module to make API calls for their assertion. We overrode it to accommodate the addition of the authorization bearer token in every request that was being made.
 
 ```javascript
 exports.customRequest = function (options, callback) {
@@ -172,17 +172,15 @@ exports.customRequest = function (options, callback) {
 };
 ```
 
-We overrode them and to accommodate the addition of the authorization bearer token in every request that was being made.
-
 And for all our load tests that were being run through JMeter, we made use of a similar script as mentioned in the first example above. It generates the access token and writes it to a file. This file is then read by the JMX scripts while adding the authorization bearer token to all the network requests that are made through JMeter.
 Keeping in mind that these tokens have a short expiration, we generate the token and write them to the files as and when the load tests are run.
 
 ### Aftermath
 
-The IAP is definitely a good option to regulate access to private resources without having to implement a VPN tunneling. But throwing accessibility to automated agents in the mix created new interesting challenges here. There are some obvious pros to it:
+The IAP is a good option to regulate access to private resources without having to implement a VPN tunneling. But throwing accessibility to automated agents in the mix created new interesting challenges here. There are some obvious pros to it:
 
 1. Easy access regulation to resources
-2. Fine grained control of access through users' and services' IAM roles
+2. Fine-grained control of access through users' and services' IAM roles
 3. Access through untrusted networks without the requirements of a VPN tunnel
 
 But there are some cons that we discovered along the way of implementing programmatic authentication:
