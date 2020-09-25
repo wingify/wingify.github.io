@@ -1,8 +1,8 @@
 {
   "name": "wingify-engineering-blog",
-  "description": "Wingify Engineering Blog",
+  "description": "Wingify's Engineering Blog",
   "version": "1.0.0",
-  "author": "Nitish Mittal <nitish.mittal@wingify.com>",
+  "author": "Wingify Engineering <engineering@wingify.com>",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "gatsby": "^2.19.49",
