@@ -60,11 +60,11 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI3NjEzMjY3OTgwNjktcjVtbGpsbG4xcmQ
 
 ```
 
-Once you have the signed JWT, you have to base64url encode it and then make an **OIDC** access token request. This request would be a **POST** request and should be made to the URL `https://oauth2.googleapis.com/token`. Two parameters, `grant_type` and `assertion` are to be added to this request. `grant_type` has the string value of `urn:ietf:params:oauth:grant-type:jwt-bearer` while the `assertion` parameter has the signed JWT, including the signature bytes, as it's value.
+Once you have the signed JWT, you have to base64url encode it and then make an **OIDC** access token request. This request would be a **POST** request and should be made to the Google OAuth API URL. Two parameters, `grant_type` and `assertion` are to be added to this request. `grant_type` has the string value of `urn:ietf:params:oauth:grant-type:jwt-bearer` while the `assertion` parameter has the signed JWT, including the signature bytes, as it's value.
 
 ```
 POST /token HTTP/1.1
-Host: oauth2.googleapis.com
+Host: GOOGLE_OAUTH_API_URL
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI3NjEzMjY3OTgwNjktcjVtbGpsbG4xcmQ0bHJiaGc3NWVmZ2lncDM2bTc4ajVAZGV2ZWxvcGVyLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJzY29wZSI6Imh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL2F1dGgvcHJlZGljdGlvbiIsImF1ZCI6Imh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbS9vL29hdXRoMi90b2tlbiIsImV4cCI6MTMyODU3MzM4MSwiaWF0IjoxMzI4NTY5NzgxfQ.ixOUGehweEVX_UKXv5BbbwVEdcz6AYS-6uQV6fGorGKrHf3LIJnyREw9evE-gs2bmMaQI5_UbabvI4k-mQE4kBqtmSpTzxYBL1TCd7Kv5nTZoUC1CmwmWCFqT9RE6D7XSgPUh_jF1qskLa2w0rxMSjwruNKbysgRNctZPln7cqQ
