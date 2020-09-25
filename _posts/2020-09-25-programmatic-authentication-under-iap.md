@@ -151,7 +151,7 @@ proxy: {
 }
 ```
 
-In our node-based automations, where we were making use of the request module to make API calls for their assertion. We overrode them and to accommodate the addition of the authorization bearer token in every request that was being made.
+In our Node.js-based automations, we were making use of the **request** module to make API calls for their assertion. We overrode it to accommodate the addition of the authorization bearer token in every request that was being made.
 
 ```javascript
 exports.customRequest = function (options, callback) {
