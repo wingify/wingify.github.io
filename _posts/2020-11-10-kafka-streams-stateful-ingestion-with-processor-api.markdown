@@ -6,7 +6,7 @@ authorslug: aditya_gaur
 author: Aditya Gaur
 ---
 
-At Wingify, we have used Kafka across teams and projects, solving a vast array of use cases. So, when we had to implement the [VWO Session Recordings](https://help.vwo.com/hc/en-us/articles/360019732913-What-are-Session-Recordings-in-VWO-) feature for the new Data platform, Kafka was a logical choice, with Kafka Streams framework doing all the heavy lifting involved with using Kafka Consumer API, allowing us to focus on the data processing part. This blog post is an account of the issues we faced while working on the Kafka Streams based solution and how we were able found a way around them.
+At Wingify, we have used Kafka across teams and projects, solving a vast array of use cases. So, when we had to implement the [VWO Session Recordings](https://vwo.com/insights/session-recordings/) feature for the new Data platform, Kafka was a logical choice, with Kafka Streams framework doing all the heavy lifting involved with using Kafka Consumer API, allowing us to focus on the data processing part. This blog post is an account of the issues we faced while working on the Kafka Streams based solution and how we were able found a way around them.
 
 ### The Problem
 Batching write operations to a database can significantly increase the write throughput. It can also become a necessity in situations when you have to adhere to quotas and limits. In one of our [earlier](https://engineering.wingify.com/posts/leveraging-kafka-streams-to-reduce-db-hits/) blog posts, we discussed how the windowing and aggregation features of Kafka Streams allowed us to aggregate events in a time interval and reduce update operations on a database. What we wanted to do for the recordings feature was quite similar. The way we wanted to batch updates to an external sink for a particular customer's data was to fire an update if either :
@@ -74,12 +74,12 @@ Duration windowDuration = Duration.ofMillis(10000);
 TimeWindows window = TimeWindows.of(windowDuration).advanceBy(windowDuration);
 
 streamsBuilder
-        .stream(Main.KAFKA_TOPIC, Consumed.with(Serdes.String(), visitorSerde))                    (1)       
+        .stream(Main.KAFKA_TOPIC, Consumed.with(Serdes.String(), visitorSerde))                    (1)
         .filter((k, v) -> v != null)
-        .map((k, v) -> KeyValue.pair(v.getCustomerId(), new VisitorAggregated(v)))                 (2)  
+        .map((k, v) -> KeyValue.pair(v.getCustomerId(), new VisitorAggregated(v)))                 (2)
         .groupByKey(Grouped.with((Serdes.Integer()), visitorAggregatedSerde))
         .windowedBy(window.grace(Duration.ZERO))
-        .reduce(VisitorAggregated::merge)                                                          (3) 
+        .reduce(VisitorAggregated::merge)                                                          (3)
         .suppress(Suppressed.untilTimeLimit(windowDuration, Suppressed.BufferConfig.unbounded()))  (4)
         .toStream()
         .foreach((k, v) -> writeToSink(k.toString(), v));                                          (5)
@@ -102,19 +102,19 @@ In theory, all looked good, and an existing Kafka Streams application having nea
 
 With few load test runs, we observed certain areas of concern
 1. Before a `groupByKey()` transform, we need to perform a key changing operation(Step 2 in the above code snippet). As a result, the Kafka Streams framework is forced to perform a [**repartition**](https://www.confluent.io/blog/optimizing-kafka-streams-applications/) operation (similar to the shuffle step in the Map/Reduce paradigm). This involves creating an internal topic with the same number of partitions as the source topic and writing records with identical keys to the same partition. After records with identical keys are co-located to the same partition, aggregation is performed and results are sent to the downstream Processor nodes.
-   
+
    Due to **repartition**, what was initially one single [**topology**](https://docs.confluent.io/current/streams/architecture.html#processor-topology), is now broken into two sub-topologies and the processing overhead of writing to and reading from a Kafka topic is introduced, along with duplication of the source topic data. This overhead meant that messages already having higher payload size, would leave an even higher footprint on the Kafka broker.
 2. The result of the aggregation step is a `KTable` object and is persisted and replicated for fault tolerance with a compacted Kafka changelog topic. Also, the KTable object is periodically flushed to the disk. In case of a consumer rebalance, the new/existing Kafka Stream application instance reads all messages from this changelog topic and ensures it is caught up with all the stateful updates/computations an earlier consumer that was processing messages from those partitions made. Like the repartition topic, the changelog topic is an internal topic created by the Kafka Streams framework itself.
-   
+
    An additional changelog topic and a persistent KeyValue store meant more storage overhead on top of the repartition topic and slower startup times for the application as well since they had to read from this topic. State store replication through changelog topics is useful for streaming use cases where the state has to be persisted, but it was not needed for our aggregation use case as we were not persisting state.
-   
+
    <div style="text-align:center; margin: 10px;">
      <img src="/images/2020/10/kafka-streams-repartition-topic.png">
      <div style="margin: 10px;">
        <b>Internal repartition and change-log topics created by Kafka Streams</a></b><br>
      </div>
    </div>
-       
+
 3. Our expectation of window-based aggregation was that for each key we would receive the results in the downstream Processor nodes strictly after the expiration of the window. However, the result of aggregation stored in a `KTable` object is flushed from the cache and forwarded downstream either when the commit interval has elapsed or the `max-cache` size is reached. This meant that we lacked fine-grained control over when the results of aggregation will be forwarded for a particular customer. Also, for keys having a lower rate of incoming messages, aggregation results can take a long time to be forwarded and reflected in the database.
    Despite tweaking with configuration parameters and using Kafka Streams constructs like [**commit interval**](https://stackoverflow.com/questions/50312386/kafka-stream-consumer-commit-frequency), [**cache flushes**](https://kafka.apache.org/10/documentation/streams/developer-guide/memory-mgmt#:~:text=The%20semantics%20of%20caching%20is%20that%20data), and [`KTable#supress()`](https://kafka.apache.org/21/javadoc/org/apache/kafka/streams/kstream/Suppressed.html), we were unable to ensure that all updates were made to the external sink in a time-bound manner.
 
@@ -126,7 +126,7 @@ The challenges we faced with a time-based windowing and `groupByKey()` + `reduce
 
 [Processor API](https://kafka.apache.org/10/documentation/streams/developer-guide/processor-api.html) is a low-level KafkaStreams construct which allows for:
 1. Attaching KeyValue stores to KafkaStreams Processor nodes and performing read/write operations. A state store instance is created per partition and can be either persistent or in-memory only.
-2. Schedule actions to occur at strictly regular intervals(wall-clock time) and gain full control over when records are forwarded to specific Processor Nodes. 
+2. Schedule actions to occur at strictly regular intervals(wall-clock time) and gain full control over when records are forwarded to specific Processor Nodes.
 
 #### Transformer Interface
 
@@ -135,7 +135,7 @@ Using the Processor API requires manually creating the streams Topology, a proce
 [From Kafka Streams documentation](https://kafka.apache.org/20/javadoc/org/apache/kafka/streams/kstream/Transformer.html) :
 
 > The Transformer interface is for stateful mapping of an input record to zero, one, or multiple new output records (both key and value type can be altered arbitrarily).
-> This is a stateful record-by-record operation, i.e, transform(Object, Object) is invoked individually for each record of a stream and can access and modify 
+> This is a stateful record-by-record operation, i.e, transform(Object, Object) is invoked individually for each record of a stream and can access and modify
 > a state that is available beyond a single call of transform(Object, Object). Additionally, this Transformer can schedule a method to be called periodically with the provided context.
 
 #### Implementation
@@ -149,8 +149,8 @@ The `Transformer` interface having access to a key-value store and being able to
 </div>
 
 ```java
-StreamsBuilder streamsBuilder = new StreamsBuilder();          
- 
+StreamsBuilder streamsBuilder = new StreamsBuilder();
+
 streamsBuilder.addStateStore(                                                           (1)
         Stores.keyValueStoreBuilder(
                 Stores.inMemoryKeyValueStore(AGGREGATE_KV_STORE_ID),
@@ -194,7 +194,7 @@ public class VisitorProcessor implements Transformer<String, VisitorAggregated>,
         this.threshold = threshold;
         this.interval = interval;
     }
-    
+
     @Override
     public void init(ProcessorContext context) {                                                    (1)
         this.ctx = context;
@@ -202,7 +202,7 @@ public class VisitorProcessor implements Transformer<String, VisitorAggregated>,
         this.countStore = (KeyValueStore) context.getStateStore(Main.COUNT_KV_STORE_ID);
         this.ctx.schedule(interval, PunctuationType.WALL_CLOCK_TIME, this::punctuate);
     }
-    
+
     @Override
     public KeyValue<String, VisitorAggregated> transform(String key, VisitorAggregated visitor) {   (2)
         KeyValue<String, VisitorAggregated> toForward = null;
