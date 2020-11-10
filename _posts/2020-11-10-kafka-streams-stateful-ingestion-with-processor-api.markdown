@@ -61,12 +61,12 @@ The snippet below describes the code for the approach
 
 ```java
 Serde<Visitor> visitorSerde = Serdes.serdeFrom(
-        new JsonSerializer<>(Visitor.class),
-        new JsonDeserializer<>(Visitor.class));
+  new JsonSerializer<>(Visitor.class),
+  new JsonDeserializer<>(Visitor.class));
 
 Serde<VisitorAggregated> visitorAggregatedSerde = Serdes.serdeFrom(
-        new JsonSerializer<>(VisitorAggregated.class),
-        new JsonDeserializer<>(VisitorAggregated.class));
+  new JsonSerializer<>(VisitorAggregated.class),
+  new JsonDeserializer<>(VisitorAggregated.class));
 
 StreamsBuilder streamsBuilder = new StreamsBuilder();
 
@@ -74,15 +74,18 @@ Duration windowDuration = Duration.ofMillis(10000);
 TimeWindows window = TimeWindows.of(windowDuration).advanceBy(windowDuration);
 
 streamsBuilder
-        .stream(Main.KAFKA_TOPIC, Consumed.with(Serdes.String(), visitorSerde))                    (1)
-        .filter((k, v) -> v != null)
-        .map((k, v) -> KeyValue.pair(v.getCustomerId(), new VisitorAggregated(v)))                 (2)
-        .groupByKey(Grouped.with((Serdes.Integer()), visitorAggregatedSerde))
-        .windowedBy(window.grace(Duration.ZERO))
-        .reduce(VisitorAggregated::merge)                                                          (3)
-        .suppress(Suppressed.untilTimeLimit(windowDuration, Suppressed.BufferConfig.unbounded()))  (4)
-        .toStream()
-        .foreach((k, v) -> writeToSink(k.toString(), v));                                          (5)
+  .stream(KAFKA_TOPIC, Consumed.with(Serdes.String(), visitorSerde))     (1)
+  .filter((k, v) -> v != null)
+  .map((k, v) ->
+    KeyValue.pair(v.getCustomerId(), new VisitorAggregated(v)))          (2)
+  .groupByKey(Grouped.with((Serdes.Integer()), visitorAggregatedSerde))
+  .windowedBy(window.grace(Duration.ZERO))
+  .reduce(VisitorAggregated::merge)                                      (3)
+  .suppress(                                                             (4)
+    Suppressed.untilTimeLimit(windowDuration,
+    Suppressed.BufferConfig.unbounded()))
+  .toStream()
+  .foreach((k, v) -> writeToSink(k.toString(), v));                      (5)
 
 KafkaStreams kafkaStreams = new KafkaStreams(streamsBuilder.build(), streamsConfig);
 kafkaStreams.start();
@@ -151,28 +154,30 @@ The `Transformer` interface having access to a key-value store and being able to
 ```java
 StreamsBuilder streamsBuilder = new StreamsBuilder();
 
-streamsBuilder.addStateStore(                                                           (1)
-        Stores.keyValueStoreBuilder(
-                Stores.inMemoryKeyValueStore(AGGREGATE_KV_STORE_ID),
-                Serdes.Integer(), visitorAggregatedSerde
-        ).withLoggingDisabled().withCachingDisabled());
+streamsBuilder.addStateStore(                                            (1)
+  Stores.keyValueStoreBuilder(
+    Stores.inMemoryKeyValueStore(AGGREGATE_KV_STORE_ID),
+    Serdes.Integer(), visitorAggregatedSerde
+  ).withLoggingDisabled().withCachingDisabled());
 
 streamsBuilder.addStateStore(
-        Stores.keyValueStoreBuilder(
-                Stores.inMemoryKeyValueStore(COUNT_KV_STORE_ID),
-                Serdes.Integer(), Serdes.Integer()
-        ).withLoggingDisabled().withCachingDisabled());
+  Stores.keyValueStoreBuilder(
+    Stores.inMemoryKeyValueStore(COUNT_KV_STORE_ID),
+    Serdes.Integer(), Serdes.Integer()
+  ).withLoggingDisabled().withCachingDisabled());
 
 streamsBuilder
-       .stream(KAFKA_TOPIC, Consumed.with(Serdes.String(), visitorSerde))
-       .filter((k, v) -> v != null)
-       .mapValues(VisitorAggregated::new)
-       .transform(() -> new VisitorProcessor(AGGREGATE_THRESHOLD, AGGREGATE_DURATION),  (2)
-                  AGGREGATE_KV_STORE_ID, COUNT_KV_STORE_ID)
-       .foreach((k, v) -> writeToSink(k, v));
+  .stream(KAFKA_TOPIC, Consumed.with(Serdes.String(), visitorSerde))
+  .filter((k, v) -> v != null)
+  .mapValues(VisitorAggregated::new)
+  .transform(() ->                                                       (2)
+    new VisitorProcessor(AGGREGATE_THRESHOLD, AGGREGATE_DURATION),
+    AGGREGATE_KV_STORE_ID,
+    COUNT_KV_STORE_ID)
+  .foreach((k, v) -> writeToSink(k, v));
 
 KafkaStreams kafkaStreams = new KafkaStreams(streamsBuilder.build(), streamsConfig);
-Runtime.getRuntime().addShutdownHook(new Thread(kafkaStreams::close));                  (3)
+Runtime.getRuntime().addShutdownHook(new Thread(kafkaStreams::close));   (3)
 kafkaStreams.start();
 ```
 
@@ -184,66 +189,66 @@ kafkaStreams.start();
 
 ```java
 public class VisitorProcessor implements Transformer<String, VisitorAggregated>, Punctuator {
-    private Duration interval;
-    private ProcessorContext ctx;
-    private KeyValueStore<Integer, VisitorAggregated> aggregateStore;
-    private KeyValueStore<Integer, Integer> countStore;
-    private Integer threshold;
+  private Duration interval;
+  private ProcessorContext ctx;
+  private KeyValueStore<Integer, VisitorAggregated> aggregateStore;
+  private KeyValueStore<Integer, Integer> countStore;
+  private Integer threshold;
 
-    public VisitorProcessor(Integer threshold, Duration interval) {
-        this.threshold = threshold;
-        this.interval = interval;
+  public VisitorProcessor(Integer threshold, Duration interval) {
+    this.threshold = threshold;
+    this.interval = interval;
+  }
+
+  @Override
+  public void init(ProcessorContext context) {
+    this.ctx = context;
+    this.aggregateStore = (KeyValueStore) context.getStateStore(Main.AGGREGATE_KV_STORE_ID);
+    this.countStore = (KeyValueStore) context.getStateStore(Main.COUNT_KV_STORE_ID);
+    this.ctx.schedule(interval, PunctuationType.WALL_CLOCK_TIME, this::punctuate);
+  }
+
+  @Override
+  public KeyValue<String, VisitorAggregated> transform(String key, VisitorAggregated visitor) {
+    KeyValue<String, VisitorAggregated> toForward = null;
+
+    Integer stateStoreKey = visitor.getCustomerId();
+    countStore.putIfAbsent(stateStoreKey, 0);
+    aggregateStore.putIfAbsent(stateStoreKey, new VisitorAggregated(visitor.getCustomerId()));
+
+    Integer aggregateCount = countStore.get(stateStoreKey) + 1;
+    VisitorAggregated visitorAggregated = visitor.merge(aggregateStore.get(stateStoreKey));
+    aggregateStore.put(stateStoreKey, visitorAggregated);
+    countStore.put(stateStoreKey, aggregateCount);
+
+    if (aggregateCount >= threshold) {
+      toForward = KeyValue.pair(key, visitorAggregated);
+      countStore.delete(stateStoreKey);
+      aggregateStore.delete(stateStoreKey);
     }
+    return toForward;
+  }
 
-    @Override
-    public void init(ProcessorContext context) {                                                    (1)
-        this.ctx = context;
-        this.aggregateStore = (KeyValueStore) context.getStateStore(Main.AGGREGATE_KV_STORE_ID);
-        this.countStore = (KeyValueStore) context.getStateStore(Main.COUNT_KV_STORE_ID);
-        this.ctx.schedule(interval, PunctuationType.WALL_CLOCK_TIME, this::punctuate);
+  private void forwardAll() {
+    KeyValueIterator<Integer, VisitorAggregated> it = aggregateStore.all();
+    while (it.hasNext()) {
+      KeyValue<Integer, VisitorAggregated> entry = it.next();
+      ctx.forward(entry.key, entry.value);
+      aggregateStore.delete(entry.key);
+      countStore.delete(entry.key);
     }
+    it.close();
+  }
 
-    @Override
-    public KeyValue<String, VisitorAggregated> transform(String key, VisitorAggregated visitor) {   (2)
-        KeyValue<String, VisitorAggregated> toForward = null;
+  @Override
+  public void punctuate(long timestamp) {
+    forwardAll();
+  }
 
-        Integer stateStoreKey = visitor.getCustomerId();
-        countStore.putIfAbsent(stateStoreKey, 0);
-        aggregateStore.putIfAbsent(stateStoreKey, new VisitorAggregated(visitor.getCustomerId()));
-
-        Integer aggregateCount = countStore.get(stateStoreKey) + 1;
-        VisitorAggregated visitorAggregated = visitor.merge(aggregateStore.get(stateStoreKey));
-        aggregateStore.put(stateStoreKey, visitorAggregated);
-        countStore.put(stateStoreKey, aggregateCount);
-
-        if (aggregateCount >= threshold) {
-            toForward = KeyValue.pair(key, visitorAggregated);
-            countStore.delete(stateStoreKey);
-            aggregateStore.delete(stateStoreKey);
-        }
-        return toForward;
-    }
-
-    private void forwardAll() {
-        KeyValueIterator<Integer, VisitorAggregated> it = aggregateStore.all();
-        while (it.hasNext()) {
-            KeyValue<Integer, VisitorAggregated> entry = it.next();
-            ctx.forward(entry.key, entry.value);
-            aggregateStore.delete(entry.key);
-            countStore.delete(entry.key);
-        }
-        it.close();
-    }
-
-    @Override
-    public void punctuate(long timestamp) {                                                         (3)
-        forwardAll();
-    }
-
-    @Override
-    public void close() {
-        forwardAll();
-    }
+  @Override
+  public void close() {
+    forwardAll();
+  }
 }
 ```
 
