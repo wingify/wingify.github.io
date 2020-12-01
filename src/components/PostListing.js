@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styles from './PostsListing.module.scss'
-import Img from "gatsby-image"
 
 const PostListing = ({ postEdges }) => {
   const getPostList = () => {
@@ -37,8 +36,8 @@ const PostListing = ({ postEdges }) => {
                 />
               </div>
               <h3>{post.title}</h3>
-              <Img className={styles.authorImage}
-                fixed={`/images/team/${post.authorslug}.png`}
+              <img className={styles.authorImage}
+                src={`/images/team/${post.authorslug}.png`}
                 alt={post.author}
               />
               <div className={styles.authorDescription}>
