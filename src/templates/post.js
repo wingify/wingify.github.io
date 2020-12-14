@@ -46,7 +46,7 @@ export default ({ data, pageContext }) => {
     });
   }
 
-  if (window.location.href.indexOf('maths-behind-bayesian-duration-calculator') > -1) {
+  if (typeof window !== 'undefined' && window.location.href.indexOf('maths-behind-bayesian-duration-calculator') > -1) {
     loadJs().then(function () {
       if (MathJax && MathJax.Hub && MathJax.Hub.Queue) {
         MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
