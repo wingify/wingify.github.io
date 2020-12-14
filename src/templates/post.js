@@ -26,6 +26,34 @@ export default ({ data, pageContext }) => {
   if (!post.id) {
     post.id = slug
   }
+
+  function loadJs() {
+    return new Promise(function (resolve, reject) {
+      var scriptEl = document.createElement('script');
+
+      scriptEl.setAttribute('type','text/javascript')
+      scriptEl.setAttribute('src', 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML')
+
+      scriptEl.onload = function () {
+        resolve();
+      }
+
+      scriptEl.onerror = function () {
+        reject();
+      }
+
+      document.getElementsByTagName('head')[0].appendChild(scriptEl)
+    });
+  }
+
+  if (window.location.href.indexOf('maths-behind-bayesian-duration-calculator') > -1) {
+    loadJs().then(function () {
+      if (MathJax && MathJax.Hub && MathJax.Hub.Queue) {
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+      }
+    })
+  }
+
   return (
     <Layout>
       <main>
@@ -41,7 +69,7 @@ export default ({ data, pageContext }) => {
             {date} &mdash; {postNode.timeToRead} Min Read{' '} | &nbsp;
             <CommentCount config={disqusConfig} placeholder={'...'} />
           </p>
-          
+
           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
 
           <hr />

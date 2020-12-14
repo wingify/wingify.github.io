@@ -25,6 +25,19 @@
     padding: 20px;
 }
 
+.code-latex {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+    border-radius: 0.3em;
+    color: #f8f8f2;
+    background: #272822;
+}
+
+.MJXc-display {
+    text-align: initial !important;
+}
+
 @media (max-width: 600px) {
     .project-box {
         width: 100%;
