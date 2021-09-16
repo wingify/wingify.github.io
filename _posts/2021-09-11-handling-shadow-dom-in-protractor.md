@@ -5,7 +5,7 @@ excerpt: Custom locator to select web elements residing in Shadow DOMs
 authorslug: punit_goswami
 author: Punit Goswami
 ---
- 
+
 ### Overview
 
 Shadow DOM has slowly and steadily become an integral part of modern web apps. Before this, the Web platform provided only one way to isolate one chunk of code from another - the iframe. But for most encapsulation requirements, the frames are too heavy and not as allowing. Enter the shadow DOM. Through this a browser can include the subtree of DOM elements into the rendered document, still keeping it separate from the main document's DOM tree.
@@ -21,53 +21,55 @@ So we decided to make a custom locator for handling shadow DOM elements since a 
 Our approach was to traverse the shadow DOM tree as any other tree, from the root to the node, and traverse only that path that matches our desired path, as dictated by the selector path. Keeping a note of the immediate parent of the root node of the shadow tree allows us to map the shadow DOM tree to the main page DOM tree.
 
 ```javascript
-       // split the selector path into degenerate shadow root levels
-       const selectors = cssSelector.split('::sr');
-       // handling the case where no CSS selector is provided
-       if (selectors.length === 0) {
-           return [];
-       }
-       // attach a shadow DOM tree to the specified element's immediate parent
-       const shadowDomInUse = document.head.attachShadow;
+// split the selector path into degenerate shadow root levels
+const selectors = cssSelector.split('::sr');
 
-       /**
-        * Determines whether the given element is a shadow root
-        * @param  {Object} el - web element
-        */
-       const getShadowRoot = function (el) {
-           return ((el && shadowDomInUse) ? el.shadowRoot : el);
-       };
+// handling the case where no CSS selector is provided
+if (selectors.length === 0) {
+    return [];
+}
+
+// attach a shadow DOM tree to the specified element's immediate parent
+const shadowDomInUse = document.head.attachShadow;
+
+/**
+ * Determines whether the given element is a shadow root
+ * @param  {Object} el - web element
+ */
+const getShadowRoot = function (el) {
+    return ((el && shadowDomInUse) ? el.shadowRoot : el);
+};
 ```
 
 It also had to be kept in mind that more than one element could match any given selector path. So the matching elements would be kept in an array. Also, we run this recursively so that we traverse all the matching branches of any given node.
 
 ```javascript
-       /**
-        * finds all elements matching the given selector, pushes them in an array
-        * @param  {string} selector - CSS selector
-        * @param  {Object} targets - Targetted element
-        * @param  {boolean} firstTry - Whether this is the first attempt to look for the element at the path
-        */
-       const findAllMatches = function (selector, targets, firstTry) {
-           let using, i;
-           var matches = [];
+/**
+ * finds all elements matching the given selector, pushes them in an array
+ * @param  {string} selector - CSS selector
+ * @param  {Object} targets - Targetted element
+ * @param  {boolean} firstTry - Whether this is the first attempt to look for the element at the path
+ */
+const findAllMatches = function (selector, targets, firstTry) {
+    let using, i;
+    var matches = [];
 
-           for (i = 0; i < targets.length; ++i) {
-               // traverse root level elements in targets, otherwise if not the first pass
-               // traverse the nested shadow DOMs in the targets recursively
-               using = (firstTry) ? targets[i] : getShadowRoot(targets[i]);
-               if (using) {
-                   if (selector === '') {
-                       // if the selector is empty push the current element in the matches
-                       matches.push(using);
-                   } else {
-                       // get the node list of elements matching the selector, push it in the matches
-                       Array.prototype.push.apply(matches, using.querySelectorAll(selector));
-                   }
-               }
-           }
-           return matches;
-       };
+    for (i = 0; i < targets.length; ++i) {
+        // traverse root level elements in targets, otherwise if not the first pass
+        // traverse the nested shadow DOMs in the targets recursively
+        using = (firstTry) ? targets[i] : getShadowRoot(targets[i]);
+        if (using) {
+            if (selector === '') {
+                // if the selector is empty push the current element in the matches
+                matches.push(using);
+            } else {
+                // get the node list of elements matching the selector, push it in the matches
+                Array.prototype.push.apply(matches, using.querySelectorAll(selector));
+            }
+        }
+    }
+    return matches;
+};
 ```
 
 We added this as a custom matcher through the `addLocator()` method provided by Protractor to add custom locators. Making this an exportable module allowed us to import this in the protractor configuration file and then reference the selector in any spec file.
