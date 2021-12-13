@@ -40,6 +40,11 @@ const Header = () => (
             Feed
           </a>
         </li>
+        <li>
+          <a href="https://wingify.com/careers/" className={styles.weAreHiring} target="_blank">
+            <span>We are Hiring</span>
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
