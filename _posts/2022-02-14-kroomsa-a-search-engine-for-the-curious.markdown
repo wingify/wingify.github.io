@@ -8,7 +8,7 @@ author: Aakash Chawla
 
 ## Introduction
 
-The search algorithm implemented in your website greatly influences visitor engagement. A decent implementation of a search algorithm can significantly reduce dependency on standard search engines like Google for every query thus, increasing engagement. Traditional methods look at terms or phrases in your query to find relevant content based on syntactic matching. Since you can use a sentence or a word in multiple contexts, this approach alone is ineffective, and the results are often a hit or a miss. At VWO, as a fun side project, we developed an algorithm that uses semantic matching to find content relevant to your query. We implemented this approach as a modern search engine, **Kroomsa: A search engine for the curious**. Kroomsa engages users by exposing them to relevant yet interesting content during their session.
+The search algorithm implemented in your website greatly influences visitor engagement. A decent implementation of a search algorithm can significantly reduce dependency on standard search engines like Google for every query thus, increasing engagement. Traditional methods look at terms or phrases in your query to find relevant content based on syntactic matching. Since you can use a sentence or a word in multiple contexts, this approach alone is ineffective, and the results are often a hit or a miss. At VWO, as a fun side project, we developed an algorithm that uses semantic matching to find content relevant to your query. We implemented this approach as a modern search engine, **Kroomsa: A search engine for the curious**. Kroomsa engages users by exposing them to relevant yet interesting content during their session. Here is a look at [Kroomsa in action](https://www.youtube.com/watch?v=xvgdAEEvhsA).
 
 ## Current Work
 
@@ -84,7 +84,7 @@ Using a GPU translated to a 10x speedup without sacrificing accuracy. This chang
 
 ## Conclusion: Open sourcing Kroomsa
 
-While developing Kroomsa, we came across multiple roadblocks at each step that required rigorous research and swift implementation to resolve. Dealing with the issues of scaling, algorithm accuracy, and efficiency exposed us to the state of the art approaches in the field. We collected valuable feedback from our users over a limited period. It gave us confidence in the potential that this approach holds. Due to misalignment with our product stack, we believe that our community can make better use of it than us at this point, and hence we have decided to open-source the entire project here.
+While developing Kroomsa, we came across multiple roadblocks at each step that required rigorous research and swift implementation to resolve. Dealing with the issues of scaling, algorithm accuracy, and efficiency exposed us to the state of the art approaches in the field. We collected valuable feedback from our users over a limited period. It gave us confidence in the potential that this approach holds. Due to misalignment with our product stack, we believe that our community can make better use of it than us at this point, and hence we have decided to open-source the entire project [here](https://github.com/wingify/kroomsa).
 
 ## Useful resources
 
