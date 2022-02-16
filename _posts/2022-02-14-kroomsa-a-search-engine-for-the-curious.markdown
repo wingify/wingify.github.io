@@ -15,7 +15,7 @@ The search algorithm implemented in your website greatly influences visitor enga
 Search engine giants like Google use algorithms that look at many factors, including the words of your query, relevance, and usability of pages, the expertise of sources, and your location and additional settings. These features are dynamically weighted, and the weight applied varies depending on the nature of your query. These algorithms are evaluated rigorously through live experimentation and coordination with external search quality raters. 
 Our proposed approach is not as complex or meticulous as the previous work in the field, but it improves upon traditional search algorithms that solely rely on syntactic matching. We use a deep learning model to understand the intention and context of the query to match it with appropriate content. **It enables us to map user queries to documents that do not even contain the exact phrase**. For example, the query "working desk" can match with content relevant to "study table".
 
-## Current Work
+## Motivation
 
 Kroomsa as a product does not align well with what VWO currently offers. It was never intended to be a final product in its current form but is a great avenue to test the algorithm at its core, similarity search. We combined various existing techniques in literature to develop this algorithm that identifies information that is relevant to the query. We modeled a modern search engine around it to procure feedback from potentially interested customers. The goal was to package the mature version of the search algorithm as an add-on that our customers could deploy on their websites.
 
