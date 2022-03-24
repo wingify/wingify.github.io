@@ -32,7 +32,7 @@ Contrary to what we read in certain blogs, we like debugging features in Cypress
 
 # Other smaller 'wins' for Cypress:
 * Cypress can handle iframes: As opposed to what is mentioned in some of the older blogs on the internet, newer versions of Cypress handle iframes. The plugin 'Cypress-iframe' can be used for this purpose. However, we observed no screenshots for iframes yet in the test runner.
-* Cypress provides a blueprint of a framework to its users which will is a boon for beginners.
+* Cypress provides a blueprint of a framework to its users which is a boon for beginners.
 
 All in all, Cypress seems to be a robust tool, and spending just a few hours with it one can see why it is so widely accepted. Read on to the next section where we explore the limitations of the tool. And whether or not we, at Wingify, finalize it as our web automation tool.
 
@@ -49,4 +49,4 @@ Cypress does not allow you to visit two domains of different origins in the same
    	
 While there are other limitations that Cypress has, we talk about just these two as they are the deal breakers for us. If these limitations do not block any of the use cases in your case - Thats great but do take a look at the other issues here: [Cypress Trade-Offs](https://docs.cypress.io/guides/references/trade-offs#Permanent-trade-offs-1) before you make a final decision.
 
-    As our hunt for a new Automation tool continues, we now turn our gaze towards Playwright. Only time will tell if this tool that finally mends our broken heart :) 
+As our hunt for a new Automation tool continues, we now turn our gaze towards Playwright. Only time will tell if this is the tool that finally mends our broken heart :) 
