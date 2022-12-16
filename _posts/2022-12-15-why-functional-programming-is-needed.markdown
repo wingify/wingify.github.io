@@ -42,15 +42,53 @@ The word memoization was coined by Donald Michie, a British artificial intellige
 Memoization is a feature built into a programming language
 that enables the automatic caching of recurring function-return values. In other words, it automatically supplies the code I’ve written in Examples 4-1 and 4-3. Many modern languages support memoization, including Groovy.
 
+This feature intensively applicable in dynamic programming:
+Here is one example:
+
+    if (array_key_exists($key, $this->cache)) {
+            return $this->cache[$key];
+        }
+
+        $result = call_user_func($compute);
+        $this->cache[$key] = $result;
+
+        return $result;
+
 ## Lazy Evaluation
 Lazy evaluation—deferral of expression evaluation for as long as possible is a feature of many functional programming languages. Lazy collections deliver their elements as needed rather than precalculating them, offering several benefits. First, you can defer expensive calculations until they’re needed. Second, you can create infinite collections, which keep delivering elements as long as they keep receiving requests. Third, lazy use of functional concepts such as map and filter enables you to generate more efficient code.
 
     It is better to have 100 functions operate on one data structure than 10 functions on 10 data structures.
     — Alan Perlis
 
+Here is one example:
+
+    def range(start, end) =
+        list.takeElementsBetween(start - 1, end - 1)
+        print(range(5, 10)) // [5, 6, 7, 8, 9]
+
 ## FP Data Structures
 Functional programming languages approach code reuse differently from object-oriented languages. Object-oriented languages tend to have many data structures with many operations, whereas functional languages exhibit few data structures with many operations.
 
+    class WingifyCollection
+    {
+      protected $items = [];
+
+      /**
+       * Create an instance of Wingify Collection
+       * 
+       * @param mixed $items
+       */
+      public function __construct($items = null)
+      {
+          if (is_array($items)) {
+              $this->items = $items;
+          } else if ($items instanceof WingifyCollection) {
+              $this->items = $items->items();
+          } else {
+              $this->items = is_null($items) ? [] : array($items);
+          }
+      }
+       
 Most developers labor under the misconception that their job is to take a complex business problem and translate it into a language such as Java. They do that because Java isn’t particularly flexible as a language, forcing you to mold your ideas into the rigid structure already there. But as developers use malleable languages, they see the opportunity to bend the language more toward their problem rather than the problem toward
 their language. Languages like `Ruby` with its friendlier-than-mainstream support for domain-specific languages (DSLs) demonstrated that potential. Modern functional languages go even further. `Scala` was designed to accommodate hosting internal DSLs, and all `Lisps` (including Clojure) have unparalleled flexibility in enabling the developer to mold the language to the problem.
 
@@ -62,5 +100,13 @@ Functional programmers also want reusable code, but they use different building 
 
 ## FP immutability
 Functional architectures embrace immutability at the core level, leveraging it as much as possible. Embracing immutability is high on the list of ways to think like a functional programmer.
+Here is sample case of minimizing moving parts:
+    
+    $accountIds = []
+    foreach($account as $account) {
+        $accountIds[] = $account->getId();
+    }
 
+    //The above snippet can transformed as
+    $accountIds = collection($accountIds)->map->getId();
 
