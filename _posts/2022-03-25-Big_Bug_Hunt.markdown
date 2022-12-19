@@ -5,6 +5,9 @@ excerpt: "The Big Bug Hunt - Wingify"
 authorslug: kandeel_chauhan
 author: Kandeel Chauhan
 ---
+<div style="text-align:center; margin: 10px; display: none">
+  <img src="/images/2022/12/qaWingify.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
 
 *Quality is never an accident. It is always the result of intelligent effort.*
 

@@ -5,6 +5,9 @@ excerpt: "Rest Assured - Journey to the end to end API automation"
 authorslug: rahul_pandey
 author: Rahul Pandey
 ---
+<div style="text-align:center; margin: 10px; display: none">
+  <img src="/images/2022/12/qaWingify.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
 
 **[REST Assured](https://rest-assured.io/)** is a Java-based library, one of the most popular libraries to test RESTful Web Services, and is used to perform testing and validation of Rest Services with simplicity. We can use any Java IDE for writing code to test our API. REST Assured is helpful in writing small Unit tests as well as large automation frameworks, where we can create test cases for large APIs.
 

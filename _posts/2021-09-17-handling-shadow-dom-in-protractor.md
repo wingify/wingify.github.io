@@ -5,6 +5,9 @@ excerpt: Custom locator to select web elements residing in Shadow DOMs
 authorslug: punit_goswami
 author: Punit Goswami
 ---
+<div style="text-align:center; margin: 10px; display: none">
+  <img src="/images/2022/12/qaWingify.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
 
 ### Overview
 

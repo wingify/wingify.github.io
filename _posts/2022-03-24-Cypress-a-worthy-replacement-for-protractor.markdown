@@ -5,6 +5,9 @@ excerpt: "Cypress - A worthy replacement for Protractor?"
 authorslug: kandeel_chauhan
 author: Kandeel Chauhan
 ---
+<div style="text-align:center; margin: 10px; display: none">
+  <img src="/images/2022/12/qaWingify.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
 
 We, at Wingify, have implemented our web automation tests using Protractor. Although the old horse has served us well it is fast approaching it's end of life. And so, the hunt for a worthy successor begins. In this article, we will talk about what we love about Cypress, the drawbacks, trade-offs, and dealbreakers(if any). 
 

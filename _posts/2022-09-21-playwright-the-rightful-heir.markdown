@@ -5,6 +5,9 @@ excerpt: "Playwright – The Rightful Heir"
 authorslug: pratik_sisodia
 author: Pratik Sisodia
 ---
+<div style="text-align:center; margin: 10px; display: none">
+  <img src="/images/2022/12/qaWingify.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
 
 The hunt has ended. Protractor's successor has finally been found!
 

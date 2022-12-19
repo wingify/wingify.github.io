@@ -5,6 +5,9 @@ excerpt: Performance Testing a data pipeline at scale
 authorslug: sushant_soni
 author: Sushant Soni
 ---
+<div style="text-align:center; margin: 10px; display: none">
+  <img src="/images/2022/12/qaWingify.png" style="box-shadow: 2px 2px 10px 1px #aaa">
+</div>
 
 ## Introduction
 
