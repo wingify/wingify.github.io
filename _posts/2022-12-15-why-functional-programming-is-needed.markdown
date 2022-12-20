@@ -24,6 +24,8 @@ class diagram with each pattern. In the OOP world, developers are encouraged to 
 
 ## Understanding modern architecture of task definition using declarative language
 ![Declarative Language](/images/2022/12/fp-image-1.png "Declarative Language")
+A declarative programming language is a programming language where the programmer specifies the goal or what should be achieved, rather than how a goal should be achieved.
+Widely used `SQL` is a popular example of declarative language.
 
 ## Abstraction
 One advantage of leveraging higher-level abstractions is already appearing in the `Clojure` space. Recent clever innovations in Clojure’s libraries have managed to rewrite the map function to be automatically parallelizable, meaning that all map operations get a performance boost without developer intervention.
@@ -112,3 +114,60 @@ Here is sample case of minimizing moving parts:
     //The above snippet can transformed as
     $accountIds = collection($accounts)->map->getId();
 
+## The takeaway
+ - As we apply functional principles, we’ll find the ratio of code in actions to code in calculations shifting toward calculations
+ - Implicit inputs can often be replaced by arguments
+ - Implicit outputs can often be replaced by return values
+ - Functions have single responsibilities, we will find that they are easy to organize around concepts
+ - Staying immutable in a mutable language
+ - Higher-order functions are functions that take other functions as arguments (or that return a function). Higher-order functions let us abstract over varying behavior
+ - Functional tools (`map`, `filter`, `reduce`, `each`, etc) into multi-step chains. Their combination allows to express very complex computations over data in small, clear steps.
+ - Functional programming is used as a playground for mathematical ideas. If that’s your thing, dig in
+
+## Final Takeaway
+Identifying the most problematic parts of your code by distinguishing `actions`, `calculations`, and `data`
+- Making your code more reusable and testable by extracting calculations from actions
+- Improving the design of actions by replacing implicit inputs and outputs with explicit ones
+- Implementing immutability to make reading data into a calculation
+- Organizing and improve
+
+## Popular Functional Languages
+Clojure (https://clojure.org)
+Clojure runs on the Java Virtual Machine and JavaScript (in the form of ClojureScript).
+
+Elixir (https://elixir-lang.org)
+Elixir runs on the Erlang Virtual Machine. It uses actors to manage concurrency.
+
+Swift (https://swift.org)
+Swift is Apple’s open source, flagship language.
+
+Kotlin (https://kotlinlang.org)
+Kotlin combines object-oriented and functional programming into one JVM language.
+
+Haskell (https://haskell.org)
+Haskell is a statically typed language used in academia, startups, and enterprises alike.
+
+Erlang (https://erlang.org)
+Erlang was built for fault tolerance. It uses actors for concurrency.
+
+Elm (https://elm-lang.org)
+Elm is statically typed and used for frontend web applications that compile to JavaScript.
+
+Scala (https://scala-lang.org)
+Scala combines object-oriented and functional programming into one language. It runs on the Java Virtual Machine and JavaScript.
+
+F# (https://fsharp.org)
+F# is statically typed and runs on the Microsoft Common Language Runtime.
+
+Rust (https://rust-lang.org)
+Rust is a system language with a powerful type system designed to
+prevent memory leaks and concurrency errors.
+
+PureScript (https://www.purescript.org)
+PureScript is a Haskell-like language that compiles to JavaScript to run in the browser.
+
+Racket (https://racket-lang.org)
+Racket has a rich history and a large and vibrant community.
+
+Reason (https://reasonml.github.io)
+Reason is statically typed and compiles to JavaScript and native assembly.
