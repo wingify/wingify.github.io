@@ -2,11 +2,9 @@
 layout: post
 title: "Why functional programming is needed"
 excerpt: "High order functions such as map, filter etc."
-authorslug: ganeshgupta
+authorslug: ganesh_gupta
 author: Ganesh Gupta
 ---
-
-# Why functional programming aka FP is needed?
 
 ## FP Paradigm
 The problem with a completely new programming paradigm isn’t learning a new language. The tricky part is learning to think differently.
@@ -24,6 +22,9 @@ Object-Oriented Programming (OOP) constructs: encapsulation, scoping, visibility
 In object-oriented imperative programming languages, the units of reuse are classes and the messages they communicate with, captured in a class diagram. The seminal work in that space, Design Patterns: Elements of Reusable Object-Oriented Software (by Erich Gamma et al.), includes at least one
 class diagram with each pattern. In the OOP world, developers are encouraged to create unique data structures, with specific operations attached in the form of methods. Functional programming languages don’t try to achieve reuse in quite the same way. In functional programming languages, the preference is for a few key data structures (such as list, set, and map) with highly optimized operations on those data structures. To utilize this machinery, developers pass data structures plus higher-order functions to plug into the machinery, customizing it for a particular use.
 
+## Understanding modern architecture of task definition using declarative language
+![Declarative Language](/images/2022/12/fp-image-1.png "Declarative Language")
+
 ## Abstraction
 One advantage of leveraging higher-level abstractions is already appearing in the `Clojure` space. Recent clever innovations in Clojure’s libraries have managed to rewrite the map function to be automatically parallelizable, meaning that all map operations get a performance boost without developer intervention.
 
@@ -32,7 +33,7 @@ Functional programming describes programs as expressions and transformations, mo
 
 ## Benefits of Higher Level of Abstraction
  - First, it encourages us to categorize problems differently, seeing commonalities. 
- - Second, it allows the run‐time to be more intelligent about optimizations. In some cases, reordering the work stream makes it more efficient (for example, processing fewer items) if it doesn’t change the outcome. 
+ - Second, it allows the run‐time to be more intelligent about optimizations. In some cases, reordering the work stream makes it more efficient (for example, processing fewer items) if it does not change the outcome. 
  - Third, it allows solutions that aren’t possible when the developer is elbow-deep in the details problem.
 
 `Clojure` has a similar drop-in replacement for common collection transformations that makes them seamlessly parallel. Working at a higher level of abstraction allows the runtime to optimize low-level details.
@@ -40,16 +41,17 @@ Functional programming describes programs as expressions and transformations, mo
 ## Memoization
 The word memoization was coined by Donald Michie, a British artificial intelligence researcher, to refer to function-level caching for repeating values. Today, memoization is common in functional programming languages, either as a built-in feature or one that’s relatively easy to implement. Functions must be pure for the caching technique to work. A pure function has no side effects: it references no other mutable class fields, doesn’t set any values other than the return value, and relies only on the parameters for input.
 Memoization is a feature built into a programming language
-that enables the automatic caching of recurring function-return values. In other words, it automatically supplies the code I’ve written in Examples 4-1 and 4-3. Many modern languages support memoization, including Groovy.
+that enables the automatic caching of recurring function-return values. Many modern languages support memoization, including `Groovy`.
 
 This feature intensively applicable in dynamic programming:
 Here is one example:
 
-    if (array_key_exists($key, $this->cache)) {
+        if (array_key_exists($key, $this->cache)) {
             return $this->cache[$key];
         }
 
         $result = call_user_func($compute);
+
         $this->cache[$key] = $result;
 
         return $result;
@@ -92,8 +94,8 @@ Functional programming languages approach code reuse differently from object-ori
 Most developers labor under the misconception that their job is to take a complex business problem and translate it into a language such as Java. They do that because Java isn’t particularly flexible as a language, forcing you to mold your ideas into the rigid structure already there. But as developers use malleable languages, they see the opportunity to bend the language more toward their problem rather than the problem toward
 their language. Languages like `Ruby` with its friendlier-than-mainstream support for domain-specific languages (DSLs) demonstrated that potential. Modern functional languages go even further. `Scala` was designed to accommodate hosting internal DSLs, and all `Lisps` (including Clojure) have unparalleled flexibility in enabling the developer to mold the language to the problem.
 
-# FP Error Handling
-In Java, errors are traditionally handled by exceptions and the language’s support for creating and propagating them. But what if structured exception handling didn’t exist? Many functional languages don’t support the exception paradigm, so they must find alternate ways of expressing error conditions. Exceptions violate a couple of premises that most functional languages adhere to. First, they prefer pure functions, which have no side effects. However, throwing an exception is a side effect that causes unusual (exceptional) program flow. Functional languages tend to deal with values, preferring to react to return values that indicate an error rather than interrupt program flow. Functional programs tend toward referential transparency: the calling routine shouldn’t care whether it accesses a value or a function that returns a value. If a function can also throw an exception, it isn’t a safe substitute for a value.
+## FP Error Handling
+In `Java`, errors are traditionally handled by exceptions and the language’s support for creating and propagating them. But what if structured exception handling didn’t exist? Many functional languages don’t support the exception paradigm, so they must find alternate ways of expressing error conditions. Exceptions violate a couple of premises that most functional languages adhere to. First, they prefer pure functions, which have no side effects. However, throwing an exception is a side effect that causes unusual (exceptional) program flow. Functional languages tend to deal with values, preferring to react to return values that indicate an error rather than interrupt program flow. Functional programs tend toward referential transparency: the calling routine shouldn’t care whether it accesses a value or a function that returns a value. If a function can also throw an exception, it isn’t a safe substitute for a value.
 
 ## FP Code Reuse
 Functional programmers also want reusable code, but they use different building blocks. Rather than try to create well-known relationships (coupling) between structures, functional programming tries to extract coarse-grained reuse mechanisms—based in part on category theory, a branch of mathematics that defines relationships (morphism) between types of objects. Most applications do things with lists of elements, so a functional approach is to build reuse mechanisms around the idea of lists plus contextualized, portable code. Functional languages rely on first-class functions (functions that can appear anywhere any other language construct can appear) as parameters and return values.
@@ -103,10 +105,10 @@ Functional architectures embrace immutability at the core level, leveraging it a
 Here is sample case of minimizing moving parts:
     
     $accountIds = []
-    foreach($account as $account) {
+    foreach($accounts as $account) {
         $accountIds[] = $account->getId();
     }
 
     //The above snippet can transformed as
-    $accountIds = collection($accountIds)->map->getId();
+    $accountIds = collection($accounts)->map->getId();
 
