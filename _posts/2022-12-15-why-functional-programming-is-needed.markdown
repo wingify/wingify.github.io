@@ -114,7 +114,7 @@ Here is sample case of minimizing moving parts:
     //The above snippet can transformed as
     $accountIds = collection($accounts)->map->getId();
 
-## The takeaway
+## The Takeaway
  - As we apply functional principles, we’ll find the ratio of code in actions to code in calculations shifting toward calculations
  - Implicit inputs can often be replaced by arguments
  - Implicit outputs can often be replaced by return values
