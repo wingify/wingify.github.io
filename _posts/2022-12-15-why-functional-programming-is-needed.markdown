@@ -214,6 +214,12 @@ Find these in code `actions`, `calculations`, and `data`
 * design actions by replacing implicit inputs and outputs with explicit ones
 * implementing immutability to make reading data into a calculation
 
+---
+
+To know more about how Wingify uses FP, feel free to comment.
+
+---
+
 
 ## Popular Functional Languages (source: Wikipedia)
 
