@@ -74,9 +74,9 @@ Now it was time to search for a database that could meet our current as well as 
 
 **Figure 1:** In-depth explanation of the custom logic we used to improve upon the official BigQueryIO library
 
-    <div style="text-align:center; margin: 10px;">
-        <img src="../images/2022/12/google-bigquery-custom-writer-figure1.png">
-    </div>
+<div style="text-align:center; margin: 10px;">
+    <img src="../images/2022/12/google-bigquery-custom-writer-figure1.png">
+</div>
 
 2. **Deletion/Updation of Rows**
 
