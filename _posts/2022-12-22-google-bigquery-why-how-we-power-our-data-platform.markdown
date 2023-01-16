@@ -60,41 +60,40 @@ Now it was time to search for a database that could meet our current as well as 
 
 1. **Apache beam’s BigQueryIO library**
 
-* **Context**
-    * Apache Beam is a framework that lets you define and execute data processing pipelines, including ETL, batch, and stream processing. In simple words, you can create consumers/producers by plugging in different IOs (like BigQueryIO, PubSubIO, etc) directly. You can read more about this framework [here](https://beam.apache.org/documentation/).
-    * We were using BigQueryIO (a library/plugin provided by Apache Beam itself) as our sink in our data pipeline. This means, we read data from message queues, do internal transformations and finally write data to BigQuery using Apache Beam’s BigQueryIO.
+    * **Context**
+        * Apache Beam is a framework that lets you define and execute data processing pipelines, including ETL, batch, and stream processing. In simple words, you can create consumers/producers by plugging in different IOs (like BigQueryIO, PubSubIO, etc) directly. You can read more about this framework [here](https://beam.apache.org/documentation/).
+        * We were using BigQueryIO (a library/plugin provided by Apache Beam itself) as our sink in our data pipeline. This means, we read data from message queues, do internal transformations and finally write data to BigQuery using Apache Beam’s BigQueryIO.
 
-* **Problem**
-    * One of the crucial parts of our BigQuery database is having multiple datasets and tables which means, we can have thousands of tables in different datasets. Now, this way of storing data created some issues while inserting data through Beam’s BigQueryIO library (we tested it on version 2.26.0).
-    * First Issue, while using BigQueryIO for a large number of tables insertions, we found that it has an issue with its local caching technique for table creation. Tables are first searched in the local cache (in the consumer’s memory) and then checked whether to create a table or not. The main issue is when inserting into thousands of tables: let's suppose we have 10k tables to insert in realtime and now since we deploy a fresh dataflow pipeline after every PR merge, the local cache will be empty and it will take an enormous time just to build up that cache for 10k tables (since it will use BigQuery’s API to check if the table is already created or not) even though these 10k tables were already created in BigQuery.
-    * Secondly, BigQueryIO does not create datasets dynamically i.e. if the pipeline consumes an entry for a new dataset, then BigQueryIO will not create a new dataset in our database thus leading to insertion failures.
+    * **Problem**
+        * One of the crucial parts of our BigQuery database is having multiple datasets and tables which means, we can have thousands of tables in different datasets. Now, this way of storing data created some issues while inserting data through Beam’s BigQueryIO library (we tested it on version 2.26.0).
+        * First Issue, while using BigQueryIO for a large number of tables insertions, we found that it has an issue with its local caching technique for table creation. Tables are first searched in the local cache (in the consumer’s memory) and then checked whether to create a table or not. The main issue is when inserting into thousands of tables: let's suppose we have 10k tables to insert in realtime and now since we deploy a fresh dataflow pipeline after every PR merge, the local cache will be empty and it will take an enormous time just to build up that cache for 10k tables (since it will use BigQuery’s API to check if the table is already created or not) even though these 10k tables were already created in BigQuery.
+        * Secondly, BigQueryIO does not create datasets dynamically i.e. if the pipeline consumes an entry for a new dataset, then BigQueryIO will not create a new dataset in our database thus leading to insertion failures.
 
-* **Solution**
-    * So we decided to write our own Custom BigQuery writer (as you can see in Figure 1) for Apache Beam. It not only resolved the issues that we had with the official BigQueryIO library but also was very performant in streaming data into BigQuery because we were using BigQuery’s Storage API for insertion.
+    * **Solution**
+        * So we decided to write our own Custom BigQuery writer (as you can see in Figure 1) for Apache Beam. It not only resolved the issues that we had with the official BigQueryIO library but also was very performant in streaming data into BigQuery because we were using BigQuery’s Storage API for insertion.
 
-**Figure 1:** In-depth explanation of the custom logic we used to improve upon the official BigQueryIO library
+        **Figure 1:** In-depth explanation of the custom logic we used to improve upon the official BigQueryIO library
 
-<div style="text-align:center; margin: 10px;">
-    <img src="../images/2022/12/google-bigquery-custom-writer-figure1.png">
-</div>
+        <div style="text-align:center; margin: 10px;">
+            <img src="../images/2022/12/google-bigquery-custom-writer-figure1.png">
+        </div>
 
 2. **Deletion/Updation of Rows**
 
-* **Problem**
-    * Although we understand that it is a bad practice to perform deletion/updation operations in a data warehouse type of database, still there are some 1% scenarios where we need to delete data that was recently ingested in BigQuery. 
-    * For this, BigQuery says that when a row is inserted into the database through streams, they are present in a Streaming Buffer for 90 mins and you can not delete these rows for the same duration.
-* **Solution**
-    * We can’t really do much about it to circumvent this issue since it is a server-side thing and we as a user do not have control over it. But BigQuery provides a way to query the rows present in Streaming Buffer (the ones you can’t delete/update). Now you can perform your DML statements on certain rows after you verified that those rows are not present in the Streaming Buffer anymore.
-
+    * **Problem**
+        * Although we understand that it is a bad practice to perform deletion/updation operations in a data warehouse type of database, still there are some 1% scenarios where we need to delete data that was recently ingested in BigQuery. 
+        * For this, BigQuery says that when a row is inserted into the database through streams, they are present in a Streaming Buffer for 90 mins and you can not delete these rows for the same duration.
+    * **Solution**
+        * We can’t really do much about it to circumvent this issue since it is a server-side thing and we as a user do not have control over it. But BigQuery provides a way to query the rows present in Streaming Buffer (the ones you can’t delete/update). Now you can perform your DML statements on certain rows after you verified that those rows are not present in the Streaming Buffer anymore.
 
 3. **BigQuery Slots Usage**
 
-* **Problem**
-    * BigQuery slots are the computational capacity required to execute a SQL query. BigQuery uses the concept of slots in an interesting and efficient way to allocate resources so that your query can be executed parallelly in stages. Therefore depending on your query nature and the number of concurrent queries, slots will be consumed. So if you want to read multiple large queries parallely, then BigQuery slots might eat up the majority of your budget. 
-* **Solution**
-    * Try to optimize your read queries in BigQuery such that your query reads relevant data only, avoid joins such as a cartesian product that can create more output than input, and avoids DML statements that update or insert single rows only.
-    * Since BigQuery Slots work on the basis of data size and query complexity, therefore it is always a good idea to keep your query as short and simple as possible.
-    * We would suggest you to closely monitor slots usage when you are running this database in a production environment.
+    * **Problem**
+        * BigQuery slots are the computational capacity required to execute a SQL query. BigQuery uses the concept of slots in an interesting and efficient way to allocate resources so that your query can be executed parallelly in stages. Therefore depending on your query nature and the number of concurrent queries, slots will be consumed. So if you want to read multiple large queries parallely, then BigQuery slots might eat up the majority of your budget. 
+    * **Solution**
+        * Try to optimize your read queries in BigQuery such that your query reads relevant data only, avoid joins such as a cartesian product that can create more output than input, and avoids DML statements that update or insert single rows only.
+        * Since BigQuery Slots work on the basis of data size and query complexity, therefore it is always a good idea to keep your query as short and simple as possible.
+        * We would suggest you to closely monitor slots usage when you are running this database in a production environment.
 
 ## Takeaways
 
