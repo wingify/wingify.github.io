@@ -32,12 +32,11 @@ Google Maps: [http://bit.ly/1AmaGYh][4]
 
 ### Get In Touch
 
-You can mail us at [engineering@wingify.com][5] or give us a call at [+91-9654585776][6].
+You can email us at [engineering@wingify.com][5].
 
   [1]: https://metarefresh.talkfunnel.com/2015/
   [2]: https://metarefresh.in/2015/
   [3]: https://metarefresh.talkfunnel.com/2015-delhi/
   [4]: http://bit.ly/1AmaGYh
   [5]: mailto:engineering@wingify.com
-  [6]: tel:+91-9654585776
   [7]: http://wingify.com
