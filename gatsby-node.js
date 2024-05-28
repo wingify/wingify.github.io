@@ -56,7 +56,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       const postsEdges = result.data.allMarkdownRemark.edges;
 
-      postsEdges.forEach((edge, index) => { 
+      postsEdges.forEach((edge, index) => {
         const nextID = index + 1 < postsEdges.length ? index + 1 : 0;
         const prevID = index - 1 >= 0 ? index - 1 : postsEdges.length - 1;
         const nextEdge = postsEdges[nextID];
@@ -89,7 +89,7 @@ exports.createPages = ({ graphql, actions }) => {
           }
         });
       });*/
-      execSync("mkdir -p public/images && cp -R images/* public/images && cp robots.txt public/robots.txt && cp -R labs/* public/ && cp -R css public/");
+      execSync("mkdir -p public/images && cp -R images/* public/images && cp robots.txt public/robots.txt && cp -R labs/* public/ && cp -R css public/ && cp -R docs/* public/");
       resolve();
     });
   });

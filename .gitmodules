@@ -1,0 +1,7 @@
+[submodule "vwo-fme-node-sdk"]
+	path = vwo-fme-node-sdk
+	url = git@github.com:wingify/vwo-fme-node-sdk.git
+	branch = gh-pages
+[submodule "docs/vwo-fme-node-sdk"]
+	path = docs/vwo-fme-node-sdk
+	url = git@github.com:wingify/vwo-fme-node-sdk.git
