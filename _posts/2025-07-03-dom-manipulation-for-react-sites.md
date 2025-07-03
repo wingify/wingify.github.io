@@ -2,7 +2,7 @@
 layout: post
 title: "VWO Editor: Seamless DOM Manipulations for React-based Websites"
 excerpt: "VWO Editor: Seamless DOM Manipulations for React-based Websites"
-authorslug: initishmittal
+authorslug: nitish_mittal
 author: Nitish Mittal
 ---
 
@@ -57,28 +57,28 @@ Similarly, for Rearrange operation, which simply changes an element's position, 
 Here's a code snippet showing how VWO handles changes in the old position during a Rearrange operation:
 
 ``` js
-// When an element (nodeFiber) is moved, its previous sibling's 'sibling' pointer  
-// needs to bypass it and point to its next sibling.  
-if (nodePrevElementSiblingFiber) {  
-    nodePrevElementSiblingFiber.sibling = nodeNextElementSiblingFiber;  
-} else {  
-    // If there was no previous sibling, the node was the first child.  
-    // So, the parent's 'child' pointer needs to point to the next sibling.  
-    nodeParentFiber.child = nodeNextElementSiblingFiber;  
-}  
-  
-// Ensure changes are mirrored in the alternate fibers  
-if (nodePrevElementSiblingFiber && nodePrevElementSiblingFiber.alternate) {  
-    nodePrevElementSiblingFiber.alternate.sibling = nodeNextElementSiblingFiber;  
-}  
-if (nodeParentFiber.alternate) {  
-    nodeParentFiber.alternate.child = nodeNextElementSiblingFiber;  
+// When an element (nodeFiber) is moved, its previous sibling's 'sibling' pointer
+// needs to bypass it and point to its next sibling.
+if (nodePrevElementSiblingFiber) {
+    nodePrevElementSiblingFiber.sibling = nodeNextElementSiblingFiber;
+} else {
+    // If there was no previous sibling, the node was the first child.
+    // So, the parent's 'child' pointer needs to point to the next sibling.
+    nodeParentFiber.child = nodeNextElementSiblingFiber;
+}
+
+// Ensure changes are mirrored in the alternate fibers
+if (nodePrevElementSiblingFiber && nodePrevElementSiblingFiber.alternate) {
+    nodePrevElementSiblingFiber.alternate.sibling = nodeNextElementSiblingFiber;
+}
+if (nodeParentFiber.alternate) {
+    nodeParentFiber.alternate.child = nodeNextElementSiblingFiber;
 }
 ```
 
 And here's how VWO handles changes in the new position:
 
-``` js 
+``` js
 // When moving nodeFiber to a new position after targetPreviousElementSiblingFiber:
 if (targetPreviousElementSiblingFiber) {
     targetPreviousElementSiblingFiber.sibling = nodeFiber;
