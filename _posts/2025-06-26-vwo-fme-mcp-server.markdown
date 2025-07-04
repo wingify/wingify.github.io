@@ -158,6 +158,16 @@ The magic of the VWO FME MCP Server lies in its ability to **automate every step
 
 3. **Instant Flag Creation**: Just type a prompt, and the server creates the flag automatically—no need for backend setups or manual processes.
 
+## See It in Action: Demo Video
+
+We’ve prepared a **demo video** showing the entire process from prompt to production-ready flag. Watch it in action to see how fast and seamless this entire process is.
+
+<div class="img-wrapper" style="text-align: center;">
+    <video loop="true" controls="true" muted width="100%" autoplay="true" src="/images/2025/06/VWO_FME_MCP_Server.mp4" alt="HMR Video Preview">
+</div>
+
+<br>
+
 ## Key Technical Insights: Zod, Structured Responses, and Validation Logic
 
 During development, we focused on **structured validation** to ensure the server could handle complex inputs correctly. Let's dive into some of the challenges and technical decisions that made the VWO FME MCP Server robust.
@@ -231,16 +241,6 @@ const ruleSchema = z
 ```
 
 This allowed us to enforce complex, conditional validation rules for the flags being created.
-
-## See It in Action: Demo Video
-
-We’ve prepared a **demo video** showing the entire process from prompt to production-ready flag. Watch it in action to see how fast and seamless this entire process is.
-
-<div class="img-wrapper" style="text-align: center;">
-    <video loop="true" controls="true" muted width="100%" autoplay="true" src="/images/2025/06/vwo-mcp-tools.mp4" alt="HMR Video Preview">
-</div>
-
-<br>
 
 ## Get Started with VWO FME MCP Server
 
