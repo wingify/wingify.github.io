@@ -168,6 +168,13 @@ We’ve prepared a **demo video** showing the entire process from prompt to prod
 
 <br>
 
+> You can add the VWO FME Server by simply clicking the button below. Make sure to update the VWO_ACCOUNT_ID and VWO_API_KEY environment variables before you start using it.
+
+<a href="https://cursor.com/install-mcp?name=vwo-fme-mcp&config=eyJjb21tYW5kIjoibnB4IC15IHZ3by1mbWUtbWNwQGxhdGVzdCIsImVudiI6eyJWV09fQUNDT1VOVF9JRCI6IlZXT19BQ0NPVU5UX0lEIiwiVldPX0FQSV9LRVkiOiJWV09fQVBJX0tFWSJ9fQ=" target="_blank">
+  <img src="https://cursor.com/deeplink/mcp-install-dark.svg" alt="Add vwo-fme-mcp MCP server to Cursor" width="170" height="40" />
+</a>
+
+
 ## Key Technical Insights: Zod, Structured Responses, and Validation Logic
 
 During development, we focused on **structured validation** to ensure the server could handle complex inputs correctly. Let's dive into some of the challenges and technical decisions that made the VWO FME MCP Server robust.
