@@ -18,6 +18,7 @@ export default ({ data, pageContext }) => {
   const post = postNode.frontmatter
   const date = postNode.fields.date;
   postNode.frontmatter.twitter = yamlData.authors[postNode.frontmatter.authorslug] && yamlData.authors[postNode.frontmatter.authorslug].twitter;
+  postNode.frontmatter.cover = postNode.frontmatter.cover ? postNode.frontmatter.cover : 'https://wingify.com/wp-content/themes/wingify/images/labs/engg_blog.png'
   let disqusConfig = {
     url: `${config.siteUrl+slug}`,
     identifier: post.id,
@@ -108,6 +109,7 @@ export const pageQuery = graphql`
         title
         author
         authorslug
+        cover
       }
       fields {
         slug

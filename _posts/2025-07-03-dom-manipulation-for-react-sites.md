@@ -4,6 +4,7 @@ title: "VWO Editor: Seamless DOM Manipulations for React-based Websites"
 excerpt: "VWO Editor: Seamless DOM Manipulations for React-based Websites"
 authorslug: nitish_mittal
 author: Nitish Mittal
+cover: https://engineering.wingify.com/images/2025/07/dom-manipulation-react-err.png
 ---
 
 # VWO Editor: Seamless DOM Manipulations for React-based Websites

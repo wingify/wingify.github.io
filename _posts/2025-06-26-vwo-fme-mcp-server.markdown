@@ -4,6 +4,7 @@ title: "AI-Driven Feature Flags: How VWO MCP Server Revolutionizes Your Developm
 excerpt: "AI-Driven Feature Flags: How VWO MCP Server Revolutionizes Your Development Workflow"
 authorslug: varun_abhishek
 author: Varun Malhotra, Abhishek Joshi
+cover: https://engineering.wingify.com/images/2025/06/mcp-flow.png
 ---
 
 ## Introduction: Why Feature Flag Management & Experimentation Needs a Revolution

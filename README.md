@@ -42,4 +42,4 @@ Please go through our [contributing guidelines](https://github.com/wingify/wingi
 
 [Apache License, Version 2.0](https://github.com/wingify/wingify.github.io/blob/master/LICENSE)
 
-Copyright 2012-2020 Wingify Software Pvt. Ltd.
+Copyright 2012-2025 Wingify Software Pvt. Ltd.
