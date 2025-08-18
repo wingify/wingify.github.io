@@ -9,6 +9,10 @@ category: "Engineering"
 tags: ["i18n", "automation", "AI", "development-workflow", "internationalization", "translation"]
 ---
 
+<div style="text-align:center; margin: 20px;">
+  <img src="/images/2025/08/i18n-flow.png" style="box-shadow: 2px 2px 10px 1px #aaa; border-radius: 4px;">
+</div>
+
 # Introduction
 
 Today, if you’re building a software product for people around the world, you need to support many languages. In this blog, we’ll share how we’re using Gen AI to build a translation system that’s simple, fast, and easy to scale as we gradually migrate to a new framework.
