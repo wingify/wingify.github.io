@@ -8,7 +8,7 @@ const Header = () => (
     <h1>
       <Link to="/" activeClassName={styles.activeNav}>
         <span className={styles.brand}>
-          <img src="https://wingify.com/wp-content/themes/wingify/images/labs/engg_blog.png" width="30px" height="30px" alt="Wingify Engineering" />
+          <img src="/images/logo/wingify-logo.png" width="32px" height="32px" alt="Wingify Engineering" />
           <span style={{ marginTop: "5px", marginLeft: "15px" }}>{config.siteTitle}</span>
         </span>
       </Link>
